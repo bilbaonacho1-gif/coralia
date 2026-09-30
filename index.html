@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Coralia Environmental — Inteligencia climática para decisiones reales</title>
+<meta name="description" content="Herramientas, datos y asesoramiento para medir, mitigar y adaptarse al cambio climático.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="wrap header__in">
+    <a href="#top" class="logo"><img src="assets/logo.png" alt="Coralia Environmental" height="40"></a>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="#herramientas">Plataforma</a>
+      <a href="#herramientas">Soluciones</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="#equipo">Nosotros</a>
+      <a href="#simuladores">Simuladores</a>
+    </nav>
+    <div class="header__right">
+      <!-- TODO: versión en inglés -->
+      <a href="#" class="lang">ES →</a>
+      <!-- TODO: URL real de la plataforma -->
+      <a href="#" class="btn btn--ghost-light btn--sm">Iniciar sesión →</a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="hero" data-scene="con">
+  <img class="hero__bg hero__bg--con" src="assets/hero-con.webp" srcset="assets/hero-con-960.webp 960w, assets/hero-con.webp 1920w" sizes="100vw" alt="" fetchpriority="high">
+  <!-- La versión "sin acción" se carga después de abrir la página (main.js) para no frenar el inicio -->
+  <img class="hero__bg hero__bg--sin" data-src="assets/hero-sin.webp" data-srcset="assets/hero-sin-960.webp 960w, assets/hero-sin.webp 1920w" sizes="100vw" alt="">
+  <div class="hero__shade"></div>
+  <div class="wrap hero__in">
+    <div class="hero__text">
+      <span class="eyebrow in">CLIMATE INTELLIGENCE PLATFORM</span>
+      <h1 class="in d1">Datos hoy.<br><span class="mint">Decisiones reales</span><br>para un mañana posible.</h1>
+      <p class="in d2">Herramientas, datos y asesoramiento para medir, mitigar y adaptarse al cambio climático.</p>
+      <div class="hero__ctas in d3">
+        <a href="#herramientas" class="btn btn--mint">Explorar la plataforma</a>
+        <a href="#confianza" class="btn btn--text">Conocer más ↓</a>
+      </div>
+    </div>
+    <div class="hero__metric in d4" aria-hidden="true">
+      <div class="glass metric">
+        <b id="heroTemp">+1.5°C</b>
+        <span id="heroTempTxt">Meta del Acuerdo de París</span>
+        <svg viewBox="0 0 200 40"><path class="draw" id="heroCurve" d="M0 34 L25 30 L50 27 L75 25 L100 24 L125 23 L150 23 L175 22 L200 22" fill="none" stroke="#8fe0b0" stroke-width="2"/></svg>
+      </div>
+      <span class="hero__line"></span>
+      <span class="pin-pulse"><i></i><i></i><b></b></span>
+    </div>
+  </div>
+  <div class="scene in d4" role="group" aria-label="Escenario al 2050">
+    <button type="button" class="scene__btn is-on" data-scene="con" aria-pressed="true"><b>Con acción<span class="hide-sm"> climática</span></b><span>2050 · +1,5 °C</span></button>
+    <button type="button" class="scene__btn" data-scene="sin" aria-pressed="false"><b>Sin acción</b><span>2050 · +2,4 °C</span></button>
+    <small class="scene__note">Imagen ilustrativa</small>
+  </div>
+</section>
+
+<!-- ================= TRES HERRAMIENTAS (interactivo) ================= -->
+<section id="herramientas" class="section">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <span class="eyebrow">PLATAFORMA CORALIA</span>
+        <h2>Tres herramientas,<br>un mismo propósito.</h2>
+        <p class="lead">Un ecosistema integrado para entender tu impacto, generar soluciones y prepararte para los desafíos del clima. <b>Elegí una y probala acá mismo.</b></p>
+      </div>
+      <a href="#lab" class="link">Ver cómo funciona →</a>
+    </div>
+
+    <div class="tools" role="tablist" aria-label="Herramientas">
+      <button type="button" class="tool tool--green is-active reveal" role="tab" aria-selected="true" aria-controls="lab" data-tool="footprint">
+        <img src="assets/card-footprint.jpg" alt="">
+        <span class="tool__tag">01. MEDIR</span>
+        <span class="tool__title">Carbon Footprint</span>
+        <span class="tool__desc">Calculá, analizá y gestioná tu huella de carbono.</span>
+        <span class="tool__data"><small>Factores de emisión</small><b>1,000+</b>
+          <span class="minibars" aria-hidden="true"><i style="--h:30%"></i><i style="--h:55%"></i><i style="--h:45%"></i><i style="--h:75%"></i><i style="--h:100%"></i></span></span>
+        <span class="tool__cta">Probar la calculadora →</span>
+      </button>
+      <button type="button" class="tool tool--copper reveal" role="tab" aria-selected="false" aria-controls="lab" data-tool="markets">
+        <img src="assets/card-markets.jpg" alt="">
+        <span class="tool__tag">02. MITIGAR</span>
+        <span class="tool__title">Carbon Markets</span>
+        <span class="tool__desc">Desarrollá proyectos, analizá oportunidades y accedé al mercado de carbono.</span>
+        <span class="tool__data"><small>VCUs · ECO2 Misiones</small><b>10M+</b>
+          <span class="minidots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></span>
+        <span class="tool__cta">Diagnosticar mi tierra →</span>
+      </button>
+      <button type="button" class="tool tool--blue reveal" role="tab" aria-selected="false" aria-controls="lab" data-tool="risk">
+        <img src="assets/card-risk.jpg" alt="">
+        <span class="tool__tag">03. ADAPTAR</span>
+        <span class="tool__title">Climate Risk</span>
+        <span class="tool__desc">Evaluá riesgos climáticos y fortalecé la resiliencia de tu empresa.</span>
+        <span class="tool__data"><small>Amenazas modeladas</small><b>5</b>
+          <svg class="miniwave" viewBox="0 0 120 40" aria-hidden="true"><path d="M0 32 C15 32 20 20 32 22 S52 36 66 26 S92 4 120 8" fill="none" stroke="#9cc3ea" stroke-width="2"/></svg></span>
+        <span class="tool__cta">Evaluar un riesgo →</span>
+      </button>
+    </div>
+
+    <!-- Laboratorio: cambia según la herramienta elegida -->
+    <div id="lab" class="lab reveal" role="tabpanel" aria-live="polite">
+
+      <!-- FOOTPRINT -->
+      <div class="lab__pane is-active" data-pane="footprint">
+        <div class="lab__controls">
+          <h3>Calculá una huella rápida</h3>
+          <p class="muted">Mové los controles con datos aproximados de un año de tu empresa.</p>
+          <label class="range">Electricidad comprada <output data-out="elec">800 MWh</output>
+            <input type="range" min="0" max="5000" step="50" value="800" data-in="elec"></label>
+          <label class="range">Gas natural <output data-out="gas">150 mil m³</output>
+            <input type="range" min="0" max="2000" step="10" value="150" data-in="gas"></label>
+          <label class="range">Flota propia <output data-out="fleet">200.000 km</output>
+            <input type="range" min="0" max="2000000" step="10000" value="200000" data-in="fleet"></label>
+          <label class="range">Vuelos de negocios <output data-out="flights">300 h</output>
+            <input type="range" min="0" max="3000" step="10" value="300" data-in="flights"></label>
+          <label class="range">Compras de bienes y servicios <output data-out="buy">USD 2.000 mil</output>
+            <input type="range" min="0" max="50000" step="100" value="2000" data-in="buy"></label>
+        </div>
+        <div class="lab__result">
+          <span class="muted small">Emisiones totales estimadas</span>
+          <div class="bignum"><span id="fpTotal">0</span> <small>tCO₂e/año</small></div>
+          <div class="scopes" id="fpScopes">
+            <div class="scope"><span>Alcance 1</span><div class="scope__bar"><i style="--c:#8fe0b0"></i></div><b>0</b></div>
+            <div class="scope"><span>Alcance 2</span><div class="scope__bar"><i style="--c:#5fb69a"></i></div><b>0</b></div>
+            <div class="scope"><span>Alcance 3</span><div class="scope__bar"><i style="--c:#c8894f"></i></div><b>0</b></div>
+          </div>
+          <p class="insight" id="fpInsight"></p>
+          <p class="disclaimer">Estimación ilustrativa con factores genéricos. La plataforma usa más de 1.000 factores de emisión, 190 benchmarks sectoriales y trazabilidad ISO 14064 / 14067.</p>
+          <a href="#planes" class="btn btn--mint btn--sm">Hacer mi huella real →</a>
+        </div>
+      </div>
+
+      <!-- MARKETS -->
+      <div class="lab__pane" data-pane="markets" hidden>
+        <div class="lab__controls">
+          <h3>¿Tu tierra puede ser un proyecto de carbono?</h3>
+          <p class="muted">Elegí qué hay hoy en el terreno y cuántas hectáreas tiene.</p>
+          <div class="chips" role="radiogroup" aria-label="Uso del suelo" data-group="land">
+            <button type="button" class="chip is-on" role="radio" aria-checked="true" data-v="redd">Bosque nativo amenazado</button>
+            <button type="button" class="chip" role="radio" aria-checked="false" data-v="arr">Tierra degradada para reforestar</button>
+            <button type="button" class="chip" role="radio" aria-checked="false" data-v="alm">Campo agrícola o ganadero</button>
+            <button type="button" class="chip" role="radio" aria-checked="false" data-v="blue">Humedal o manglar</button>
+          </div>
+          <label class="range">Superficie <output data-out="ha">5.000 ha</output>
+            <input type="range" min="100" max="100000" step="100" value="5000" data-in="ha"></label>
+        </div>
+        <div class="lab__result">
+          <span class="muted small">Tipo de proyecto posible</span>
+          <div class="bignum bignum--sm" id="mkType">REDD+</div>
+          <p class="muted" id="mkMethod"></p>
+          <span class="muted small">Créditos potenciales por año (rango orientativo)</span>
+          <div class="bignum"><span id="mkRange">0</span> <small>tCO₂e</small></div>
+          <span class="muted small">Ingresos potenciales por año</span>
+          <div class="bignum bignum--sm">USD <span id="mkRev">0</span></div>
+          <div class="checklist" id="mkChecks"></div>
+          <p class="disclaimer">Rango ilustrativo, valorizado entre USD 5,7 (promedio de mercado) y USD 20 (créditos investment grade), según Sylvera, 1.er trimestre de 2026. El diagnóstico NbS del Carbon Markets Hub evalúa elegibilidad filtro por filtro, benchmarks, biodiversidad y análisis financiero en unos 5 minutos.</p>
+          <a href="#planes" class="btn btn--mint btn--sm">Pedir el diagnóstico →</a>
+        </div>
+      </div>
+
+      <!-- RISK -->
+      <div class="lab__pane" data-pane="risk" hidden>
+        <div class="lab__controls">
+          <h3>Evaluá un riesgo climático</h3>
+          <p class="muted">Elegí la amenaza, el escenario y el horizonte de tiempo.</p>
+          <span class="label">Amenaza</span>
+          <div class="chips" data-group="hazard">
+            <button type="button" class="chip is-on" data-v="drought">Sequía</button>
+            <button type="button" class="chip" data-v="heat">Olas de calor</button>
+            <button type="button" class="chip" data-v="flood">Inundaciones</button>
+            <button type="button" class="chip" data-v="fire">Incendios</button>
+            <button type="button" class="chip" data-v="wind">Vientos extremos</button>
+          </div>
+          <span class="label">Escenario</span>
+          <div class="chips" data-group="ssp">
+            <button type="button" class="chip is-on" data-v="245">SSP2-4.5 · intermedio</button>
+            <button type="button" class="chip" data-v="585">SSP5-8.5 · altas emisiones</button>
+          </div>
+          <span class="label">Horizonte</span>
+          <div class="chips" data-group="year">
+            <button type="button" class="chip" data-v="2030">2030</button>
+            <button type="button" class="chip is-on" data-v="2050">2050</button>
+            <button type="button" class="chip" data-v="2080">2080</button>
+          </div>
+        </div>
+        <div class="lab__result">
+          <span class="muted small">Nivel de riesgo para un activo tipo</span>
+          <div class="gauge" id="rkGauge">
+            <svg viewBox="0 0 200 110" aria-hidden="true">
+              <path d="M15 100 A85 85 0 0 1 185 100" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="16" stroke-linecap="round"/>
+              <path id="rkArc" d="M15 100 A85 85 0 0 1 185 100" fill="none" stroke="url(#rkGrad)" stroke-width="16" stroke-linecap="round" pathLength="100" stroke-dasharray="0 100"/>
+              <defs><linearGradient id="rkGrad"><stop offset="0" stop-color="#8fe0b0"/><stop offset=".55" stop-color="#e3c35a"/><stop offset="1" stop-color="#e0674f"/></linearGradient></defs>
+            </svg>
+            <div class="gauge__label"><b id="rkLevel">Medio</b><span id="rkScore">0/100</span></div>
+          </div>
+          <p class="insight" id="rkInsight"></p>
+          <p class="disclaimer">Ejemplo ilustrativo. La Climate Risk App modela 5 amenazas y 9 indicadores ETCCDI con proyecciones CMIP6, a 1–5 km de resolución, activo por activo (ISO 14091 · TCFD / ISSB).</p>
+          <a href="#planes" class="btn btn--mint btn--sm">Analizar mis activos →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONFIANZA ================= -->
+<section id="confianza" class="section section--band">
+  <div class="wrap trust reveal">
+    <div>
+      <span class="eyebrow">CONFIANZA GLOBAL</span>
+      <h2 class="h2--sm">Organizaciones que<br>confían en Coralia.</h2>
+    </div>
+    <div class="stats">
+      <div><b data-count="100">0</b><span>Proyectos</span></div>
+      <div><b data-count="23">0</b><span>Países</span></div>
+      <div><b data-count="13" data-suffix="M+">0</b><span>tCO₂e reducidas o removidas</span></div>
+    </div>
+  </div>
+  <div class="wrap award reveal">
+    <img src="assets/premio.webp" alt="Sello Best Developer, Carbon Positive Awards 2025" width="56">
+    <p><b>Best Global NbS Developer 2025</b> · Green Cross United Kingdom. Un reconocimiento a más de una década desarrollando proyectos que conservan ecosistemas y fortalecen comunidades.</p>
+    <a class="link" href="https://green-cross.org.uk/wp-content/uploads/2025/06/CA25-Pitch-Deck.pdf" target="_blank" rel="noopener">Ver documento →</a>
+  </div>
+  <div class="marquee" aria-label="Clientes: YPF, Coca-Cola, Mars, Pan American Energy, Holcim, Arcor, Ledesma, Aluar, Genneia, Pluspetrol, Verra, Norfund, Ingredion, Molinos, Seaboard, Oldelval, Andrómaco, Pampa Energía, Capex, Buenos Aires Ciudad, Petrobras, Adecoagro, TotalEnergies, Veladero, Codere, Josemaria, Ingredia, Petrolera Entre Lomas, Provincia de Corrientes, Atabey, Ministerio de Ambiente y Desarrollo Sostenible, Secretaría de Energía">
+    <div class="marquee__track"><img src="assets/clientes.webp" alt=""><img src="assets/clientes.webp" alt=""></div>
+  </div>
+</section>
+
+<!-- ================= MAPA INTERACTIVO ================= -->
+<section id="mapa" class="section">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <span class="eyebrow">DÓNDE TRABAJAMOS</span>
+        <h2>Proyectos en <span class="mint">23 países</span>, desde 2012.</h2>
+        <p class="lead">Tocá un país para ver qué hicimos ahí. Los que tienen casos publicados tienen columnas más altas.</p>
+      </div>
+    </div>
+    <div class="map-wrap reveal">
+      <div class="map" id="map">
+        <canvas class="map__globe" id="globe" role="img" aria-label="Globo con los 23 países donde trabajó Coralia. Usá las flechas de la ficha para recorrerlos."></canvas>
+        <button type="button" class="map__reset" id="mapReset" hidden>← Ver el mundo</button>
+        <span class="map__hint" aria-hidden="true">Arrastrá para girar · tocá un país</span>
+      </div>
+      <aside class="map-card glass" id="mapCard">
+        <span class="eyebrow" id="mcRegion">AMÉRICA DEL SUR</span>
+        <h3 id="mcName">Argentina</h3>
+        <div class="tags" id="mcTags"></div>
+        <ul class="map-card__list" id="mcList"></ul>
+        <div class="map-card__nav">
+          <button type="button" class="round" id="mcPrev" aria-label="País anterior">←</button>
+          <span id="mcCount">1 / 23</span>
+          <button type="button" class="round round--mint" id="mcNext" aria-label="País siguiente">→</button>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CASOS ================= -->
+<section id="casos" class="section section--band">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <span class="eyebrow">CASOS</span>
+        <h2>Nuestros proyectos: resultados verificados, <span class="mint">no promesas.</span></h2>
+        <p class="lead">Deslizá, usá las flechas o tocá una tarjeta. Filtrá por servicio para ver casos como el tuyo.</p>
+      </div>
+      <div class="chips chips--filters" id="caseFilters" role="group" aria-label="Filtrar casos">
+        <button type="button" class="chip is-on" data-f="all">Todos</button>
+        <button type="button" class="chip" data-f="medir">Medir</button>
+        <button type="button" class="chip" data-f="mitigar">Mitigar</button>
+        <button type="button" class="chip" data-f="adaptar">Adaptar</button>
+        <button type="button" class="chip" data-f="consultoria">Consultoría</button>
+      </div>
+    </div>
+    <div class="deck reveal" id="deck" aria-roledescription="carrusel" aria-label="Proyectos">
+      <div class="deck__stage" id="deckStage" tabindex="0"></div>
+      <div class="deck__info" id="deckInfo" aria-live="polite"></div>
+      <div class="deck__ctrl">
+        <button type="button" class="round" id="deckPrev" aria-label="Proyecto anterior">←</button>
+        <div class="deck__progress"><span id="deckCount">01 / 10</span><div class="deck__bar"><i id="deckBar"></i></div></div>
+        <button type="button" class="round round--mint" id="deckNext" aria-label="Proyecto siguiente">→</button>
+      </div>
+    </div>
+    <div class="more-row"><a class="btn btn--ghost-light" href="proyectos.html">Ver todos los proyectos →</a></div>
+
+    <div class="quotes reveal" id="quotes">
+      <figure class="quote glass is-on">
+        <img src="assets/test-jafella.webp" alt="Javier Jafella" width="72" height="72">
+        <blockquote>“Poder obtener la huella de carbono total de un producto es muy complejo. Junto a Coralia desarrollamos una metodología que nos permitió acceder a información clave y dar mayor precisión a los datos, incluso en contextos de alta incertidumbre.”</blockquote>
+        <figcaption><b>Javier Jafella</b> · Jefe de Sustentabilidad, Laboratorios Andrómaco</figcaption>
+      </figure>
+      <figure class="quote glass">
+        <img src="assets/test-martinenghi.webp" alt="Antonella Martinenghi" width="72" height="72">
+        <blockquote>“Agradecemos a Coralia Environmental por todo su apoyo durante el proceso de certificación del proyecto y destacamos su rigor técnico, su atención al detalle y su perseverancia para completarlo con éxito.”</blockquote>
+        <figcaption><b>Antonella Martinenghi</b> · Sr. Carbon Commercial Executive, Genneia</figcaption>
+      </figure>
+      <div class="quotes__nav"><button type="button" class="dot-btn is-on" data-q="0" aria-label="Testimonio 1"></button><button type="button" class="dot-btn" data-q="1" aria-label="Testimonio 2"></button></div>
+    </div>
+  </div>
+
+  <dialog class="case-modal" id="caseModal" aria-labelledby="cmTitle">
+    <button type="button" class="case-modal__x" id="cmClose" aria-label="Cerrar">×</button>
+    <span class="eyebrow" id="cmClient"></span>
+    <h3 id="cmTitle"></h3>
+    <div class="tags" id="cmTags"></div>
+    <div class="case-modal__kpi" id="cmKpi"></div>
+    <div id="cmBody"></div>
+    <a class="btn btn--mint btn--sm" id="cmLink" href="proyectos.html">Ver proyecto completo →</a>
+  </dialog>
+</section>
+
+<!-- ================= EQUIPO ================= -->
+<section id="equipo" class="team-x">
+  <img class="team-x__bg" src="assets/equipo-fondo.jpg" alt="">
+  <div class="team-x__shade"></div>
+  <div class="wrap team-x__in">
+    <div class="head reveal">
+      <div>
+        <span class="eyebrow">NUESTRO EQUIPO</span>
+        <h2>Un equipo <span class="mint">multidisciplinario</span><br>de especialistas en ciencia.</h2>
+        <p class="lead">Tocá un nombre para conocer a cada persona.</p>
+      </div>
+      <div class="chips" id="teamFilters" role="group" aria-label="Filtrar equipo"></div>
+    </div>
+    <div class="team-x__grid">
+      <div class="pills" id="pills" role="listbox" aria-label="Integrantes"></div>
+      <aside class="person glass" id="person" aria-live="polite"></aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SIMULADORES ================= -->
+<section id="simuladores" class="section section--band">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <span class="eyebrow">SIMULADORES</span>
+        <h2>Decisiones con números.</h2>
+        <p class="lead">Dos simuladores para dimensionar tu estrategia climática antes de la primera reunión.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Simuladores">
+        <button type="button" class="tab is-active" role="tab" aria-selected="true" data-sim="path">Trayectoria de reducción</button>
+        <button type="button" class="tab" role="tab" aria-selected="false" data-sim="offset">Neutralidad y créditos</button>
+      </div>
+    </div>
+
+    <!-- Trayectoria -->
+    <div class="sim glass reveal" data-simpane="path">
+      <div class="sim__controls">
+        <h3>¿A qué ritmo tenés que reducir?</h3>
+        <p class="muted">Definí tus emisiones actuales y tu meta.</p>
+        <label class="range">Emisiones actuales (alcances 1 y 2) <output data-out="pBase">50.000 tCO₂e</output>
+          <input type="range" min="1000" max="500000" step="1000" value="50000" data-in="pBase"></label>
+        <label class="range">Año de la meta <output data-out="pYear">2035</output>
+          <input type="range" min="2030" max="2050" step="1" value="2035" data-in="pYear"></label>
+        <label class="range">Reducción objetivo <output data-out="pPct">42 %</output>
+          <input type="range" min="10" max="100" step="1" value="42" data-in="pPct"></label>
+      </div>
+      <div class="sim__result">
+        <svg class="chart" id="pChart" viewBox="0 0 520 240" role="img" aria-label="Trayectoria de emisiones"></svg>
+        <div class="kpis">
+          <div><span class="muted small">Reducción por año</span><b id="pYearly">0</b><small>tCO₂e</small></div>
+          <div><span class="muted small">Emisiones en la meta</span><b id="pEnd">0</b><small>tCO₂e</small></div>
+          <div><span class="muted small">Ritmo anual</span><b id="pRate">0 %</b><small>del año base</small></div>
+        </div>
+        <p class="insight" id="pInsight"></p>
+        <p class="disclaimer">Año base 2026. Referencia: contracción lineal de 4,2 % anual del año base, el ritmo mínimo que usa SBTi para metas alineadas a 1,5 °C en alcances 1 y 2.</p>
+      </div>
+    </div>
+
+    <!-- Neutralidad -->
+    <div class="sim glass reveal" data-simpane="offset" hidden>
+      <div class="sim__controls">
+        <h3>¿Cuánto cuesta compensar con calidad?</h3>
+        <p class="muted">Emisiones residuales que querés compensar cada año y qué parte con créditos de alta calidad.</p>
+        <label class="range">Emisiones residuales por año <output data-out="oTon">20.000 tCO₂e</output>
+          <input type="range" min="500" max="300000" step="500" value="20000" data-in="oTon"></label>
+        <label class="range">Proporción con créditos de alta calidad (BBB+ o superior) <output data-out="oHq">60 %</output>
+          <input type="range" min="0" max="100" step="5" value="60" data-in="oHq"></label>
+        <div class="prices">
+          <div><span class="muted small">Precio promedio de mercado</span><b>USD 5,7</b></div>
+          <div><span class="muted small">Créditos investment grade (BBB+)</span><b class="mint">USD 20</b></div>
+        </div>
+      </div>
+      <div class="sim__result">
+        <span class="muted small">Costo anual estimado</span>
+        <div class="bignum">USD <span id="oCost">0</span></div>
+        <div class="stack" aria-hidden="true"><i id="oBarHq"></i><i id="oBarStd"></i></div>
+        <div class="stack__legend"><span><i class="dot dot--mint"></i>Alta calidad: USD <b id="oHqCost">0</b></span><span><i class="dot dot--dim"></i>Promedio: USD <b id="oStdCost">0</b></span></div>
+        <p class="insight" id="oInsight"></p>
+        <p class="disclaimer">Precios de referencia: Sylvera, State of Carbon Credits, datos de mercado del 1.er trimestre de 2026. Los créditos de calidad cotizan 3,5 veces más y su oferta viene bajando desde 2023. Coralia desarrolla proyectos propios con rating A–AA antes de la emisión.</p>
+        <a href="#contacto" class="btn btn--mint btn--sm">Armar mi estrategia de compensación →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PLANES ================= -->
+<section id="planes" class="section">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <span class="eyebrow">PLANES DE ACCESO</span>
+        <h2>Elegí cómo querés avanzar.</h2>
+        <p class="lead">Accedé a nuestras herramientas según las necesidades de tu empresa. Desde una demo gratuita hasta el acompañamiento completo de nuestro equipo.</p>
+      </div>
+    </div>
+    <div class="plans">
+      <div class="plan reveal"><h3>Demo</h3><span class="muted">Explorá la herramienta</span>
+        <ul><li>Acceso limitado</li><li>Datos de ejemplo</li><li>Sin costo</li></ul>
+        <a href="#contacto" class="btn btn--ghost-light">Probar demo</a></div>
+      <div class="plan reveal"><h3>Analyze</h3><span class="muted">Para análisis internos</span>
+        <ul><li>Funcionalidades básicas</li><li>Tus propios datos</li><li>Reportes simples</li></ul>
+        <a href="#contacto" class="btn btn--ghost-light">Solicitar acceso</a></div>
+      <div class="plan reveal"><h3>Professional</h3><span class="muted">Para gestión avanzada</span>
+        <ul><li>Plataforma completa</li><li>Reportes avanzados</li><li>Soporte técnico</li></ul>
+        <a href="#contacto" class="btn btn--ghost-light">Contactar ventas</a></div>
+      <div class="plan plan--hl reveal"><h3>Consulting</h3><span class="muted">Plataforma + equipo Coralia</span>
+        <ul><li>Todo lo anterior</li><li>Asesoramiento experto</li><li>Acompañamiento estratégico</li></ul>
+        <a href="#contacto" class="btn btn--mint">Hablar con un experto</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section id="contacto" class="cta">
+  <img src="assets/cta.webp" alt="">
+  <div class="cta__shade"></div>
+  <div class="wrap cta__in reveal">
+    <h2>Transformemos datos<br>en un impacto real.</h2>
+    <a href="mailto:contacto@coraliae.com" class="btn btn--mint">Hablemos →</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__in">
+    <img src="assets/logo.png" alt="Coralia Environmental" height="34">
+    <nav aria-label="Pie"><a href="#herramientas">Plataforma</a><a href="#herramientas">Soluciones</a><a href="#casos">Proyectos</a><a href="#confianza">Nosotros</a><a href="#simuladores">Simuladores</a></nav>
+    <div class="footer__meta"><span>Nogoyá 4169, CABA · contacto@coraliae.com · +54 9 11 3848-4171</span><a href="https://www.linkedin.com/company/coraliae/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.youtube.com/@coraliaenvironmental" target="_blank" rel="noopener">YouTube</a><span class="lang">EN · <b>ES</b></span></div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+<script src="data.js"></script>
+<script src="main.js"></script>
+<script src="globe.js"></script>
+<script src="deco.js"></script>
+</body>
+</html>
