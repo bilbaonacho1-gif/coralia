@@ -66,12 +66,98 @@ const CASES = [
       'Los conectamos con proveedores de soluciones tecnológicas a través de la plataforma global de WIPO GREEN, con asesoramiento en propiedad intelectual del INPI.'],
     url: 'https://www.coraliae.com/projects-wipo' },
 ];
-// Otros trabajos (deck institucional) que suman a la ficha del país
-const EXTRA = {
-  Argentina: ['ReMonte: regeneración de bosques del Chaco Seco, con rating Sylvera A antes de la emisión.'],
-  Paraguay: ['Datos de actividad jurisdiccionales para proyectos REDD+ para Verra (VM0048).'],
-  'Perú': ['Informe pericial socioambiental del Metro de Lima Línea 2 para un arbitraje en el CIADI.'],
+// Países donde trabajó Coralia (fuente: deck institucional 2026). Se usan en el globo de la Home.
+// [nombre, longitud, latitud, región, cantidad de trabajos, nombre en el mapa si es distinto]
+const COUNTRIES = [
+  ['Argentina', -64, -35, 'América del Sur', 70],
+  ['Paraguay', -58, -23.4, 'América del Sur', 1],
+  ['Bolivia', -64.7, -16.7, 'América del Sur', 1],
+  ['Perú', -75, -9.5, 'América del Sur', 8, 'Peru'],
+  ['Brasil', -51, -10, 'América del Sur', 1, 'Brazil'],
+  ['Chile', -71, -32, 'América del Sur', 2],
+  ['Ecuador', -78.5, -1.5, 'América del Sur', 2],
+  ['Colombia', -73.5, 4, 'América del Sur', 3],
+  ['Panamá', -80, 8.5, 'Centroamérica y Caribe', 2, 'Panama'],
+  ['Costa Rica', -84, 9.9, 'Centroamérica y Caribe', 1],
+  ['República Dominicana', -70.3, 18.8, 'Centroamérica y Caribe', 1, 'Dominican Rep.'],
+  ['México', -102, 23.5, 'América del Norte', 5, 'Mexico'],
+  ['Estados Unidos', -98, 39, 'América del Norte', 1, 'United States of America'],
+  ['España', -3.7, 40.2, 'Europa', 2, 'Spain'],
+  ['Francia', 2.3, 46.6, 'Europa', 1, 'France'],
+  ['Bélgica', 4.6, 50.6, 'Europa', 1, 'Belgium'],
+  ['Alemania', 10.4, 51.1, 'Europa', 1, 'Germany'],
+  ['Italia', 12.5, 42.8, 'Europa', 1, 'Italy'],
+  ['Suecia', 16, 62.5, 'Europa', 1, 'Sweden'],
+  ['Noruega', 9, 61, 'Europa', 1, 'Norway'],
+  ['Arabia Saudita', 45, 24, 'Medio Oriente', 1, 'Saudi Arabia'],
+  ['India', 79, 22, 'Asia', 1],
+  ['Sudáfrica', 24, -29, 'África', 1, 'South Africa'],
+];
+
+// Qué hizo Coralia en cada país: [año, cliente, trabajo]. Los casos publicados (CASES) se suman arriba de la lista.
+const WORK = {
+  Argentina: [
+    ['2022–', 'Gobierno de Misiones', 'Programa jurisdiccional REDD+ (ECO2 Misiones, Verra JNR)'],
+    ['2019 · 2023', 'YPF', 'Mapas de amenaza, vulnerabilidad y riesgo · valoración económica del riesgo climático'],
+    ['2023', 'Pan American Energy', 'Riesgo climático físico y de transición en todas sus instalaciones'],
+    ['2024', 'Mars Petcare · Aconcagua · Cartocor · Phoenix', 'Huellas de carbono corporativas'],
+    ['2020–23', 'Laboratorios Andrómaco', 'Huellas de producto (Aveno, Dermaglós) y estrategia de bajas emisiones'],
+    ['2013 · 2015', 'Coca-Cola Argentina', 'Huella y compensación del concierto de Metallica en la Antártida'],
+    ['2014', 'Secretaría de Ambiente', 'Capítulo de energía de la Tercera Comunicación Nacional de Argentina (CMNUCC)'],
+    ['2024', 'Mercuria Energy Trading', 'Gestión del programa de Misiones · monitoreo de proyectos eólicos de Genneia'],
+    ['2025–26', 'Ruuts · GIZ', 'ReMonte Chaco Seco (ARR + ALM) · Regenerando Chubut (ARR)'],
+  ],
+  'México': [
+    ['2012', 'FIDE – Greening', 'Calentamiento solar para la agroindustria (Mexisco II)'],
+    ['2013', 'GIZ – FIDE', 'Diseño de un sistema MRV para medidas de eficiencia energética'],
+    ['2016', 'IMPECO', 'Proyecto de abatimiento de N₂O en la planta de Fertinal'],
+    ['2024', 'Casa Centinela', 'Huellas de producto de tequila y agave'],
+    ['2025–26', 'Sinaloa Blue Carbon', 'Proyecto de restauración de manglares (VM0033)'],
+  ],
+  'Perú': [
+    ['2012–24', 'Pluspetrol Perú', 'Estudio WHRU de Malvinas · monitoreo y verificación MDL · inventario de emisiones fugitivas · huella corporativa'],
+    ['2020', 'Pluspetrol – BP', 'Informe de monitoreo y venta de reducciones de emisiones en el Reino Unido'],
+    ['2018–19', 'Metro de Lima Línea 2', 'Informe pericial socioambiental para un arbitraje en el CIADI (Washington)'],
+    ['2024', 'Pluspetrol', 'Servicio corporativo integral: huella, riesgo climático, mitigación y estrategia de carbono'],
+  ],
+  Colombia: [
+    ['2015', 'Cesviter – ONU-Hábitat', 'Indicadores de cambio climático para la Secretaría Distrital de Ambiente de Bogotá'],
+    ['2020', 'ICONTEC', 'Validación y verificación de proyectos de reducción de emisiones (Fedepalma, Providencia III, Las Vacas)'],
+    ['2024', 'APLA', 'Huella y compensación del 44.º Encuentro Anual Latinoamericano de Petroquímica'],
+  ],
+  Chile: [
+    ['2022', 'Allianz Zero Emissions', 'Desarrollo de un proyecto REDD+'],
+    ['2024', 'Propietarios privados', 'Factibilidad REDD en la región del Maule'],
+  ],
+  Ecuador: [
+    ['2022', 'Pluspetrol', 'Desarrollo de un proyecto hidroeléctrico'],
+    ['2024', 'Pluspetrol', 'Servicio climático corporativo integral'],
+  ],
+  Paraguay: [['2024', 'Verra – MADES', 'Datos de actividad jurisdiccionales para proyectos REDD+ (VM0048)']],
+  Bolivia: [['2026', 'Fundares · ReForest LATAM', 'Carbon Connect Bolivia: hoja de ruta REDD+ jurisdiccional para Santa Cruz']],
+  Brasil: [['2023', 'APLA', 'Huella y compensación del 43.º Encuentro Anual Latinoamericano de Petroquímica']],
+  'República Dominicana': [['2024–', 'Fundación CI Atabey', 'Dominican Blue Carbon Exchange: restauración y conservación de manglares (VM0033 / VM0007)']],
+  'Costa Rica': [['2019', 'GeoAdaptive – Gobierno de Costa Rica', 'Análisis territorial de emisiones de GEI y captura de carbono']],
+  'Panamá': [
+    ['2015', 'Panama Forest Services', 'Factibilidad de los proyectos de energía de la Autoridad del Canal de Panamá'],
+    ['2017', 'Ciudad del Saber – Sinergia', 'Revisión de la gestión ambiental, de emisiones y de energía'],
+  ],
+  'Estados Unidos': [['2016', 'Global Footprint Network', 'Huella ecológica de Argentina']],
+  'España': [
+    ['2012', 'COMSA EMTE', 'Estaciones meteorológicas para proyectos de energía renovable'],
+    ['2024', 'Munbaus – OCASA', 'Huella corporativa multipaís'],
+  ],
+  Francia: [['2022', 'TotalEnergies', 'Estrategia de carbono y proyectos de mitigación']],
+  Alemania: [['2022', 'Prolignis Energie', 'Factibilidad de tratamiento de residuos mixtos']],
+  Italia: [['2012', 'Greening – Municipio de Bolonia', 'Plataforma de monitoreo y reporte de emisiones territoriales']],
+  Suecia: [['2012', 'Jegrelius – Eco2Win', 'Análisis de ciclo de vida de bolsas para transfusión de sangre']],
+  Noruega: [['2022', 'Norfund', 'Capacitación en mercados de carbono']],
+  'Bélgica': [['2024', 'Munbaus – OCASA', 'Huella corporativa de las operaciones en Bélgica']],
+  India: [['2024', 'Munbaus – OCASA', 'Huella corporativa de las operaciones en India']],
+  'Sudáfrica': [['2014', 'National Pride Ltd', 'Sistema de gestión de la energía ISO 50001']],
+  'Arabia Saudita': [['2013', 'Tetra Tech', 'Estudio comparativo de reformas del sector eléctrico (Argentina, México y Arabia Saudita)']],
 };
+const workLabel = (n) => (n >= 70 ? 'Más de 70 trabajos desde 2012' : `${n} ${n === 1 ? 'trabajo' : 'trabajos'}`);
 
 // Orden de la grilla en la página de proyectos (igual que en la web actual)
 const GRID_ORDER = ['wipo', 'genneia', 'phoenix', 'mercuria', 'pluspetrol', 'sesuai', 'ruuts'];

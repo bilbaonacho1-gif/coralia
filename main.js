@@ -12,20 +12,38 @@ $$('.reveal, .map, .stats').forEach((el) => io ? io.observe(el) : el.classList.a
 function onVisible(el) {
   if (el.classList.contains('stats') || el.querySelector?.('[data-count]')) {
     $$('[data-count]', el).forEach((b) => {
-      const to = +b.dataset.count, suf = b.dataset.suffix || '+'; const t0 = performance.now();
+      const to = +b.dataset.count, suf = b.dataset.suffix ?? '+'; const t0 = performance.now();
       const step = (t) => { const p = Math.min(1, (t - t0) / 1400); b.textContent = Math.round(to * (1 - Math.pow(1 - p, 3))) + suf; if (p < 1) requestAnimationFrame(step); };
       requestAnimationFrame(step);
     });
   }
 }
 
-/* ---------- 1) Tres herramientas: tarjetas + laboratorio ---------- */
-const tools = $$('.tool');
-tools.forEach((t) => t.addEventListener('click', () => {
-  tools.forEach((x) => { x.classList.toggle('is-active', x === t); x.setAttribute('aria-selected', x === t); });
-  $$('.lab__pane').forEach((p) => { const on = p.dataset.pane === t.dataset.tool; p.hidden = !on; p.classList.toggle('is-active', on); });
-  if (window.innerWidth < 1000) $('#lab').scrollIntoView({ behavior: 'smooth', block: 'start' });
-}));
+/* ---------- 1) Plataformas: pestañas, recorrido paso a paso y mini demo ---------- */
+const APP_PANE = { footprint: 'footprint', markets: 'markets', risk: 'risk' };
+function setApp(k) {
+  $$('.apptab').forEach((t) => { const on = t.dataset.app === k; t.classList.toggle('is-on', on); t.setAttribute('aria-selected', on); });
+  $$('.story').forEach((st) => { st.hidden = st.dataset.story !== k; });
+  $$('.lab__pane').forEach((p) => { const on = p.dataset.pane === APP_PANE[k]; p.hidden = !on; p.classList.toggle('is-active', on); });
+  const st = $(`.story[data-story="${k}"]`); if (st) showStep(st, 0);
+}
+$$('.apptab').forEach((t) => t.addEventListener('click', () => setApp(t.dataset.app)));
+// botones de las tarjetas de herramientas: eligen la plataforma y el navegador baja al ancla
+$$('[data-open-app]').forEach((a) => a.addEventListener('click', () => setApp(a.dataset.openApp)));
+
+function showStep(story, n) {
+  $$('.step', story).forEach((s, i) => s.classList.toggle('is-on', i === n));
+  $$('.device__view img', story).forEach((im, i) => { im.classList.toggle('is-on', i === n); if (Math.abs(i - n) <= 1) im.loading = 'eager'; });
+  $$('.story__dots i', story).forEach((d, i) => d.classList.toggle('is-on', i === n));
+}
+// el paso activo es el que cruza la mitad de la pantalla
+const stepIO = 'IntersectionObserver' in window ? new IntersectionObserver((es) => es.forEach((e) => {
+  if (e.isIntersecting) showStep(e.target.closest('.story'), +e.target.dataset.step);
+}), { rootMargin: '-45% 0px -45% 0px' }) : null;
+$$('.step').forEach((s) => {
+  if (stepIO) stepIO.observe(s);
+  s.addEventListener('click', () => showStep(s.closest('.story'), +s.dataset.step));
+});
 
 // chips (grupos de opción única)
 $$('.chips').forEach((g) => g.addEventListener('click', (e) => {
@@ -97,35 +115,20 @@ function calcRisk() {
 $('[data-pane="risk"]').addEventListener('change', calcRisk);
 calcRisk();
 
-/* ---------- 2) Mapa interactivo (globo 3D en globe.js) ---------- */
-// [nombre, longitud, latitud, región, servicios, nombre en el mapa]. TODO: completar los proyectos de cada país.
-const T = (n) => `[Completar proyectos en ${n}]`;
-const COUNTRIES = [
-  ['Argentina', -64, -35, 'América del Sur', ['mitigar', 'adaptar', 'medir']],
-  ['Paraguay', -58, -23.4, 'América del Sur', ['mitigar']],
-  ['Perú', -75, -9.5, 'América del Sur', ['medir', 'consultoria'], 'Peru'],
-  ['Brasil', -51, -10, 'América del Sur', [], 'Brazil'], ['Uruguay', -56, -32.8, 'América del Sur'], ['Chile', -71, -32, 'América del Sur'],
-  ['Colombia', -73.5, 4, 'América del Sur'], ['Ecuador', -78.5, -1.5, 'América del Sur'],
-  ['Panamá', -80, 8.5, 'Centroamérica y Caribe', [], 'Panama'], ['Costa Rica', -84, 9.9, 'Centroamérica y Caribe'], ['República Dominicana', -70.3, 18.8, 'Centroamérica y Caribe', [], 'Dominican Rep.'],
-  ['México', -102, 23.5, 'América del Norte', [], 'Mexico'], ['Estados Unidos', -98, 39, 'América del Norte', [], 'United States of America'],
-  ['España', -3.7, 40.2, 'Europa', [], 'Spain'], ['Francia', 2.3, 46.6, 'Europa', [], 'France'], ['Bélgica', 4.6, 50.6, 'Europa', [], 'Belgium'], ['Italia', 12.5, 42.8, 'Europa', [], 'Italy'], ['Noruega', 9, 61, 'Europa', [], 'Norway'], ['Suecia', 16, 62.5, 'Europa', [], 'Sweden'],
-  ['Arabia Saudita', 45, 24, 'Medio Oriente', [], 'Saudi Arabia'], ['India', 79, 22, 'Asia'], ['Corea del Sur', 127.8, 36.4, 'Asia', [], 'South Korea'], ['Sudáfrica', 24, -29, 'África', [], 'South Africa'],
-];
-const TAGN = { mitigar: 'Mitigar', adaptar: 'Adaptar', medir: 'Medir', consultoria: 'Consultoría' };
-
-const SVCN = TAGN;
+/* ---------- 2) Mapa interactivo (globo 3D en globe.js; países y trabajos en data.js) ---------- */
+const SVCN = { mitigar: 'Mitigar', adaptar: 'Adaptar', medir: 'Medir', consultoria: 'Consultoría' };
 let cur = 0;
 const map = $('#map');
 function showCountry(i, zoom = false) {
   cur = (i + COUNTRIES.length) % COUNTRIES.length;
-  const [n, , , region, tags = []] = COUNTRIES[cur];
+  const [n, , , region, count] = COUNTRIES[cur];
   if (window.globeFocus) globeFocus(cur, zoom);
-  $('#mcRegion').textContent = region.toUpperCase(); $('#mcName').textContent = n;
-  $('#mcTags').innerHTML = tags.map((t) => `<span class="tag tag--${t}">${TAGN[t]}</span>`).join('');
   const cs = CASES.filter((c) => c.country === n);
-  const list = cs.map((c) => `<li><button type="button" class="mc-case" data-case="${c.id}"><b>${c.client}</b> · ${c.title} →</button></li>`)
-    .concat((EXTRA[n] || []).map((t) => `<li>${t}</li>`));
-  $('#mcList').innerHTML = list.length ? list.join('') : `<li class="todo">${T(n)}</li>`;
+  $('#mcRegion').textContent = region; $('#mcName').textContent = n;
+  $('#mcCountLabel').textContent = workLabel(count);
+  $('#mcTags').innerHTML = [...new Set(cs.map((c) => c.svc))].map((t) => `<span class="tag tag--${t}">${SVCN[t]}</span>`).join('');
+  $('#mcList').innerHTML = cs.map((c) => `<li class="mc-pub"><button type="button" class="mc-case" data-case="${c.id}"><span>Caso publicado</span><b>${c.client}</b> · ${c.title} →</button></li>`)
+    .concat((WORK[n] || []).map(([y, who, what]) => `<li><span class="mc-yr">${y}</span><div><b>${who}</b>${what}</div></li>`)).join('');
   $('#mcCount').textContent = `${cur + 1} / ${COUNTRIES.length}`;
   const c = $('#mapCard'); c.classList.remove('swap'); void c.offsetWidth; c.classList.add('swap');
 }
@@ -282,23 +285,4 @@ setInterval(() => { if (!document.hidden) showQuote((qn + 1) % quotes.length); }
     $$('#teamFilters .chip').forEach((x) => x.classList.toggle('is-on', x === c)); group = c.dataset.g; renderPills();
   });
   renderPills();
-})();
-
-/* ---------- Hero: escenario 2050 con / sin acción ---------- */
-(() => {
-  const hero = $('#hero'); if (!hero) return;
-  const sin = hero.querySelector('.hero__bg--sin');
-  const loadSin = () => { if (sin.dataset.src) { sin.srcset = sin.dataset.srcset; sin.src = sin.dataset.src; delete sin.dataset.src; } };
-  addEventListener('load', () => setTimeout(loadSin, 300)); // se baja después de abrir la página
-  const TXT = {
-    con: ['+1.5°C', 'Meta del Acuerdo de París', 'M0 34 L25 30 L50 27 L75 25 L100 24 L125 23 L150 23 L175 22 L200 22'],
-    sin: ['+2.4°C', 'Aumento de temperatura proyectado al 2050', 'M0 34 L25 32 L50 33 L75 27 L100 24 L125 20 L150 15 L175 9 L200 4'],
-  };
-  $$('.scene__btn').forEach((b) => b.addEventListener('click', () => {
-    const k = b.dataset.scene; loadSin();
-    hero.dataset.scene = k;
-    $$('.scene__btn').forEach((x) => { const on = x === b; x.classList.toggle('is-on', on); x.setAttribute('aria-pressed', on); });
-    $('#heroTemp').textContent = TXT[k][0]; $('#heroTempTxt').textContent = TXT[k][1];
-    $('#heroCurve').setAttribute('d', TXT[k][2]);
-  }));
 })();

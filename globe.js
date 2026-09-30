@@ -1,7 +1,7 @@
 /* Globo 3D liviano (canvas + d3-geo, ~60 KB comprimido en total).
    - Las librerías y el mapa se cargan recién cuando el mapa está cerca de la pantalla.
    - Dibuja solo mientras el globo se ve; fuera de pantalla no consume nada.
-   - Países, coordenadas y servicios: COUNTRIES en main.js. Casos: CASES en data.js. */
+   - Países, coordenadas y cantidad de trabajos: COUNTRIES en data.js. */
 (() => {
   const box = document.getElementById('map'), cv = document.getElementById('globe');
   if (!box || !cv) return;
@@ -27,7 +27,7 @@
     const byName = new Map(feats.map((f) => [f.properties.name, f]));
     const shape = COUNTRIES.map((c) => byName.get(c[5] || c[0]) || null);
     const worked = { type: 'FeatureCollection', features: shape.filter(Boolean) };
-    const nCases = COUNTRIES.map((c) => CASES.filter((k) => k.country === c[0]).length);
+    const nWork = COUNTRIES.map((c) => c[4] || 0);
     const proj = d3.geoOrthographic().clipAngle(90).precision(0.7);
     const path = d3.geoPath(proj, ctx);
     const grat = d3.geoGraticule10(), sphere = { type: 'Sphere' };
@@ -73,31 +73,31 @@
 
       // Halo
       let g = ctx.createRadialGradient(cx, cy, R * 0.95, cx, cy, R * 1.28);
-      g.addColorStop(0, 'rgba(143,224,176,.22)'); g.addColorStop(1, 'rgba(143,224,176,0)');
+      g.addColorStop(0, 'rgba(120,170,70,.22)'); g.addColorStop(1, 'rgba(120,170,70,0)');
       ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
 
       // Océano
       g = ctx.createRadialGradient(cx - R * 0.35, cy - R * 0.4, R * 0.1, cx, cy, R);
-      g.addColorStop(0, '#15372a'); g.addColorStop(1, '#06120d');
+      g.addColorStop(0, '#e6eee8'); g.addColorStop(1, '#b9cdc3');
       ctx.beginPath(); path(sphere); ctx.fillStyle = g; ctx.fill();
 
-      ctx.beginPath(); path(grat); ctx.strokeStyle = 'rgba(143,224,176,.07)'; ctx.lineWidth = 0.6; ctx.stroke();
+      ctx.beginPath(); path(grat); ctx.strokeStyle = 'rgba(18,38,30,.07)'; ctx.lineWidth = 0.6; ctx.stroke();
 
       // Tierra, países trabajados y el activo
-      ctx.beginPath(); path(land); ctx.fillStyle = '#18322a'; ctx.fill();
-      ctx.beginPath(); path(worked); ctx.fillStyle = 'rgba(143,224,176,.38)'; ctx.fill();
-      if (hover > -1 && hover !== active && shape[hover]) { ctx.beginPath(); path(shape[hover]); ctx.fillStyle = 'rgba(143,224,176,.3)'; ctx.fill(); }
+      ctx.beginPath(); path(land); ctx.fillStyle = '#fbfbf6'; ctx.fill();
+      ctx.beginPath(); path(worked); ctx.fillStyle = '#b9d88a'; ctx.fill();
+      if (hover > -1 && hover !== active && shape[hover]) { ctx.beginPath(); path(shape[hover]); ctx.fillStyle = '#9cc56a'; ctx.fill(); }
       if (shape[active]) {
-        ctx.beginPath(); path(shape[active]); ctx.fillStyle = 'rgba(200,245,218,.85)';
-        ctx.shadowColor = 'rgba(143,224,176,.9)'; ctx.shadowBlur = 14; ctx.fill(); ctx.shadowBlur = 0;
+        ctx.beginPath(); path(shape[active]); ctx.fillStyle = '#4f7f2a';
+        ctx.shadowColor = 'rgba(79,127,42,.6)'; ctx.shadowBlur = 14; ctx.fill(); ctx.shadowBlur = 0;
       }
-      ctx.beginPath(); path(borders); ctx.strokeStyle = 'rgba(7,19,15,.7)'; ctx.lineWidth = 0.6; ctx.stroke();
+      ctx.beginPath(); path(borders); ctx.strokeStyle = 'rgba(18,38,30,.22)'; ctx.lineWidth = 0.6; ctx.stroke();
 
       // Luz y sombra para dar volumen
       g = ctx.createRadialGradient(cx - R * 0.45, cy - R * 0.5, R * 0.2, cx, cy, R * 1.02);
-      g.addColorStop(0, 'rgba(255,255,255,.06)'); g.addColorStop(0.55, 'rgba(0,0,0,0)'); g.addColorStop(1, 'rgba(0,0,0,.5)');
+      g.addColorStop(0, 'rgba(255,255,255,.45)'); g.addColorStop(0.55, 'rgba(255,255,255,0)'); g.addColorStop(1, 'rgba(18,38,30,.22)');
       ctx.beginPath(); path(sphere); ctx.fillStyle = g; ctx.fill();
-      ctx.strokeStyle = 'rgba(143,224,176,.3)'; ctx.lineWidth = 1; ctx.stroke();
+      ctx.strokeStyle = 'rgba(18,38,30,.22)'; ctx.lineWidth = 1; ctx.stroke();
 
       // Columnas de luz
       const c = proj.invert([cx, cy]);
@@ -105,24 +105,24 @@
         const d = d3.geoDistance([lon, lat], c);
         heads[i] = null;
         if (d > 1.5) { hNow[i] = 0; return; }
-        const n = nCases[i], want = (n ? Math.min(0.12 + 0.015 * n, 0.24) : 0.07) + (i === active ? 0.05 : 0);
+        const n = nWork[i], want = Math.min(0.08 + 0.035 * Math.log2(n + 1), 0.26) + (i === active ? 0.05 : 0);
         hNow[i] += (want - hNow[i]) * 0.12;
         const [px, py] = proj([lon, lat]), k = 1 + hNow[i];
         // radial + un empuje hacia arriba: así las del centro también se ven "paradas"
         const tx = cx + (px - cx) * k, ty = cy + (py - cy) * k - hNow[i] * R * 0.55 * Math.cos(d);
         const a = Math.min(1, Math.cos(d) * 1.6), on = i === active;
         const beam = ctx.createLinearGradient(px, py, tx, ty);
-        beam.addColorStop(0, 'rgba(143,224,176,0)'); beam.addColorStop(1, on ? `rgba(255,255,255,${a})` : `rgba(143,224,176,${a})`);
+        beam.addColorStop(0, 'rgba(79,127,42,0)'); beam.addColorStop(1, on ? `rgba(18,38,30,${a})` : `rgba(79,127,42,${a})`);
         ctx.beginPath(); ctx.moveTo(px, py); ctx.lineTo(tx, ty);
-        ctx.strokeStyle = beam; ctx.lineWidth = n ? 3 : 2; ctx.lineCap = 'round'; ctx.stroke();
+        ctx.strokeStyle = beam; ctx.lineWidth = n > 1 ? 3 : 2; ctx.lineCap = 'round'; ctx.stroke();
         if (on && !calm) { // anillo que late en la base
           const p = (t % 2) / 2;
           ctx.beginPath(); ctx.arc(px, py, 4 + p * 16, 0, Math.PI * 2);
-          ctx.strokeStyle = `rgba(200,245,218,${(1 - p) * 0.8 * a})`; ctx.lineWidth = 1.5; ctx.stroke();
+          ctx.strokeStyle = `rgba(79,127,42,${(1 - p) * 0.8 * a})`; ctx.lineWidth = 1.5; ctx.stroke();
         }
-        ctx.beginPath(); ctx.arc(tx, ty, on ? 6 : n ? 4.5 : 3.5, 0, Math.PI * 2);
-        ctx.fillStyle = on ? `rgba(255,255,255,${a})` : `rgba(143,224,176,${a})`;
-        ctx.shadowColor = 'rgba(143,224,176,.9)'; ctx.shadowBlur = on ? 18 : 10; ctx.fill(); ctx.shadowBlur = 0;
+        ctx.beginPath(); ctx.arc(tx, ty, on ? 6 : n > 1 ? 4.5 : 3.5, 0, Math.PI * 2);
+        ctx.fillStyle = on ? `rgba(18,38,30,${a})` : `rgba(79,127,42,${a})`;
+        ctx.shadowColor = on ? 'rgba(200,240,74,.9)' : 'rgba(79,127,42,.5)'; ctx.shadowBlur = on ? 18 : 10; ctx.fill(); ctx.shadowBlur = 0;
         heads[i] = { x: tx, y: ty, bx: px, by: py };
       });
       let label = null;
@@ -132,15 +132,15 @@
     }
 
     function tag({ i, x, y }) {
-      const n = nCases[i], txt = COUNTRIES[i][0] + (n ? ` · ${n} ${n === 1 ? 'caso' : 'casos'}` : '');
-      ctx.font = '600 12px Manrope, system-ui, sans-serif';
+      const n = nWork[i], txt = `${COUNTRIES[i][0]} · ${n >= 70 ? '70+ trabajos' : `${n} ${n === 1 ? 'trabajo' : 'trabajos'}`}`;
+      ctx.font = '600 12px Inter, system-ui, sans-serif';
       const w = ctx.measureText(txt).width + 18, h = 24;
       let lx = Math.max(8, Math.min(W - w - 8, x - w / 2)), ly = y - h - 12;
       if (ly < 8) ly = y + 14;
       ctx.beginPath(); ctx.roundRect ? ctx.roundRect(lx, ly, w, h, 7) : ctx.rect(lx, ly, w, h);
-      ctx.fillStyle = 'rgba(10,26,18,.92)'; ctx.fill();
-      ctx.strokeStyle = 'rgba(160,220,190,.35)'; ctx.lineWidth = 1; ctx.stroke();
-      ctx.fillStyle = '#e8f1ec'; ctx.textBaseline = 'middle'; ctx.fillText(txt, lx + 9, ly + h / 2 + 0.5);
+      ctx.fillStyle = '#12261e'; ctx.fill();
+      ctx.strokeStyle = 'rgba(200,240,74,.5)'; ctx.lineWidth = 1; ctx.stroke();
+      ctx.fillStyle = '#f3f4ec'; ctx.textBaseline = 'middle'; ctx.fillText(txt, lx + 9, ly + h / 2 + 0.5);
     }
 
     // Animación: solo corre mientras el globo está en pantalla
