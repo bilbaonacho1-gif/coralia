@@ -1,0 +1,14 @@
+// Coralia — menú del encabezado en celular y tablet (debajo de 1000 px)
+(() => {
+  const btn = document.querySelector('.nav-toggle'), nav = document.getElementById('nav');
+  if (!btn || !nav) return;
+  const set = (open) => {
+    nav.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', open);
+    btn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  };
+  btn.addEventListener('click', () => set(!nav.classList.contains('is-open')));
+  nav.addEventListener('click', (e) => { if (e.target.closest('a')) set(false); });
+  document.addEventListener('click', (e) => { if (!nav.contains(e.target) && !btn.contains(e.target)) set(false); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && nav.classList.contains('is-open')) { set(false); btn.focus(); } });
+})();
