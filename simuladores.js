@@ -67,4 +67,74 @@ function calcOffset() {
 $('[data-simpane="offset"]').addEventListener('input', calcOffset);
 calcOffset();
 
+/* ---------- Huella rápida, tierra y riesgo (antes en la Home) ---------- */
+// chips (grupos de opción única)
+$$('.chips').forEach((g) => g.addEventListener('click', (e) => {
+  const c = e.target.closest('.chip'); if (!c) return;
+  $$('.chip', g).forEach((x) => { x.classList.toggle('is-on', x === c); if (x.hasAttribute('role')) x.setAttribute('aria-checked', x === c); });
+  g.dispatchEvent(new Event('change', { bubbles: true }));
+}));
+const chipVal = (group) => $(`[data-group="${group}"] .chip.is-on`).dataset.v;
+
+// Footprint — factores genéricos ilustrativos
+const F = { elec: 0.35, gas: 1.95, fleet: 0.00025, flights: 0.09, buy: 0.30 };
+function calcFootprint() {
+  const e = val('elec'), g = val('gas'), f = val('fleet'), fl = val('flights'), b = val('buy');
+  $('[data-out="elec"]').textContent = fmt(e) + ' MWh';
+  $('[data-out="gas"]').textContent = fmt(g) + ' mil m³';
+  $('[data-out="fleet"]').textContent = fmt(f) + ' km';
+  $('[data-out="flights"]').textContent = fmt(fl) + ' h';
+  $('[data-out="buy"]').textContent = 'USD ' + fmt(b) + ' mil';
+  const src = { 'la electricidad': e * F.elec, 'el gas natural': g * F.gas, 'la flota': f * F.fleet, 'los vuelos': fl * F.flights, 'las compras': b * F.buy };
+  const s1 = src['el gas natural'] + src['la flota'], s2 = src['la electricidad'], s3 = src['los vuelos'] + src['las compras'];
+  const tot = s1 + s2 + s3;
+  $('#fpTotal').textContent = fmt(tot);
+  const rows = $$('#fpScopes .scope');
+  [s1, s2, s3].forEach((v, i) => { rows[i].querySelector('i').style.setProperty('--w', (tot ? v / tot * 100 : 0) + '%'); rows[i].querySelector('b').textContent = fmt(v); });
+  const top = Object.entries(src).sort((a, b) => b[1] - a[1])[0];
+  $('#fpInsight').textContent = tot ? `La mayor fuente es ${top[0]}: ${Math.round(top[1] / tot * 100)}% del total. Ahí suele estar la primera palanca de reducción.` : 'Mové los controles para ver tu huella.';
+}
+$$('[data-simpane="footprint"] input').forEach((i) => i.addEventListener('input', calcFootprint));
+calcFootprint();
+
+// Markets — rangos ilustrativos por tipo de proyecto (tCO2e/ha/año)
+const M = {
+  redd: { t: 'REDD+', m: 'Deforestación evitada en bosque nativo. Metodología de referencia: VM0048 (Verra).', r: [1, 6] },
+  arr: { t: 'ARR', m: 'Forestación, reforestación y revegetación. Metodología de referencia: VM0047 (Verra).', r: [4, 12] },
+  alm: { t: 'ALM', m: 'Manejo agrícola y ganadero mejorado, con carbono en suelo. Metodología de referencia: VM0042 (Verra).', r: [0.3, 1.5] },
+  blue: { t: 'Carbono azul', m: 'Conservación y restauración de humedales y manglares.', r: [2, 8] },
+};
+function calcMarkets() {
+  const ha = val('ha'), k = M[chipVal('land')];
+  $('[data-out="ha"]').textContent = fmt(ha) + ' ha';
+  $('#mkType').textContent = k.t; $('#mkMethod').textContent = k.m;
+  $('#mkRange').textContent = `${fmt(ha * k.r[0])} – ${fmt(ha * k.r[1])}`;
+  $('#mkRev').textContent = `${fmt(ha * k.r[0] * 5.7)} – ${fmt(ha * k.r[1] * 20)}`;
+  $('#mkChecks').innerHTML = ['Elegibilidad por metodología', 'Benchmark de desempeño', 'Pre-screening de biodiversidad y AVC', 'Análisis financiero y costo de oportunidad'].map((c) => `<span>${c}</span>`).join('');
+}
+$('[data-simpane="markets"]').addEventListener('input', calcMarkets);
+$('[data-simpane="markets"]').addEventListener('change', calcMarkets);
+calcMarkets();
+
+// Risk — ejemplo ilustrativo
+const RB = { drought: 46, heat: 52, flood: 40, fire: 36, wind: 28 };
+const RT = {
+  drought: 'Diversificar fuentes de agua y planificar reservas para los meses críticos.',
+  heat: 'Revisar la refrigeración de equipos y las condiciones de trabajo en verano.',
+  flood: 'Relevar cotas, drenajes y accesos de las instalaciones expuestas.',
+  fire: 'Mantener cortafuegos y un plan de respuesta coordinado con la zona.',
+  wind: 'Revisar estructuras, techos y líneas aéreas frente a ráfagas extremas.',
+};
+function calcRisk() {
+  const h = chipVal('hazard'), s = chipVal('ssp'), y = chipVal('year');
+  let v = RB[h] + (s === '585' ? 12 : 0) + ({ 2030: -8, 2050: 0, 2080: 14 })[y] + (s === '585' && y === '2080' ? 8 : 0);
+  v = Math.max(5, Math.min(97, v));
+  const lvl = v < 35 ? 'Bajo' : v < 60 ? 'Medio' : v < 80 ? 'Alto' : 'Muy alto';
+  $('#rkArc').setAttribute('stroke-dasharray', `${v} 100`);
+  $('#rkLevel').textContent = lvl; $('#rkScore').textContent = `${v}/100`;
+  $('#rkInsight').textContent = `Medida de adaptación posible: ${RT[h]}`;
+}
+$('[data-simpane="risk"]').addEventListener('change', calcRisk);
+calcRisk();
+
 fromHash();

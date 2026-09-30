@@ -133,7 +133,7 @@
 
     function tag({ i, x, y }) {
       const n = nWork[i], txt = `${COUNTRIES[i][0]} · ${n >= 70 ? '70+ trabajos' : `${n} ${n === 1 ? 'trabajo' : 'trabajos'}`}`;
-      ctx.font = '600 12px Inter, system-ui, sans-serif';
+      ctx.font = '600 12px Figtree, system-ui, sans-serif';
       const w = ctx.measureText(txt).width + 18, h = 24;
       let lx = Math.max(8, Math.min(W - w - 8, x - w / 2)), ly = y - h - 12;
       if (ly < 8) ly = y + 14;

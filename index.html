@@ -6,9 +6,8 @@
 <title>Coralia Environmental — Plataforma de inteligencia climática</title>
 <meta name="description" content="Tecnología, datos y conocimiento climático para medir, mitigar y adaptarse al cambio climático. Tres plataformas propias: Carbon Footprint, Carbon Markets Hub y Climate Risk App.">
 <meta name="theme-color" content="#f3f4ec">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body class="page-home">
@@ -20,11 +19,10 @@
       <img class="logo__dark" src="assets/logo-oscuro.webp" alt="" height="40">
     </a>
     <nav class="nav" id="nav" aria-label="Principal">
-      <a href="#herramientas">Herramientas</a>
-      <a href="#como-funciona">Cómo funciona</a>
-      <a href="#accesos">Accesos</a>
+      <a href="#apps">Apps</a>
       <a href="#proyectos">Proyectos</a>
       <a href="#equipo">Nosotros</a>
+      <a href="#accesos">Accesos</a>
       <a href="simuladores.html">Simuladores</a>
     </nav>
     <div class="header__right">
@@ -51,26 +49,26 @@
       <h1 class="hero__title in d1">Datos hoy.<br><em>Decisiones reales</em><br>para un mañana posible.</h1>
       <p class="in d2">Tecnología, datos y conocimiento climático para que tu organización mida, mitigue y se adapte al cambio climático.</p>
       <div class="hero__ctas in d3">
-        <a href="#herramientas" class="btn btn--lime">Conocer las herramientas</a>
+        <a href="#apps" class="btn btn--lime">Conocer las apps</a>
         <a href="#contacto" class="btn btn--glass">Hablar con el equipo</a>
       </div>
     </div>
     <!-- Tarjetas de interfaz sobre el paisaje (decorativas; los datos salen de las demos de cada plataforma) -->
     <div class="hero__ui" aria-hidden="true">
       <div class="ui-card ui-card--a" data-depth="0.10">
-        <span class="ui-card__tag"><i class="dot dot--medir"></i>Medir · Carbon Footprint</span>
+        <span class="ui-card__tag"><i class="dot dot--medir"></i>Carbon Footprint</span>
         <b class="ui-card__num">0,4644</b>
         <small>kg CO₂e por unidad · ISO 14067</small>
         <span class="ui-bars"><i style="--h:38%"></i><i style="--h:64%"></i><i style="--h:52%"></i><i style="--h:88%"></i><i style="--h:46%"></i><i style="--h:30%"></i></span>
       </div>
       <div class="ui-card ui-card--b" data-depth="-0.06">
-        <span class="ui-card__tag"><i class="dot dot--mitigar"></i>Mitigar · Carbon Markets</span>
+        <span class="ui-card__tag"><i class="dot dot--mitigar"></i>Carbon Markets Hub</span>
         <b class="ui-card__num">A–AA</b>
         <small>Rating Sylvera antes de la emisión</small>
         <span class="ui-chip">10M+ VCUs · ECO2 Misiones</span>
       </div>
       <div class="ui-card ui-card--c" data-depth="0.18">
-        <span class="ui-card__tag"><i class="dot dot--adaptar"></i>Adaptar · Climate Risk</span>
+        <span class="ui-card__tag"><i class="dot dot--adaptar"></i>Climate Risk App</span>
         <b class="ui-card__num">Olas de calor</b>
         <small>Activo tipo · 2050 · SSP5-8.5</small>
         <span class="ui-meter"><i style="--w:74%"></i></span>
@@ -103,104 +101,52 @@
         <p>Un equipo multidisciplinario con 14 años de trayectoria, autores de metodologías de carbono y expertos del IPCC.</p>
       </article>
     </div>
-    <div class="stats reveal">
-      <div><b data-count="100">0</b><span>proyectos</span></div>
-      <div><b data-count="23" data-suffix="">0</b><span>países</span></div>
-      <div><b data-count="13" data-suffix="M+">0</b><span>tCO₂e reducidas o removidas</span></div>
-      <div><b data-count="14" data-suffix="">0</b><span>años de trayectoria</span></div>
-    </div>
   </div>
 </section>
 
-<!-- ================= 3. TRES HERRAMIENTAS (scroll horizontal) ================= -->
-<section class="hz" id="herramientas" aria-label="Tres herramientas">
-  <div class="hz__sticky">
-    <div class="wrap hz__head">
-      <div>
-        <span class="eyebrow">Tres acciones, tres herramientas</span>
-        <h2>Medir. Mitigar. <em>Adaptar.</em></h2>
-      </div>
-      <div class="hz__nav" role="group" aria-label="Ir a una herramienta">
-        <button type="button" data-hz="0"><span>01</span>Medir</button>
-        <button type="button" data-hz="1"><span>02</span>Mitigar</button>
-        <button type="button" data-hz="2"><span>03</span>Adaptar</button>
-        <i class="hz__bar"><i></i></i>
-      </div>
-    </div>
-    <div class="hz__viewport">
-      <div class="hz__track">
-        <article class="app-panel app-panel--medir">
-          <div class="app-panel__text">
-            <span class="app-panel__verb">01 · Medir</span>
-            <h3>Carbon Footprint</h3>
-            <p>Huella de productos, empresas y eventos. De la fórmula al reporte verificable, según ISO 14067, ISO 14064 y GHG Protocol.</p>
-            <ul class="app-panel__stats">
-              <li><b>1.000+</b><span>factores de emisión</span></li>
-              <li><b>190</b><span>benchmarks sectoriales</span></li>
-              <li><b>30</b><span>palancas de reducción</span></li>
-            </ul>
-            <div class="app-panel__ctas">
-              <a class="btn btn--mint" href="#como-funciona" data-open-app="footprint">Ver cómo funciona</a>
-              <a class="link" href="#probar" data-open-app="footprint">Probar una estimación →</a>
-            </div>
-          </div>
-          <figure class="app-panel__art"><img src="assets/marca/3d-huella.webp" alt="Ilustración 3D de una huella verde junto a un informe" loading="lazy"></figure>
-        </article>
-        <article class="app-panel app-panel--mitigar">
-          <div class="app-panel__text">
-            <span class="app-panel__verb">02 · Mitigar</span>
-            <h3>Carbon Markets Hub</h3>
-            <p>Proyectos de carbono y biodiversidad de punta a punta, de la factibilidad a la emisión. Tu tierra, diagnosticada en cinco minutos.</p>
-            <ul class="app-panel__stats">
-              <li><b>5 min</b><span>diagnóstico NbS</span></li>
-              <li><b>10M+</b><span>VCUs emitidos · ECO2 Misiones</span></li>
-              <li><b>A–AA</b><span>rating Sylvera</span></li>
-            </ul>
-            <div class="app-panel__ctas">
-              <a class="btn btn--mint" href="#como-funciona" data-open-app="markets">Ver cómo funciona</a>
-              <a class="link" href="#probar" data-open-app="markets">Diagnosticar mi tierra →</a>
-            </div>
-          </div>
-          <figure class="app-panel__art"><img src="assets/marca/3d-bosque.webp" alt="Ilustración 3D de una isla de bosque nativo" loading="lazy"></figure>
-        </article>
-        <article class="app-panel app-panel--adaptar">
-          <div class="app-panel__text">
-            <span class="app-panel__verb">03 · Adaptar</span>
-            <h3>Climate Risk App</h3>
-            <p>Riesgo físico y de transición, activo por activo, con planes de adaptación. ISO 14091 · TCFD / ISSB · IPCC AR6.</p>
-            <ul class="app-panel__stats">
-              <li><b>5</b><span>amenazas climáticas</span></li>
-              <li><b>9</b><span>indicadores ETCCDI</span></li>
-              <li><b>1–5 km</b><span>de resolución</span></li>
-            </ul>
-            <div class="app-panel__ctas">
-              <a class="btn btn--mint" href="#como-funciona" data-open-app="risk">Ver cómo funciona</a>
-              <a class="link" href="#probar" data-open-app="risk">Evaluar un riesgo →</a>
-            </div>
-          </div>
-          <figure class="app-panel__art"><img src="assets/marca/3d-planta.webp" alt="Ilustración 3D de una planta industrial con un tablero de riesgo" loading="lazy"></figure>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= 4. CÓMO FUNCIONAN LAS PLATAFORMAS ================= -->
-<section class="section how" id="como-funciona">
+<!-- ================= 3. NUESTRAS APPS ================= -->
+<section class="section apps" id="apps">
   <div class="wrap">
     <div class="head reveal">
       <div>
-        <span class="eyebrow">Cómo funcionan las plataformas</span>
-        <h2>Interfaces reales, <em>paso a paso.</em></h2>
-        <p class="lead">Son pantallas de las plataformas en uso. Elegí una y bajá para recorrerla.</p>
+        <span class="eyebrow">Plataformas Coralia</span>
+        <h2>Conocé nuestras apps</h2>
       </div>
+      <a class="link" href="simuladores.html">Probá los simuladores →</a>
     </div>
-    <div class="apptabs reveal" role="tablist" aria-label="Plataformas">
-      <button type="button" class="apptab is-on" role="tab" aria-selected="true" data-app="footprint"><img src="assets/marca/3d-huella.webp" alt=""><span><small>Medir</small>Carbon Footprint</span></button>
-      <button type="button" class="apptab" role="tab" aria-selected="false" data-app="markets"><img src="assets/marca/3d-bosque.webp" alt=""><span><small>Mitigar</small>Carbon Markets Hub</span></button>
-      <button type="button" class="apptab" role="tab" aria-selected="false" data-app="risk"><img src="assets/marca/3d-planta.webp" alt=""><span><small>Adaptar</small>Climate Risk App</span></button>
+    <div class="appcards" role="tablist" aria-label="Apps">
+      <button type="button" class="appcard reveal" role="tab" aria-selected="false" aria-controls="app-detail" data-app="footprint">
+        <span class="appcard__shot"><img src="assets/apps/card-footprint.webp" alt="Tablero de Carbon Footprint con evaluaciones, productos y trayectoria de reducción" loading="lazy"></span>
+        <span class="appcard__body">
+          <span class="appcard__name">Carbon Footprint</span>
+          <span class="appcard__desc">Huella de productos, empresas y eventos, de la fórmula al reporte verificable.</span>
+          <span class="appcard__cta">Tocá para conocer la app <i aria-hidden="true">↓</i></span>
+        </span>
+      </button>
+      <button type="button" class="appcard reveal" role="tab" aria-selected="false" aria-controls="app-detail" data-app="markets">
+        <span class="appcard__shot"><img src="assets/apps/card-markets.webp" alt="Carbon Markets Hub: mapa de elegibilidad de un terreno con el panel de diagnóstico" loading="lazy"></span>
+        <span class="appcard__body">
+          <span class="appcard__name">Carbon Markets Hub</span>
+          <span class="appcard__desc">Tu tierra diagnosticada en cinco minutos: qué proyecto de carbono es posible y cuánto vale.</span>
+          <span class="appcard__cta">Tocá para conocer la app <i aria-hidden="true">↓</i></span>
+        </span>
+      </button>
+      <button type="button" class="appcard reveal" role="tab" aria-selected="false" aria-controls="app-detail" data-app="risk">
+        <span class="appcard__shot"><img src="assets/apps/card-risk.webp" alt="Climate Risk App: mapa de temperaturas proyectadas en Sudamérica" loading="lazy"></span>
+        <span class="appcard__body">
+          <span class="appcard__name">Climate Risk App</span>
+          <span class="appcard__desc">Riesgo climático físico y de transición, activo por activo, con planes de adaptación.</span>
+          <span class="appcard__cta">Tocá para conocer la app <i aria-hidden="true">↓</i></span>
+        </span>
+      </button>
     </div>
 
+    <!-- Se abre al tocar una app: recorrido paso a paso con pantallas reales -->
+    <div class="app-detail" id="app-detail" role="tabpanel" hidden>
+      <div class="app-detail__bar">
+        <span class="app-detail__title" id="appDetailTitle"></span>
+        <button type="button" class="app-detail__close" id="appDetailClose">Cerrar ×</button>
+      </div>
     <div class="story" data-story="footprint">
       <div class="story__screen">
         <div class="device">
@@ -345,170 +291,20 @@
         </li>
       </ol>
     </div>
-
-    <!-- Mini demos: cambian según la plataforma elegida -->
-    <div class="try reveal" id="probar">
-      <div class="try__head">
-        <span class="eyebrow">Probalo acá</span>
-        <p class="muted">Una versión simplificada, con factores genéricos. En la plataforma trabajás con tus datos reales.</p>
-      </div>
-      <div id="lab" class="lab" role="tabpanel" aria-live="polite">
-
-        <!-- FOOTPRINT -->
-        <div class="lab__pane is-active" data-pane="footprint">
-          <div class="lab__controls">
-            <h3>Calculá una huella rápida</h3>
-            <p class="muted">Mové los controles con datos aproximados de un año de tu empresa.</p>
-            <label class="range">Electricidad comprada <output data-out="elec">800 MWh</output>
-              <input type="range" min="0" max="5000" step="50" value="800" data-in="elec"></label>
-            <label class="range">Gas natural <output data-out="gas">150 mil m³</output>
-              <input type="range" min="0" max="2000" step="10" value="150" data-in="gas"></label>
-            <label class="range">Flota propia <output data-out="fleet">200.000 km</output>
-              <input type="range" min="0" max="2000000" step="10000" value="200000" data-in="fleet"></label>
-            <label class="range">Vuelos de negocios <output data-out="flights">300 h</output>
-              <input type="range" min="0" max="3000" step="10" value="300" data-in="flights"></label>
-            <label class="range">Compras de bienes y servicios <output data-out="buy">USD 2.000 mil</output>
-              <input type="range" min="0" max="50000" step="100" value="2000" data-in="buy"></label>
-          </div>
-          <div class="lab__result">
-            <span class="muted small">Emisiones totales estimadas</span>
-            <div class="bignum"><span id="fpTotal">0</span> <small>tCO₂e/año</small></div>
-            <div class="scopes" id="fpScopes">
-              <div class="scope"><span>Alcance 1</span><div class="scope__bar"><i style="--c:var(--medir)"></i></div><b>0</b></div>
-              <div class="scope"><span>Alcance 2</span><div class="scope__bar"><i style="--c:var(--mitigar)"></i></div><b>0</b></div>
-              <div class="scope"><span>Alcance 3</span><div class="scope__bar"><i style="--c:var(--adaptar)"></i></div><b>0</b></div>
-            </div>
-            <p class="insight" id="fpInsight"></p>
-            <p class="disclaimer">Estimación ilustrativa con factores genéricos. La plataforma usa más de 1.000 factores de emisión, 190 benchmarks sectoriales y trazabilidad ISO 14064 / 14067.</p>
-            <a href="#accesos" class="btn btn--mint btn--sm">Hacer mi huella real →</a>
-          </div>
-        </div>
-
-        <!-- MARKETS -->
-        <div class="lab__pane" data-pane="markets" hidden>
-          <div class="lab__controls">
-            <h3>¿Tu tierra puede ser un proyecto de carbono?</h3>
-            <p class="muted">Elegí qué hay hoy en el terreno y cuántas hectáreas tiene.</p>
-            <div class="chips" role="radiogroup" aria-label="Uso del suelo" data-group="land">
-              <button type="button" class="chip is-on" role="radio" aria-checked="true" data-v="redd">Bosque nativo amenazado</button>
-              <button type="button" class="chip" role="radio" aria-checked="false" data-v="arr">Tierra degradada para reforestar</button>
-              <button type="button" class="chip" role="radio" aria-checked="false" data-v="alm">Campo agrícola o ganadero</button>
-              <button type="button" class="chip" role="radio" aria-checked="false" data-v="blue">Humedal o manglar</button>
-            </div>
-            <label class="range">Superficie <output data-out="ha">5.000 ha</output>
-              <input type="range" min="100" max="100000" step="100" value="5000" data-in="ha"></label>
-          </div>
-          <div class="lab__result">
-            <span class="muted small">Tipo de proyecto posible</span>
-            <div class="bignum bignum--sm" id="mkType">REDD+</div>
-            <p class="muted" id="mkMethod"></p>
-            <span class="muted small">Créditos potenciales por año (rango orientativo)</span>
-            <div class="bignum"><span id="mkRange">0</span> <small>tCO₂e</small></div>
-            <span class="muted small">Ingresos potenciales por año</span>
-            <div class="bignum bignum--sm">USD <span id="mkRev">0</span></div>
-            <div class="checklist" id="mkChecks"></div>
-            <p class="disclaimer">Rango ilustrativo, valorizado entre USD 5,7 (promedio de mercado) y USD 20 (créditos investment grade), según Sylvera, 1.er trimestre de 2026. El diagnóstico NbS del Carbon Markets Hub evalúa elegibilidad filtro por filtro, benchmarks, biodiversidad y análisis financiero en unos 5 minutos.</p>
-            <a href="#accesos" class="btn btn--mint btn--sm">Pedir el diagnóstico →</a>
-          </div>
-        </div>
-
-        <!-- RISK -->
-        <div class="lab__pane" data-pane="risk" hidden>
-          <div class="lab__controls">
-            <h3>Evaluá un riesgo climático</h3>
-            <p class="muted">Elegí la amenaza, el escenario y el horizonte de tiempo.</p>
-            <span class="label">Amenaza</span>
-            <div class="chips" data-group="hazard">
-              <button type="button" class="chip is-on" data-v="drought">Sequía</button>
-              <button type="button" class="chip" data-v="heat">Olas de calor</button>
-              <button type="button" class="chip" data-v="flood">Inundaciones</button>
-              <button type="button" class="chip" data-v="fire">Incendios</button>
-              <button type="button" class="chip" data-v="wind">Vientos extremos</button>
-            </div>
-            <span class="label">Escenario</span>
-            <div class="chips" data-group="ssp">
-              <button type="button" class="chip is-on" data-v="245">SSP2-4.5 · intermedio</button>
-              <button type="button" class="chip" data-v="585">SSP5-8.5 · altas emisiones</button>
-            </div>
-            <span class="label">Horizonte</span>
-            <div class="chips" data-group="year">
-              <button type="button" class="chip" data-v="2030">2030</button>
-              <button type="button" class="chip is-on" data-v="2050">2050</button>
-              <button type="button" class="chip" data-v="2080">2080</button>
-            </div>
-          </div>
-          <div class="lab__result">
-            <span class="muted small">Nivel de riesgo para un activo tipo</span>
-            <div class="gauge" id="rkGauge">
-              <svg viewBox="0 0 200 110" aria-hidden="true">
-                <path d="M15 100 A85 85 0 0 1 185 100" fill="none" stroke="rgba(18,38,30,.1)" stroke-width="16" stroke-linecap="round"/>
-                <path id="rkArc" d="M15 100 A85 85 0 0 1 185 100" fill="none" stroke="url(#rkGrad)" stroke-width="16" stroke-linecap="round" pathLength="100" stroke-dasharray="0 100"/>
-                <defs><linearGradient id="rkGrad"><stop offset="0" stop-color="#7fae4a"/><stop offset=".55" stop-color="#e0b14a"/><stop offset="1" stop-color="#c8553a"/></linearGradient></defs>
-              </svg>
-              <div class="gauge__label"><b id="rkLevel">Medio</b><span id="rkScore">0/100</span></div>
-            </div>
-            <p class="insight" id="rkInsight"></p>
-            <p class="disclaimer">Ejemplo ilustrativo. La Climate Risk App modela 5 amenazas y 9 indicadores ETCCDI con proyecciones CMIP6, a 1–5 km de resolución, activo por activo (ISO 14091 · TCFD / ISSB).</p>
-            <a href="#accesos" class="btn btn--mint btn--sm">Analizar mis activos →</a>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
 
-<!-- ================= 5. NIVELES DE ACCESO ================= -->
-<section class="section section--band access" id="accesos">
-  <div class="wrap">
-    <div class="head reveal">
-      <div>
-        <span class="eyebrow">Niveles de acceso</span>
-        <h2>Del primer vistazo al <em>acompañamiento completo.</em></h2>
-        <p class="lead">Las tres plataformas se usan según el nivel de acceso de tu organización. Empezá con una demo y sumá herramientas y equipo cuando lo necesites.</p>
-      </div>
-    </div>
-    <div class="levels">
-      <article class="level reveal" style="--lv:1">
-        <span class="level__n">Nivel 1</span>
-        <h3>Demo</h3><span class="muted">Explorá la herramienta</span>
-        <ul><li>Acceso limitado</li><li>Datos de ejemplo</li><li>Sin costo</li></ul>
-        <a href="#contacto" class="btn btn--ghost-light">Probar demo</a>
-      </article>
-      <article class="level reveal" style="--lv:2">
-        <span class="level__n">Nivel 2</span>
-        <h3>Analyze</h3><span class="muted">Para análisis internos</span>
-        <ul><li>Funcionalidades básicas</li><li>Tus propios datos</li><li>Reportes simples</li></ul>
-        <a href="#contacto" class="btn btn--ghost-light">Solicitar acceso</a>
-      </article>
-      <article class="level reveal" style="--lv:3">
-        <span class="level__n">Nivel 3</span>
-        <h3>Professional</h3><span class="muted">Para gestión avanzada</span>
-        <ul><li>Plataforma completa</li><li>Reportes avanzados</li><li>Soporte técnico</li></ul>
-        <a href="#contacto" class="btn btn--ghost-light">Contactar ventas</a>
-      </article>
-      <article class="level level--hl reveal" style="--lv:4">
-        <span class="level__n">Nivel 4</span>
-        <h3>Consulting</h3><span class="muted">Plataforma + equipo Coralia</span>
-        <ul><li>Todo lo anterior</li><li>Asesoramiento experto</li><li>Acompañamiento estratégico</li></ul>
-        <a href="#contacto" class="btn btn--mint">Hablar con un experto</a>
-      </article>
-    </div>
-    <div class="access__more reveal">
-      <!-- TODO: URL real de la plataforma -->
-      <a class="link" href="#">¿Ya tenés acceso? Iniciar sesión →</a>
-      <a class="link" href="simuladores.html">¿Querés probar sin registrarte? Usá los simuladores →</a>
-    </div>
-  </div>
-</section>
 
-<!-- ================= 6. PROYECTOS REALES ================= -->
+
+<!-- ================= 4. PROYECTOS ================= -->
 <section class="section" id="proyectos">
   <div class="wrap">
     <div class="head reveal">
       <div>
-        <span class="eyebrow">Proyectos reales</span>
-        <h2>Más de 100 proyectos en <em>23 países</em>, desde 2012.</h2>
-        <p class="lead">Tocá un país para ver qué hicimos ahí, o arrastrá el globo para recorrerlo.</p>
+        <span class="eyebrow">Proyectos</span>
+        <h2>Proyectos en <em>23 países</em></h2>
+        <p class="lead">Tocá un país para ver qué hicimos ahí.</p>
       </div>
     </div>
     <div class="map-wrap reveal" id="mapa">
@@ -534,7 +330,6 @@
     <div class="head head--sub reveal" id="casos">
       <div>
         <h3 class="h3--lg">Casos publicados</h3>
-        <p class="lead">Deslizá, usá las flechas o tocá una tarjeta. Filtrá por servicio para ver casos como el tuyo.</p>
       </div>
       <div class="chips chips--filters" id="caseFilters" role="group" aria-label="Filtrar casos">
         <button type="button" class="chip is-on" data-f="all">Todos</button>
@@ -557,73 +352,13 @@
   </div>
 </section>
 
-<!-- ================= 6b. TRAYECTORIA (horizontal con el scroll) ================= -->
-<section class="timeline" id="trayectoria" aria-label="Trayectoria">
-  <div class="wrap timeline__head reveal">
-    <span class="eyebrow">Trayectoria</span>
-    <h2>Catorce años <em>de trayectoria.</em></h2>
-  </div>
-  <div class="timeline__viewport">
-    <ol class="timeline__track">
-      <li class="tl">
-        <span class="tl__logo"><img src="assets/logo-oscuro.webp" alt="Coralia Environmental" loading="lazy"></span>
-        <span class="tl__year">2012</span>
-        <h3>Fundación en Buenos Aires</h3>
-        <p>Consultoría ambiental con alianzas internacionales desde el primer día.</p>
-      </li>
-      <li class="tl">
-        <span class="tl__logo"><img src="assets/logos/coca-cola.webp" alt="Coca-Cola" loading="lazy"></span>
-        <span class="tl__year">2013</span>
-        <h3>Coca-Cola Argentina</h3>
-        <p>Huella y compensación del concierto de Metallica en la Antártida.</p>
-      </li>
-      <li class="tl">
-        <span class="tl__logo"><img src="assets/logos/ministerio-ambiente.webp" alt="Ministerio de Ambiente de Argentina" loading="lazy"></span>
-        <span class="tl__year">2014</span>
-        <h3>Secretaría de Ambiente</h3>
-        <p>Capítulo de energía de la Tercera Comunicación Nacional de Argentina a la CMNUCC.</p>
-      </li>
-      <li class="tl">
-        <span class="tl__logo"><img src="assets/logos/metro-lima-l2.webp" alt="Metro de Lima Línea 2" loading="lazy"></span>
-        <span class="tl__year">2018</span>
-        <h3>Metro de Lima Línea 2</h3>
-        <p>Informe pericial socioambiental para un arbitraje en el CIADI (Washington).</p>
-      </li>
-      <li class="tl">
-        <span class="tl__logo"><img src="assets/logos/ypf.webp" alt="YPF" loading="lazy"></span>
-        <span class="tl__year">2019</span>
-        <h3>YPF</h3>
-        <p>Mapas de amenaza, vulnerabilidad y riesgo climático en upstream, downstream y generación.</p>
-      </li>
-      <li class="tl">
-        <span class="tl__logo"><img src="assets/logos/gobierno-misiones.webp" alt="Gobierno de Misiones" loading="lazy"></span>
-        <span class="tl__year">2022</span>
-        <h3>Gobierno de Misiones</h3>
-        <p>Programa jurisdiccional REDD+ sobre 1,5 millones de hectáreas · Verra JNR.</p>
-      </li>
-      <li class="tl">
-        <span class="tl__logo"><img src="assets/logos/verra.webp" alt="Verra" loading="lazy"></span>
-        <span class="tl__year">2024</span>
-        <h3>Verra</h3>
-        <p>Datos de actividad jurisdiccionales para proyectos REDD+ en Paraguay (VM0048).</p>
-      </li>
-      <li class="tl tl--hl">
-        <span class="tl__logo"><img src="assets/logos/verified-carbon-standard.webp" alt="Verified Carbon Standard" loading="lazy"></span>
-        <span class="tl__year">2026</span>
-        <h3>ECO2 Misiones · 10M+ VCUs</h3>
-        <p>Rating Sylvera A–AA. La mayor emisión de un solo período en la historia de Verra.</p>
-      </li>
-    </ol>
-  </div>
-</section>
 
-<!-- ================= 6c. CONFIANZA ================= -->
+<!-- ================= 5. CONFIANZA ================= -->
 <section class="section section--band trust" id="confianza">
   <div class="wrap">
     <div class="head reveal">
       <div>
-        <span class="eyebrow">Ya confían en Coralia</span>
-        <h2>Gobiernos, grandes empresas <em>y el propio mercado.</em></h2>
+        <h2 class="h2--sm">Confían en Coralia</h2>
       </div>
     </div>
   </div>
@@ -670,20 +405,64 @@
   </div>
 </section>
 
-<!-- ================= 7. EQUIPO ================= -->
+<!-- ================= 6. EQUIPO ================= -->
 <section id="equipo" class="section team-x">
   <div class="wrap team-x__in">
     <div class="head reveal">
       <div>
         <span class="eyebrow">Nuestro equipo</span>
-        <h2>El equipo detrás <em>de las plataformas.</em></h2>
-        <p class="lead">Especialistas en ciencia climática, carbono y datos. Tocá un nombre para conocer a cada persona.</p>
+        <h2>El equipo detrás <em>de las apps</em></h2>
+        <p class="lead">Tocá una persona para conocerla.</p>
       </div>
       <div class="chips" id="teamFilters" role="group" aria-label="Filtrar equipo"></div>
     </div>
-    <div class="team-x__grid">
-      <div class="pills" id="pills" role="listbox" aria-label="Integrantes"></div>
-      <aside class="person" id="person" aria-live="polite"></aside>
+    <div class="team-stage" id="teamStage">
+      <div class="hive" id="hive" aria-label="Integrantes"></div>
+      <div class="person" id="person" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 7. NIVELES DE ACCESO ================= -->
+<section class="section section--band access" id="accesos">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <span class="eyebrow">Niveles de acceso</span>
+        <h2>Elegí cómo usar las apps</h2>
+        <p class="lead">Empezá con una demo y sumá herramientas y equipo cuando lo necesites.</p>
+      </div>
+    </div>
+    <div class="levels">
+      <article class="level reveal">
+        <span class="level__n">Nivel 1</span>
+        <h3>Demo</h3><span class="muted">Explorá la herramienta</span>
+        <ul><li>Acceso limitado</li><li>Datos de ejemplo</li><li>Sin costo</li></ul>
+        <a href="#contacto" class="btn btn--ghost-light">Probar demo</a>
+      </article>
+      <article class="level reveal">
+        <span class="level__n">Nivel 2</span>
+        <h3>Análisis</h3><span class="muted">Para análisis internos</span>
+        <ul><li>Funcionalidades básicas</li><li>Tus propios datos</li><li>Reportes simples</li></ul>
+        <a href="#contacto" class="btn btn--ghost-light">Solicitar acceso</a>
+      </article>
+      <article class="level reveal">
+        <span class="level__n">Nivel 3</span>
+        <h3>Profesional</h3><span class="muted">Para gestión avanzada</span>
+        <ul><li>Plataforma completa</li><li>Reportes avanzados</li><li>Soporte técnico</li></ul>
+        <a href="#contacto" class="btn btn--ghost-light">Contactar ventas</a>
+      </article>
+      <article class="level level--hl reveal">
+        <span class="level__n">Nivel 4</span>
+        <h3>Consultoría</h3><span class="muted">Plataforma + equipo Coralia</span>
+        <ul><li>Todo lo anterior</li><li>Asesoramiento experto</li><li>Acompañamiento estratégico</li></ul>
+        <a href="#contacto" class="btn btn--mint">Hablar con un experto</a>
+      </article>
+    </div>
+    <div class="access__more reveal">
+      <!-- TODO: URL real de la plataforma -->
+      <a class="link" href="#">¿Ya tenés acceso? Iniciar sesión →</a>
+      <a class="link" href="simuladores.html">¿Querés probar sin registrarte? Usá los simuladores →</a>
     </div>
   </div>
 </section>
@@ -726,7 +505,7 @@
 <footer class="footer">
   <div class="wrap footer__in">
     <img src="assets/logo-oscuro.webp" alt="Coralia Environmental" height="36">
-    <nav aria-label="Pie"><a href="#herramientas">Herramientas</a><a href="#como-funciona">Cómo funciona</a><a href="#accesos">Accesos</a><a href="proyectos.html">Proyectos</a><a href="#equipo">Nosotros</a><a href="simuladores.html">Simuladores</a></nav>
+    <nav aria-label="Pie"><a href="#apps">Apps</a><a href="proyectos.html">Proyectos</a><a href="#equipo">Nosotros</a><a href="#accesos">Accesos</a><a href="simuladores.html">Simuladores</a></nav>
     <div class="footer__meta"><span>Nogoyá 4169, CABA · contacto@coraliae.com · +54 9 11 3848-4171</span><a href="https://www.linkedin.com/company/coraliae/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.youtube.com/@coraliaenvironmental" target="_blank" rel="noopener">YouTube</a><span class="lang">EN · <b>ES</b></span></div>
   </div>
 </footer>

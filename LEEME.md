@@ -4,29 +4,28 @@ Abrí la carpeta en VS Code y tocá **Go Live** sobre `index.html`.
 
 La web presenta a Coralia como una plataforma de inteligencia climática: tres herramientas digitales
 (Medir, Mitigar, Adaptar) con un equipo especializado detrás. Estilo claro tomado del deck institucional:
-crema, verde bosque y verde hoja, con lima de acento. Títulos en Bricolage Grotesque y texto en Inter.
+crema, verde bosque y verde hoja, con lima de acento.
+
+## Tipografías (assets/fonts)
+Títulos en **Fraunces** y textos en **Figtree** (licencia libre SIL OFL). Están instaladas dentro del proyecto,
+así que no dependen de Google Fonts. Se declaran al principio de styles.css (@font-face).
 
 ## Recorrido de la Home (de arriba a abajo)
-1. **Portada**: paisaje con tres tarjetas de interfaz flotando (una por herramienta). Al bajar, la foto se
-   achica hasta quedar como una tarjeta con bordes redondeados.
-2. **Qué es Coralia**: la frase principal se "enciende" palabra por palabra con el scroll. Tres pilares
-   (tecnología, datos, conocimiento) y números que cuentan al aparecer (100+ proyectos, 23 países,
-   13M+ tCO₂e, 14 años).
-3. **Tres herramientas** (#herramientas): en compu la sección queda fija y las tarjetas de Carbon Footprint,
-   Carbon Markets Hub y Climate Risk App pasan de costado mientras bajás. Los botones 01 / 02 / 03 llevan
-   a cada una. En celular, tablet o con "reducir movimiento" activado es un carrusel que se desliza con el dedo.
-4. **Cómo funcionan las plataformas** (#como-funciona): pestañas por herramienta. Cada una es un recorrido de
-   6 pasos con pantallas reales de la demo: al bajar por los pasos cambia la pantalla. Abajo, "Probalo acá":
-   la mini demo de esa herramienta (calculadora de huella, diagnóstico de tierra o medidor de riesgo).
-   - Pantallas: assets/apps/<footprint|markets|risk>-1…6.webp, sacadas de los videos de demo del deck.
-   - Textos de los pasos: en index.html (bloques `.story`).
-   - Los números de las mini demos son ILUSTRATIVOS (factores genéricos) y así lo aclara cada panel.
-5. **Niveles de acceso** (#accesos): Demo, Analyze, Professional y Consulting como escalera, más links a
-   "Iniciar sesión" y a los simuladores.
-6. **Proyectos reales** (#proyectos): globo 3D con los 23 países, carrusel de casos publicados, línea de tiempo
-   2012 → 2026 que corre de costado con el scroll, 34 logos de clientes en dos filas, premio Green Cross,
-   ratings Sylvera y testimonios.
-7. **Equipo** (#equipo): los 15 integrantes; al tocar uno aparece su ficha. Datos en data.js (TEAM).
+1. **Portada**: paisaje con tres tarjetas de interfaz flotando (una por app). Al bajar, la foto se achica
+   hasta quedar como una tarjeta con bordes redondeados.
+2. **Qué es Coralia**: la frase principal se "enciende" palabra por palabra con el scroll y tres pilares
+   (tecnología, datos, conocimiento).
+3. **Conocé nuestras apps** (#apps): tres tarjetas con una pantalla real de cada app. Al tocar una ("Tocá para
+   conocer la app") se abre abajo su recorrido de 6 pasos: al bajar por los pasos cambia la pantalla.
+   Tocar la misma tarjeta o "Cerrar" lo cierra. Link a los simuladores.
+   - Pantallas: assets/apps/card-*.webp (tarjetas) y <footprint|markets|risk>-1…6.webp (pasos), de los
+     videos de demo del deck. Textos de los pasos: en index.html (bloques `.story`).
+4. **Proyectos** (#proyectos): globo 3D con los 23 países y carrusel de casos publicados.
+5. **Confían en Coralia** (#confianza): 34 logos en dos filas, premio Green Cross, ratings Sylvera y testimonios.
+6. **Equipo** (#equipo): panal de hexágonos con las 15 personas (en color al pasar el mouse). Los filtros
+   iluminan un grupo y apagan el resto. Al tocar a alguien, su hexágono crece hasta la ficha (cargo,
+   especialidades, LinkedIn), con flechas para pasar a la siguiente y "Volver al equipo" (o Escape).
+7. **Niveles de acceso** (#accesos): Demo, Análisis, Profesional y Consultoría.
 8. **Contacto** (#contacto): email, pedido de demo, teléfono y oficina.
 
 ## Globo (globe.js + data.js)
@@ -40,16 +39,15 @@ crema, verde bosque y verde hoja, con lima de acento. Títulos en Bricolage Grot
   y su lista en WORK.
 
 ## Animaciones (motion.js)
-Portada que se achica, frase que se enciende, herramientas horizontales y línea de tiempo horizontal.
-Sin librerías: se calculan con la posición de la página. Con "reducir movimiento" activado no se mueve nada y
-las secciones horizontales pasan a carrusel.
+Portada que se achica y frase que se enciende. Sin librerías. Con "reducir movimiento" activado no se mueve nada.
 
 ## Otras páginas
 - **proyectos.html**: 3 destacados, texto institucional, grilla con filtros por servicio, industria y país, ficha
   de cada proyecto. Link directo: proyectos.html#ypf, #misiones, etc.
 - **proyecto.html?p=ypf**: página de cada proyecto (portada, datos, resumen, galería, testimonio, relacionados).
-- **simuladores.html**: Trayectoria de reducción y Neutralidad y créditos. Links directos:
-  simuladores.html#trayectoria y #neutralidad. Código: simuladores.js.
+- **simuladores.html**: cinco simuladores: Trayectoria de reducción, Neutralidad y créditos, Huella rápida,
+  ¿Tu tierra puede ser un proyecto de carbono? y Riesgo climático. Links directos: simuladores.html#trayectoria,
+  #neutralidad, #huella, #tierra y #riesgo. Código: simuladores.js.
 - Los datos de los proyectos están en data.js (los usan todas las páginas).
 
 ## Encabezado y menú (nav.js)
@@ -58,9 +56,8 @@ Debajo de 1000 px el menú se abre con el botón ☰; se cierra al tocar un link
 
 ## Imágenes
 - assets/apps/: pantallas de las tres plataformas (de los videos de demo del deck).
-- assets/marca/: ilustraciones 3D de las herramientas, sello Green Cross, ratings Sylvera, paisaje del río y
-  curvas de nivel (fondo de las tarjetas). Todo del deck institucional.
-- assets/logos/: 34 logos de clientes y socios + Verified Carbon Standard (del deck).
+- assets/marca/: sello Green Cross, ratings Sylvera y paisaje del río (del deck institucional).
+- assets/logos/: 34 logos de clientes y socios (del deck).
 - assets/proyectos/: tarjetas y galerías de cada caso. Faltan fotos sin logo de Misiones, YPF y sesu.ai.
 - Foto de portada: Remigiusz Dettlaff en Unsplash (uso libre).
 
@@ -68,13 +65,15 @@ Debajo de 1000 px el menú se abre con el botón ☰; se cierra al tocar un link
 - El botón "Con acción / Sin acción" de la portada y sus fotos (hero-sin.webp, generada con IA).
 - Las mariposas de fondo (deco.js y assets/deco/).
 - La tira de logos en una sola imagen (clientes.webp), el fondo de hojas del equipo y el sello viejo del premio.
+- Segunda vuelta: la fila de números, la sección horizontal de herramientas con ilustraciones 3D, la sección
+  separada "Cómo funcionan", las mini demos de la Home (ahora en simuladores.html) y la línea de tiempo.
 
 ## Pendientes (buscá TODO)
 - Links reales: Iniciar sesión (plataforma), versión en inglés.
 - Faltan páginas que existen en la web actual: Mitigación, Adaptación, Equipo completo,
   "What's Climate Change" y Política de privacidad.
 - Revisar con el equipo técnico los rangos ilustrativos de las mini demos y simuladores
-  (main.js: F, M, RB · simuladores.js: REF_RATE, P_STD, P_HQ).
+  (simuladores.js: F, M, RB, REF_RATE, P_STD, P_HQ).
 - LinkedIn personal de cada integrante (data.js, TEAM).
 
 ## Wix
