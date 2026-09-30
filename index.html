@@ -20,7 +20,7 @@
       <a href="#herramientas">Soluciones</a>
       <a href="proyectos.html">Proyectos</a>
       <a href="#equipo">Nosotros</a>
-      <a href="#simuladores">Simuladores</a>
+      <a href="simuladores.html">Simuladores</a>
     </nav>
     <div class="header__right">
       <!-- TODO: versión en inglés -->
@@ -343,72 +343,6 @@
   </div>
 </section>
 
-<!-- ================= SIMULADORES ================= -->
-<section id="simuladores" class="section section--band">
-  <div class="wrap">
-    <div class="head reveal">
-      <div>
-        <span class="eyebrow">SIMULADORES</span>
-        <h2>Decisiones con números.</h2>
-        <p class="lead">Dos simuladores para dimensionar tu estrategia climática antes de la primera reunión.</p>
-      </div>
-      <div class="tabs" role="tablist" aria-label="Simuladores">
-        <button type="button" class="tab is-active" role="tab" aria-selected="true" data-sim="path">Trayectoria de reducción</button>
-        <button type="button" class="tab" role="tab" aria-selected="false" data-sim="offset">Neutralidad y créditos</button>
-      </div>
-    </div>
-
-    <!-- Trayectoria -->
-    <div class="sim glass reveal" data-simpane="path">
-      <div class="sim__controls">
-        <h3>¿A qué ritmo tenés que reducir?</h3>
-        <p class="muted">Definí tus emisiones actuales y tu meta.</p>
-        <label class="range">Emisiones actuales (alcances 1 y 2) <output data-out="pBase">50.000 tCO₂e</output>
-          <input type="range" min="1000" max="500000" step="1000" value="50000" data-in="pBase"></label>
-        <label class="range">Año de la meta <output data-out="pYear">2035</output>
-          <input type="range" min="2030" max="2050" step="1" value="2035" data-in="pYear"></label>
-        <label class="range">Reducción objetivo <output data-out="pPct">42 %</output>
-          <input type="range" min="10" max="100" step="1" value="42" data-in="pPct"></label>
-      </div>
-      <div class="sim__result">
-        <svg class="chart" id="pChart" viewBox="0 0 520 240" role="img" aria-label="Trayectoria de emisiones"></svg>
-        <div class="kpis">
-          <div><span class="muted small">Reducción por año</span><b id="pYearly">0</b><small>tCO₂e</small></div>
-          <div><span class="muted small">Emisiones en la meta</span><b id="pEnd">0</b><small>tCO₂e</small></div>
-          <div><span class="muted small">Ritmo anual</span><b id="pRate">0 %</b><small>del año base</small></div>
-        </div>
-        <p class="insight" id="pInsight"></p>
-        <p class="disclaimer">Año base 2026. Referencia: contracción lineal de 4,2 % anual del año base, el ritmo mínimo que usa SBTi para metas alineadas a 1,5 °C en alcances 1 y 2.</p>
-      </div>
-    </div>
-
-    <!-- Neutralidad -->
-    <div class="sim glass reveal" data-simpane="offset" hidden>
-      <div class="sim__controls">
-        <h3>¿Cuánto cuesta compensar con calidad?</h3>
-        <p class="muted">Emisiones residuales que querés compensar cada año y qué parte con créditos de alta calidad.</p>
-        <label class="range">Emisiones residuales por año <output data-out="oTon">20.000 tCO₂e</output>
-          <input type="range" min="500" max="300000" step="500" value="20000" data-in="oTon"></label>
-        <label class="range">Proporción con créditos de alta calidad (BBB+ o superior) <output data-out="oHq">60 %</output>
-          <input type="range" min="0" max="100" step="5" value="60" data-in="oHq"></label>
-        <div class="prices">
-          <div><span class="muted small">Precio promedio de mercado</span><b>USD 5,7</b></div>
-          <div><span class="muted small">Créditos investment grade (BBB+)</span><b class="mint">USD 20</b></div>
-        </div>
-      </div>
-      <div class="sim__result">
-        <span class="muted small">Costo anual estimado</span>
-        <div class="bignum">USD <span id="oCost">0</span></div>
-        <div class="stack" aria-hidden="true"><i id="oBarHq"></i><i id="oBarStd"></i></div>
-        <div class="stack__legend"><span><i class="dot dot--mint"></i>Alta calidad: USD <b id="oHqCost">0</b></span><span><i class="dot dot--dim"></i>Promedio: USD <b id="oStdCost">0</b></span></div>
-        <p class="insight" id="oInsight"></p>
-        <p class="disclaimer">Precios de referencia: Sylvera, State of Carbon Credits, datos de mercado del 1.er trimestre de 2026. Los créditos de calidad cotizan 3,5 veces más y su oferta viene bajando desde 2023. Coralia desarrolla proyectos propios con rating A–AA antes de la emisión.</p>
-        <a href="#contacto" class="btn btn--mint btn--sm">Armar mi estrategia de compensación →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ================= PLANES ================= -->
 <section id="planes" class="section">
   <div class="wrap">
@@ -451,7 +385,7 @@
 <footer class="footer">
   <div class="wrap footer__in">
     <img src="assets/logo.png" alt="Coralia Environmental" height="34">
-    <nav aria-label="Pie"><a href="#herramientas">Plataforma</a><a href="#herramientas">Soluciones</a><a href="#casos">Proyectos</a><a href="#confianza">Nosotros</a><a href="#simuladores">Simuladores</a></nav>
+    <nav aria-label="Pie"><a href="#herramientas">Plataforma</a><a href="#herramientas">Soluciones</a><a href="#casos">Proyectos</a><a href="#confianza">Nosotros</a><a href="simuladores.html">Simuladores</a></nav>
     <div class="footer__meta"><span>Nogoyá 4169, CABA · contacto@coraliae.com · +54 9 11 3848-4171</span><a href="https://www.linkedin.com/company/coraliae/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.youtube.com/@coraliaenvironmental" target="_blank" rel="noopener">YouTube</a><span class="lang">EN · <b>ES</b></span></div>
   </div>
 </footer>

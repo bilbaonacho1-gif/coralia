@@ -22,12 +22,13 @@ Carpeta aparte de la réplica. Abrila en VS Code y tocá **Go Live** sobre `inde
      bajás cerca del mapa y deja de dibujar cuando no está en pantalla.
    - Para agregar un país: sumá una fila en COUNTRIES con su longitud/latitud y, si el nombre en
      inglés es distinto, ponelo como 6º dato (ej. 'Spain').
-3. **Simuladores** para empresas:
+3. **Simuladores** para empresas: ya no están en la Home, tienen su página (simuladores.html), a la que se
+   llega desde "Simuladores" en el menú y en el pie. Arriba se elige uno con dos tarjetas.
+   Link directo: simuladores.html#trayectoria o simuladores.html#neutralidad. Código: simuladores.js.
    - Trayectoria de reducción: emisiones actuales, año y % de la meta → gráfico, reducción por año y
      comparación con el ritmo de referencia 1,5 °C (4,2 % anual, SBTi).
    - Neutralidad y créditos: toneladas a compensar y % de alta calidad → costo anual con precios de
      referencia Sylvera 1T 2026 (USD 5,7 promedio / USD 20 investment grade).
-   - Carbon Markets ahora también muestra ingresos potenciales por año.
 4. **Nuestros proyectos (Home)**: carrusel 3D en abanico con los 10 proyectos. Avanza solo, se desliza con el dedo o
    el mouse, flechas del teclado, filtro por servicio; tocar la del medio abre la ficha.
    Desde el mapa también se abren (los países con casos tienen un anillo).
