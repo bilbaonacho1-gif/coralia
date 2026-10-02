@@ -2,7 +2,7 @@
 document.documentElement.classList.add('js');
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-const fmt = (n, d = 0) => n.toLocaleString('es-AR', { maximumFractionDigits: d, minimumFractionDigits: d });
+const fmt = (n, d = 0) => n.toLocaleString(window.LOCALE || 'es-AR', { maximumFractionDigits: d, minimumFractionDigits: d });
 const val = (k) => +$(`[data-in="${k}"]`).value;
 
 /* Aparición al scrollear */

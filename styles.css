@@ -963,3 +963,22 @@ h3{font-size:22px;font-weight:600;letter-spacing:-.015em}
 .deco-pattern{-webkit-mask-image:radial-gradient(ellipse 70% 80% at 50% 55%,transparent 30%,#000 85%),linear-gradient(180deg,transparent 0,#000 22%,#000 78%,transparent 100%);
   -webkit-mask-composite:source-in;mask-image:radial-gradient(ellipse 70% 80% at 50% 55%,transparent 30%,#000 85%),linear-gradient(180deg,transparent 0,#000 22%,#000 78%,transparent 100%);mask-composite:intersect}
 .access__more .link{white-space:normal}
+
+/* ===== Selector de idioma ===== */
+.langsel{position:relative}
+.langsel__btn{display:flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;font-size:14px;font-weight:600;color:rgba(255,255,255,.92);border:1px solid transparent;transition:border-color .25s,background .25s}
+.langsel__btn i{font-style:normal;font-size:10px;opacity:.7;transition:transform .25s}
+.langsel__btn[aria-expanded="true"] i{transform:rotate(180deg)}
+.langsel__btn:hover{border-color:rgba(255,255,255,.45)}
+.header.is-scrolled .langsel__btn{color:var(--ink)}
+.header.is-scrolled .langsel__btn:hover{border-color:var(--line2)}
+.langsel__menu{position:absolute;right:0;top:calc(100% + 8px);z-index:60;min-width:180px;margin:0;padding:6px;list-style:none;border-radius:16px;background:var(--paper);border:1px solid var(--line);box-shadow:0 24px 50px -20px rgba(18,38,30,.45);animation:fadeUp .25s var(--ease) both}
+.langsel__menu[hidden]{display:none}
+.langsel__menu a{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;font-size:14.5px;color:var(--ink)}
+.langsel__menu a b{width:24px;font-size:12px;color:var(--dim)}
+.langsel__menu a:hover{background:var(--bg2)}
+.langsel__menu a.is-on{background:var(--forest);color:var(--bg)}
+.langsel__menu a.is-on b{color:var(--lime)}
+.footlang a{color:var(--dim)}
+.footlang a:hover{color:var(--leaf)}
+.footlang a.is-on{color:var(--leaf);font-weight:600}

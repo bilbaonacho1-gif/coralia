@@ -112,12 +112,24 @@ Debajo de 1000 px el menú se abre con el botón ☰; se cierra al tocar un link
   separada "Cómo funcionan", las mini demos de la Home (ahora en simuladores.html) y la línea de tiempo.
 
 ## Pendientes (buscá TODO)
-- Links reales: Iniciar sesión (plataforma), versión en inglés.
+- Link real de Iniciar sesión (plataforma).
 - Faltan páginas que existen en la web actual: Mitigación, Adaptación, Equipo completo,
   "What's Climate Change" y Política de privacidad.
 - Revisar con el equipo técnico los rangos ilustrativos de las mini demos y simuladores
   (simuladores.js: F, M, RB, REF_RATE, P_STD, P_HQ).
 - LinkedIn personal de cada integrante (data.js, TEAM).
+
+## Idiomas: español, inglés, portugués y alemán (i18n.js + carpeta i18n)
+- Arriba a la derecha está el selector (ES · EN · PT · DE) y abajo, en el pie, los mismos links. El idioma elegido
+  queda guardado al pasar de página. Link directo a un idioma: agregá ?lang=en (o pt, de, es), ej. index.html?lang=pt.
+- El español es el texto base de las páginas. Las traducciones están en i18n/en.js, pt.js y de.js, y se cargan
+  solo cuando se elige ese idioma. Traducen también lo que aparece al tocar cosas (países, casos, equipo,
+  simuladores) y los números salen con el formato de cada idioma (10,175,209 en inglés).
+- Para cambiar o agregar una traducción: editá las tablas de i18n/fuente/ (cada fila: español, inglés, portugués,
+  alemán; el español tiene que ser igual al texto de la página) y después corré  python3 i18n/fuente/armar.py
+  para regenerar los tres archivos. Si cambiás un texto en español en la página, cambialo también en la tabla.
+- Los textos con números que cambian (contadores, resultados de los simuladores) están como patrones en armar.py.
+- Lo que no está en las tablas queda como está (por ejemplo nombres de clientes y personas).
 
 ## Wix
 Cumple los límites de Wix Headless: sin videos, cada archivo pesa menos de 3 MB.

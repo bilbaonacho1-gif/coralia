@@ -45,7 +45,7 @@ $('#featured').innerHTML = featured.map((c) => card(c, true)).join('');
 /* Grilla + filtros */
 const grid = GRID_ORDER.map((id) => CASES.find((c) => c.id === id)).filter(Boolean);
 const all = [...featured, ...grid];
-const fill = (sel, vals) => { $(sel).insertAdjacentHTML('beforeend', vals.map((v) => `<option>${v}</option>`).join('')); };
+const fill = (sel, vals) => { $(sel).insertAdjacentHTML('beforeend', vals.map((v) => `<option value="${v}">${v}</option>`).join('')); };
 fill('#fInd', [...new Set(all.map((c) => c.ind))].sort());
 fill('#fCountry', countries.sort());
 const F = { svc: 'all', ind: 'all', country: 'all' };
@@ -64,8 +64,8 @@ $('#fSvc').addEventListener('click', (e) => {
   const b = e.target.closest('.chip'); if (!b) return;
   $$('#fSvc .chip').forEach((x) => x.classList.toggle('is-on', x === b)); F.svc = b.dataset.v; renderGrid();
 });
-$('#fInd').addEventListener('change', (e) => { F.ind = e.target.value === 'Todas' ? 'all' : e.target.value; renderGrid(); });
-$('#fCountry').addEventListener('change', (e) => { F.country = e.target.value === 'Todos' ? 'all' : e.target.value; renderGrid(); });
+$('#fInd').addEventListener('change', (e) => { F.ind = e.target.value; renderGrid(); });
+$('#fCountry').addEventListener('change', (e) => { F.country = e.target.value; renderGrid(); });
 $('#fReset').addEventListener('click', () => {
   F.svc = F.ind = F.country = 'all'; $('#fInd').value = 'all'; $('#fCountry').value = 'all';
   $$('#fSvc .chip').forEach((x, i) => x.classList.toggle('is-on', i === 0)); renderGrid();

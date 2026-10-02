@@ -9,6 +9,7 @@
 <link rel="preload" href="assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
+<script src="i18n.js"></script>
 <noscript><style>.doors,.opening__run{display:none}.hero{--q:1}</style></noscript>
 </head>
 <body class="page-home">
@@ -27,8 +28,15 @@
       <a href="simuladores.html">Simuladores</a>
     </nav>
     <div class="header__right">
-      <!-- TODO: versión en inglés -->
-      <a href="#" class="lang">ES</a>
+      <div class="langsel" translate="no">
+        <button type="button" class="langsel__btn" aria-haspopup="true" aria-expanded="false" aria-label="Idioma: Español"><span class="langsel__cur">ES</span><i aria-hidden="true">▾</i></button>
+        <ul class="langsel__menu" role="menu" hidden>
+          <li role="none"><a role="menuitem" href="?lang=es" data-lang="es"><b>ES</b>Español</a></li>
+          <li role="none"><a role="menuitem" href="?lang=en" data-lang="en"><b>EN</b>English</a></li>
+          <li role="none"><a role="menuitem" href="?lang=pt" data-lang="pt"><b>PT</b>Português</a></li>
+          <li role="none"><a role="menuitem" href="?lang=de" data-lang="de"><b>DE</b>Deutsch</a></li>
+        </ul>
+      </div>
       <!-- TODO: URL real de la plataforma -->
       <a href="#" class="btn btn--ghost-light btn--sm">Iniciar sesión</a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú"><span></span></button>
@@ -550,7 +558,7 @@
   <div class="wrap footer__in">
     <img src="assets/logo-oscuro.webp" alt="Coralia Environmental" height="36">
     <nav aria-label="Pie"><a href="#apps">Apps</a><a href="proyectos.html">Proyectos</a><a href="#equipo">Nosotros</a><a href="#accesos">Accesos</a><a href="simuladores.html">Simuladores</a></nav>
-    <div class="footer__meta"><span>Nogoyá 4169, CABA · contacto@coraliae.com · +54 9 11 3848-4171</span><a href="https://www.linkedin.com/company/coraliae/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.youtube.com/@coraliaenvironmental" target="_blank" rel="noopener">YouTube</a><span class="lang">EN · <b>ES</b></span></div>
+    <div class="footer__meta"><span>Nogoyá 4169, CABA · contacto@coraliae.com · +54 9 11 3848-4171</span><a href="https://www.linkedin.com/company/coraliae/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.youtube.com/@coraliaenvironmental" target="_blank" rel="noopener">YouTube</a><span class="lang footlang" translate="no"><a href="?lang=es" data-lang="es">ES</a> · <a href="?lang=en" data-lang="en">EN</a> · <a href="?lang=pt" data-lang="pt">PT</a> · <a href="?lang=de" data-lang="de">DE</a></span></div>
   </div>
 </footer>
 

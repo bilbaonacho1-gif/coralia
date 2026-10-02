@@ -75,10 +75,10 @@
     const end = 0.4644, t0 = performance.now() + 1100, dur = 1300;
     const step = (now) => {
       const t = clamp((now - t0) / dur), v = end * (1 - Math.pow(1 - t, 3));
-      num.textContent = v.toFixed(4).replace('.', ',');
+      num.textContent = v.toLocaleString(window.LOCALE || 'es-AR', { minimumFractionDigits: 4, maximumFractionDigits: 4 });
       if (t < 1 && revealed) requestAnimationFrame(step);
     };
-    num.textContent = '0,0000'; requestAnimationFrame(step);
+    num.textContent = (0).toLocaleString(window.LOCALE || 'es-AR', { minimumFractionDigits: 4 }); requestAnimationFrame(step);
   }
   if (hero && run) hero.classList.add('rv-on');
   let ticking = false;

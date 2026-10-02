@@ -137,7 +137,8 @@
     }
 
     function tag({ i, x, y }) {
-      const n = nWork[i], txt = `${COUNTRIES[i][0]} · ${n >= 70 ? '70+ trabajos' : `${n} ${n === 1 ? 'trabajo' : 'trabajos'}`}`;
+      const n = nWork[i], T = (window.I18N && I18N.t) || ((x) => x);
+      const txt = `${T(COUNTRIES[i][0])} · ${T(n >= 70 ? '70+ trabajos' : `${n} ${n === 1 ? 'trabajo' : 'trabajos'}`)}`;
       ctx.font = '600 12px Figtree, system-ui, sans-serif';
       const w = ctx.measureText(txt).width + 18, h = 24;
       let lx = Math.max(8, Math.min(W - w - 8, x - w / 2)), ly = y - h - 12;
