@@ -52,6 +52,7 @@
 "Tu tierra diagnosticada en cinco minutos: qué proyecto de carbono es posible y cuánto vale.": "Sua terra diagnosticada em cinco minutos: qual projeto de carbono é possível e quanto vale.",
 "Riesgo climático físico y de transición, activo por activo, con planes de adaptación.": "Risco climático físico e de transição, ativo por ativo, com planos de adaptação.",
 "Tablero de Carbon Footprint con evaluaciones, productos y trayectoria de reducción": "Painel do Carbon Footprint com avaliações, produtos e trajetória de redução",
+"Bosque visto desde arriba, con un río y datos de carbono superpuestos": "Floresta vista de cima, com um rio e dados de carbono sobrepostos",
 "mapa de elegibilidad de un terreno con el panel de diagnóstico": "mapa de elegibilidade de um terreno com o painel de diagnóstico",
 "mapa de temperaturas proyectadas en Sudamérica": "mapa de temperaturas projetadas na América do Sul",
 "Cerrar": "Fechar",
