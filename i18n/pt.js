@@ -113,6 +113,8 @@
 "Clientes y socios": "Clientes e parceiros",
 "Reconocimiento": "Reconhecimento",
 "Green Cross United Kingdom, Carbon Positive Awards 2025, por la calidad de los proyectos basados en la naturaleza que desarrollamos.": "Green Cross United Kingdom, Carbon Positive Awards 2025, pela qualidade dos projetos baseados na natureza que desenvolvemos.",
+"Green Cross United Kingdom, la organización fundada por Mijaíl Gorbachov, nos premió en los Carbon Positive Awards 2025 por nuestros proyectos de carbono y soluciones basadas en la naturaleza.": "A Green Cross United Kingdom, organização fundada por Mikhail Gorbachev, nos premiou no Carbon Positive Awards 2025 por nossos projetos de carbono e soluções baseadas na natureza.",
+"Conocé más del premio →": "Saiba mais sobre o prêmio →",
 "Sello Best Developer de Green Cross United Kingdom, Carbon Positive Awards 2025": "Selo Best Developer da Green Cross United Kingdom, Carbon Positive Awards 2025",
 "Calidad de los créditos": "Qualidade dos créditos",
 "Calificados antes de emitir": "Avaliados antes da emissão",

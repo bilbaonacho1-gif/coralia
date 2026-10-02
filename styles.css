@@ -288,6 +288,8 @@ h3{font-size:22px;font-weight:600;letter-spacing:-.015em}
 .proof h3{font-size:26px;margin-bottom:8px}
 .proof p{margin:0 0 10px;color:var(--ink2);font-size:15px}
 .proof .eyebrow{margin-bottom:8px}
+.proof__links{display:flex;flex-wrap:wrap;gap:10px 22px}
+.link--soft{color:var(--ink2);font-weight:500}
 .quotes{position:relative;margin-top:24px;min-height:220px}
 .quote{position:absolute;inset:0 0 auto;margin:0;padding:30px 32px;display:grid;grid-template-columns:72px 1fr;gap:8px 24px;border-radius:28px;background:var(--paper);border:1px solid var(--line);opacity:0;transform:translateY(8px);transition:opacity .6s,transform .6s;pointer-events:none}
 .quote.is-on{opacity:1;transform:none;pointer-events:auto;position:relative}
