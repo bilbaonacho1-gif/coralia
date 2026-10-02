@@ -54,6 +54,7 @@
 "Tablero de Carbon Footprint con evaluaciones, productos y trayectoria de reducción": "Painel do Carbon Footprint com avaliações, produtos e trajetória de redução",
 "Bosque visto desde arriba, con un río y datos de carbono superpuestos": "Floresta vista de cima, com um rio e dados de carbono sobrepostos",
 "La Tierra de noche con conexiones de luz sobre América y datos de créditos de carbono": "A Terra à noite com conexões de luz sobre as Américas e dados de créditos de carbono",
+"La Tierra desde el espacio con un huracán sobre el Atlántico y datos de riesgo climático": "A Terra vista do espaço com um furacão sobre o Atlântico e dados de risco climático",
 "mapa de elegibilidad de un terreno con el panel de diagnóstico": "mapa de elegibilidade de um terreno com o painel de diagnóstico",
 "mapa de temperaturas proyectadas en Sudamérica": "mapa de temperaturas projetadas na América do Sul",
 "Cerrar": "Fechar",

@@ -42,7 +42,7 @@ $$('.appcard').forEach((c) => c.addEventListener('click', () => openApp(c.datase
 const APPS = [
   { k: 'footprint', a0: -60, a1: 60, lines: ['Carbon', 'Footprint'], bg: 'fondo-footprint', tag: 'Medir', dot: 'medir', desc: 'Huella de productos, empresas y eventos, de la fórmula al reporte verificable.' },
   { k: 'markets', a0: 60, a1: 180, lines: ['Carbon', 'Markets'], bg: 'fondo-markets', tag: 'Mitigar', dot: 'mitigar', desc: 'Tu tierra diagnosticada en cinco minutos: qué proyecto de carbono es posible y cuánto vale.' },
-  { k: 'risk', a0: 180, a1: 300, lines: ['Climate', 'Risk App'], tag: 'Adaptar', dot: 'adaptar', desc: 'Riesgo climático físico y de transición, activo por activo, con planes de adaptación.' },
+  { k: 'risk', a0: 180, a1: 300, lines: ['Climate', 'Risk App'], bg: 'fondo-risk', pos: 'xMaxYMid', tag: 'Adaptar', dot: 'adaptar', desc: 'Riesgo climático físico y de transición, activo por activo, con planes de adaptación.' },
 ];
 const R0 = 104, R1 = 228, RON = 250, RC = 22, GAP = 9, CORE = 92;
 const wheel = $('#wheel');
@@ -79,7 +79,7 @@ if (wheel) {
     const x = Math.min(...xs), y = Math.min(...ys), w = Math.max(...xs) - x, h = Math.max(...ys) - y;
     // fondo: la foto de la app si la tiene; si no, su pantalla en blanco y negro
     if (ap.bg) g.classList.add('wseg--foto');
-    el('image', { href: `assets/apps/${ap.bg || 'card-' + ap.k}.webp`, x, y, width: w, height: h, preserveAspectRatio: 'xMidYMid slice', 'clip-path': `url(#wclip-${ap.k})`, ...(ap.bg ? {} : { filter: 'url(#wgray)' }) }, g);
+    el('image', { href: `assets/apps/${ap.bg || 'card-' + ap.k}.webp`, x, y, width: w, height: h, preserveAspectRatio: `${ap.pos || 'xMidYMid'} slice`, 'clip-path': `url(#wclip-${ap.k})`, ...(ap.bg ? {} : { filter: 'url(#wgray)' }) }, g);
     const shade = el('path', { class: 'wseg__shade' }, g);
     const edge = el('path', { class: 'wseg__edge' }, g);
     // ícono de la app y el nombre en dos líneas (la segunda, en el color de la app)
@@ -100,6 +100,13 @@ if (wheel) {
   el('image', { href: 'assets/logo.png', x: -62, y: -58, width: 124, height: 70.6 }, core);
   const cta = el('text', { class: 'wcore__cta', x: 0, y: 40 }, core); cta.textContent = 'Probá las apps →';
   el('circle', { class: 'wheel__core', r: CORE }, core);
+  // "Probá las apps →" se achica si en otro idioma no entra en el círculo
+  const fitCta = () => {
+    cta.style.fontSize = ''; const w = cta.getBBox().width, max = 2 * Math.sqrt(CORE * CORE - 44 * 44) - 18;
+    if (w > max) cta.style.fontSize = (parseFloat(getComputedStyle(cta).fontSize) * max / w).toFixed(1) + 'px';
+  };
+  addEventListener('load', fitCta); addEventListener('resize', fitCta);
+  if (document.fonts) document.fonts.ready.then(fitCta);
 
   function draw(s) {
     const d = sector(R0, s.r, s.ap.a0, s.ap.a1);

@@ -66,6 +66,7 @@
 "Tablero de Carbon Footprint con evaluaciones, productos y trayectoria de reducción": "Carbon Footprint dashboard with assessments, products and reduction pathway",
 "Bosque visto desde arriba, con un río y datos de carbono superpuestos": "Aerial view of a forest with a river and carbon data overlaid",
 "La Tierra de noche con conexiones de luz sobre América y datos de créditos de carbono": "Earth at night with light connections across the Americas and carbon credit data",
+"La Tierra desde el espacio con un huracán sobre el Atlántico y datos de riesgo climático": "Earth from space with a hurricane over the Atlantic and climate risk data",
 "mapa de elegibilidad de un terreno con el panel de diagnóstico": "eligibility map of a plot with the diagnosis panel",
 "mapa de temperaturas proyectadas en Sudamérica": "map of projected temperatures in South America",
 "Cerrar": "Close",

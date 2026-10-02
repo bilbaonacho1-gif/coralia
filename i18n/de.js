@@ -67,6 +67,7 @@
 "Tablero de Carbon Footprint con evaluaciones, productos y trayectoria de reducción": "Carbon-Footprint-Dashboard mit Bewertungen, Produkten und Reduktionspfad",
 "Bosque visto desde arriba, con un río y datos de carbono superpuestos": "Wald von oben mit einem Fluss und eingeblendeten Kohlenstoffdaten",
 "La Tierra de noche con conexiones de luz sobre América y datos de créditos de carbono": "Die Erde bei Nacht mit Lichtverbindungen über Amerika und Daten zu CO2-Zertifikaten",
+"La Tierra desde el espacio con un huracán sobre el Atlántico y datos de riesgo climático": "Die Erde aus dem All mit einem Hurrikan über dem Atlantik und Daten zum Klimarisiko",
 "mapa de elegibilidad de un terreno con el panel de diagnóstico": "Eignungskarte einer Fläche mit dem Diagnosepanel",
 "mapa de temperaturas proyectadas en Sudamérica": "Karte der projizierten Temperaturen in Südamerika",
 "Cerrar": "Schließen",
