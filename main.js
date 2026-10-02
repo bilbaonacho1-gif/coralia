@@ -40,8 +40,8 @@ $$('.appcard').forEach((c) => c.addEventListener('click', () => openApp(c.datase
 
 /* Rueda de apps: porciones de anillo con bordes redondeados (SVG). Ángulos en grados, 0 = arriba. */
 const APPS = [
-  { k: 'footprint', a0: -60, a1: 60, lines: ['Carbon Footprint'], tag: 'Medir', dot: 'medir', desc: 'Huella de productos, empresas y eventos, de la fórmula al reporte verificable.' },
-  { k: 'markets', a0: 60, a1: 180, lines: ['Carbon', 'Markets Hub'], tag: 'Mitigar', dot: 'mitigar', desc: 'Tu tierra diagnosticada en cinco minutos: qué proyecto de carbono es posible y cuánto vale.' },
+  { k: 'footprint', a0: -60, a1: 60, lines: ['Carbon', 'Footprint'], tag: 'Medir', dot: 'medir', desc: 'Huella de productos, empresas y eventos, de la fórmula al reporte verificable.' },
+  { k: 'markets', a0: 60, a1: 180, lines: ['Carbon', 'Markets'], tag: 'Mitigar', dot: 'mitigar', desc: 'Tu tierra diagnosticada en cinco minutos: qué proyecto de carbono es posible y cuánto vale.' },
   { k: 'risk', a0: 180, a1: 300, lines: ['Climate', 'Risk App'], tag: 'Adaptar', dot: 'adaptar', desc: 'Riesgo climático físico y de transición, activo por activo, con planes de adaptación.' },
 ];
 const R0 = 104, R1 = 228, RON = 250, RC = 22, GAP = 9, CORE = 92;
@@ -64,6 +64,10 @@ if (wheel) {
       + `A${r0} ${r0} 0 ${bigI} 0 ${f(P(r0, i0 + ci))}Q${f(D)} ${f(toward(D, A, RC))}L${f(toward(A, D, RC))}Q${f(A)} ${f(P(r1, o0 + co))}Z`;
   }
   const defs = el('defs');
+  // las pantallas van en blanco y negro, oscurecidas, y cada porción se tiñe con el color de su app
+  const gray = el('filter', { id: 'wgray', 'color-interpolation-filters': 'sRGB' }, defs);
+  el('feColorMatrix', { type: 'saturate', values: 0 }, gray);
+  const ct = el('feComponentTransfer', {}, gray); ['R', 'G', 'B'].forEach((c) => el(`feFunc${c}`, { type: 'linear', slope: 0.62 }, ct));
   const spin = el('g', { class: 'wheel__spin' }); // gira al aparecer
   el('circle', { class: 'wheel__ring', r: 262 }, spin);
   const segs = APPS.map((ap, i) => {
@@ -73,14 +77,14 @@ if (wheel) {
     const pts = []; for (let a = ap.a0; a <= ap.a1; a += 5) pts.push(P(RON, a), P(R0, a));
     const xs = pts.map((p) => p[0]), ys = pts.map((p) => p[1]);
     const x = Math.min(...xs), y = Math.min(...ys), w = Math.max(...xs) - x, h = Math.max(...ys) - y;
-    el('image', { href: `assets/apps/card-${ap.k}.webp`, x, y, width: w, height: h, preserveAspectRatio: 'xMidYMid slice', 'clip-path': `url(#wclip-${ap.k})` }, g);
-    const shade = el('path', { class: 'wseg__shade', fill: 'rgba(10,24,17,.55)' }, g);
+    el('image', { href: `assets/apps/card-${ap.k}.webp`, x, y, width: w, height: h, preserveAspectRatio: 'xMidYMid slice', 'clip-path': `url(#wclip-${ap.k})`, filter: 'url(#wgray)' }, g);
+    const shade = el('path', { class: 'wseg__shade' }, g);
     const edge = el('path', { class: 'wseg__edge' }, g);
-    const t1 = el('text', { class: 'wseg__tag' }, g), t2 = el('text', { class: 'wseg__name' }, g);
-    t1.textContent = ap.tag;
-    // nombre en una o dos líneas para que entre en la porción
-    ap.lines.forEach((ln, j) => { const ts = el('tspan', { dy: j ? 22 : 0 }, t2); ts.textContent = ln; });
-    const s = { ap, cp, shade, edge, t1, t2, g, r: ap.k === appOn ? RON : R1 };
+    // ícono de la app y el nombre en dos líneas (la segunda, en el color de la app)
+    const ico = el('image', { class: 'wseg__ico', href: `assets/apps/icon-${ap.k}-claro.png` }, g);
+    const t1 = el('text', { class: 'wseg__name' }, g), t2 = el('text', { class: 'wseg__sub' }, g);
+    t1.textContent = ap.lines[0].toUpperCase(); t2.textContent = ap.lines[1].toUpperCase();
+    const s = { ap, cp, shade, edge, ico, t1, t2, g, r: ap.k === appOn ? RON : R1 };
     g.addEventListener('pointerenter', () => { stopAuto(); setApp(ap.k); });
     g.addEventListener('focus', () => { stopAuto(); setApp(ap.k); });
     g.addEventListener('click', () => { stopAuto(); setApp(ap.k); openApp(ap.k); });
@@ -99,31 +103,33 @@ if (wheel) {
     const d = sector(R0, s.r, s.ap.a0, s.ap.a1);
     s.cp.setAttribute('d', d); s.shade.setAttribute('d', d); s.edge.setAttribute('d', d);
     // los nombres: pegados al borde exterior de cada porción, en un tamaño que entra
-    const mid = (s.ap.a0 + s.ap.a1) / 2, sm = innerWidth < 900, n = s.ap.lines.length - 1;
+    // ícono arriba y las dos líneas abajo, centrados en la porción (en el celu, más grandes)
+    const mid = (s.ap.a0 + s.ap.a1) / 2, big = innerWidth < 900 ? 1.3 : 1;
+    let k = 1;
     const place = (rr, dx = 0) => {
       let [tx, ty] = P(rr, mid); tx -= Math.sign(tx) * dx;
-      s.t1.setAttribute('x', tx); s.t1.setAttribute('y', sm ? ty + 8 : ty - 12 - n * 8);
-      s.t2.setAttribute('x', tx); s.t2.setAttribute('y', ty + 14 - n * 8);
-      [...s.t2.children].forEach((ts) => ts.setAttribute('x', tx));
+      const I = 46 * k * big, f1 = 17 * k * big, f2 = 12 * k * big, H = I + 8 + f1 * 0.74 + 9 + f2 * 0.74, top = ty - H / 2;
+      Object.entries({ x: tx - I / 2, y: top, width: I, height: I }).forEach(([a, v]) => s.ico.setAttribute(a, v.toFixed(1)));
+      s.t1.setAttribute('font-size', f1.toFixed(1)); s.t1.setAttribute('x', tx); s.t1.setAttribute('y', (top + I + 8 + f1 * 0.74).toFixed(1));
+      s.t2.setAttribute('font-size', f2.toFixed(1)); s.t2.setAttribute('x', tx); s.t2.setAttribute('y', (top + H).toFixed(1));
     };
-    // si el nombre no entra en la porción, se corre hacia el centro hasta que entre
-    const fits = () => [s.t1, s.t2].every((t) => {
+    // si no entra en la porción, se corre hacia el centro hasta que entre
+    const fits = () => [s.ico, s.t1, s.t2].every((t) => {
       if (t.getClientRects().length === 0) return true;
       const bb = t.getBBox(), pad = 6;
       return [[bb.x - pad, bb.y], [bb.x + bb.width + pad, bb.y], [bb.x - pad, bb.y + bb.height], [bb.x + bb.width + pad, bb.y + bb.height]]
         .every(([x, y]) => s.shade.isPointInFill(new DOMPoint(x, y)));
     });
-    // busca una posición donde el nombre entre entero; si no hay, achica la letra un poco y vuelve a probar
-    const base = R0 + (s.r - R0) * 0.52;
+    // busca una posición donde entre entero; si no hay, achica todo un poco y vuelve a probar
+    const base = R0 + (s.r - R0) * 0.5;
     const tries = [];
     [0, 8, -8, 16].forEach((dr) => [0, 6, 12, 18, -6, -12].forEach((dx) => tries.push([base + dr, dx])));
     let ok = false;
-    for (const fsz of [null, 18, 16.5]) {
-      s.t2.setAttribute('font-size', fsz || 20);
+    for (k of [1, 0.92, 0.84, 0.76]) {
       for (const [r, dx] of tries) { place(r, dx); if (fits()) { ok = true; break; } }
       if (ok) break;
     }
-    if (!ok) place(base);
+    if (!ok) { k = 0.76; place(base); }
     s.g.classList.toggle('is-on', s.ap.k === appOn);
   }
   segs.forEach(draw);
@@ -143,7 +149,7 @@ if (wheel) {
     appOn = k; view.dataset.app = k;
     const ap = APPS.find((a) => a.k === k);
     $$('.appview__shots img', view).forEach((im) => { const on = im.dataset.app === k; im.classList.toggle('is-on', on); if (on) im.loading = 'eager'; });
-    $('#avTag').innerHTML = `<i class="dot dot--${ap.dot}"></i>${ap.tag}`;
+    $('#avTag').innerHTML = `<img src="assets/apps/icon-${k}-claro.png" alt="">${ap.tag}`;
     $('#avName').textContent = APP_NAMES[k]; $('#avDesc').textContent = ap.desc;
     $$('.apptab').forEach((t) => t.classList.toggle('is-hover', t.dataset.app === k));
     view.classList.remove('swap'); void view.offsetWidth; view.classList.add('swap');

@@ -33,6 +33,11 @@ así que no dependen de Google Fonts. Se declaran al principio de styles.css (@f
    Al pasar por una porción, crece hacia afuera y el panel muestra esa app; sola va rotando cada 4,5 s hasta
    que alguien la toca. Al tocar una porción, una pestaña o "Ver cómo funciona" se abre abajo su recorrido de 6 pasos: al bajar por los pasos cambia la pantalla.
    Tocar la misma tarjeta o "Cerrar" lo cierra. Link a los simuladores.
+   - Cada porción lleva el ícono de su app y el nombre en dos líneas (la segunda en su color) y va teñida con un
+     color por app: verde (Carbon Footprint), ámbar (Carbon Markets) y azul (Climate Risk App). Las pantallas de
+     adentro van en blanco y negro para que mande el color. Colores: bloque "un color por app" en styles.css.
+   - Íconos: assets/apps/icon-*-claro.png (sacados de los logos de cada app, con las hojas aclaradas para que se lean
+     sobre fondo oscuro). También están en las pestañas de abajo y en el panel.
    - Pantallas: assets/apps/card-*.webp (tarjetas) y <footprint|markets|risk>-1…6.webp (pasos), de los
      videos de demo del deck. Textos de los pasos: en index.html (bloques `.story`).
 4. **Proyectos** (#proyectos): globo 3D con los 23 países y carrusel de casos publicados.
