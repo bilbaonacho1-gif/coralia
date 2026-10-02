@@ -9,12 +9,65 @@ const io = 'IntersectionObserver' in window ? new IntersectionObserver((es) => {
   es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
 }, { threshold: 0.15 }) : null;
 $$('.reveal, .map').forEach((el) => io ? io.observe(el) : el.classList.add('is-visible'));
-// el patrón de mariposas de fondo se descarga recién cuando su sección está cerca
-$$('.deco-pattern').forEach((el) => {
-  if (!('IntersectionObserver' in window)) return el.classList.add('is-in');
-  const o = new IntersectionObserver((es) => { if (es[0].isIntersecting) { el.classList.add('is-in'); o.disconnect(); } }, { rootMargin: '600px 0px' });
-  o.observe(el);
-});
+/* ---------- Mariposas de fondo ----------
+   En cada .deco-scatter se reparten mariposas sueltas (assets/deco/m-1…m-10) cerca de los bordes de la
+   sección, siempre enteras (nunca quedan cortadas por el borde) y sin pisarse entre sí. Se arman
+   recién cuando la sección está cerca y se rearman si cambia el ancho. data-n: cuántas (en compu). */
+const scatterIO = 'IntersectionObserver' in window ? new IntersectionObserver((es) => {
+  es.forEach((e) => { if (e.isIntersecting) { scatter(e.target); scatterIO.unobserve(e.target); } });
+}, { rootMargin: '600px 0px' }) : null;
+function scatter(box) {
+  const W = box.clientWidth, H = box.clientHeight; if (!W || !H) return;
+  box.dataset.w = W; box.dataset.h = H; box.textContent = '';
+  let seed = [...(box.parentElement.id || 'x')].reduce((a, c) => a * 31 + c.charCodeAt(0), 7) >>> 0;
+  const rnd = () => ((seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296);
+  const sm = W < 700, n = Math.round((+box.dataset.n || 10) * (sm ? 0.5 : 1)), pad = 10, put = [];
+  // lo que hay en la sección (textos, tarjetas, imágenes): las mariposas van solo en el espacio libre,
+  // así ninguna queda tapada a medias por una tarjeta
+  const o = box.getBoundingClientRect(), busy = [];
+  const add = (r) => { if (r.width && r.height) busy.push([r.left - o.left - 14, r.top - o.top - 14, r.right - o.left + 14, r.bottom - o.top + 14]); };
+  const solid = (el, cs) => /^(IMG|SVG|svg|CANVAS|BUTTON|INPUT|VIDEO|IFRAME)$/.test(el.tagName) || cs.backgroundImage !== 'none'
+    || !/rgba\(0, 0, 0, 0\)|transparent/.test(cs.backgroundColor) || parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth) > 0;
+  (function walk(el) {
+    for (const c of el.children) {
+      if (c === box || c.classList.contains('deco') || c.classList.contains('deco-anchor')) continue;
+      const cs = getComputedStyle(c); if (cs.display === 'none' || cs.visibility === 'hidden') continue;
+      if (solid(c, cs)) { add(c.getBoundingClientRect()); continue; }
+      for (const t of c.childNodes) if (t.nodeType === 3 && t.data.trim()) { const rg = document.createRange(); rg.selectNodeContents(t); [...rg.getClientRects()].forEach(add); }
+      walk(c);
+    }
+  })(box.parentElement);
+  for (let k = 0, tries = 0; k < n && tries < 1500; tries++) {
+    const s = sm ? 30 + rnd() * 40 : 44 + rnd() * 90;
+    const m = pad + s * 0.22; // margen para el giro y el vaivén: así nunca tocan el borde
+    const x = m + rnd() * (W - s - 2 * m), y = m + rnd() * (H - s - 2 * m);
+    if (busy.some(([l, t, r, b2]) => x - s * 0.2 < r && x + s * 1.2 > l && y - s * 0.2 < b2 && y + s * 1.2 > t)) continue;
+    if (put.some((q) => Math.hypot(q.x + q.s / 2 - x - s / 2, q.y + q.s / 2 - y - s / 2) < (q.s + s) * 0.62)) continue;
+    put.push({ x, y, s }); k++;
+  }
+  put.forEach((q, i) => {
+    const im = new Image(); im.alt = ''; im.className = 'bfly'; im.decoding = 'async';
+    im.src = `assets/deco/m-${1 + Math.floor(rnd() * 10)}.webp`;
+    im.style.cssText = `left:${q.x.toFixed(0)}px;top:${q.y.toFixed(0)}px;width:${q.s.toFixed(0)}px;rotate:${(rnd() * 70 - 35).toFixed(0)}deg;`
+      + `opacity:${(0.35 + rnd() * 0.45).toFixed(2)};animation-delay:${(-rnd() * 16).toFixed(1)}s;animation-duration:${(13 + rnd() * 9).toFixed(1)}s`;
+    if (rnd() < 0.5) im.style.scale = '-1 1';
+    box.appendChild(im);
+  });
+}
+$$('.deco-scatter').forEach((box) => scatterIO ? scatterIO.observe(box) : scatter(box));
+// aletean solo mientras se ven
+const flyIO = 'IntersectionObserver' in window ? new IntersectionObserver((es) => es.forEach((e) => e.target.classList.toggle('is-on', e.isIntersecting))) : null;
+$$('.deco-scatter').forEach((box) => flyIO ? flyIO.observe(box) : box.classList.add('is-on'));
+// si la sección cambia de tamaño (otro ancho de pantalla, se abre una ficha) se vuelven a repartir
+if ('ResizeObserver' in window) {
+  const ro = new ResizeObserver((es) => es.forEach((e) => {
+    const b = e.target; if (!b.dataset.w) return;
+    clearTimeout(b._t); b._t = setTimeout(() => {
+      if (Math.abs(+b.dataset.w - b.clientWidth) > 20 || Math.abs(+b.dataset.h - b.clientHeight) > 40) scatter(b);
+    }, 250);
+  }));
+  $$('.deco-scatter').forEach((b) => ro.observe(b));
+}
 
 /* ---------- 1) Nuestras apps: tarjetas que abren el recorrido paso a paso ---------- */
 const APP_NAMES = { footprint: 'Carbon Footprint', markets: 'Carbon Markets Hub', risk: 'Climate Risk App' };

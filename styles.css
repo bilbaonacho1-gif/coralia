@@ -849,8 +849,8 @@ h3{font-size:22px;font-weight:600;letter-spacing:-.015em}
 @media (prefers-reduced-motion:reduce){.js .hive:not(.is-visible) .hex{opacity:1}.hive.is-visible :is(.hex,.hex__color,.hex__glow,.hex__in::before){animation:none}}
 
 /* ================= Decoración: mariposas de hojas en los espacios en blanco ================= */
-#plataforma,#apps,#proyectos,#equipo,#accesos{position:relative}
-#plataforma>.wrap,#apps>.wrap,#proyectos>.wrap,#equipo>.wrap,#accesos>.wrap{position:relative;z-index:1}
+#plataforma,#apps,#proyectos,#equipo,#accesos,#confianza,#contacto{position:relative}
+#plataforma>.wrap,#apps>.wrap,#proyectos>.wrap,#equipo>.wrap,#accesos>.wrap,#confianza>.wrap,#contacto>.wrap,#confianza>.logos{position:relative;z-index:1}
 .deco{position:absolute;z-index:0;pointer-events:none;user-select:none;max-width:none;height:auto;will-change:transform}
 .deco-anchor{position:relative;height:0}
 .deco--intro{right:14px;top:60px;width:clamp(170px,16vw,240px)}
@@ -892,12 +892,12 @@ h3{font-size:22px;font-weight:600;letter-spacing:-.015em}
 }
 @media (prefers-reduced-motion:reduce){.deco--fly,.leaf{animation:none}}
 
-/* Niveles de acceso: patrón de mariposas de fondo, suave y desvanecido hacia el centro */
-.deco-pattern.is-in{background-image:url(assets/deco/patron-mariposas.webp)}
-.deco-pattern{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.32;
-  background:center/cover no-repeat;
-  -webkit-mask-image:radial-gradient(ellipse 70% 80% at 50% 55%,transparent 30%,#000 85%);mask-image:radial-gradient(ellipse 70% 80% at 50% 55%,transparent 30%,#000 85%)}
-@media (max-width:900px){.deco-pattern{opacity:.2;background-size:180% auto;background-position:top center}}
+/* Mariposas sueltas de fondo (main.js las reparte cerca de los bordes, siempre enteras) */
+.deco-scatter{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;opacity:.6}
+.bfly{position:absolute;height:auto;max-width:none;animation:bflyFloat 16s ease-in-out infinite;animation-play-state:paused}
+.deco-scatter.is-on .bfly{animation-play-state:running}
+@keyframes bflyFloat{0%,100%{translate:0 0}33%{translate:7px -10px}66%{translate:-6px -4px}}
+@media (prefers-reduced-motion:reduce){.bfly{animation:none}}
 
 /* ================= Panel del país: ambientación con territorio ================= */
 .map-wrap{position:relative}
@@ -969,9 +969,6 @@ h3{font-size:22px;font-weight:600;letter-spacing:-.015em}
 
 /* Franjas de color sin corte recto: el verde aparece y se va de a poco */
 .section--band{background:linear-gradient(180deg,var(--bg) 0,var(--bg2) 170px,var(--bg2) calc(100% - 170px),var(--bg) 100%)}
-/* el patrón de hojas también se desvanece arriba y abajo (nunca queda cortado en el borde) */
-.deco-pattern{-webkit-mask-image:radial-gradient(ellipse 70% 80% at 50% 55%,transparent 30%,#000 85%),linear-gradient(180deg,transparent 0,#000 22%,#000 78%,transparent 100%);
-  -webkit-mask-composite:source-in;mask-image:radial-gradient(ellipse 70% 80% at 50% 55%,transparent 30%,#000 85%),linear-gradient(180deg,transparent 0,#000 22%,#000 78%,transparent 100%);mask-composite:intersect}
 .access__more .link{white-space:normal}
 
 /* ===== Selector de idioma ===== */

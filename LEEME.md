@@ -75,13 +75,16 @@ Mariposas de hojas de la marca en los espacios en blanco. En "Qué es Coralia": 
 la derecha, cuatro hojitas flotando entre la frase y las tarjetas, curvas topográficas muy suaves detrás de las
 tarjetas (topografia.svg) Además: dos hojitas
 aleteando en Apps, tira ancha junto al título de Proyectos, un grupo a cada lado del carrusel
-de casos, columna al costado del panal del equipo y, en Niveles de acceso, el patrón de mariposas de fondo
-(patron-mariposas.webp, desvanecido hacia el centro; se descarga recién cerca de esa sección). Se desplazan apenas
+de casos y columna al costado del panal del equipo. Se desplazan apenas
 con el scroll (data-par en index.html: negativo sube más lento, positivo más rápido; lo aplica motion.js).
-Posiciones y tamaños: bloque "Decoración" al final de styles.css. Ninguna se sale de su sección ni del borde
-de la pantalla (revisado en celu, tablet y compu). En celu quedan solo tres, más chicas.
-Los grupos salen de la imagen "Clústeres botánicos". A las piezas que venían con hojas partidas en el borde se
-les borraron esas mariposas, así ninguna se ve cortada (los *-espejo.webp son las mismas, invertidas).
+Posiciones y tamaños: bloque "Decoración" al final de styles.css.
+
+Mariposas sueltas de fondo (assets/deco/m-1 … m-10, sacadas de la imagen de mariposas de la marca): en Apps,
+Confían en Coralia, Equipo, Niveles de acceso y Contacto hay un `<div class="deco-scatter" data-n="…">` (data-n =
+cuántas en compu; en el celu, la mitad). main.js (scatter) las reparte solo en el espacio libre: mira dónde hay
+textos, tarjetas e imágenes y no las pone encima ni debajo, así ninguna queda tapada a medias, y deja margen con el
+borde para que nunca se corten. Cada una tiene su tamaño, giro y transparencia, y flota despacio mientras se ve. Se
+vuelven a repartir si cambia el tamaño de la sección. Con "reducir movimiento" quedan quietas.
 
 ## Carrusel de casos
 Al llegar a "Casos publicados", las tarjetas caen desde arriba de a una (primero la del centro) con un rebote;
