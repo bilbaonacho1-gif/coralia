@@ -762,6 +762,7 @@ h3{font-size:22px;font-weight:600;letter-spacing:-.015em}
 .wseg[data-app=markets]{--c:#eab765;--t:rgba(84,50,8,.74);--t2:rgba(112,68,10,.56)}
 .wseg[data-app=risk]{--c:#82c4ee;--t:rgba(10,46,88,.74);--t2:rgba(14,62,116,.56)}
 .wseg__shade{fill:var(--t);transition:fill .5s}
+.wseg--foto{--t:rgba(6,22,12,.42);--t2:rgba(6,22,12,.12)}
 .wseg:hover .wseg__shade,.wseg.is-on .wseg__shade{fill:var(--t2)}
 .wseg__edge{fill:none;stroke:var(--c);stroke-width:2;opacity:.5;transition:opacity .4s,stroke-width .4s}
 .wseg.is-on .wseg__edge,.wseg:focus-visible .wseg__edge{opacity:1;stroke-width:3}

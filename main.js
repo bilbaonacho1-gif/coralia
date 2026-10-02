@@ -40,7 +40,7 @@ $$('.appcard').forEach((c) => c.addEventListener('click', () => openApp(c.datase
 
 /* Rueda de apps: porciones de anillo con bordes redondeados (SVG). Ángulos en grados, 0 = arriba. */
 const APPS = [
-  { k: 'footprint', a0: -60, a1: 60, lines: ['Carbon', 'Footprint'], tag: 'Medir', dot: 'medir', desc: 'Huella de productos, empresas y eventos, de la fórmula al reporte verificable.' },
+  { k: 'footprint', a0: -60, a1: 60, lines: ['Carbon', 'Footprint'], bg: 'fondo-footprint', tag: 'Medir', dot: 'medir', desc: 'Huella de productos, empresas y eventos, de la fórmula al reporte verificable.' },
   { k: 'markets', a0: 60, a1: 180, lines: ['Carbon', 'Markets'], tag: 'Mitigar', dot: 'mitigar', desc: 'Tu tierra diagnosticada en cinco minutos: qué proyecto de carbono es posible y cuánto vale.' },
   { k: 'risk', a0: 180, a1: 300, lines: ['Climate', 'Risk App'], tag: 'Adaptar', dot: 'adaptar', desc: 'Riesgo climático físico y de transición, activo por activo, con planes de adaptación.' },
 ];
@@ -77,7 +77,9 @@ if (wheel) {
     const pts = []; for (let a = ap.a0; a <= ap.a1; a += 5) pts.push(P(RON, a), P(R0, a));
     const xs = pts.map((p) => p[0]), ys = pts.map((p) => p[1]);
     const x = Math.min(...xs), y = Math.min(...ys), w = Math.max(...xs) - x, h = Math.max(...ys) - y;
-    el('image', { href: `assets/apps/card-${ap.k}.webp`, x, y, width: w, height: h, preserveAspectRatio: 'xMidYMid slice', 'clip-path': `url(#wclip-${ap.k})`, filter: 'url(#wgray)' }, g);
+    // fondo: la foto de la app si la tiene; si no, su pantalla en blanco y negro
+    if (ap.bg) g.classList.add('wseg--foto');
+    el('image', { href: `assets/apps/${ap.bg || 'card-' + ap.k}.webp`, x, y, width: w, height: h, preserveAspectRatio: 'xMidYMid slice', 'clip-path': `url(#wclip-${ap.k})`, ...(ap.bg ? {} : { filter: 'url(#wgray)' }) }, g);
     const shade = el('path', { class: 'wseg__shade' }, g);
     const edge = el('path', { class: 'wseg__edge' }, g);
     // ícono de la app y el nombre en dos líneas (la segunda, en el color de la app)

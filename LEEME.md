@@ -35,7 +35,8 @@ así que no dependen de Google Fonts. Se declaran al principio de styles.css (@f
    Tocar la misma tarjeta o "Cerrar" lo cierra. Link a los simuladores.
    - Cada porción lleva el ícono de su app y el nombre en dos líneas (la segunda en su color) y va teñida con un
      color por app: verde (Carbon Footprint), ámbar (Carbon Markets) y azul (Climate Risk App). Las pantallas de
-     adentro van en blanco y negro para que mande el color. Colores: bloque "un color por app" en styles.css.
+     adentro van en blanco y negro para que mande el color; si la app tiene foto propia de fondo
+     (assets/apps/fondo-<app>.webp, se activa con bg: en APPS de main.js), se usa la foto en su lugar. Por ahora: Footprint. Colores: bloque "un color por app" en styles.css.
    - Íconos: assets/apps/icon-*-claro.png (sacados de los logos de cada app, con las hojas aclaradas para que se lean
      sobre fondo oscuro). También están en las pestañas de abajo y en el panel.
    - Pantallas: assets/apps/card-*.webp (tarjetas) y <footprint|markets|risk>-1…6.webp (pasos), de los
