@@ -48,7 +48,7 @@ así que no dependen de Google Fonts. Se declaran al principio de styles.css (@f
    entra en pantalla, cada hexágono aparece en un orden al azar, con un destello de color, y al encajar
    se le ilumina el borde en verde lima. Los filtros
    iluminan un grupo y apagan el resto. Al tocar a alguien, su hexágono crece hasta la ficha (cargo,
-   especialidades, LinkedIn; cuando la persona tiene su linkedin cargado en data.js, tocar la foto abre su perfil), con flechas para pasar a la siguiente y "Volver al equipo" (o Escape).
+   especialidades y LinkedIn; tocar la foto o "LinkedIn ↗" abre su perfil, cargado en data.js, TEAM), con flechas para pasar a la siguiente y "Volver al equipo" (o Escape).
 7. **Niveles de acceso** (#accesos): Demo, Análisis, Profesional y Consultoría.
 8. **Contacto** (#contacto): email, pedido de demo, teléfono y oficina.
 
@@ -123,7 +123,6 @@ Debajo de 1000 px el menú se abre con el botón ☰; se cierra al tocar un link
   "What's Climate Change" y Política de privacidad.
 - Revisar con el equipo técnico los rangos ilustrativos de las mini demos y simuladores
   (simuladores.js: F, M, RB, REF_RATE, P_STD, P_HQ).
-- LinkedIn personal de cada integrante (data.js, TEAM).
 
 ## Premio y ratings (Confían en Coralia)
 Cuando las tarjetas aparecen en pantalla: el sello de Green Cross cae como un sello de goma, deja una onda verde
