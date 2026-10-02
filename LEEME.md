@@ -11,20 +11,38 @@ Títulos en **Fraunces** y textos en **Figtree** (licencia libre SIL OFL). Está
 así que no dependen de Google Fonts. Se declaran al principio de styles.css (@font-face).
 
 ## Recorrido de la Home (de arriba a abajo)
+0. **Apertura (mariposa)**: lo primero que se ve es la mariposa mitad datos, mitad naturaleza, con
+   CORALIA ENVIRONMENTAL (sin textos a los costados). Al bajar, las dos mitades se abren como puertas haciendo zoom y aparece la
+   portada, que también se acerca. Mientras tanto el encabezado está oculto.
+   - Imagen: assets/portada-mariposa.webp (+ -1100 para celu), con el texto borrado: el título es texto
+     real (.doors__title en index.html), así se ve nítido y no se corta en el celu.
+   - Cuánto hay que bajar para abrirla: .opening__run en styles.css (110vh en compu, 85vh en celu).
+   - Animación: motion.js (--q va de 0 cerrada a 1 abierta). Con "reducir movimiento" no aparece.
+   - Cuando se abre, la portada se arma de a poco: la foto hace foco (de borrosa y oscura a nítida) con
+     un destello de luz, el título sube línea por línea, después el texto y los botones, y por último las
+     tarjetas (las barras crecen, el medidor se llena y 0,4644 cuenta desde cero). Si se vuelve a cerrar,
+     se rearma. Tiempos: bloque "La portada se arma de a poco" al final de styles.css.
 1. **Portada**: paisaje con tres tarjetas de interfaz flotando (una por app). Al bajar, la foto se achica
    hasta quedar como una tarjeta con bordes redondeados.
-2. **Qué es Coralia**: la frase principal se "enciende" palabra por palabra con el scroll y tres pilares
-   (tecnología, datos, conocimiento).
-3. **Conocé nuestras apps** (#apps): tres tarjetas con una pantalla real de cada app. Al tocar una ("Tocá para
-   conocer la app") se abre abajo su recorrido de 6 pasos: al bajar por los pasos cambia la pantalla.
+2. **Qué es Coralia** (#plataforma): la frase que se "enciende" palabra por palabra y tres tarjetas con forma
+   de carpeta (Tecnología → #apps, Datos → simuladores, Conocimiento → #equipo), con la flecha en el hueco de la
+   esquina. La forma es el clipPath #folder en index.html (proporción 5:4).
+3. **Conocé nuestras apps** (#apps): rueda con las tres apps como porciones redondeadas (con su pantalla
+   adentro). Entra girando media vuelta, las porciones se abren en abanico y al final aparece el centro: logo
+   de Coralia y "Probá las apps →", que lleva a simuladores.html (TODO: URL de la plataforma, en main.js, 'wcore') y un panel grande a la izquierda recortado por la curva de la rueda.
+   Al pasar por una porción, crece hacia afuera y el panel muestra esa app; sola va rotando cada 4,5 s hasta
+   que alguien la toca. Al tocar una porción, una pestaña o "Ver cómo funciona" se abre abajo su recorrido de 6 pasos: al bajar por los pasos cambia la pantalla.
    Tocar la misma tarjeta o "Cerrar" lo cierra. Link a los simuladores.
    - Pantallas: assets/apps/card-*.webp (tarjetas) y <footprint|markets|risk>-1…6.webp (pasos), de los
      videos de demo del deck. Textos de los pasos: en index.html (bloques `.story`).
 4. **Proyectos** (#proyectos): globo 3D con los 23 países y carrusel de casos publicados.
 5. **Confían en Coralia** (#confianza): 34 logos en dos filas, premio Green Cross, ratings Sylvera y testimonios.
-6. **Equipo** (#equipo): panal de hexágonos con las 15 personas (en color al pasar el mouse). Los filtros
+6. **Equipo** (#equipo): panal de hexágonos con las 17 personas (Kieffer Schroder e Ignacio Bilbao al final;
+   sus fotos salen de las placas de LinkedIn) (en color al pasar el mouse). Cuando el panal
+   entra en pantalla, cada hexágono aparece en un orden al azar, con un destello de color, y al encajar
+   se le ilumina el borde en verde lima. Los filtros
    iluminan un grupo y apagan el resto. Al tocar a alguien, su hexágono crece hasta la ficha (cargo,
-   especialidades, LinkedIn), con flechas para pasar a la siguiente y "Volver al equipo" (o Escape).
+   especialidades, LinkedIn; cuando la persona tiene su linkedin cargado en data.js, tocar la foto abre su perfil), con flechas para pasar a la siguiente y "Volver al equipo" (o Escape).
 7. **Niveles de acceso** (#accesos): Demo, Análisis, Profesional y Consultoría.
 8. **Contacto** (#contacto): email, pedido de demo, teléfono y oficina.
 
@@ -33,10 +51,35 @@ así que no dependen de Google Fonts. Se declaran al principio de styles.css (@f
   data.js (año, cliente, trabajo), traducido del mapa del deck 2026. Los casos publicados (CASES) aparecen
   arriba de la lista del país.
 - Respecto de la versión anterior salieron Uruguay y Corea del Sur y entraron Bolivia y Alemania, como en el deck.
+- Entrada: cuando el mapa aparece en pantalla, el globo llega desde el fondo (chico y desenfocado), gira más de
+  una vuelta y frena en Sudamérica; al final se levantan las columnas. El panel entra desde el costado. Si alguien
+  toca el globo o las flechas durante la entrada, termina enseguida. Con "reducir movimiento" no se anima.
 - Las columnas son más altas donde hay más trabajos. Se arrastra; al tocar un país gira, hace zoom y abre la ficha.
+- Panel de cada país: degradado crema a verde claro, curvas topográficas suaves en los bordes (cambian de
+  orientación según el país), coordenadas arriba a la derecha y la silueta del país con relieve adentro,
+  que se dibuja como un trazo al cambiar de país. La silueta sale del mismo mapa del globo y se ubica sola
+  en el espacio libre debajo de la lista; si no hay lugar, asoma detrás de los botones. Nunca queda texto
+  encima. Dos hojas asoman por detrás del panel. Código: countryArt() y placeSil() en main.js.
 - Liviano: assets/globo/ (~60 KB comprimido). Se descarga recién cerca del mapa y no dibuja fuera de pantalla.
 - Para agregar un país: una fila en COUNTRIES (si el nombre en inglés es distinto, va como 6º dato, ej. 'Spain')
   y su lista en WORK.
+
+## Decoración (assets/deco)
+Mariposas de hojas de la marca en los espacios en blanco. En "Qué es Coralia": las hojas grandes juntas arriba a
+la derecha, cuatro hojitas flotando entre la frase y las tarjetas, curvas topográficas muy suaves detrás de las
+tarjetas (topografia.svg) Además: dos hojitas
+aleteando en Apps, tira ancha junto al título de Proyectos, un grupo a cada lado del carrusel
+de casos, columna al costado del panal del equipo y, en Niveles de acceso, el patrón de mariposas de fondo
+(patron-mariposas.webp, desvanecido hacia el centro; se descarga recién cerca de esa sección). Se desplazan apenas
+con el scroll (data-par en index.html: negativo sube más lento, positivo más rápido; lo aplica motion.js).
+Posiciones y tamaños: bloque "Decoración" al final de styles.css. Ninguna se sale de su sección ni del borde
+de la pantalla (revisado en celu, tablet y compu). En celu quedan solo tres, más chicas.
+Los grupos salen de la imagen "Clústeres botánicos". A las piezas que venían con hojas partidas en el borde se
+les borraron esas mariposas, así ninguna se ve cortada (los *-espejo.webp son las mismas, invertidas).
+
+## Carrusel de casos
+Al llegar a "Casos publicados", las tarjetas caen desde arriba de a una (primero la del centro) con un rebote;
+se repite al cambiar de filtro. Bloque "Carrusel de casos" al final de styles.css.
 
 ## Animaciones (motion.js)
 Portada que se achica y frase que se enciende. Sin librerías. Con "reducir movimiento" activado no se mueve nada.

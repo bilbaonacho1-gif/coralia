@@ -16,7 +16,9 @@
 // Encabezado: transparente sobre la foto de portada, claro con fondo al bajar
 (() => {
   const header = document.querySelector('.header'); if (!header) return;
-  const onScroll = () => header.classList.toggle('is-scrolled', scrollY > 40);
+  // En la Home el fondo claro aparece recién después de que se abre la mariposa (.opening__run)
+  const run = document.querySelector('.opening__run');
+  const onScroll = () => header.classList.toggle('is-scrolled', scrollY > (run ? run.offsetHeight : 0) + 40);
   addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 })();

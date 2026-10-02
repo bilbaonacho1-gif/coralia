@@ -34,7 +34,11 @@
 
     // Estado: rotación [λ, φ], zoom, altura animada de cada columna
     const LEAN = 30; // el país queda un poco arriba del centro para que su columna se vea "parada"
-    let rot = [64, 18], goal = null, zoom = 0.86, zoomGoal = 1, vel = 0;
+    let rot = [64, 18], goal = null, zoom = calm ? 1 : 0.16, zoomGoal = 1, vel = 0;
+    // Entrada: el globo llega desde el fondo girando y después se levantan las columnas
+    let introT0 = 0, introWait = !calm, introFrom = null, introTo = null, colF = calm ? 1 : 0;
+    const easeOut = (t) => 1 - Math.pow(1 - t, 4);
+    function endIntro() { introT0 = 0; introWait = false; colF = 1; box.classList.remove('is-far'); }
     let W = 0, H = 0, R = 0, active = cur, hover = -1, lastTouch = 0, t0 = performance.now();
     const hNow = COUNTRIES.map(() => 0);
     const heads = [];
@@ -55,6 +59,7 @@
     }
 
     window.globeFocus = (i, z) => {
+      if (introT0 || introWait) endIntro();
       active = i; goal = aim(i); vel = 0; lastTouch = performance.now();
       if (z) { zoomGoal = small() ? 1.5 : 1.6; box.classList.add('is-zoomed'); reset.hidden = false; }
     };
@@ -105,7 +110,7 @@
         const d = d3.geoDistance([lon, lat], c);
         heads[i] = null;
         if (d > 1.5) { hNow[i] = 0; return; }
-        const n = nWork[i], want = Math.min(0.08 + 0.035 * Math.log2(n + 1), 0.26) + (i === active ? 0.05 : 0);
+        const n = nWork[i], want = (Math.min(0.08 + 0.035 * Math.log2(n + 1), 0.26) + (i === active ? 0.05 : 0)) * colF;
         hNow[i] += (want - hNow[i]) * 0.12;
         const [px, py] = proj([lon, lat]), k = 1 + hNow[i];
         // radial + un empuje hacia arriba: así las del centro también se ven "paradas"
@@ -148,7 +153,17 @@
     function tick() {
       raf = 0;
       if (!visible || document.hidden) return;
-      const idle = performance.now() - lastTouch > 5000;
+      const now = performance.now(), idle = now - lastTouch > 5000;
+      if (introWait) { draw(); raf = requestAnimationFrame(tick); return; } // quieto y lejos hasta que se ve
+      if (introT0) {
+        const t = Math.min(1, (now - introT0) / 2600), e = easeOut(t);
+        zoom = 0.16 + (1 - 0.16) * easeOut(Math.min(1, t * 1.15));
+        rot[0] = introFrom[0] + (introTo[0] - introFrom[0] - 360) * e; // da más de una vuelta antes de frenar
+        rot[1] = introFrom[1] + (introTo[1] - introFrom[1]) * e;
+        colF = Math.max(0, Math.min(1, (t - 0.55) / 0.4));
+        if (t >= 1) endIntro();
+        draw(); raf = requestAnimationFrame(tick); return;
+      }
       if (goal) {
         const dl = wrap(goal[0] - rot[0]), dp = goal[1] - rot[1];
         rot[0] += dl * 0.08; rot[1] += dp * 0.08;
@@ -181,6 +196,7 @@
     let drag = null;
     cv.addEventListener('pointerdown', (e) => {
       drag = { x: e.clientX, y: e.clientY, r: rot.slice(), moved: false, last: e.clientX, id: e.pointerId };
+      if (introT0 || introWait) endIntro();
       goal = null; vel = 0; lastTouch = performance.now();
     });
     cv.addEventListener('pointermove', (e) => {
@@ -213,8 +229,18 @@
     cv.addEventListener('pointerleave', () => { if (hover > -1) { hover = -1; cv.style.cursor = ''; } });
 
     size();
-    goal = aim(active); goal[1] = 18; // arranca mirando América del Sur, sin zoom
+    if (calm) { goal = aim(active); goal[1] = 18; } // arranca mirando América del Sur, sin zoom
+    else {
+      introTo = aim(active); introTo[1] = 18; introFrom = [introTo[0] + 140, -6]; rot = introFrom.slice();
+      box.classList.add('is-far');
+      const go = new IntersectionObserver((es) => {
+        if (!es[0].isIntersecting || !introWait) return;
+        introWait = false; introT0 = performance.now(); box.classList.remove('is-far'); go.disconnect(); run();
+      }, { threshold: 0.35 });
+      go.observe(box);
+    }
     box.classList.add('globe-ready');
+    document.dispatchEvent(new Event('globe:ready')); // el panel del país dibuja su silueta
     run();
   }
 })();

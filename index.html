@@ -9,6 +9,7 @@
 <link rel="preload" href="assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
+<noscript><style>.doors,.opening__run{display:none}.hero{--q:1}</style></noscript>
 </head>
 <body class="page-home">
 
@@ -38,17 +39,20 @@
 <main id="top">
 
 <!-- ================= 1. PORTADA ================= -->
+<!-- Apertura: la mariposa (datos | naturaleza) se abre en dos al bajar y deja ver la portada.
+     Mientras se abre, la portada queda fija (sticky) y .opening__run da el recorrido del scroll. motion.js -->
+<div class="opening" id="opening">
 <section class="hero" id="hero">
   <div class="hero__frame">
-    <img class="hero__img" src="assets/hero-con.webp" srcset="assets/hero-con-960.webp 960w, assets/hero-con.webp 1920w" sizes="100vw" alt="" fetchpriority="high">
+    <img class="hero__img" src="assets/hero-con.webp" srcset="assets/hero-con-960.webp 960w, assets/hero-con.webp 1920w" sizes="100vw" alt="">
     <div class="hero__shade"></div>
   </div>
   <div class="wrap hero__in">
     <div class="hero__text">
-      <span class="eyebrow eyebrow--light in">Plataforma de inteligencia climática</span>
-      <h1 class="hero__title in d1">Datos hoy.<br><em>Decisiones reales</em><br>para un mañana posible.</h1>
-      <p class="in d2">Tecnología, datos y conocimiento climático para que tu organización mida, mitigue y se adapte al cambio climático.</p>
-      <div class="hero__ctas in d3">
+      <span class="eyebrow eyebrow--light rv-eyebrow">Plataforma de inteligencia climática</span>
+      <h1 class="hero__title"><span class="ln"><span>Datos hoy.</span></span> <span class="ln"><span><em>Decisiones reales</em></span></span> <span class="ln"><span>para un mañana posible.</span></span></h1>
+      <p class="rv-p">Tecnología, datos y conocimiento climático para que tu organización mida, mitigue y se adapte al cambio climático.</p>
+      <div class="hero__ctas rv-ctas">
         <a href="#apps" class="btn btn--lime">Conocer las apps</a>
         <a href="#contacto" class="btn btn--glass">Hablar con el equipo</a>
       </div>
@@ -77,35 +81,64 @@
     </div>
   </div>
   <a class="hero__down" href="#plataforma" aria-label="Bajar a la propuesta"><span></span></a>
+
+  <div class="doors" aria-hidden="true">
+    <div class="door door--l">
+      <img src="assets/portada-mariposa.webp" srcset="assets/portada-mariposa-1100.webp 1100w, assets/portada-mariposa.webp 1671w" sizes="100vw" alt="" fetchpriority="high">
+    </div>
+    <div class="door door--r">
+      <img src="assets/portada-mariposa.webp" srcset="assets/portada-mariposa-1100.webp 1100w, assets/portada-mariposa.webp 1671w" sizes="100vw" alt="">
+    </div>
+    <div class="doors__title"><span class="doors__name">Coralia</span><span class="doors__sub">Environmental</span></div>
+    <div class="doors__hint"><span>Bajá para entrar</span><i></i></div>
+  </div>
 </section>
+<div class="opening__run"></div>
+</div>
 
 <!-- ================= 2. PROPUESTA ================= -->
-<section class="section intro" id="plataforma">
-  <div class="wrap">
+<section class="section intro intro2" id="plataforma">
+  <!-- decoración: mariposas de hojas (assets/deco); se mueven apenas con el scroll (data-par, motion.js) -->
+  <img class="deco deco--intro" src="assets/deco/hojas-costado.webp" alt="" aria-hidden="true" loading="lazy" data-par="-0.04">
+  <!-- Forma de "carpeta" de las tarjetas (pestaña arriba a la izquierda y hueco abajo a la derecha para la flecha).
+       Coordenadas relativas a la tarjeta: sirve para cualquier tamaño con la misma proporción (5:4). -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <clipPath id="folder" clipPathUnits="objectBoundingBox">
+      <path d="M0 .06Q0 0 .048 0L.44 0Q.48 0 .5 .03L.53 .075Q.55 .1 .59 .1L.952 .1Q1 .1 1 .16L1 .7Q1 .76 .952 .76L.84 .76Q.8 .76 .8 .81L.8 .94Q.8 1 .752 1L.048 1Q0 1 0 .94Z"/>
+    </clipPath>
+  </svg>
+  <div class="wrap intro2__in">
     <span class="eyebrow reveal">Qué es Coralia</span>
     <p class="statement" data-words>Coralia combina <b>tecnología</b>, <b>datos</b> y <b>conocimiento climático</b> para que las organizaciones tomen mejores decisiones frente al cambio climático.</p>
-    <div class="pillars">
-      <article class="pillar reveal">
-        <svg class="pillar__icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="9" width="36" height="26" rx="4"/><path d="M6 17h36M17 41h14M24 35v6"/><circle cx="11" cy="13" r="1"/><circle cx="15" cy="13" r="1"/></svg>
-        <h3>Tecnología</h3>
-        <p>Tres plataformas digitales propias: Carbon Footprint, Carbon Markets Hub y Climate Risk App.</p>
-      </article>
-      <article class="pillar reveal">
-        <svg class="pillar__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 40h36"/><path d="M11 34V24M19 34V14M27 34V20M35 34V8"/></svg>
-        <h3>Datos</h3>
-        <p>Imágenes satelitales, proyecciones climáticas CMIP6 y más de 1.000 factores de emisión curados.</p>
-      </article>
-      <article class="pillar reveal">
-        <svg class="pillar__icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="17" cy="16" r="6"/><circle cx="33" cy="18" r="5"/><path d="M6 40c1-7 6-11 11-11s10 4 11 11M27 40c1-6 4-9 7-9s7 3 8 9"/></svg>
-        <h3>Conocimiento</h3>
-        <p>Un equipo multidisciplinario con 14 años de trayectoria, autores de metodologías de carbono y expertos del IPCC.</p>
-      </article>
+    <!-- hojitas que flotan entre la frase y las tarjetas -->
+    <div class="deco-anchor deco-floats" aria-hidden="true">
+      <img class="deco leaf leaf--1" src="assets/deco/hoja-chica-1.webp" alt="" loading="lazy" data-par="-0.04">
+      <img class="deco leaf leaf--2" src="assets/deco/hoja-chica-2.webp" alt="" loading="lazy" data-par="-0.06">
+      <img class="deco leaf leaf--3" src="assets/deco/hoja-chica-3.webp" alt="" loading="lazy" data-par="-0.03">
+      <img class="deco leaf leaf--4" src="assets/deco/hoja-media.webp" alt="" loading="lazy" data-par="-0.05">
+    </div>
+    <div class="folders">
+      <a class="folder reveal" href="#apps">
+        <span class="folder__box"><span class="folder__card"><img src="assets/apps/card-footprint.webp" alt="" loading="lazy"><span class="folder__label"><i class="dot dot--lime"></i>Tecnología</span></span><span class="folder__go" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
+        <span class="folder__txt">Tres plataformas digitales propias: Carbon Footprint, Carbon Markets Hub y Climate Risk App.</span>
+      </a>
+      <a class="folder reveal" href="simuladores.html">
+        <span class="folder__box"><span class="folder__card"><img src="assets/apps/card-risk.webp" alt="" loading="lazy"><span class="folder__label"><i class="dot dot--lime"></i>Datos</span></span><span class="folder__go" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
+        <span class="folder__txt">Imágenes satelitales, proyecciones climáticas CMIP6 y más de 1.000 factores de emisión curados.</span>
+      </a>
+      <a class="folder reveal" href="#equipo">
+        <span class="folder__box"><span class="folder__card"><img src="assets/proyectos/genneia-1.jpg" alt="" loading="lazy"><span class="folder__label"><i class="dot dot--lime"></i>Conocimiento</span></span><span class="folder__go" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
+        <span class="folder__txt">Un equipo multidisciplinario con 14 años de trayectoria, autores de metodologías de carbono y expertos del IPCC.</span>
+      </a>
     </div>
   </div>
 </section>
 
 <!-- ================= 3. NUESTRAS APPS ================= -->
 <section class="section apps" id="apps">
+  <!-- decoración: mariposas de hojas (assets/deco); se mueven apenas con el scroll (data-par, motion.js) -->
+  <img class="deco deco--fly deco--fly1" src="assets/deco/hoja-chica-1.webp" alt="" aria-hidden="true" loading="lazy" data-par="-0.05">
+  <img class="deco deco--fly deco--fly2" src="assets/deco/hoja-chica-3.webp" alt="" aria-hidden="true" loading="lazy" data-par="-0.04">
   <div class="wrap">
     <div class="head reveal">
       <div>
@@ -114,31 +147,30 @@
       </div>
       <a class="link" href="simuladores.html">Probá los simuladores →</a>
     </div>
-    <div class="appcards" role="tablist" aria-label="Apps">
-      <button type="button" class="appcard reveal" role="tab" aria-selected="false" aria-controls="app-detail" data-app="footprint">
-        <span class="appcard__shot"><img src="assets/apps/card-footprint.webp" alt="Tablero de Carbon Footprint con evaluaciones, productos y trayectoria de reducción" loading="lazy"></span>
-        <span class="appcard__body">
-          <span class="appcard__name">Carbon Footprint</span>
-          <span class="appcard__desc">Huella de productos, empresas y eventos, de la fórmula al reporte verificable.</span>
-          <span class="appcard__cta">Tocá para conocer la app <i aria-hidden="true">↓</i></span>
-        </span>
-      </button>
-      <button type="button" class="appcard reveal" role="tab" aria-selected="false" aria-controls="app-detail" data-app="markets">
-        <span class="appcard__shot"><img src="assets/apps/card-markets.webp" alt="Carbon Markets Hub: mapa de elegibilidad de un terreno con el panel de diagnóstico" loading="lazy"></span>
-        <span class="appcard__body">
-          <span class="appcard__name">Carbon Markets Hub</span>
-          <span class="appcard__desc">Tu tierra diagnosticada en cinco minutos: qué proyecto de carbono es posible y cuánto vale.</span>
-          <span class="appcard__cta">Tocá para conocer la app <i aria-hidden="true">↓</i></span>
-        </span>
-      </button>
-      <button type="button" class="appcard reveal" role="tab" aria-selected="false" aria-controls="app-detail" data-app="risk">
-        <span class="appcard__shot"><img src="assets/apps/card-risk.webp" alt="Climate Risk App: mapa de temperaturas proyectadas en Sudamérica" loading="lazy"></span>
-        <span class="appcard__body">
-          <span class="appcard__name">Climate Risk App</span>
-          <span class="appcard__desc">Riesgo climático físico y de transición, activo por activo, con planes de adaptación.</span>
-          <span class="appcard__cta">Tocá para conocer la app <i aria-hidden="true">↓</i></span>
-        </span>
-      </button>
+    <!-- Rueda de apps: tres porciones redondeadas (main.js arma el SVG). Al pasar por una, crece y cambia el panel;
+         al tocarla se abre su recorrido paso a paso. Las pestañas de abajo hacen lo mismo (teclado y celu). -->
+    <div class="appwheel">
+      <div class="appview reveal" id="appView" aria-live="polite">
+        <div class="appview__shots">
+          <img class="is-on" data-app="footprint" src="assets/apps/card-footprint.webp" alt="Tablero de Carbon Footprint con evaluaciones, productos y trayectoria de reducción" loading="lazy">
+          <img data-app="markets" src="assets/apps/card-markets.webp" alt="Carbon Markets Hub: mapa de elegibilidad de un terreno con el panel de diagnóstico" loading="lazy">
+          <img data-app="risk" src="assets/apps/card-risk.webp" alt="Climate Risk App: mapa de temperaturas proyectadas en Sudamérica" loading="lazy">
+        </div>
+        <div class="appview__body">
+          <span class="appview__tag" id="avTag"><i class="dot dot--medir"></i>Medir</span>
+          <h3 class="appview__name" id="avName">Carbon Footprint</h3>
+          <p class="appview__desc" id="avDesc">Huella de productos, empresas y eventos, de la fórmula al reporte verificable.</p>
+          <button type="button" class="btn btn--lime" id="avOpen">Ver cómo funciona <i aria-hidden="true">↓</i></button>
+        </div>
+      </div>
+      <div class="wheel reveal">
+        <svg class="wheel__svg" id="wheel" viewBox="-300 -300 600 600" aria-hidden="true"></svg>
+      </div>
+      <div class="apptabs" role="tablist" aria-label="Apps">
+        <button type="button" class="appcard apptab" role="tab" aria-selected="false" aria-controls="app-detail" data-app="footprint"><i class="dot dot--medir"></i>Carbon Footprint</button>
+        <button type="button" class="appcard apptab" role="tab" aria-selected="false" aria-controls="app-detail" data-app="markets"><i class="dot dot--mitigar"></i>Carbon Markets Hub</button>
+        <button type="button" class="appcard apptab" role="tab" aria-selected="false" aria-controls="app-detail" data-app="risk"><i class="dot dot--adaptar"></i>Climate Risk App</button>
+      </div>
     </div>
 
     <!-- Se abre al tocar una app: recorrido paso a paso con pantallas reales -->
@@ -299,6 +331,8 @@
 
 <!-- ================= 4. PROYECTOS ================= -->
 <section class="section" id="proyectos">
+  <!-- decoración: mariposas de hojas (assets/deco); se mueven apenas con el scroll (data-par, motion.js) -->
+  <img class="deco deco--proj" src="assets/deco/hojas-fondo.webp" alt="" aria-hidden="true" loading="lazy" data-par="-0.03">
   <div class="wrap">
     <div class="head reveal">
       <div>
@@ -313,7 +347,12 @@
         <button type="button" class="map__reset" id="mapReset" hidden>← Ver el mundo</button>
         <span class="map__hint" aria-hidden="true">Arrastrá para girar · tocá un país</span>
       </div>
+      <!-- hojas que asoman por detrás del panel -->
+      <img class="deco mc-leaf mc-leaf--a" src="assets/deco/hoja-media.webp" alt="" aria-hidden="true" loading="lazy">
+      <img class="deco mc-leaf mc-leaf--b" src="assets/deco/hoja-chica-2.webp" alt="" aria-hidden="true" loading="lazy">
       <aside class="map-card" id="mapCard">
+        <!-- ambientación del país: curvas de relieve + silueta (main.js la dibuja con los datos del globo) -->
+        <div class="mc-art" aria-hidden="true"><div class="mc-topo"></div><div class="mc-sil" id="mcSil"></div><span class="mc-coord" id="mcCoord"></span><img class="mc-in-leaf mc-in-leaf--1" src="assets/deco/hoja-chica-1.webp" alt="" loading="lazy"><img class="mc-in-leaf mc-in-leaf--2" src="assets/deco/hoja-chica-2.webp" alt="" loading="lazy"></div>
         <span class="eyebrow" id="mcRegion">América del Sur</span>
         <h3 id="mcName">Argentina</h3>
         <span class="map-card__count" id="mcCountLabel"></span>
@@ -327,6 +366,7 @@
       </aside>
     </div>
 
+    <div class="deco-anchor" aria-hidden="true"><img class="deco deco--casos-l" src="assets/deco/grupo-arriba-izq.webp" alt="" aria-hidden="true" loading="lazy" data-par="-0.1"><img class="deco deco--casos-r" src="assets/deco/grupo-abajo-izq-espejo.webp" alt="" aria-hidden="true" loading="lazy" data-par="-0.16"></div>
     <div class="head head--sub reveal" id="casos">
       <div>
         <h3 class="h3--lg">Casos publicados</h3>
@@ -407,6 +447,8 @@
 
 <!-- ================= 6. EQUIPO ================= -->
 <section id="equipo" class="section team-x">
+  <!-- decoración: mariposas de hojas (assets/deco); se mueven apenas con el scroll (data-par, motion.js) -->
+  <img class="deco deco--team" src="assets/deco/hojas-costado-espejo.webp" alt="" aria-hidden="true" loading="lazy" data-par="-0.14">
   <div class="wrap team-x__in">
     <div class="head reveal">
       <div>
@@ -425,6 +467,8 @@
 
 <!-- ================= 7. NIVELES DE ACCESO ================= -->
 <section class="section section--band access" id="accesos">
+  <!-- decoración: mariposas de hojas (assets/deco); se mueven apenas con el scroll (data-par, motion.js) -->
+  <div class="deco-pattern" aria-hidden="true"></div>
   <div class="wrap">
     <div class="head reveal">
       <div>

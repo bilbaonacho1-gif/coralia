@@ -175,7 +175,8 @@ const bakedLogo = (c, src) => src === c.img;   // la tarjeta original ya trae el
 
 // Equipo (fuente: coraliae.com). group: direccion · tecnico · relaciones · gestion
 // photo: assets/equipo/<id>.jpg (blanco y negro) · color: <id>-color.jpg (si existe)
-// TODO: completar linkedin de cada persona
+// TODO: completar linkedin de cada persona: agregar  linkedin: 'https://www.linkedin.com/in/...'  en su fila.
+// Con el link cargado, la foto de su ficha y el botón LinkedIn llevan a su perfil.
 const TEAM = [
   { id: 'fabian-gaioli', name: 'Fabián Gaioli', group: 'direccion', area: 'Director Ejecutivo (CEO)', title: 'Estrategia global de la compañía',
     skills: ['Doctor en Física', 'Más de 30 años en cambio climático', 'Autor principal de metodologías de carbono (MDL, Verra)', 'Más de 50 proyectos de carbono en AFOLU, energía y residuos', 'Estrategias nacionales (NDC, BUR)', 'Finanzas climáticas (GCF, PNUD)', 'Experto del IPCC', 'Más de 50 publicaciones y 100 charlas'] },
@@ -207,5 +208,9 @@ const TEAM = [
     skills: ['Redes sociales corporativas', 'Vinculación con clientes', 'Generación de oportunidades comerciales', 'Posicionamiento de la empresa'] },
   { id: 'rosario-lombardi', name: 'Rosario Lombardi', group: 'gestion', area: 'Finanzas y contabilidad', title: 'Asistente financiera',
     skills: ['Flujo de caja', 'Conciliación de gastos', 'Presupuestos', 'Reportes financieros', 'Pagos y cobranzas'] },
+  { id: 'kieffer-schroder', name: 'Kieffer Schroder', group: 'tecnico', area: 'Equipo técnico · Mercados de carbono', title: 'Pasante de Sostenibilidad y Mercados de Carbono',
+    skills: ['Ingeniero ambiental', 'Sostenibilidad', 'Mercados de carbono'] },
+  { id: 'ignacio-bilbao', name: 'Ignacio Bilbao', group: 'gestion', area: 'IT y plataformas digitales', title: 'Pasante de IT y Plataformas Digitales',
+    skills: ['Desarrollo web', 'Plataformas digitales', 'Soporte IT'] },
 ];
 const TEAM_GROUPS = { all: 'Todos', direccion: 'Dirección', tecnico: 'Equipo técnico', relaciones: 'Relaciones internacionales', gestion: 'Gestión' };
