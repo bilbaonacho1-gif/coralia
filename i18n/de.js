@@ -66,6 +66,7 @@
 "Riesgo climático físico y de transición, activo por activo, con planes de adaptación.": "Physisches und transitorisches Klimarisiko, Objekt für Objekt, mit Anpassungsplänen.",
 "Tablero de Carbon Footprint con evaluaciones, productos y trayectoria de reducción": "Carbon-Footprint-Dashboard mit Bewertungen, Produkten und Reduktionspfad",
 "Bosque visto desde arriba, con un río y datos de carbono superpuestos": "Wald von oben mit einem Fluss und eingeblendeten Kohlenstoffdaten",
+"La Tierra de noche con conexiones de luz sobre América y datos de créditos de carbono": "Die Erde bei Nacht mit Lichtverbindungen über Amerika und Daten zu CO2-Zertifikaten",
 "mapa de elegibilidad de un terreno con el panel de diagnóstico": "Eignungskarte einer Fläche mit dem Diagnosepanel",
 "mapa de temperaturas proyectadas en Sudamérica": "Karte der projizierten Temperaturen in Südamerika",
 "Cerrar": "Schließen",
