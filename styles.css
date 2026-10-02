@@ -982,3 +982,35 @@ h3{font-size:22px;font-weight:600;letter-spacing:-.015em}
 .footlang a{color:var(--dim)}
 .footlang a:hover{color:var(--leaf)}
 .footlang a.is-on{color:var(--leaf);font-weight:600}
+
+/* ===== Premio y ratings: animación al aparecer ===== */
+/* Premio: el sello cae como un sello de goma, deja una onda y lo cruza un brillo dorado */
+.proof__seal{position:relative;display:block}
+.proof__seal img{position:relative;z-index:1}
+.proof__seal::before{content:"";position:absolute;inset:8%;border-radius:50%;border:2px solid var(--lime);opacity:0;pointer-events:none}
+.proof__seal::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(105deg,transparent 38%,rgba(255,236,170,.75) 48%,rgba(255,255,255,.9) 50%,rgba(255,236,170,.75) 52%,transparent 62%) 160% 0/260% 100% no-repeat;
+  -webkit-mask:url(assets/marca/premio-green-cross.webp) center/contain no-repeat;mask:url(assets/marca/premio-green-cross.webp) center/contain no-repeat;mix-blend-mode:screen}
+.proof.is-visible .proof__seal img{animation:stamp .85s .25s cubic-bezier(.3,1.5,.5,1) backwards}
+.proof.is-visible .proof__seal::before{animation:sealRing 1.1s .8s ease-out}
+.proof.is-visible .proof__seal::after{animation:sheen 1.3s 1.15s ease-in-out}
+.proof:hover .proof__seal img{transform:rotate(-3deg) scale(1.04);transition:transform .4s var(--ease)}
+.proof:hover .proof__seal::after{animation:sheen2 1.1s ease-in-out}
+@keyframes stamp{from{opacity:0;transform:translateY(-26px) rotate(-14deg) scale(1.25)}60%{opacity:1}to{opacity:1;transform:none}}
+@keyframes sealRing{from{opacity:.9;transform:scale(.7)}to{opacity:0;transform:scale(1.5)}}
+@keyframes sheen{from{background-position:160% 0}to{background-position:-60% 0}}
+@keyframes sheen2{from{background-position:160% 0}to{background-position:-60% 0}}
+
+/* Ratings: las dos tarjetas llegan apiladas, se abren en abanico y aparece la tilde de verificado */
+.proof__stack img:first-child{transform:rotate(-2deg);transition:transform .5s var(--ease)}
+.proof--rating:hover .proof__stack img:first-child{transform:rotate(-4deg) translate(-4px,-2px)}
+.proof--rating.is-visible .proof__stack img:first-child{animation:fanA .8s .3s var(--ease) backwards}
+.proof--rating.is-visible .proof__stack img+img{animation:fanB .9s .45s cubic-bezier(.3,1.35,.5,1) backwards}
+@keyframes fanA{from{opacity:0;transform:translateY(18px) rotate(0)}to{opacity:1;transform:rotate(-2deg)}}
+@keyframes fanB{from{opacity:0;transform:translate(-26%,-34%) rotate(-2deg)}35%{opacity:1}to{opacity:1;transform:rotate(4deg)}}
+.proof__check{position:absolute;right:-8px;bottom:18px;z-index:3;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--lime);box-shadow:0 8px 18px -8px rgba(18,38,30,.6)}
+.proof__check svg{width:18px;height:18px;fill:none;stroke:var(--forest);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:24;stroke-dashoffset:0}
+.proof--rating.is-visible .proof__check{animation:checkPop .5s 1.25s cubic-bezier(.3,1.8,.5,1) backwards}
+.proof--rating.is-visible .proof__check svg{animation:checkDraw .45s 1.55s ease-out backwards}
+@keyframes checkPop{from{opacity:0;transform:scale(0)}to{opacity:1;transform:none}}
+@keyframes checkDraw{from{stroke-dashoffset:24}to{stroke-dashoffset:0}}

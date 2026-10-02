@@ -119,6 +119,12 @@ Debajo de 1000 px el menú se abre con el botón ☰; se cierra al tocar un link
   (simuladores.js: F, M, RB, REF_RATE, P_STD, P_HQ).
 - LinkedIn personal de cada integrante (data.js, TEAM).
 
+## Premio y ratings (Confían en Coralia)
+Cuando las tarjetas aparecen en pantalla: el sello de Green Cross cae como un sello de goma, deja una onda verde
+lima y lo cruza un brillo dorado (vuelve a brillar al pasar el mouse). Las dos calificaciones de Sylvera llegan
+apiladas, se abren en abanico y aparece una tilde de verificado. Bloque "Premio y ratings" al final de styles.css.
+Con "reducir movimiento" se muestran quietas.
+
 ## Idiomas: español, inglés, portugués y alemán (i18n.js + carpeta i18n)
 - Arriba a la derecha está el selector (ES · EN · PT · DE) y abajo, en el pie, los mismos links. El idioma elegido
   queda guardado al pasar de página. Link directo a un idioma: agregá ?lang=en (o pt, de, es), ej. index.html?lang=pt.
