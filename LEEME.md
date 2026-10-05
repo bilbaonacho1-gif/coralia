@@ -181,7 +181,7 @@ Cuando las tarjetas aparecen en pantalla: el sello de Green Cross cae como un se
 lima y lo cruza un brillo dorado (vuelve a brillar al pasar el mouse). Las dos calificaciones de Sylvera llegan
 apiladas, se abren en abanico y aparece una tilde de verificado. Bloque "Premio y ratings" al final de styles.css.
 Con "reducir movimiento" se muestran quietas.
-La tarjeta del premio tiene "Conocé más del premio →", que abre la publicación de Coralia en LinkedIn, y "Ver documento →".
+La tarjeta del premio tiene "Conocé más del premio →", que abre la publicación de Coralia en LinkedIn.
 
 ## Idiomas: español, inglés, portugués y alemán (i18n.js + carpeta i18n)
 - Arriba a la derecha está el selector (ES · EN · PT · DE) y abajo, en el pie, los mismos links. El idioma elegido
