@@ -193,6 +193,4 @@ T = [
 ("Alta integridad", "High integrity", "Alta integridade", "Hohe Integrität"),
 ("con foco en soluciones basadas en la naturaleza", "focused on nature-based solutions", "com foco em soluções baseadas na natureza", "mit Fokus auf naturbasierte Lösungen"),
 ("Ver servicio →", "See service →", "Ver serviço →", "Zur Leistung →"),
-("Medir, mitigar y adaptarse", "Measure, mitigate and adapt", "Medir, mitigar e adaptar-se", "Messen, mindern und anpassen"),
-("En cada servicio trabajamos con tu equipo, y además desarrollamos apps para hacerlo más rápido.", "In every service we work alongside your team, and we also build apps to make it faster.", "Em cada serviço trabalhamos com a sua equipe e, além disso, desenvolvemos apps para tornar tudo mais rápido.", "In jeder Leistung arbeiten wir mit Ihrem Team zusammen und entwickeln zudem Apps, die alles schneller machen."),
 ]
