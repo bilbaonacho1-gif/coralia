@@ -1,4 +1,4 @@
-// Coralia — página de un servicio (servicio.html?s=mitigar | adaptar | consultoria)
+// Coralia — página de un servicio (servicio.html?s=medir | mitigar | adaptar)
 // Contenido tomado de la web actual de Coralia (páginas de Mitigación y Adaptación). Para editar textos: SERVICIOS abajo.
 // Si cambiás un texto, cambialo también en i18n/fuente/6-servicios.py (traducciones).
 document.documentElement.classList.add('js');
@@ -8,8 +8,35 @@ const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const INTRO = 'El cambio climático ya no es una amenaza futura, es una realidad presente. En Coralia desarrollamos estrategias concretas para reducir las emisiones, compensar los impactos y construir un futuro resiliente. Acompañamos a las organizaciones que deciden transformar su huella en acciones concretas.';
 
 const SERVICIOS = {
+  medir: {
+    title: 'Medición', sub: 'de la huella de carbono', img: 'assets/proyectos/andromaco-1.jpg', intro: INTRO, cases: ['medir'],
+    blocks: [
+      {
+        id: 'huella', eyebrow: 'Medir', name: 'Huella de carbono', app: 'footprint',
+        text: 'Realizamos cálculos de huella de carbono y estrategias de reducción para empresas, productos, eventos y territorios, promoviendo la sostenibilidad y la mitigación del cambio climático.',
+        groups: [
+          { title: 'Huella de carbono de productos', steps: [
+            ['Definición del alcance', 'Establecemos los límites del análisis, desde la extracción de materias primas hasta la disposición final del producto, abarcando todo su ciclo de vida.'],
+            ['Recolección de datos', 'Relevamos datos detallados de cada fase del ciclo de vida con una metodología robusta y una base de datos de insumos propia.'],
+            ['Cálculo de emisiones', 'Calculamos las emisiones de GEI en cada etapa del proceso productivo, según estándares internacionales como ISO 14067 y el GHG Protocol.'],
+            ['Análisis de puntos críticos', 'Identificamos las fases del ciclo de vida con más emisiones, como la producción de materiales o el transporte, para enfocar la reducción.'],
+            ['Estrategias de reducción', 'Proponemos acciones concretas, como el uso de energía renovable, la optimización de procesos o el cambio de insumos.'],
+            ['Informe y comunicación', 'Preparamos un informe detallado con los resultados y las oportunidades de mejora, y lo presentamos de forma clara a los grupos de interés.'],
+          ] },
+          { title: 'Huella de carbono corporativa', steps: [
+            ['Definición del alcance', 'Definimos los límites del estudio, incluyendo los alcances operativos y organizacionales.'],
+            ['Recolección de datos', 'Reunimos información de consumo de energía, transporte, residuos y otras fuentes para identificar las fuentes de emisión.'],
+            ['Cálculo de emisiones', 'Cuantificamos las emisiones según estándares internacionales, como ISO 14064 y el GHG Protocol.'],
+            ['Análisis de fuentes clave', 'Identificamos las actividades de la empresa con mayor impacto en la huella total.'],
+            ['Desarrollo de estrategias', 'Proponemos medidas de reducción, como mejoras de eficiencia energética y el uso de energía renovable.'],
+            ['Informe y comunicación', 'Presentamos los resultados en un informe claro, que facilita la comunicación interna y externa de la huella.'],
+          ] },
+        ],
+      },
+    ],
+  },
   mitigar: {
-    title: 'Mitigación', sub: 'del cambio climático', img: 'assets/proyectos/mercuria-1.jpg', intro: INTRO, cases: ['mitigar', 'medir'],
+    title: 'Mitigación', sub: 'del cambio climático', img: 'assets/proyectos/mercuria-1.jpg', intro: INTRO, cases: ['mitigar'],
     blocks: [
       {
         id: 'mercados', eyebrow: 'Mitigar', name: 'Mercados de carbono', app: 'markets',
@@ -53,28 +80,6 @@ const SERVICIOS = {
           ] },
         ],
       },
-      {
-        id: 'huella', eyebrow: 'Mitigar', name: 'Huella de carbono', app: 'footprint',
-        text: 'Realizamos cálculos de huella de carbono y estrategias de reducción para empresas, productos, eventos y territorios, promoviendo la sostenibilidad y la mitigación del cambio climático.',
-        groups: [
-          { title: 'Huella de carbono de productos', steps: [
-            ['Definición del alcance', 'Establecemos los límites del análisis, desde la extracción de materias primas hasta la disposición final del producto, abarcando todo su ciclo de vida.'],
-            ['Recolección de datos', 'Relevamos datos detallados de cada fase del ciclo de vida con una metodología robusta y una base de datos de insumos propia.'],
-            ['Cálculo de emisiones', 'Calculamos las emisiones de GEI en cada etapa del proceso productivo, según estándares internacionales como ISO 14067 y el GHG Protocol.'],
-            ['Análisis de puntos críticos', 'Identificamos las fases del ciclo de vida con más emisiones, como la producción de materiales o el transporte, para enfocar la reducción.'],
-            ['Estrategias de reducción', 'Proponemos acciones concretas, como el uso de energía renovable, la optimización de procesos o el cambio de insumos.'],
-            ['Informe y comunicación', 'Preparamos un informe detallado con los resultados y las oportunidades de mejora, y lo presentamos de forma clara a los grupos de interés.'],
-          ] },
-          { title: 'Huella de carbono corporativa', steps: [
-            ['Definición del alcance', 'Definimos los límites del estudio, incluyendo los alcances operativos y organizacionales.'],
-            ['Recolección de datos', 'Reunimos información de consumo de energía, transporte, residuos y otras fuentes para identificar las fuentes de emisión.'],
-            ['Cálculo de emisiones', 'Cuantificamos las emisiones según estándares internacionales, como ISO 14064 y el GHG Protocol.'],
-            ['Análisis de fuentes clave', 'Identificamos las actividades de la empresa con mayor impacto en la huella total.'],
-            ['Desarrollo de estrategias', 'Proponemos medidas de reducción, como mejoras de eficiencia energética y el uso de energía renovable.'],
-            ['Informe y comunicación', 'Presentamos los resultados en un informe claro, que facilita la comunicación interna y externa de la huella.'],
-          ] },
-        ],
-      },
     ],
   },
   adaptar: {
@@ -98,14 +103,6 @@ const SERVICIOS = {
           ] },
         ],
       },
-    ],
-  },
-  consultoria: {
-    // TODO: texto de Consultoría a completar por Coralia (qué incluye el servicio y para quién)
-    title: 'Consultoría', sub: 'a medida', img: 'assets/explora.jpg', cases: ['consultoria'],
-    intro: 'Estudios técnicos y acompañamiento estratégico para empresas, gobiernos y organismos internacionales, con el respaldo de más de 14 años de experiencia.',
-    blocks: [
-      { id: 'consultoria', eyebrow: 'Consultoría', name: 'Cómo te acompañamos', text: '[Texto a completar por Coralia: qué incluye el servicio de consultoría, para quién es y cómo se trabaja.]' },
     ],
   },
 };

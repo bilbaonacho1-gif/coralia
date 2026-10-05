@@ -17,16 +17,18 @@ así que no dependen de Google Fonts. Se declaran al principio de styles.css (@f
   Botón "Conocé nuestros servicios". Tarjetas enfocadas en servicio: Huella de carbono, Mercados de carbono
   (350k toneladas removidas: NÚMERO A CONFIRMAR) y Riesgo climático.
 - Menú: "Apps" pasó a "Servicios" (#servicios; #apps sigue funcionando).
-- Qué es Coralia: debajo de la frase, "Nuestros servicios" (#servicios, el menú lleva acá): tres carpetas, Mitigar,
-  Adaptar y Consultoría, cada una abre su página (servicio.html?s=mitigar | adaptar | consultoria).
+- Qué es Coralia: debajo de la frase, "Nuestros servicios" (#servicios, el menú lleva acá): tres carpetas, Medir,
+  Mitigar y Adaptar (como en el deck), cada una abre su página (servicio.html?s=medir | mitigar | adaptar). La
+  consultoría no es un servicio aparte: es cómo trabajamos en los tres (portada, "Cómo trabajamos").
+  Cada servicio tiene su app: Medir → Carbon Footprint, Mitigar → Carbon Markets Hub, Adaptar → Climate Risk App.
 - Páginas de servicio (servicio.html + servicio.js, contenido en SERVICIOS): el texto de la web actual,
+  Medición con la Huella de carbono (producto y corporativa, 6 pasos cada una);
   Mitigación con Mercados de carbono (13M+ tCO₂e del Company deck 2026: ECO2 Misiones 10M+ más los proyectos
-  anteriores por sector, 3,2M; proyecto destacado ECO2 Misiones con sus datos, reparto de beneficios y ratings; y los 14 pasos) y Huella de carbono (producto y
-  corporativa, 6 pasos cada una); Adaptación con el análisis de riesgo, sus 3 pilares y los 5 pasos;
-  Consultoría con texto PROVISORIO (TODO: lo pasa Coralia). Cada bloque termina con su app y la página con sus casos.
+  anteriores por sector, 3,2M; proyecto destacado ECO2 Misiones con sus datos, reparto de beneficios y ratings; y los 14 pasos); Adaptación con el análisis de riesgo,
+  sus 3 pilares y los 5 pasos. Cada bloque termina con su app y la página con sus casos.
   Traducciones: i18n/fuente/6-servicios.py.
 - La rueda es "Herramientas propias · Nuestras apps" (#apps; el menú tiene "Apps"): cada porción es una app, con
-  el servicio al que pertenece en el panel ("Servicio: Mitigar →" lleva a su página). Fotos reales con el mismo
+  el servicio al que pertenece en el panel ("Servicio: Medir →" lleva a su página). Fotos reales con el mismo
   tono por app (assets/apps/fondo-*.webp). El centro dice "Probá las apps →" (simuladores).
 - Huella y Riesgo, al tocarlos: muestran el recorrido de su app como antes.
 - Mercados de carbono, al tocarlo: "Restauramos ecosistemas naturales." + antes y después (Blue Carbon, ARR, REDD+;

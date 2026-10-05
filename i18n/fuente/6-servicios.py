@@ -6,6 +6,9 @@ T = [
 ("Estudios a medida y acompañamiento estratégico para empresas, gobiernos y organismos.", "Tailored studies and strategic support for companies, governments and institutions.", "Estudos sob medida e acompanhamento estratégico para empresas, governos e organismos.", "Maßgeschneiderte Studien und strategische Begleitung für Unternehmen, Regierungen und Institutionen."),
 ("Herramientas propias", "Our own tools", "Ferramentas próprias", "Eigene Werkzeuge"),
 ("Apps desarrolladas por Coralia, cada una vinculada a uno de nuestros servicios.", "Apps developed by Coralia, each linked to one of our services.", "Apps desenvolvidos pela Coralia, cada um vinculado a um de nossos serviços.", "Von Coralia entwickelte Apps, jede mit einer unserer Leistungen verbunden."),
+("Huella de carbono de empresas, productos y eventos, con estándares internacionales (GHG Protocol, ISO 14064 e ISO 14067).", "Carbon footprint of companies, products and events, using international standards (GHG Protocol, ISO 14064 and ISO 14067).", "Pegada de carbono de empresas, produtos e eventos, com padrões internacionais (GHG Protocol, ISO 14064 e ISO 14067).", "CO₂-Fußabdruck von Unternehmen, Produkten und Veranstaltungen nach internationalen Standards (GHG Protocol, ISO 14064 und ISO 14067)."),
+("Mercados de carbono: desarrollamos proyectos de punta a punta, de la factibilidad a la emisión de los créditos.", "Carbon markets: we develop projects end to end, from feasibility to credit issuance.", "Mercados de carbono: desenvolvemos projetos de ponta a ponta, da viabilidade à emissão dos créditos.", "CO₂-Märkte: Wir entwickeln Projekte von Anfang bis Ende, von der Machbarkeit bis zur Ausgabe der Zertifikate."),
+("Servicio: <b>Medir</b> →", "Service: <b>Measure</b> →", "Serviço: <b>Medir</b> →", "Leistung: <b>Messen</b> →"),
 ("Servicio: <b>Mitigar</b> →", "Service: <b>Mitigate</b> →", "Serviço: <b>Mitigar</b> →", "Leistung: <b>Mindern</b> →"),
 ("Servicio: <b>Adaptar</b> →", "Service: <b>Adapt</b> →", "Serviço: <b>Adaptar</b> →", "Leistung: <b>Anpassen</b> →"),
 # --- Mitigación: impacto actualizado y ECO2 Misiones (Company deck 2026)
@@ -36,6 +39,8 @@ T = [
 ("Mitigación | Coralia Environmental", "Mitigation | Coralia Environmental", "Mitigação | Coralia Environmental", "Minderung | Coralia Environmental"),
 ("Adaptación | Coralia Environmental", "Adaptation | Coralia Environmental", "Adaptação | Coralia Environmental", "Anpassung | Coralia Environmental"),
 ("Consultoría | Coralia Environmental", "Consulting | Coralia Environmental", "Consultoria | Coralia Environmental", "Beratung | Coralia Environmental"),
+("Medición", "Measurement", "Medição", "Messung"),
+("de la huella de carbono", "of the carbon footprint", "da pegada de carbono", "des CO₂-Fußabdrucks"),
 ("Mitigación", "Mitigation", "Mitigação", "Minderung"),
 ("del cambio climático", "of climate change", "das mudanças climáticas", "des Klimawandels"),
 ("Adaptación", "Adaptation", "Adaptação", "Anpassung"),
