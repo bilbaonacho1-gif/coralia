@@ -69,18 +69,29 @@ if ('ResizeObserver' in window) {
   $$('.deco-scatter').forEach((b) => ro.observe(b));
 }
 
-/* ---------- 1) Nuestras apps: tarjetas que abren el recorrido paso a paso ---------- */
+/* ---------- 1) Nuestros servicios (consultoría primero; cada uno con su app) ---------- */
 const APP_NAMES = { footprint: 'Carbon Footprint', markets: 'Carbon Markets Hub', risk: 'Climate Risk App' };
+const SVC_NAMES = { footprint: 'Huella de carbono', markets: 'Mercados de carbono', risk: 'Riesgo climático' };
+// traduce un texto armado desde acá (si se eligió otro idioma)
+const tr = (s) => (window.I18N && I18N.t ? I18N.t(s) : s);
+// nombre del servicio en dos líneas para la rueda (en otros idiomas se parte la traducción por la mitad)
+function twoLines(ap) {
+  return ap.lines; // nombres de las apps (marcas): iguales en todos los idiomas
+  if (!window.I18N || I18N.lang === 'es') return ap.lines;
+  const w = tr(SVC_NAMES[ap.k]).split(' '), h = Math.ceil(w.length / 2);
+  return w.length > 1 ? [w.slice(0, h).join(' '), w.slice(h).join(' ')] : [w[0], ''];
+}
 const detail = $('#app-detail');
 function openApp(k) {
   const card = $(`.appcard[data-app="${k}"]`), already = card.classList.contains('is-on') && !detail.hidden;
   if (already) return closeApp();
   if (window.setApp) setApp(k);
   $$('.appcard').forEach((c) => { const on = c === card; c.classList.toggle('is-on', on); c.setAttribute('aria-selected', on); });
-  $$('.story', detail).forEach((st) => { st.hidden = st.dataset.story !== k; });
-  $('#appDetailTitle').textContent = APP_NAMES[k];
+  $$(':scope > [data-story]', detail).forEach((st) => { st.hidden = st.dataset.story !== k; });
+  // Mercados muestra qué hacemos; Huella y Riesgo, el recorrido de su app
+  $('#appDetailTitle').textContent = `${APP_NAMES[k]} · ${tr(SVC_NAMES[k])}`;
   detail.hidden = false;
-  showStep($(`.story[data-story="${k}"]`), 0);
+  const st = $(`.story[data-story="${k}"]`); if (st) showStep(st, 0);
   requestAnimationFrame(() => detail.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }));
 }
 function closeApp() {
@@ -93,9 +104,10 @@ $$('.appcard').forEach((c) => c.addEventListener('click', () => openApp(c.datase
 
 /* Rueda de apps: porciones de anillo con bordes redondeados (SVG). Ángulos en grados, 0 = arriba. */
 const APPS = [
-  { k: 'footprint', a0: -60, a1: 60, lines: ['Carbon', 'Footprint'], bg: 'fondo-footprint', tag: 'Medir', dot: 'medir', desc: 'Huella de productos, empresas y eventos, de la fórmula al reporte verificable.' },
-  { k: 'markets', a0: 60, a1: 180, lines: ['Carbon', 'Markets'], bg: 'fondo-markets', tag: 'Mitigar', dot: 'mitigar', desc: 'Tu tierra diagnosticada en cinco minutos: qué proyecto de carbono es posible y cuánto vale.' },
-  { k: 'risk', a0: 180, a1: 300, lines: ['Climate', 'Risk App'], bg: 'fondo-risk', pos: 'xMaxYMid', tag: 'Adaptar', dot: 'adaptar', desc: 'Riesgo climático físico y de transición, activo por activo, con planes de adaptación.' },
+  // svc: página del servicio al que pertenece la app (servicio.html?s=...)
+  { k: 'footprint', a0: -60, a1: 60, lines: ['Carbon', 'Footprint'], bg: 'fondo-footprint', tag: 'Huella de carbono', svc: 'mitigar', svcName: 'Mitigar', dot: 'medir', desc: 'Huella de productos, empresas y eventos, de la fórmula al reporte verificable.' },
+  { k: 'markets', a0: 60, a1: 180, lines: ['Carbon', 'Markets'], bg: 'fondo-markets', tag: 'Mercados de carbono', svc: 'mitigar', svcName: 'Mitigar', dot: 'mitigar', desc: 'Tu tierra diagnosticada en cinco minutos: qué proyecto de carbono es posible y cuánto vale.' },
+  { k: 'risk', a0: 180, a1: 300, lines: ['Climate', 'Risk App'], bg: 'fondo-risk', tag: 'Riesgo climático', svc: 'adaptar', svcName: 'Adaptar', dot: 'adaptar', desc: 'Riesgo climático físico y de transición, activo por activo, con planes de adaptación.' },
 ];
 const R0 = 104, R1 = 228, RON = 250, RC = 22, GAP = 9, CORE = 92;
 const wheel = $('#wheel');
@@ -125,7 +137,7 @@ if (wheel) {
   el('circle', { class: 'wheel__ring', r: 262 }, spin);
   const segs = APPS.map((ap, i) => {
     const clip = el('clipPath', { id: `wclip-${ap.k}` }, defs), cp = el('path', {}, clip);
-    const g = el('g', { class: 'wseg', tabindex: 0, role: 'button', 'aria-label': `${APP_NAMES[ap.k]}: ${ap.desc} Ver cómo funciona`, 'data-app': ap.k }, spin);
+    const g = el('g', { class: 'wseg', tabindex: 0, role: 'button', 'aria-label': `${APP_NAMES[ap.k]}: ${ap.desc}`, 'data-app': ap.k }, spin);
     // imagen que cubre la porción en su tamaño máximo
     const pts = []; for (let a = ap.a0; a <= ap.a1; a += 5) pts.push(P(RON, a), P(R0, a));
     const xs = pts.map((p) => p[0]), ys = pts.map((p) => p[1]);
@@ -138,7 +150,7 @@ if (wheel) {
     // ícono de la app y el nombre en dos líneas (la segunda, en el color de la app)
     const ico = el('image', { class: 'wseg__ico', href: `assets/apps/icon-${ap.k}-claro.png` }, g);
     const t1 = el('text', { class: 'wseg__name' }, g), t2 = el('text', { class: 'wseg__sub' }, g);
-    t1.textContent = ap.lines[0].toUpperCase(); t2.textContent = ap.lines[1].toUpperCase();
+    const L = twoLines(ap); t1.textContent = L[0].toUpperCase(); t2.textContent = L[1].toUpperCase();
     const s = { ap, cp, shade, edge, ico, t1, t2, g, r: ap.k === appOn ? RON : R1 };
     g.addEventListener('pointerenter', () => { stopAuto(); setApp(ap.k); });
     g.addEventListener('focus', () => { stopAuto(); setApp(ap.k); });
@@ -146,7 +158,7 @@ if (wheel) {
     g.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openApp(ap.k); } });
     return s;
   });
-  // centro: logo de Coralia y acceso para probar las apps (TODO: cambiar por la URL de la plataforma cuando esté)
+  // centro: logo de Coralia y acceso a los simuladores
   const core = el('a', { class: 'wcore', href: 'simuladores.html', 'aria-label': 'Probá las apps de Coralia' });
   el('circle', { class: 'wcore__pulse', r: CORE }, core);
   el('circle', { class: 'wcore__bg', r: CORE }, core);
@@ -213,6 +225,7 @@ if (wheel) {
     $$('.appview__shots img', view).forEach((im) => { const on = im.dataset.app === k; im.classList.toggle('is-on', on); if (on) im.loading = 'eager'; });
     $('#avTag').innerHTML = `<img src="assets/apps/icon-${k}-claro.png" alt="">${ap.tag}`;
     $('#avName').textContent = APP_NAMES[k]; $('#avDesc').textContent = ap.desc;
+    const sv = $('#avApp'); sv.href = `servicio.html?s=${ap.svc}`; sv.innerHTML = `Servicio: <b>${ap.svcName}</b> →`;
     $$('.apptab').forEach((t) => t.classList.toggle('is-hover', t.dataset.app === k));
     view.classList.remove('swap'); void view.offsetWidth; view.classList.add('swap');
     if (!anim) anim = requestAnimationFrame(tween);
@@ -235,6 +248,70 @@ if (wheel) {
   }
 }
 $('#appDetailClose').addEventListener('click', closeApp);
+
+/* Mercados de carbono: antes y después de cada tipo de proyecto + paneles para clientes e inversores.
+   TODO: fotos reales (las pasa Coralia). Mientras tanto se ven fondos de color con el texto de la foto que falta.
+   Para sumar las fotos: guardarlas como assets/servicios/<k>-antes.webp y <k>-despues.webp y poner foto: true. */
+const BA_TYPES = [
+  { k: 'blue-carbon', foto: false, name: 'Blue Carbon', antes: 'Antes · manglar degradado', despues: 'Después · manglar restaurado' },
+  { k: 'arr', foto: false, name: 'ARR', antes: 'Antes · bosque quemado', despues: 'Después · bosque restaurado' },
+  { k: 'redd', foto: false, name: 'REDD+', antes: 'Sin proyecto · bosque amenazado', despues: 'Con proyecto · bosque conservado' },
+];
+(() => {
+  const ba = $('#ba'); if (!ba) return;
+  const range = $('#baRange'), tabs = $('#baTabs');
+  let cur = 0, timer = 0, userTouched = false;
+  tabs.innerHTML = BA_TYPES.map((t, i) => `<button type="button" role="tab" class="ba__tab" data-i="${i}" aria-selected="false">${t.name}</button>`).join('');
+  const set = (x) => { ba.style.setProperty('--x', `${x}%`); range.value = x; };
+  function show(i) {
+    cur = (i + BA_TYPES.length) % BA_TYPES.length; const t = BA_TYPES[cur];
+    ['antes', 'despues'].forEach((w) => {
+      const L = $(`.ba__layer--${w}`, ba), src = `assets/servicios/${t.k}-${w}.webp`;
+      L.dataset.ph = tr('foto a cargar'); L.classList.remove('has-img'); L.style.backgroundImage = '';
+      if (!t.foto) return;
+      const im = new Image(); im.onload = () => { L.style.backgroundImage = `url(${src})`; L.classList.add('has-img'); }; im.src = src;
+    });
+    $('#baAntes').textContent = t.antes; $('#baDespues').textContent = t.despues;
+    $$('.ba__tab', tabs).forEach((b, k) => { b.classList.toggle('is-on', k === cur); b.setAttribute('aria-selected', k === cur); });
+  }
+  // pasa solo: barre de "antes" a "después" y sigue con el próximo tipo, hasta que alguien lo toca
+  const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function cycle() {
+    if (userTouched || calm) return;
+    let t0 = null;
+    const sweep = (now) => {
+      if (userTouched) return; t0 = t0 || now;
+      const p = Math.min(1, (now - t0) / 2600); set(85 - 70 * (0.5 - Math.cos(p * Math.PI) / 2));
+      if (p < 1) requestAnimationFrame(sweep); else timer = setTimeout(() => { show(cur + 1); set(85); timer = setTimeout(cycle, 900); }, 2200);
+    };
+    requestAnimationFrame(sweep);
+  }
+  const stop = () => { userTouched = true; clearTimeout(timer); };
+  range.addEventListener('input', () => { stop(); set(+range.value); });
+  tabs.addEventListener('click', (e) => { const b = e.target.closest('.ba__tab'); if (!b) return; stop(); show(+b.dataset.i); set(50); });
+  show(0); set(calm ? 50 : 85);
+  if ('IntersectionObserver' in window) {
+    let started = false;
+    new IntersectionObserver((es) => { if (es[0].isIntersecting && !started) { started = true; cycle(); } }, { threshold: 0.5 }).observe(ba);
+  }
+  // Para clientes / Para inversores: abre su panel debajo (el otro se cierra)
+  $$('.svc__btn').forEach((b) => b.addEventListener('click', () => {
+    const k = b.dataset.panel, panel = $(k === 'clientes' ? '#svcClientes' : '#svcInversores'), open = panel.hidden;
+    $$('.svc__panel').forEach((p) => { p.hidden = true; });
+    $$('.svc__btn').forEach((x) => x.setAttribute('aria-pressed', 'false'));
+    if (open) {
+      panel.hidden = false; b.setAttribute('aria-pressed', 'true');
+      const st = $('.story', panel); if (st) showStep(st, 0);
+      requestAnimationFrame(() => panel.scrollIntoView({ behavior: calm ? 'auto' : 'smooth', block: 'start' }));
+    }
+  }));
+  // pipeline de proyectos propios (tarjetitas que llevan a su ficha)
+  const grid = $('#pipeGrid');
+  if (grid && typeof PIPELINE !== 'undefined') grid.innerHTML = PIPELINE.map((p) => `<a class="pipe__card" href="pipeline.html?p=${p.id}">
+    <span class="pipe__media">${p.img ? `<img src="${p.img}" alt="" loading="lazy">` : ''}<span class="pipe__type">${p.type}</span></span>
+    <span class="pipe__body"><b>${p.name}</b><small>${p.place}</small><span class="pipe__stage">${p.stage}</span></span>
+    <span class="pipe__go" aria-hidden="true">↗</span></a>`).join('');
+})();
 
 function showStep(story, n) {
   $$('.step', story).forEach((s, i) => s.classList.toggle('is-on', i === n));

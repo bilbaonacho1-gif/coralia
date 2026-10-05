@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f3f4ec">
-<title>Proyecto | Coralia Environmental</title>
-<meta name="description" content="Caso de Coralia Environmental.">
+<title>Pipeline de proyectos | Coralia Environmental</title>
+<meta name="description" content="Pipeline de proyectos de carbono propios de Coralia Environmental.">
 <link rel="preload" href="assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
@@ -21,7 +21,7 @@
     </a>
     <nav class="nav" id="nav" aria-label="Principal">
       <a href="index.html#servicios">Servicios</a><a href="index.html#apps">Apps</a>
-      <a href="proyectos.html" aria-current="page">Proyectos</a>
+      <a href="proyectos.html">Proyectos</a>
       <a href="index.html#equipo">Nosotros</a>
       <a href="index.html#accesos">Cómo trabajamos</a>
       <a href="simuladores.html">Simuladores</a>
@@ -43,59 +43,52 @@
   </div>
 </header>
 
-<main id="proyecto">
-  <section class="d-hero">
-    <img class="d-hero__bg" id="dHeroImg" alt="">
+<main id="pipeline">
+  <!-- Pipeline de proyectos propios. Sin ?p= muestra todos; con ?p=<id> muestra la ficha. Datos: PIPELINE en data.js -->
+  <section class="d-hero d-hero--pipe">
+    <img class="d-hero__bg" id="pHeroImg" alt="" src="assets/apps/fondo-markets.webp">
     <div class="d-hero__shade"></div>
     <div class="wrap d-hero__in">
-      <nav class="crumbs in" aria-label="Ruta"><a href="proyectos.html">Proyectos</a><span>/</span><span id="dCrumb"></span></nav>
-      <div class="tags in d1" id="dTags"></div>
-      <h1 class="in d1" id="dTitle"></h1>
-      <p class="in d2" id="dShort"></p>
-      <div class="d-facts in d3" id="dFacts"></div>
+      <nav class="crumbs in" aria-label="Ruta"><a href="index.html#servicios">Mercados de carbono</a><span>/</span><a href="pipeline.html">Pipeline</a><span id="pCrumbSep" hidden>/</span><span id="pCrumb"></span></nav>
+      <div class="tags in d1" id="pTags"><span class="tag tag--mitigar">Para inversores</span></div>
+      <h1 class="in d1" id="pTitle">Pipeline de proyectos propios</h1>
+      <p class="in d2" id="pShort">Proyectos de carbono de alta integridad que Coralia desarrolla. Elegí uno para ver su detalle.</p>
+      <div class="d-facts in d3" id="pFacts"></div>
     </div>
   </section>
 
-  <section class="section">
+  <!-- Lista -->
+  <section class="section" id="pList">
+    <div class="wrap">
+      <div class="pipe pipe--page" id="pGrid"></div>
+    </div>
+  </section>
+
+  <!-- Ficha de un proyecto -->
+  <section class="section" id="pDetail" hidden>
     <div class="wrap d-body">
       <article class="d-text reveal">
-        <span class="eyebrow">RESUMEN</span>
-        <div id="dBody"></div>
-        <div id="dRole"></div>
+        <span class="eyebrow">EL PROYECTO</span>
+        <div id="pBody"></div>
       </article>
       <aside class="d-side glass reveal">
-        <span class="eyebrow" id="dSideClient"></span>
-        <b class="d-side__kpi" id="dKpi"></b>
-        <span class="muted small" id="dKpiLabel"></span>
-        <a class="btn btn--mint" id="dContact" href="mailto:contacto@coraliae.com">Quiero un proyecto así →</a>
-        <button type="button" class="btn btn--ghost-light btn--sm" id="dShare">Copiar link del caso</button>
-        <span class="small muted" id="dShareMsg" role="status"></span>
+        <span class="eyebrow">CRÉDITOS ESTIMADOS</span>
+        <b class="d-side__kpi" id="pKpi"></b>
+        <span class="muted small">tCO₂e en la vida del proyecto</span>
+        <a class="btn btn--mint" id="pContact" href="mailto:contacto@coraliae.com">Quiero invertir en este proyecto →</a>
       </aside>
     </div>
   </section>
-
-  <section class="section section--band" id="dGalleryWrap" hidden>
+  <section class="section section--band" id="pGalleryWrap" hidden>
     <div class="wrap">
       <span class="eyebrow">GALERÍA</span>
-      <div class="d-gallery" id="dGallery"></div>
+      <div class="d-gallery" id="pGallery"></div>
     </div>
   </section>
-
-  <section class="section" id="dQuoteWrap" hidden>
-    <div class="wrap"><figure class="quote glass is-on" id="dQuote"></figure></div>
-  </section>
-
-  <section class="section section--band">
+  <section class="section" id="pMore" hidden>
     <div class="wrap">
-      <div class="head">
-        <div><span class="eyebrow">SEGUÍ EXPLORANDO</span><h2 class="h2--sm">Otros proyectos</h2></div>
-        <a class="link" href="proyectos.html">Ver todos →</a>
-      </div>
-      <div class="related" id="dRelated"></div>
-      <div class="d-pager">
-        <a class="d-pager__link" id="dPrev" href="#"><small>← Anterior</small><b></b></a>
-        <a class="d-pager__link d-pager__link--next" id="dNext" href="#"><small>Siguiente →</small><b></b></a>
-      </div>
+      <div class="head"><div><span class="eyebrow">PIPELINE</span><h2 class="h2--sm">Otros proyectos</h2></div><a class="link" href="pipeline.html">Ver todos →</a></div>
+      <div class="pipe" id="pOthers"></div>
     </div>
   </section>
 
@@ -103,8 +96,8 @@
     <img src="assets/cta.webp" alt="">
     <div class="cta__shade"></div>
     <div class="wrap cta__in reveal">
-      <h2>¿Tenés un desafío<br>parecido?</h2>
-      <a href="mailto:contacto@coraliae.com" class="btn btn--mint" id="dCta">Hablemos →</a>
+      <h2>¿Querés invertir<br>en proyectos de carbono?</h2>
+      <a href="mailto:contacto@coraliae.com?subject=Pipeline%20de%20proyectos" class="btn btn--mint">Hablemos →</a>
     </div>
   </section>
 </main>
@@ -121,6 +114,6 @@
 
 <script src="nav.js"></script>
 <script src="data.js"></script>
-<script src="proyecto.js"></script>
+<script src="pipeline.js"></script>
 </body>
 </html>

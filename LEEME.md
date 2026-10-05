@@ -10,6 +10,39 @@ crema, verde bosque y verde hoja, con lima de acento.
 Títulos en **Fraunces** y textos en **Figtree** (licencia libre SIL OFL). Están instaladas dentro del proyecto,
 así que no dependen de Google Fonts. Se declaran al principio de styles.css (@font-face).
 
+## Revisión 01 (comentarios del 05/10/2026): la consultoría primero
+- Sin la intro de la mariposa: la página arranca en la portada (la frase sigue apareciendo con el brillo).
+- Portada: foto del río (assets/hero-portada.webp). Frase PROVISORIA "Soluciones ambientales / con impacto real /
+  para cada organización." (TODO en index.html: la definitiva la pasa Coralia; la línea del medio va en lima).
+  Botón "Conocé nuestros servicios". Tarjetas enfocadas en servicio: Huella de carbono, Mercados de carbono
+  (350k toneladas removidas: NÚMERO A CONFIRMAR) y Riesgo climático.
+- Menú: "Apps" pasó a "Servicios" (#servicios; #apps sigue funcionando).
+- Qué es Coralia: debajo de la frase, "Nuestros servicios" (#servicios, el menú lleva acá): tres carpetas, Mitigar,
+  Adaptar y Consultoría, cada una abre su página (servicio.html?s=mitigar | adaptar | consultoria).
+- Páginas de servicio (servicio.html + servicio.js, contenido en SERVICIOS): el texto de la web actual,
+  Mitigación con Mercados de carbono (13M+ tCO₂e del Company deck 2026: ECO2 Misiones 10M+ más los proyectos
+  anteriores por sector, 3,2M; proyecto destacado ECO2 Misiones con sus datos, reparto de beneficios y ratings; y los 14 pasos) y Huella de carbono (producto y
+  corporativa, 6 pasos cada una); Adaptación con el análisis de riesgo, sus 3 pilares y los 5 pasos;
+  Consultoría con texto PROVISORIO (TODO: lo pasa Coralia). Cada bloque termina con su app y la página con sus casos.
+  Traducciones: i18n/fuente/6-servicios.py.
+- La rueda es "Herramientas propias · Nuestras apps" (#apps; el menú tiene "Apps"): cada porción es una app, con
+  el servicio al que pertenece en el panel ("Servicio: Mitigar →" lleva a su página). Fotos reales con el mismo
+  tono por app (assets/apps/fondo-*.webp). El centro dice "Probá las apps →" (simuladores).
+- Huella y Riesgo, al tocarlos: muestran el recorrido de su app como antes.
+- Mercados de carbono, al tocarlo: "Restauramos ecosistemas naturales." + antes y después (Blue Carbon, ARR, REDD+;
+  pasa solo y también se arrastra) + "Para clientes" (prediagnóstico con los pasos del Carbon Markets Hub y
+  "Acceder a la demo", TODO link) y "Para inversores" (tarjetas del pipeline).
+  - Fotos del antes y después: TODO. Guardarlas como assets/servicios/<blue-carbon|arr|redd>-antes.webp y
+    -despues.webp y poner foto: true en BA_TYPES (main.js). Mientras tanto se ven fondos de color.
+- Pipeline (pipeline.html): lista de proyectos propios y ficha de cada uno (pipeline.html?p=proyecto-1).
+  Datos PROVISORIOS en data.js (PIPELINE): nombre, tipo, ubicación, etapa, hectáreas, créditos, descripción, fotos.
+- El botón del panel de la rueda dice "Conocé la app" (abre su recorrido).
+- "Niveles de acceso" pasó a "Cómo trabajamos" (también en el menú): Consultoría primera y destacada
+  ("Con nuestro equipo") y después Profesional, Análisis y Demo ("Solo apps").
+- Equipo: "El equipo detrás de cada proyecto". Contacto: "Te respondemos con una propuesta a medida".
+- Equipo: salieron Ignacio Duhourq y Sebastián Kamin.
+- Traducciones de todo lo nuevo: i18n/fuente/5-revision-01.py.
+
 ## Recorrido de la Home (de arriba a abajo)
 0. **Apertura (mariposa)**: lo primero que se ve es la mariposa mitad datos, mitad naturaleza, con
    CORALIA ENVIRONMENTAL (sin textos a los costados). Al bajar, las dos mitades se abren como puertas haciendo zoom y aparece la

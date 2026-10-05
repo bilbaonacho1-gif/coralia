@@ -3,14 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Coralia Environmental — Plataforma de inteligencia climática</title>
-<meta name="description" content="Tecnología, datos y conocimiento climático para medir, mitigar y adaptarse al cambio climático. Tres plataformas propias: Carbon Footprint, Carbon Markets Hub y Climate Risk App.">
+<title>Coralia Environmental — Consultoría ambiental y climática</title>
+<meta name="description" content="Consultoría ambiental desde 2012: huella de carbono, mercados de carbono y riesgo climático, con apps propias para cada servicio.">
 <meta name="theme-color" content="#f3f4ec">
 <link rel="preload" href="assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 <script src="i18n.js"></script>
-<noscript><style>.doors,.opening__run{display:none}.hero{--q:1}</style></noscript>
 </head>
 <body class="page-home">
 
@@ -21,10 +20,10 @@
       <img class="logo__dark" src="assets/logo-oscuro.webp" alt="" height="40">
     </a>
     <nav class="nav" id="nav" aria-label="Principal">
-      <a href="#apps">Apps</a>
+      <a href="#servicios">Servicios</a><a href="#apps">Apps</a>
       <a href="#proyectos">Proyectos</a>
       <a href="#equipo">Nosotros</a>
-      <a href="#accesos">Accesos</a>
+      <a href="#accesos">Cómo trabajamos</a>
       <a href="simuladores.html">Simuladores</a>
     </nav>
     <div class="header__right">
@@ -47,40 +46,39 @@
 <main id="top">
 
 <!-- ================= 1. PORTADA ================= -->
-<!-- Apertura: la mariposa (datos | naturaleza) se abre en dos al bajar y deja ver la portada.
-     Mientras se abre, la portada queda fija (sticky) y .opening__run da el recorrido del scroll. motion.js -->
-<div class="opening" id="opening">
 <section class="hero" id="hero">
   <div class="hero__frame">
-    <img class="hero__img" src="assets/hero-con.webp" srcset="assets/hero-con-960.webp 960w, assets/hero-con.webp 1920w" sizes="100vw" alt="">
+    <img class="hero__img" src="assets/hero-portada.webp" srcset="assets/hero-portada-960.webp 960w, assets/hero-portada.webp 1920w" sizes="100vw" alt="" fetchpriority="high">
     <div class="hero__shade"></div>
   </div>
   <div class="wrap hero__in">
     <div class="hero__text">
-      <span class="eyebrow eyebrow--light rv-eyebrow">Plataforma de inteligencia climática</span>
-      <h1 class="hero__title"><span class="ln"><span>Datos hoy.</span></span> <span class="ln"><span><em>Decisiones reales</em></span></span> <span class="ln"><span>para un mañana posible.</span></span></h1>
-      <p class="rv-p">Tecnología, datos y conocimiento climático para que tu organización mida, mitigue y se adapte al cambio climático.</p>
+      <span class="eyebrow eyebrow--light rv-eyebrow">Consultoría ambiental · desde 2012</span>
+      <!-- TODO: frase provisoria. La frase definitiva la pasa Coralia (mantener las tres líneas: la del medio va en verde lima) -->
+      <h1 class="hero__title"><span class="ln"><span>Soluciones ambientales</span></span> <span class="ln"><span><em>con impacto real</em></span></span> <span class="ln"><span>para cada organización.</span></span></h1>
+      <p class="rv-p">Consultoría en huella de carbono, mercados de carbono y riesgo climático, con datos y herramientas propias para decidir mejor.</p>
       <div class="hero__ctas rv-ctas">
-        <a href="#apps" class="btn btn--lime">Conocer las apps</a>
+        <a href="#servicios" class="btn btn--lime">Conocé nuestros servicios</a>
         <a href="#contacto" class="btn btn--glass">Hablar con el equipo</a>
       </div>
     </div>
     <!-- Tarjetas de interfaz sobre el paisaje (decorativas; los datos salen de las demos de cada plataforma) -->
     <div class="hero__ui" aria-hidden="true">
       <div class="ui-card ui-card--a" data-depth="0.10">
-        <span class="ui-card__tag"><i class="dot dot--medir"></i>Carbon Footprint</span>
+        <span class="ui-card__tag"><i class="dot dot--medir"></i>Huella de carbono</span>
         <b class="ui-card__num">0,4644</b>
         <small>kg CO₂e por unidad · ISO 14067</small>
         <span class="ui-bars"><i style="--h:38%"></i><i style="--h:64%"></i><i style="--h:52%"></i><i style="--h:88%"></i><i style="--h:46%"></i><i style="--h:30%"></i></span>
       </div>
       <div class="ui-card ui-card--b" data-depth="-0.06">
-        <span class="ui-card__tag"><i class="dot dot--mitigar"></i>Carbon Markets Hub</span>
-        <b class="ui-card__num">A–AA</b>
-        <small>Rating Sylvera antes de la emisión</small>
+        <span class="ui-card__tag"><i class="dot dot--mitigar"></i>Mercados de carbono</span>
+        <!-- TODO: número a confirmar por Coralia -->
+        <b class="ui-card__num">350k</b>
+        <small>toneladas de CO₂e removidas</small>
         <span class="ui-chip">10M+ VCUs · ECO2 Misiones</span>
       </div>
       <div class="ui-card ui-card--c" data-depth="0.18">
-        <span class="ui-card__tag"><i class="dot dot--adaptar"></i>Climate Risk App</span>
+        <span class="ui-card__tag"><i class="dot dot--adaptar"></i>Riesgo climático</span>
         <b class="ui-card__num">Olas de calor</b>
         <small>Activo tipo · 2050 · SSP5-8.5</small>
         <span class="ui-meter"><i style="--w:74%"></i></span>
@@ -90,19 +88,7 @@
   </div>
   <a class="hero__down" href="#plataforma" aria-label="Bajar a la propuesta"><span></span></a>
 
-  <div class="doors" aria-hidden="true">
-    <div class="door door--l">
-      <img src="assets/portada-mariposa.webp" srcset="assets/portada-mariposa-1100.webp 1100w, assets/portada-mariposa.webp 1671w" sizes="100vw" alt="" fetchpriority="high">
-    </div>
-    <div class="door door--r">
-      <img src="assets/portada-mariposa.webp" srcset="assets/portada-mariposa-1100.webp 1100w, assets/portada-mariposa.webp 1671w" sizes="100vw" alt="">
-    </div>
-    <div class="doors__title"><span class="doors__name">Coralia</span><span class="doors__sub">Environmental</span></div>
-    <div class="doors__hint"><span>Bajá para entrar</span><i></i></div>
-  </div>
 </section>
-<div class="opening__run"></div>
-</div>
 
 <!-- ================= 2. PROPUESTA ================= -->
 <section class="section intro intro2" id="plataforma">
@@ -117,7 +103,7 @@
   </svg>
   <div class="wrap intro2__in">
     <span class="eyebrow reveal">Qué es Coralia</span>
-    <p class="statement" data-words>Coralia combina <b>tecnología</b>, <b>datos</b> y <b>conocimiento climático</b> para que las organizaciones tomen mejores decisiones frente al cambio climático.</p>
+    <p class="statement" data-words>Coralia combina <b>conocimiento climático</b>, <b>datos</b> y <b>tecnología</b> para que las organizaciones tomen mejores decisiones frente al cambio climático.</p>
     <!-- hojitas que flotan entre la frase y las tarjetas -->
     <div class="deco-anchor deco-floats" aria-hidden="true">
       <img class="deco leaf leaf--1" src="assets/deco/hoja-chica-1.webp" alt="" loading="lazy" data-par="-0.04">
@@ -125,24 +111,26 @@
       <img class="deco leaf leaf--3" src="assets/deco/hoja-chica-3.webp" alt="" loading="lazy" data-par="-0.03">
       <img class="deco leaf leaf--4" src="assets/deco/hoja-media.webp" alt="" loading="lazy" data-par="-0.05">
     </div>
+    <!-- Nuestros servicios: cada carpeta lleva a la página que explica el servicio (servicio.html?s=...) -->
+    <span class="eyebrow folders__eyebrow reveal" id="servicios">Nuestros servicios</span>
     <div class="folders">
-      <a class="folder reveal" href="#apps">
-        <span class="folder__box"><span class="folder__card"><img src="assets/marca/pilar-tecnologia.webp" alt="" loading="lazy" style="object-position:center"><span class="folder__label"><i class="dot dot--lime"></i>Tecnología</span></span><span class="folder__go" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
-        <span class="folder__txt">Tres plataformas digitales propias: Carbon Footprint, Carbon Markets Hub y Climate Risk App.</span>
+      <a class="folder reveal" href="servicio.html?s=mitigar">
+        <span class="folder__box"><span class="folder__card"><img src="assets/proyectos/mercuria-1.jpg" alt="" loading="lazy"><span class="folder__label"><i class="dot dot--lime"></i>Mitigar</span></span><span class="folder__go" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
+        <span class="folder__txt">Huella de carbono y mercados de carbono: medimos, reducimos y compensamos emisiones.</span>
       </a>
-      <a class="folder reveal" href="simuladores.html">
-        <span class="folder__box"><span class="folder__card"><img src="assets/marca/pilar-datos.webp" alt="" loading="lazy" style="object-position:center"><span class="folder__label"><i class="dot dot--lime"></i>Datos</span></span><span class="folder__go" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
-        <span class="folder__txt">Imágenes satelitales, proyecciones climáticas CMIP6 y más de 1.000 factores de emisión curados.</span>
+      <a class="folder reveal" href="servicio.html?s=adaptar">
+        <span class="folder__box"><span class="folder__card"><img src="assets/proyectos/pluspetrol-2.jpg" alt="" loading="lazy"><span class="folder__label"><i class="dot dot--lime"></i>Adaptar</span></span><span class="folder__go" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
+        <span class="folder__txt">Análisis de riesgo climático y planes de adaptación para cada activo y organización.</span>
       </a>
-      <a class="folder reveal" href="#equipo">
-        <span class="folder__box"><span class="folder__card"><img src="assets/proyectos/genneia-1.jpg" alt="" loading="lazy"><span class="folder__label"><i class="dot dot--lime"></i>Conocimiento</span></span><span class="folder__go" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
-        <span class="folder__txt">Un equipo multidisciplinario con 14 años de trayectoria, autores de metodologías de carbono y expertos del IPCC.</span>
+      <a class="folder reveal" href="servicio.html?s=consultoria">
+        <span class="folder__box"><span class="folder__card"><img src="assets/explora.jpg" alt="" loading="lazy"><span class="folder__label"><i class="dot dot--lime"></i>Consultoría</span></span><span class="folder__go" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
+        <span class="folder__txt">Estudios a medida y acompañamiento estratégico para empresas, gobiernos y organismos.</span>
       </a>
     </div>
   </div>
 </section>
 
-<!-- ================= 3. NUESTRAS APPS ================= -->
+<!-- ================= 3. NUESTRAS APPS (herramientas propias, cada una vinculada a un servicio) ================= -->
 <section class="section apps" id="apps">
   <div class="deco-scatter" data-n="8" aria-hidden="true"></div>
   <!-- decoración: mariposas de hojas (assets/deco); se mueven apenas con el scroll (data-par, motion.js) -->
@@ -151,10 +139,10 @@
   <div class="wrap">
     <div class="head reveal">
       <div>
-        <span class="eyebrow">Plataformas Coralia</span>
-        <h2>Conocé nuestras apps</h2>
+        <span class="eyebrow">Herramientas propias</span>
+        <h2>Nuestras apps</h2>
+        <p class="svc-lead">Apps desarrolladas por Coralia, cada una vinculada a uno de nuestros servicios.</p>
       </div>
-      <a class="link" href="simuladores.html">Probá los simuladores →</a>
     </div>
     <!-- Rueda de apps: tres porciones redondeadas (main.js arma el SVG). Al pasar por una, crece y cambia el panel;
          al tocarla se abre su recorrido paso a paso. Las pestañas de abajo hacen lo mismo (teclado y celu). -->
@@ -166,10 +154,11 @@
           <img data-app="risk" src="assets/apps/fondo-risk.webp" alt="La Tierra desde el espacio con un huracán sobre el Atlántico y datos de riesgo climático" style="object-position:center" loading="lazy">
         </div>
         <div class="appview__body">
-          <span class="appview__tag" id="avTag"><img src="assets/apps/icon-footprint-claro.png" alt="">Medir</span>
+          <span class="appview__tag" id="avTag"><img src="assets/apps/icon-footprint-claro.png" alt="">Huella de carbono</span>
           <h3 class="appview__name" id="avName">Carbon Footprint</h3>
           <p class="appview__desc" id="avDesc">Huella de productos, empresas y eventos, de la fórmula al reporte verificable.</p>
-          <button type="button" class="btn btn--lime" id="avOpen">Ver cómo funciona <i aria-hidden="true">↓</i></button>
+          <a class="appview__app" id="avApp" href="servicio.html?s=mitigar">Servicio: <b>Mitigar</b> →</a>
+          <button type="button" class="btn btn--lime" id="avOpen">Conocé la app <i aria-hidden="true">↓</i></button>
         </div>
       </div>
       <div class="wheel reveal">
@@ -182,7 +171,7 @@
       </div>
     </div>
 
-    <!-- Se abre al tocar una app: recorrido paso a paso con pantallas reales -->
+    <!-- Se abre al tocar un servicio. Huella y Riesgo: recorrido de su app. Mercados: qué hacemos + clientes / inversores -->
     <div class="app-detail" id="app-detail" role="tabpanel" hidden>
       <div class="app-detail__bar">
         <span class="app-detail__title" id="appDetailTitle"></span>
@@ -236,53 +225,99 @@
         </li>
       </ol>
     </div>
-    <div class="story" data-story="markets" hidden>
-      <div class="story__screen">
-        <div class="device">
-          <div class="device__bar"><i></i><i></i><i></i><span>Carbon Markets Hub</span></div>
-          <div class="device__view">
-            <img src="assets/apps/markets-1.webp" alt="Carbon Markets Hub: Dibujá tu tierra. Nada más." class="is-on" width="1280" height="720">
-            <img src="assets/apps/markets-2.webp" alt="Carbon Markets Hub: Lo que vio el satélite." loading="lazy" class="" width="1280" height="720">
-            <img src="assets/apps/markets-3.webp" alt="Carbon Markets Hub: Seis preguntas, en lenguaje simple." loading="lazy" class="" width="1280" height="720">
-            <img src="assets/apps/markets-4.webp" alt="Carbon Markets Hub: Qué proyecto es y cuánto vale." loading="lazy" class="" width="1280" height="720">
-            <img src="assets/apps/markets-5.webp" alt="Carbon Markets Hub: Elegibilidad, filtro por filtro." loading="lazy" class="" width="1280" height="720">
-            <img src="assets/apps/markets-6.webp" alt="Carbon Markets Hub: Y cuando decidís avanzar, todo esto." loading="lazy" class="" width="1280" height="720">
+    <div class="svc" data-story="markets" hidden>
+      <div class="svc__grid">
+        <div class="svc__text">
+          <span class="eyebrow">Qué hacemos</span>
+          <!-- Texto propuesto por Coralia (a pulir) -->
+          <h3 class="svc__title">Restauramos ecosistemas naturales.</h3>
+          <p class="svc__lead">Acompañamos a propietarios y desarrolladores en todo el ciclo de un proyecto de carbono de alta integridad, principalmente de soluciones basadas en la naturaleza: desde la factibilidad inicial hasta la validación, la verificación y la emisión de los créditos.</p>
+          <div class="svc__btns" role="group" aria-label="Elegí tu perfil">
+            <button type="button" class="btn btn--mint svc__btn" data-panel="clientes" aria-pressed="false" aria-controls="svcClientes">Para clientes</button>
+            <button type="button" class="btn btn--ghost-light svc__btn" data-panel="inversores" aria-pressed="false" aria-controls="svcInversores">Para inversores</button>
           </div>
         </div>
-        <div class="story__dots" aria-hidden="true"><i class="is-on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
+        <!-- Antes y después de cada tipo de proyecto. TODO: fotos reales (las pasa Coralia): assets/servicios/<tipo>-antes.webp y -despues.webp -->
+        <div class="ba-wrap">
+          <div class="ba" id="ba" style="--x:50%">
+            <div class="ba__layer ba__layer--antes"></div>
+            <div class="ba__layer ba__layer--despues"></div>
+            <span class="ba__label ba__label--antes" id="baAntes"></span>
+            <span class="ba__label ba__label--despues" id="baDespues"></span>
+            <input class="ba__range" id="baRange" type="range" min="0" max="100" value="50" aria-label="Deslizá para comparar antes y después">
+            <span class="ba__handle" aria-hidden="true">◂ ▸</span>
+          </div>
+          <div class="ba__tabs" role="tablist" aria-label="Tipos de proyecto" id="baTabs"></div>
+        </div>
       </div>
-      <ol class="story__steps">
-        <li class="step is-on" data-step="0">
-          <span class="step__n">01</span>
-          <h3>Dibujá tu tierra. Nada más.</h3>
-          <p>Marcá el polígono en el mapa o subí un KML o shapefile. El satélite hace el resto.</p>
-        </li>
-        <li class="step" data-step="1">
-          <span class="step__n">02</span>
-          <h3>Lo que vio el satélite.</h3>
-          <p>Cobertura forestal, degradación y uso del suelo del polígono, calculados al instante.</p>
-        </li>
-        <li class="step" data-step="2">
-          <span class="step__n">03</span>
-          <h3>Seis preguntas, en lenguaje simple.</h3>
-          <p>Qué hay hoy en el terreno, qué se hizo antes y qué querés lograr. Sin jerga técnica.</p>
-        </li>
-        <li class="step" data-step="3">
-          <span class="step__n">04</span>
-          <h3>Qué proyecto es y cuánto vale.</h3>
-          <p>Tipo de proyecto posible, rango de créditos y de ingresos, con precios de mercado actuales.</p>
-        </li>
-        <li class="step" data-step="4">
-          <span class="step__n">05</span>
-          <h3>Elegibilidad, filtro por filtro.</h3>
-          <p>Benchmarks de desempeño, pre-screening de biodiversidad y análisis financiero para cada escenario.</p>
-        </li>
-        <li class="step" data-step="5">
-          <span class="step__n">06</span>
-          <h3>Y cuando decidís avanzar, todo esto.</h3>
-          <p>Informes auditables, benchmarks, modelo financiero y MRV sobre el mismo polígono, en la misma plataforma.</p>
-        </li>
-      </ol>
+      <!-- Para clientes: el prediagnóstico (los pasos del Carbon Markets Hub) -->
+      <div class="svc__panel" id="svcClientes" hidden>
+        <div class="svc__phead">
+          <span class="eyebrow">Para clientes</span>
+          <h3>¿No sabés qué proyecto podés hacer? <em>Diagnosticalo en 5 minutos.</em></h3>
+          <p>Con Carbon Markets Hub hacés un prediagnóstico de tu tierra y sabés qué tipo de proyecto de carbono es posible.</p>
+          <!-- TODO: link real de la demo -->
+          <a class="btn btn--lime" href="#" id="svcDemo">Acceder a la demo →</a>
+        </div>
+    <div class="story" data-story="markets-demo">
+            <div class="story__screen">
+              <div class="device">
+                <div class="device__bar"><i></i><i></i><i></i><span>Carbon Markets Hub</span></div>
+                <div class="device__view">
+                  <img src="assets/apps/markets-1.webp" alt="Carbon Markets Hub: Dibujá tu tierra. Nada más." class="is-on" width="1280" height="720">
+                  <img src="assets/apps/markets-2.webp" alt="Carbon Markets Hub: Lo que vio el satélite." loading="lazy" class="" width="1280" height="720">
+                  <img src="assets/apps/markets-3.webp" alt="Carbon Markets Hub: Seis preguntas, en lenguaje simple." loading="lazy" class="" width="1280" height="720">
+                  <img src="assets/apps/markets-4.webp" alt="Carbon Markets Hub: Qué proyecto es y cuánto vale." loading="lazy" class="" width="1280" height="720">
+                  <img src="assets/apps/markets-5.webp" alt="Carbon Markets Hub: Elegibilidad, filtro por filtro." loading="lazy" class="" width="1280" height="720">
+                  <img src="assets/apps/markets-6.webp" alt="Carbon Markets Hub: Y cuando decidís avanzar, todo esto." loading="lazy" class="" width="1280" height="720">
+                </div>
+              </div>
+              <div class="story__dots" aria-hidden="true"><i class="is-on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
+            </div>
+            <ol class="story__steps">
+              <li class="step is-on" data-step="0">
+                <span class="step__n">01</span>
+                <h3>Dibujá tu tierra. Nada más.</h3>
+                <p>Marcá el polígono en el mapa o subí un KML o shapefile. El satélite hace el resto.</p>
+              </li>
+              <li class="step" data-step="1">
+                <span class="step__n">02</span>
+                <h3>Lo que vio el satélite.</h3>
+                <p>Cobertura forestal, degradación y uso del suelo del polígono, calculados al instante.</p>
+              </li>
+              <li class="step" data-step="2">
+                <span class="step__n">03</span>
+                <h3>Seis preguntas, en lenguaje simple.</h3>
+                <p>Qué hay hoy en el terreno, qué se hizo antes y qué querés lograr. Sin jerga técnica.</p>
+              </li>
+              <li class="step" data-step="3">
+                <span class="step__n">04</span>
+                <h3>Qué proyecto es y cuánto vale.</h3>
+                <p>Tipo de proyecto posible, rango de créditos y de ingresos, con precios de mercado actuales.</p>
+              </li>
+              <li class="step" data-step="4">
+                <span class="step__n">05</span>
+                <h3>Elegibilidad, filtro por filtro.</h3>
+                <p>Benchmarks de desempeño, pre-screening de biodiversidad y análisis financiero para cada escenario.</p>
+              </li>
+              <li class="step" data-step="5">
+                <span class="step__n">06</span>
+                <h3>Y cuando decidís avanzar, todo esto.</h3>
+                <p>Informes auditables, benchmarks, modelo financiero y MRV sobre el mismo polígono, en la misma plataforma.</p>
+              </li>
+            </ol>
+          </div>
+      </div>
+      <!-- Para inversores: pipeline de proyectos propios (datos en data.js, PIPELINE) -->
+      <div class="svc__panel" id="svcInversores" hidden>
+        <div class="svc__phead">
+          <span class="eyebrow">Para inversores</span>
+          <h3>Ahora también desarrollamos <em>proyectos propios.</em></h3>
+          <p>Conocé nuestro pipeline: cada proyecto con su tipo, ubicación y etapa.</p>
+        </div>
+        <div class="pipe" id="pipeGrid"></div>
+        <a class="btn btn--mint" href="pipeline.html">Ver pipeline de proyectos →</a>
+      </div>
     </div>
     <div class="story" data-story="risk" hidden>
       <div class="story__screen">
@@ -468,7 +503,7 @@
     <div class="head reveal">
       <div>
         <span class="eyebrow">Nuestro equipo</span>
-        <h2>El equipo detrás <em>de las apps</em></h2>
+        <h2>El equipo detrás <em>de cada proyecto</em></h2>
         <p class="lead">Tocá una persona para conocerla.</p>
       </div>
       <div class="chips" id="teamFilters" role="group" aria-label="Filtrar equipo"></div>
@@ -487,35 +522,35 @@
   <div class="wrap">
     <div class="head reveal">
       <div>
-        <span class="eyebrow">Niveles de acceso</span>
-        <h2>Elegí cómo usar las apps</h2>
-        <p class="lead">Empezá con una demo y sumá herramientas y equipo cuando lo necesites.</p>
+        <span class="eyebrow">Cómo trabajamos</span>
+        <h2>Elegí cómo trabajar con Coralia</h2>
+        <p class="lead">Desde una consultoría a medida con nuestro equipo hasta usar nuestras apps por tu cuenta.</p>
       </div>
     </div>
     <div class="levels">
-      <article class="level reveal">
-        <span class="level__n">Nivel 1</span>
-        <h3>Demo</h3><span class="muted">Explorá la herramienta</span>
-        <ul><li>Acceso limitado</li><li>Datos de ejemplo</li><li>Sin costo</li></ul>
-        <a href="#contacto" class="btn btn--ghost-light">Probar demo</a>
+      <article class="level level--hl reveal">
+        <span class="level__n">Con nuestro equipo</span>
+        <h3>Consultoría</h3><span class="muted">Equipo Coralia + apps</span>
+        <ul><li>Consultores dedicados a tu proyecto</li><li>Asesoramiento experto</li><li>Acompañamiento estratégico</li><li>Acceso a nuestras apps</li></ul>
+        <a href="#contacto" class="btn btn--mint">Hablar con un experto</a>
       </article>
       <article class="level reveal">
-        <span class="level__n">Nivel 2</span>
+        <span class="level__n">Solo apps</span>
+        <h3>Profesional</h3><span class="muted">Para gestión avanzada</span>
+        <ul><li>Plataforma completa</li><li>Reportes avanzados</li><li>Soporte técnico</li></ul>
+        <a href="#contacto" class="btn btn--ghost-light">Contactar ventas</a>
+      </article>
+      <article class="level reveal">
+        <span class="level__n">Solo apps</span>
         <h3>Análisis</h3><span class="muted">Para análisis internos</span>
         <ul><li>Funcionalidades básicas</li><li>Tus propios datos</li><li>Reportes simples</li></ul>
         <a href="#contacto" class="btn btn--ghost-light">Solicitar acceso</a>
       </article>
       <article class="level reveal">
-        <span class="level__n">Nivel 3</span>
-        <h3>Profesional</h3><span class="muted">Para gestión avanzada</span>
-        <ul><li>Plataforma completa</li><li>Reportes avanzados</li><li>Soporte técnico</li></ul>
-        <a href="#contacto" class="btn btn--ghost-light">Contactar ventas</a>
-      </article>
-      <article class="level level--hl reveal">
-        <span class="level__n">Nivel 4</span>
-        <h3>Consultoría</h3><span class="muted">Plataforma + equipo Coralia</span>
-        <ul><li>Todo lo anterior</li><li>Asesoramiento experto</li><li>Acompañamiento estratégico</li></ul>
-        <a href="#contacto" class="btn btn--mint">Hablar con un experto</a>
+        <span class="level__n">Solo apps</span>
+        <h3>Demo</h3><span class="muted">Explorá la herramienta</span>
+        <ul><li>Acceso limitado</li><li>Datos de ejemplo</li><li>Sin costo</li></ul>
+        <a href="#contacto" class="btn btn--ghost-light">Probar demo</a>
       </article>
     </div>
     <div class="access__more reveal">
@@ -535,7 +570,7 @@
       <div class="contact__in">
         <span class="eyebrow eyebrow--light">Contacto</span>
         <h2>Transformemos datos en un impacto real.</h2>
-        <p>Contanos qué necesitás medir, mitigar o adaptar. Te respondemos con una propuesta y, si querés, una demo de las plataformas.</p>
+        <p>Contanos qué necesitás medir, mitigar o adaptar. Te respondemos con una propuesta a medida.</p>
         <div class="contact__ctas">
           <a href="mailto:contacto@coraliae.com" class="btn btn--lime">Escribinos →</a>
           <a href="mailto:contacto@coraliae.com?subject=Quiero%20una%20demo%20de%20las%20plataformas" class="btn btn--glass">Pedir una demo</a>
@@ -565,7 +600,7 @@
 <footer class="footer">
   <div class="wrap footer__in">
     <img src="assets/logo-oscuro.webp" alt="Coralia Environmental" height="36">
-    <nav aria-label="Pie"><a href="#apps">Apps</a><a href="proyectos.html">Proyectos</a><a href="#equipo">Nosotros</a><a href="#accesos">Accesos</a><a href="simuladores.html">Simuladores</a></nav>
+    <nav aria-label="Pie"><a href="#servicios">Servicios</a><a href="#apps">Apps</a><a href="proyectos.html">Proyectos</a><a href="#equipo">Nosotros</a><a href="#accesos">Cómo trabajamos</a><a href="simuladores.html">Simuladores</a></nav>
     <div class="footer__meta"><span>Nogoyá 4169, CABA · contacto@coraliae.com · +54 9 11 3848-4171</span><a href="https://www.linkedin.com/company/coraliae/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.youtube.com/@coraliaenvironmental" target="_blank" rel="noopener">YouTube</a><span class="lang footlang" translate="no"><a href="?lang=es" data-lang="es">ES</a> · <a href="?lang=en" data-lang="en">EN</a> · <a href="?lang=pt" data-lang="pt">PT</a> · <a href="?lang=de" data-lang="de">DE</a></span></div>
   </div>
 </footer>

@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f3f4ec">
-<title>Proyecto | Coralia Environmental</title>
-<meta name="description" content="Caso de Coralia Environmental.">
+<title>Servicios | Coralia Environmental</title>
+<meta name="description" content="Servicios de Coralia Environmental: mitigación, adaptación y consultoría.">
 <link rel="preload" href="assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
@@ -21,7 +21,7 @@
     </a>
     <nav class="nav" id="nav" aria-label="Principal">
       <a href="index.html#servicios">Servicios</a><a href="index.html#apps">Apps</a>
-      <a href="proyectos.html" aria-current="page">Proyectos</a>
+      <a href="proyectos.html">Proyectos</a>
       <a href="index.html#equipo">Nosotros</a>
       <a href="index.html#accesos">Cómo trabajamos</a>
       <a href="simuladores.html">Simuladores</a>
@@ -43,73 +43,35 @@
   </div>
 </header>
 
-<main id="proyecto">
-  <section class="d-hero">
-    <img class="d-hero__bg" id="dHeroImg" alt="">
+<main id="servicio">
+  <!-- Página de un servicio: servicio.html?s=mitigar | adaptar | consultoria. Contenido en servicio.js (SERVICIOS) -->
+  <section class="d-hero sv-hero">
+    <img class="d-hero__bg" id="sHeroImg" alt="">
     <div class="d-hero__shade"></div>
     <div class="wrap d-hero__in">
-      <nav class="crumbs in" aria-label="Ruta"><a href="proyectos.html">Proyectos</a><span>/</span><span id="dCrumb"></span></nav>
-      <div class="tags in d1" id="dTags"></div>
-      <h1 class="in d1" id="dTitle"></h1>
-      <p class="in d2" id="dShort"></p>
-      <div class="d-facts in d3" id="dFacts"></div>
+      <nav class="crumbs in" aria-label="Ruta"><a href="index.html#servicios">Servicios</a><span>/</span><span id="sCrumb"></span></nav>
+      <h1 class="in d1 sv-hero__title"><span id="sTitle"></span> <em id="sSub"></em></h1>
+      <p class="in d2" id="sIntro"></p>
+      <div class="sv-jump in d3" id="sJump"></div>
     </div>
   </section>
-
-  <section class="section">
-    <div class="wrap d-body">
-      <article class="d-text reveal">
-        <span class="eyebrow">RESUMEN</span>
-        <div id="dBody"></div>
-        <div id="dRole"></div>
-      </article>
-      <aside class="d-side glass reveal">
-        <span class="eyebrow" id="dSideClient"></span>
-        <b class="d-side__kpi" id="dKpi"></b>
-        <span class="muted small" id="dKpiLabel"></span>
-        <a class="btn btn--mint" id="dContact" href="mailto:contacto@coraliae.com">Quiero un proyecto así →</a>
-        <button type="button" class="btn btn--ghost-light btn--sm" id="dShare">Copiar link del caso</button>
-        <span class="small muted" id="dShareMsg" role="status"></span>
-      </aside>
-    </div>
-  </section>
-
-  <section class="section section--band" id="dGalleryWrap" hidden>
+  <div id="sBlocks"></div>
+  <section class="section section--band" id="sCasesWrap" hidden>
     <div class="wrap">
-      <span class="eyebrow">GALERÍA</span>
-      <div class="d-gallery" id="dGallery"></div>
+      <div class="head"><div><span class="eyebrow">CASOS</span><h2 class="h2--sm">Proyectos de este servicio</h2></div><a class="link" href="proyectos.html">Ver todos →</a></div>
+      <div class="sv-cases" id="sCases"></div>
     </div>
   </section>
-
-  <section class="section" id="dQuoteWrap" hidden>
-    <div class="wrap"><figure class="quote glass is-on" id="dQuote"></figure></div>
-  </section>
-
-  <section class="section section--band">
-    <div class="wrap">
-      <div class="head">
-        <div><span class="eyebrow">SEGUÍ EXPLORANDO</span><h2 class="h2--sm">Otros proyectos</h2></div>
-        <a class="link" href="proyectos.html">Ver todos →</a>
-      </div>
-      <div class="related" id="dRelated"></div>
-      <div class="d-pager">
-        <a class="d-pager__link" id="dPrev" href="#"><small>← Anterior</small><b></b></a>
-        <a class="d-pager__link d-pager__link--next" id="dNext" href="#"><small>Siguiente →</small><b></b></a>
-      </div>
-    </div>
-  </section>
-
   <section id="contacto" class="cta">
     <img src="assets/cta.webp" alt="">
     <div class="cta__shade"></div>
     <div class="wrap cta__in reveal">
-      <h2>¿Tenés un desafío<br>parecido?</h2>
-      <a href="mailto:contacto@coraliae.com" class="btn btn--mint" id="dCta">Hablemos →</a>
+      <h2>Hablemos de<br>tu proyecto.</h2>
+      <a href="mailto:contacto@coraliae.com" class="btn btn--mint" id="sCta">Hablemos →</a>
     </div>
   </section>
 </main>
 
-<dialog class="lightbox" id="lightbox"><button type="button" class="case-modal__x" id="lbClose" aria-label="Cerrar">×</button><img id="lbImg" alt=""></dialog>
 
 <footer class="footer">
   <div class="wrap footer__in">
@@ -121,6 +83,6 @@
 
 <script src="nav.js"></script>
 <script src="data.js"></script>
-<script src="proyecto.js"></script>
+<script src="servicio.js"></script>
 </body>
 </html>

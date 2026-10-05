@@ -184,8 +184,6 @@ const TEAM = [
     skills: ['Liderazgo estratégico y operativo', 'Desarrollo de proyectos de carbono (Verra, BCR)', 'Inventarios de GEI', 'Experiencia en AFOLU', 'Agricultura regenerativa y proyectos forestales'] },
   { id: 'claudia-bernardou', name: 'Claudia Bernardou', linkedin: 'https://www.linkedin.com/in/claudia-bernardou-21b925175/', group: 'gestion', area: 'Asistente Ejecutiva', title: 'Eficiencia y coherencia organizacional',
     skills: ['Soporte administrativo', 'Coordinación de RR. HH. y del equipo', 'Gestión de agenda y flujos de trabajo', 'Seguimiento de tareas estratégicas', 'Procesos internos y de oficina'] },
-  { id: 'ignacio-duhourq', name: 'Ignacio Duhourq', linkedin: 'https://www.linkedin.com/in/iduhourq/', group: 'tecnico', area: 'Equipo técnico · Huella de carbono', title: 'Líder técnico de inventarios de GEI',
-    skills: ['Cálculo de huella de carbono', 'Calidad de datos', 'Oportunidades de mitigación', 'Normas ISO', 'Gestión de datos de inventarios'] },
   { id: 'augusto-fumagalli', name: 'Augusto Fumagalli', linkedin: 'https://www.linkedin.com/in/augusto-fumagalli-0b9459213/', group: 'tecnico', area: 'Equipo técnico · Riesgo climático', title: 'Analista técnico y líder científico',
     skills: ['Modelos climáticos CMIP6', 'QGIS para proyección de amenazas', 'Encuestas de sensibilidad', 'Matrices causa-efecto', 'Vulnerabilidad e impacto', 'Proyectos de carbono AFOLU'] },
   { id: 'filippo-berdes', name: 'Filippo Berdes', linkedin: 'https://www.linkedin.com/in/filippoberdes/', group: 'tecnico', area: 'Equipo técnico · Riesgo climático', title: 'Especialista en modelado climático',
@@ -204,8 +202,6 @@ const TEAM = [
     skills: ['Búsqueda de proyectos en LatAm', 'Vinculación con actores', 'Desarrollo de alianzas', 'Documentos de proyecto', 'Mercado de carbono', 'Financiamiento'] },
   { id: 'hernan-lopez', name: 'Hernán Lopez', linkedin: 'https://www.linkedin.com/in/hernan-lopez-4367036/', group: 'relaciones', area: 'Relaciones internacionales', title: 'Gerente de proyectos de carbono Norteamérica',
     skills: ['Búsqueda de proyectos en Norteamérica', 'Vinculación con actores', 'Desarrollo de alianzas', 'Documentos de proyecto', 'Mercado de carbono', 'Financiamiento'] },
-  { id: 'sebastian-kamin', name: 'Sebastián Kamin', linkedin: 'https://www.linkedin.com/in/sebastiankamin/', group: 'gestion', area: 'Comunicación', title: 'Director de Marketing',
-    skills: ['Redes sociales corporativas', 'Vinculación con clientes', 'Generación de oportunidades comerciales', 'Posicionamiento de la empresa'] },
   { id: 'rosario-lombardi', name: 'Rosario Lombardi', linkedin: 'https://www.linkedin.com/in/mar%C3%ADa-del-rosario-lombardi-22bbb218b/', group: 'gestion', area: 'Finanzas y contabilidad', title: 'Asistente financiera',
     skills: ['Flujo de caja', 'Conciliación de gastos', 'Presupuestos', 'Reportes financieros', 'Pagos y cobranzas'] },
   { id: 'kieffer-schroder', name: 'Kieffer Schroder', linkedin: 'https://www.linkedin.com/in/kieffer-kersten-schroder-308a322bb/', group: 'tecnico', area: 'Equipo técnico · Mercados de carbono', title: 'Pasante de Sostenibilidad y Mercados de Carbono',
@@ -214,3 +210,11 @@ const TEAM = [
     skills: ['Desarrollo web', 'Plataformas digitales', 'Soporte IT'] },
 ];
 const TEAM_GROUPS = { all: 'Todos', direccion: 'Dirección', tecnico: 'Equipo técnico', relaciones: 'Relaciones internacionales', gestion: 'Gestión' };
+
+// Pipeline de proyectos propios (para inversores). TODO: completar con la info que pasa Coralia.
+// Cada uno: id (para el link), nombre, tipo, ubicación, etapa, hectáreas, créditos estimados, descripción y fotos.
+const PIPELINE = [1, 2, 3, 4, 5, 6].map((n) => ({
+  id: `proyecto-${n}`, name: `Proyecto ${n}`, type: ['ARR', 'REDD+', 'Blue Carbon', 'ARR', 'REDD+', 'ALM'][n - 1],
+  place: '[Ubicación a completar]', stage: '[Etapa a completar]', ha: '[A completar]', credits: '[A completar]',
+  desc: ['[Descripción del proyecto a completar: qué se hace, dónde y con qué impacto esperado.]'], img: '', gallery: [],
+}));
