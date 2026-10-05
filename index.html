@@ -104,55 +104,39 @@
       <img class="deco leaf leaf--3" src="assets/deco/hoja-chica-3.webp" alt="" loading="lazy" data-par="-0.03">
       <img class="deco leaf leaf--4" src="assets/deco/hoja-media.webp" alt="" loading="lazy" data-par="-0.05">
     </div>
-    <span class="eyebrow folders__eyebrow reveal" id="servicios">Nuestros servicios</span>
-    <!-- Servicios: uno en grande y los otros al costado; al tocar uno de la derecha pasa a ser el grande
-         (main.js, "Servicios"). Cada uno lleva a su página: servicio.html?s=medir | mitigar | adaptar -->
-    <div class="svx reveal" id="svx">
-      <div class="svx__main">
-        <article class="svx__slide sv--medir is-on" data-svc="medir">
-          <img src="assets/proyectos/andromaco-1.jpg" alt="" loading="lazy">
-          <div class="svx__body">
-            <span class="svx__num" aria-hidden="true">01</span>
-            <span class="svx__eyebrow">Medir</span>
-            <h3>Huella de carbono</h3>
-            <p>Huella de carbono de empresas, productos y eventos, con estándares internacionales (GHG Protocol, ISO 14064 e ISO 14067).</p>
-            <a class="btn btn--lime" href="servicio.html?s=medir">Ver servicio →</a>
-          </div>
-        </article>
-        <article class="svx__slide sv--mitigar" data-svc="mitigar" aria-hidden="true">
-          <img src="assets/proyectos/mercuria-1.jpg" alt="" loading="lazy">
-          <div class="svx__body">
-            <span class="svx__num" aria-hidden="true">02</span>
-            <span class="svx__eyebrow">Mitigar</span>
-            <h3>Mercados de carbono</h3>
-            <p>Mercados de carbono: desarrollamos proyectos de punta a punta, de la factibilidad a la emisión de los créditos.</p>
-            <a class="btn btn--lime" href="servicio.html?s=mitigar" tabindex="-1">Ver servicio →</a>
-          </div>
-        </article>
-        <article class="svx__slide sv--adaptar" data-svc="adaptar" aria-hidden="true">
-          <img src="assets/proyectos/pluspetrol-2.jpg" alt="" loading="lazy">
-          <div class="svx__body">
-            <span class="svx__num" aria-hidden="true">03</span>
-            <span class="svx__eyebrow">Adaptarse</span>
-            <h3>Riesgo climático</h3>
-            <p>Análisis de riesgo climático y planes de adaptación para cada activo y organización.</p>
-            <a class="btn btn--lime" href="servicio.html?s=adaptar" tabindex="-1">Ver servicio →</a>
-          </div>
-        </article>
+    <!-- Nuestros servicios: panel claro con el título al centro y tres tarjetas (oscura, clara y lima).
+         Cada una lleva a su página: servicio.html?s=medir | mitigar | adaptar -->
+    <div class="svc3" id="servicios">
+      <img class="svc3__leaf svc3__leaf--1" src="assets/deco/hoja-chica-1.webp" alt="" aria-hidden="true" loading="lazy">
+      <img class="svc3__leaf svc3__leaf--2" src="assets/deco/hoja-chica-3.webp" alt="" aria-hidden="true" loading="lazy">
+      <img class="svc3__leaf svc3__leaf--3" src="assets/deco/hoja-chica-2.webp" alt="" aria-hidden="true" loading="lazy">
+      <div class="svc3__head reveal">
+        <span class="eyebrow">Nuestros servicios</span>
+        <h2>Medir, mitigar y adaptarse</h2>
+        <p>En cada servicio trabajamos con tu equipo, y además desarrollamos apps para hacerlo más rápido.</p>
       </div>
-      <div class="svx__side">
-        <button type="button" class="svx__card sv--medir is-on" data-svc="medir" aria-label="Medir: Huella de carbono">
-          <img src="assets/proyectos/andromaco-1.jpg" alt="" loading="lazy"><span class="svx__cnum" aria-hidden="true">01</span>
-          <span class="svx__ctxt"><b>Medir</b><em>Huella de carbono</em></span>
-        </button>
-        <button type="button" class="svx__card sv--mitigar" data-svc="mitigar" aria-label="Mitigar: Mercados de carbono">
-          <img src="assets/proyectos/mercuria-1.jpg" alt="" loading="lazy"><span class="svx__cnum" aria-hidden="true">02</span>
-          <span class="svx__ctxt"><b>Mitigar</b><em>Mercados de carbono</em></span>
-        </button>
-        <button type="button" class="svx__card sv--adaptar" data-svc="adaptar" aria-label="Adaptarse: Riesgo climático">
-          <img src="assets/proyectos/pluspetrol-2.jpg" alt="" loading="lazy"><span class="svx__cnum" aria-hidden="true">03</span>
-          <span class="svx__ctxt"><b>Adaptarse</b><em>Riesgo climático</em></span>
-        </button>
+      <div class="svc3__grid">
+      <a class="svc3__card svc3__card--medir reveal" href="servicio.html?s=medir" style="--d:0.00s">
+        <span class="svc3__pill"><i aria-hidden="true">01</i>Medir</span>
+        <h3>Huella de carbono</h3>
+        <p>Huella de carbono de empresas, productos y eventos, con estándares internacionales (GHG Protocol, ISO 14064 e ISO 14067).</p>
+        <span class="svc3__media"><img src="assets/proyectos/andromaco-1.jpg" alt="" loading="lazy"><img class="svc3__icon" src="assets/apps/icon-footprint-claro.png" alt=""></span>
+        <span class="svc3__go" aria-hidden="true">→</span>
+      </a>
+      <a class="svc3__card svc3__card--mitigar reveal" href="servicio.html?s=mitigar" style="--d:0.12s">
+        <span class="svc3__pill"><i aria-hidden="true">02</i>Mitigar</span>
+        <h3>Mercados de carbono</h3>
+        <p>Mercados de carbono: desarrollamos proyectos de punta a punta, de la factibilidad a la emisión de los créditos.</p>
+        <span class="svc3__media"><img src="assets/proyectos/mercuria-1.jpg" alt="" loading="lazy"><img class="svc3__icon" src="assets/apps/icon-markets-claro.png" alt=""></span>
+        <span class="svc3__go" aria-hidden="true">→</span>
+      </a>
+      <a class="svc3__card svc3__card--adaptar reveal" href="servicio.html?s=adaptar" style="--d:0.24s">
+        <span class="svc3__pill"><i aria-hidden="true">03</i>Adaptarse</span>
+        <h3>Riesgo climático</h3>
+        <p>Análisis de riesgo climático y planes de adaptación para cada activo y organización.</p>
+        <span class="svc3__media"><img src="assets/proyectos/pluspetrol-2.jpg" alt="" loading="lazy"><img class="svc3__icon" src="assets/apps/icon-risk-claro.png" alt=""></span>
+        <span class="svc3__go" aria-hidden="true">→</span>
+      </a>
       </div>
     </div>
   </div>

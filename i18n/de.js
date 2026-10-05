@@ -804,7 +804,9 @@
 "los dos mercados de carbono": "beide CO₂-Märkte",
 "Alta integridad": "Hohe Integrität",
 "con foco en soluciones basadas en la naturaleza": "mit Fokus auf naturbasierte Lösungen",
-"Ver servicio →": "Zur Leistung →"
+"Ver servicio →": "Zur Leistung →",
+"Medir, mitigar y adaptarse": "Messen, mindern und anpassen",
+"En cada servicio trabajamos con tu equipo, y además desarrollamos apps para hacerlo más rápido.": "In jeder Leistung arbeiten wir mit Ihrem Team zusammen und entwickeln zudem Apps, die alles schneller machen."
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 Auftrag'],

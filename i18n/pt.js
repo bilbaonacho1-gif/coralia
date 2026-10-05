@@ -733,7 +733,9 @@
 "los dos mercados de carbono": "os dois mercados de carbono",
 "Alta integridad": "Alta integridade",
 "con foco en soluciones basadas en la naturaleza": "com foco em soluções baseadas na natureza",
-"Ver servicio →": "Ver serviço →"
+"Ver servicio →": "Ver serviço →",
+"Medir, mitigar y adaptarse": "Medir, mitigar e adaptar-se",
+"En cada servicio trabajamos con tu equipo, y además desarrollamos apps para hacerlo más rápido.": "Em cada serviço trabalhamos com a sua equipe e, além disso, desenvolvemos apps para tornar tudo mais rápido."
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 trabalho'],

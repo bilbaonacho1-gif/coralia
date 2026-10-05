@@ -797,7 +797,9 @@
 "los dos mercados de carbono": "both carbon markets",
 "Alta integridad": "High integrity",
 "con foco en soluciones basadas en la naturaleza": "focused on nature-based solutions",
-"Ver servicio →": "See service →"
+"Ver servicio →": "See service →",
+"Medir, mitigar y adaptarse": "Measure, mitigate and adapt",
+"En cada servicio trabajamos con tu equipo, y además desarrollamos apps para hacerlo más rápido.": "In every service we work alongside your team, and we also build apps to make it faster."
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 engagement'],

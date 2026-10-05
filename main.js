@@ -69,33 +69,6 @@ if ('ResizeObserver' in window) {
   $$('.deco-scatter').forEach((b) => ro.observe(b));
 }
 
-/* ---------- Servicios (Home): uno en grande y los otros al costado ----------
-   Al tocar una tarjeta de la derecha pasa a ser la grande. Mientras nadie la toca, va pasando sola. */
-const svx = $('#svx');
-if (svx) {
-  let svOn = 'medir', svAuto = 0;
-  const svSet = (k) => {
-    svOn = k;
-    $$('.svx__slide', svx).forEach((sl) => {
-      const on = sl.dataset.svc === k; sl.classList.toggle('is-on', on);
-      sl.setAttribute('aria-hidden', !on); $('a', sl).tabIndex = on ? 0 : -1;
-    });
-    $$('.svx__card', svx).forEach((c) => { const on = c.dataset.svc === k; c.classList.toggle('is-on', on); c.tabIndex = on ? -1 : 0; });
-  };
-  const svStop = () => { clearInterval(svAuto); svAuto = -1; };
-  $$('.svx__card', svx).forEach((c) => c.addEventListener('click', () => { svStop(); svSet(c.dataset.svc); }));
-  svx.addEventListener('focusin', svStop);
-  const svKeys = $$('.svx__slide', svx).map((sl) => sl.dataset.svc);
-  if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
-    new IntersectionObserver((es) => {
-      if (svAuto === -1) return;
-      clearInterval(svAuto); svAuto = 0;
-      if (es[0].isIntersecting) svAuto = setInterval(() => svSet(svKeys[(svKeys.indexOf(svOn) + 1) % svKeys.length]), 6000);
-    }, { threshold: 0.5 }).observe(svx);
-  }
-  svSet('medir');
-}
-
 /* ---------- 1) Nuestros servicios (consultoría primero; cada uno con su app) ---------- */
 const APP_NAMES = { footprint: 'Carbon Footprint', markets: 'Carbon Markets Hub', risk: 'Climate Risk App' };
 const SVC_NAMES = { footprint: 'Huella de carbono', markets: 'Mercados de carbono', risk: 'Riesgo climático' };
