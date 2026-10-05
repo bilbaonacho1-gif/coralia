@@ -201,4 +201,4 @@ Cumple los límites de Wix Headless: sin videos, cada archivo pesa menos de 3 MB
 ## Fotos de los proyectos (kits de comunicación, octubre 2026)
 - Misiones (REDD+): fotos del kit en la galería del caso (proyecto.html?p=misiones) y en el proyecto destacado de
   Mitigación. Dato actualizado: 10,1M VCUs verificados por Verra para 2017–2022 (antes decía 10M+).
-- Medir: la foto de la carpeta y de la página es la de la tablet entre las plantas (assets/marca/pilar-tecnologia.webp).
+- Medir: la foto de la carpeta y de la página es la de Ruuts, el ganado entre los árboles (assets/proyectos/ruuts-1.jpg).
