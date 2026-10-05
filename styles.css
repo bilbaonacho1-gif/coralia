@@ -1280,3 +1280,6 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
 .sv-block:has(+ .sv-facts){padding-bottom:30px}
 /* las fotos del pipeline tienen distintas proporciones: todas se recortan al mismo 16:9 */
 .pipe__media{overflow:hidden}.pipe__media img{position:absolute;inset:0}
+/* flecha diagonal dibujada (el carácter ↗ se ve como emoji en algunas computadoras y celulares) */
+.ico-ne{display:inline-block;width:1em;height:1em;vertical-align:-.12em;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.pcard__go .ico-ne,.pipe__go .ico-ne{width:52%;height:52%;stroke-width:2.6}

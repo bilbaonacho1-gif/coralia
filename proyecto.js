@@ -62,7 +62,7 @@ $('#dRelated').innerHTML = rel.map((x) => {
   return `<a class="pcard pcard--${x.svc}" href="proyecto.html?p=${x.id}">
     <span class="pcard__media${baked ? ' is-baked' : ''}">${src ? `<img src="${src}" alt="" loading="lazy" onerror="this.parentNode.classList.remove('is-baked');this.remove()">` : ''}<span class="pcard__logo">${x.client}</span></span>
     <span class="pcard__tag"><span class="tag tag--${x.svc}">${SVC[x.svc]}</span><span>${x.country}</span></span>
-    <span class="pcard__panel"><span class="pcard__title">${x.title}</span><span class="pcard__kpi"><b>${x.kpi[0]}</b> ${x.kpi[1]}</span><span class="pcard__go" aria-hidden="true">↗</span></span>
+    <span class="pcard__panel"><span class="pcard__title">${x.title}</span><span class="pcard__kpi"><b>${x.kpi[0]}</b> ${x.kpi[1]}</span><span class="pcard__go" aria-hidden="true"><svg class="ico-ne" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
   </a>`;
 }).join('');
 const prev = CASES[(i - 1 + CASES.length) % CASES.length], next = CASES[(i + 1) % CASES.length];

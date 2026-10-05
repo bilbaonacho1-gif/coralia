@@ -6,7 +6,7 @@ const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const card = (p) => `<a class="pipe__card" href="pipeline.html?p=${p.id}">
   <span class="pipe__media">${p.img ? `<img src="${p.img}" alt="" loading="lazy">` : ''}<span class="pipe__type">${p.type}</span></span>
   <span class="pipe__body"><b>${p.name}</b><small>${p.place}</small><span class="pipe__stage">${p.stage}</span></span>
-  <span class="pipe__go" aria-hidden="true">↗</span></a>`;
+  <span class="pipe__go" aria-hidden="true"><svg class="ico-ne" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a>`;
 
 const id = new URLSearchParams(location.search).get('p');
 const p = PIPELINE.find((x) => x.id === id);

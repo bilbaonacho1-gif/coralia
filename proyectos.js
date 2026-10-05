@@ -27,7 +27,7 @@ function card(c, big) {
       <span class="pcard__title">${c.title}</span>
       <span class="pcard__text">${c.short}</span>
       <span class="pcard__kpi"><b>${c.kpi[0]}</b> ${c.kpi[1]}</span>
-      <span class="pcard__go" aria-hidden="true">↗</span>
+      <span class="pcard__go" aria-hidden="true"><svg class="ico-ne" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
     </span>
   </button>`;
 }

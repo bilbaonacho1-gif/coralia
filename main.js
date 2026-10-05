@@ -311,7 +311,7 @@ const BA_TYPES = [
   if (grid && typeof PIPELINE !== 'undefined') grid.innerHTML = PIPELINE.map((p) => `<a class="pipe__card" href="pipeline.html?p=${p.id}">
     <span class="pipe__media">${p.img ? `<img src="${p.img}" alt="" loading="lazy">` : ''}<span class="pipe__type">${p.type}</span></span>
     <span class="pipe__body"><b>${p.name}</b><small>${p.place}</small><span class="pipe__stage">${p.stage}</span></span>
-    <span class="pipe__go" aria-hidden="true">↗</span></a>`).join('');
+    <span class="pipe__go" aria-hidden="true"><svg class="ico-ne" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a>`).join('');
 })();
 
 function showStep(story, n) {
@@ -580,7 +580,7 @@ setInterval(() => { if (!document.hidden) showQuote((qn + 1) % quotes.length); }
             <button type="button" class="round" data-step="-1" aria-label="Persona anterior">←</button>
             <span>${String(k + 1).padStart(2, '0')} / ${String(list.length).padStart(2, '0')}</span>
             <button type="button" class="round round--mint" data-step="1" aria-label="Persona siguiente">→</button>
-            <a class="btn btn--ghost-light btn--sm person__in" href="${p.linkedin || 'https://www.linkedin.com/company/coraliae/'}" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a class="btn btn--ghost-light btn--sm person__in" href="${p.linkedin || 'https://www.linkedin.com/company/coraliae/'}" target="_blank" rel="noopener">LinkedIn <svg class="ico-ne" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
           </div>
         </div>
       </div>`;
