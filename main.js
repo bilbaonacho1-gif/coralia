@@ -134,7 +134,7 @@ const APPS = [
   // svc: página del servicio al que pertenece la app (servicio.html?s=...)
   { k: 'footprint', a0: -60, a1: 60, lines: ['Carbon', 'Footprint'], bg: 'fondo-footprint', tag: 'Huella de carbono', svc: 'medir', svcName: 'Medir', dot: 'medir', desc: 'Huella de productos, empresas y eventos, de la fórmula al reporte verificable.' },
   { k: 'markets', a0: 60, a1: 180, lines: ['Carbon', 'Markets'], bg: 'fondo-markets', tag: 'Mercados de carbono', svc: 'mitigar', svcName: 'Mitigar', dot: 'mitigar', desc: 'Tu tierra diagnosticada en cinco minutos: qué proyecto de carbono es posible y cuánto vale.' },
-  { k: 'risk', a0: 180, a1: 300, lines: ['Climate', 'Risk App'], bg: 'fondo-risk', tag: 'Riesgo climático', svc: 'adaptar', svcName: 'Adaptar', dot: 'adaptar', desc: 'Riesgo climático físico y de transición, activo por activo, con planes de adaptación.' },
+  { k: 'risk', a0: 180, a1: 300, lines: ['Climate', 'Risk App'], bg: 'fondo-risk', tag: 'Riesgo climático', svc: 'adaptar', svcName: 'Adaptarse', dot: 'adaptar', desc: 'Riesgo climático físico y de transición, activo por activo, con planes de adaptación.' },
 ];
 const R0 = 104, R1 = 228, RON = 250, RC = 22, GAP = 9, CORE = 92;
 const wheel = $('#wheel');
@@ -355,7 +355,7 @@ $$('.step').forEach((s) => {
 });
 
 /* ---------- 2) Mapa interactivo (globo 3D en globe.js; países y trabajos en data.js) ---------- */
-const SVCN = { mitigar: 'Mitigar', adaptar: 'Adaptar', medir: 'Medir', consultoria: 'Consultoría' };
+const SVCN = { mitigar: 'Mitigar', adaptar: 'Adaptarse', medir: 'Medir', consultoria: 'Consultoría' };
 let cur = 0;
 const map = $('#map');
 function showCountry(i, zoom = false) {

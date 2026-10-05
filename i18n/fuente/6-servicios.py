@@ -10,6 +10,8 @@ T = [
 ("Mercados de carbono: desarrollamos proyectos de punta a punta, de la factibilidad a la emisión de los créditos.", "Carbon markets: we develop projects end to end, from feasibility to credit issuance.", "Mercados de carbono: desenvolvemos projetos de ponta a ponta, da viabilidade à emissão dos créditos.", "CO₂-Märkte: Wir entwickeln Projekte von Anfang bis Ende, von der Machbarkeit bis zur Ausgabe der Zertifikate."),
 ("Servicio: <b>Medir</b> →", "Service: <b>Measure</b> →", "Serviço: <b>Medir</b> →", "Leistung: <b>Messen</b> →"),
 ("Servicio: <b>Mitigar</b> →", "Service: <b>Mitigate</b> →", "Serviço: <b>Mitigar</b> →", "Leistung: <b>Mindern</b> →"),
+("Adaptarse", "Adapt", "Adaptar-se", "Anpassen"),
+("Servicio: <b>Adaptarse</b> →", "Service: <b>Adapt</b> →", "Serviço: <b>Adaptar-se</b> →", "Leistung: <b>Anpassen</b> →"),
 ("Servicio: <b>Adaptar</b> →", "Service: <b>Adapt</b> →", "Serviço: <b>Adaptar</b> →", "Leistung: <b>Anpassen</b> →"),
 # --- Mitigación: impacto actualizado y ECO2 Misiones (Company deck 2026)
 ("toneladas de CO₂e reducidas o removidas de la atmósfera en proyectos desarrollados por Coralia.", "tonnes of CO₂e reduced or removed from the atmosphere in projects developed by Coralia.", "toneladas de CO₂e reduzidas ou removidas da atmosfera em projetos desenvolvidos pela Coralia.", "Tonnen CO₂e reduziert oder der Atmosphäre entzogen in von Coralia entwickelten Projekten."),

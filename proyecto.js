@@ -2,7 +2,7 @@
 document.documentElement.classList.add('js');
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-const SVC = { mitigar: 'Mitigar', adaptar: 'Adaptar', medir: 'Medir', consultoria: 'Consultoría' };
+const SVC = { mitigar: 'Mitigar', adaptar: 'Adaptarse', medir: 'Medir', consultoria: 'Consultoría' };
 
 const id = new URLSearchParams(location.search).get('p') || location.hash.slice(1);
 const i = CASES.findIndex((c) => c.id === id);

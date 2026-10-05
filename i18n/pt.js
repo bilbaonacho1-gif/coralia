@@ -598,6 +598,8 @@
 "Mercados de carbono: desarrollamos proyectos de punta a punta, de la factibilidad a la emisión de los créditos.": "Mercados de carbono: desenvolvemos projetos de ponta a ponta, da viabilidade à emissão dos créditos.",
 "Servicio: <b>Medir</b> →": "Serviço: <b>Medir</b> →",
 "Servicio: <b>Mitigar</b> →": "Serviço: <b>Mitigar</b> →",
+"Adaptarse": "Adaptar-se",
+"Servicio: <b>Adaptarse</b> →": "Serviço: <b>Adaptar-se</b> →",
 "Servicio: <b>Adaptar</b> →": "Serviço: <b>Adaptar</b> →",
 "toneladas de CO₂e reducidas o removidas de la atmósfera en proyectos desarrollados por Coralia.": "toneladas de CO₂e reduzidas ou removidas da atmosfera em projetos desenvolvidos pela Coralia.",
 "Bosque nativo · ECO2 Misiones": "Floresta nativa · ECO2 Misiones",

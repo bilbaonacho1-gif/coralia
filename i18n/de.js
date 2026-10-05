@@ -664,6 +664,8 @@
 "Mercados de carbono: desarrollamos proyectos de punta a punta, de la factibilidad a la emisión de los créditos.": "CO₂-Märkte: Wir entwickeln Projekte von Anfang bis Ende, von der Machbarkeit bis zur Ausgabe der Zertifikate.",
 "Servicio: <b>Medir</b> →": "Leistung: <b>Messen</b> →",
 "Servicio: <b>Mitigar</b> →": "Leistung: <b>Mindern</b> →",
+"Adaptarse": "Anpassen",
+"Servicio: <b>Adaptarse</b> →": "Leistung: <b>Anpassen</b> →",
 "Servicio: <b>Adaptar</b> →": "Leistung: <b>Anpassen</b> →",
 "toneladas de CO₂e reducidas o removidas de la atmósfera en proyectos desarrollados por Coralia.": "Tonnen CO₂e reduziert oder der Atmosphäre entzogen in von Coralia entwickelten Projekten.",
 "Bosque nativo · ECO2 Misiones": "Naturwald · ECO2 Misiones",

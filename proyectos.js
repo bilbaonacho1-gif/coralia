@@ -2,7 +2,7 @@
 document.documentElement.classList.add('js');
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-const SVC = { mitigar: 'Mitigar', adaptar: 'Adaptar', medir: 'Medir', consultoria: 'Consultoría' };
+const SVC = { mitigar: 'Mitigar', adaptar: 'Adaptarse', medir: 'Medir', consultoria: 'Consultoría' };
 
 /* Aparición al scrollear */
 const io = 'IntersectionObserver' in window ? new IntersectionObserver((es) => es.forEach((e) => {

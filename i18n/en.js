@@ -657,6 +657,8 @@
 "Mercados de carbono: desarrollamos proyectos de punta a punta, de la factibilidad a la emisión de los créditos.": "Carbon markets: we develop projects end to end, from feasibility to credit issuance.",
 "Servicio: <b>Medir</b> →": "Service: <b>Measure</b> →",
 "Servicio: <b>Mitigar</b> →": "Service: <b>Mitigate</b> →",
+"Adaptarse": "Adapt",
+"Servicio: <b>Adaptarse</b> →": "Service: <b>Adapt</b> →",
 "Servicio: <b>Adaptar</b> →": "Service: <b>Adapt</b> →",
 "toneladas de CO₂e reducidas o removidas de la atmósfera en proyectos desarrollados por Coralia.": "tonnes of CO₂e reduced or removed from the atmosphere in projects developed by Coralia.",
 "Bosque nativo · ECO2 Misiones": "Native forest · ECO2 Misiones",

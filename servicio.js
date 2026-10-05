@@ -92,7 +92,7 @@ const SERVICIOS = {
     highlights: [['Físico y de transición', 'los dos tipos de riesgo climático'], ['Activo por activo', 'con escenarios en el territorio'], ['Plan de adaptación', 'alerta temprana y respuesta']],
     blocks: [
       {
-        id: 'riesgo', eyebrow: 'Adaptar', name: 'Análisis de riesgo climático', app: 'risk',
+        id: 'riesgo', eyebrow: 'Adaptarse', name: 'Análisis de riesgo climático', app: 'risk',
         text: 'Un análisis de riesgo climático identifica y evalúa los impactos potenciales del cambio climático sobre los sistemas productivos, naturales y humanos. Nuestra metodología combina el estudio de la vulnerabilidad con la probabilidad de eventos extremos, construyendo escenarios de amenazas climáticas representados en el territorio. Así se arma una matriz de riesgo climático, a partir de la cual se diseña un plan de adaptación.',
         pillars: [
           ['Evaluación de vulnerabilidad', 'Identificamos las sensibilidades ambientales e intrínsecas, junto con los factores que determinan la resiliencia.'],
@@ -159,7 +159,7 @@ function feature(f) {
     <div class="sv-feat__ratings"><span class="sv-feat__rtitle">Calificados antes de la emisión</span>${f.ratings.map((r) => `<figure><img src="${r[0]}" alt="" loading="lazy"><figcaption><b>${r[2]}</b>${r[1]}</figcaption></figure>`).join('')}</div>
   </article>`;
 }
-// número del servicio (01 Medir, 02 Mitigar, 03 Adaptar) y los otros dos al costado, con su número asomando
+// número del servicio (01 Medir, 02 Mitigar, 03 Adaptarse) y los otros dos al costado, con su número asomando
 const KEYS = Object.keys(SERVICIOS), num = (k) => String(KEYS.indexOf(k) + 1).padStart(2, '0');
 $('#sNum').textContent = num(key);
 $('#sSide').innerHTML = KEYS.filter((k) => k !== key).map((k) => `<a class="sv-side sv--${k}" href="servicio.html?s=${k}"><img src="${SERVICIOS[k].img}" alt="" loading="lazy"><span class="sv-side__n" aria-hidden="true">${num(k)}</span><span class="sv-side__t"><b>${SERVICIOS[k].title}</b><em>${SERVICIOS[k].sub}</em></span></a>`).join('');
