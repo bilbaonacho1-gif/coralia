@@ -9,7 +9,7 @@ const INTRO = 'El cambio climático ya no es una amenaza futura, es una realidad
 
 const SERVICIOS = {
   medir: {
-    title: 'Medición', sub: 'de la huella de carbono', img: 'assets/proyectos/phoenix-1.jpg', intro: INTRO, cases: ['medir'],
+    title: 'Medición', sub: 'de la huella de carbono', img: 'assets/marca/pilar-tecnologia.webp', intro: INTRO, cases: ['medir'],
     card: 'Huella de carbono de empresas, productos y eventos, con estándares internacionales (GHG Protocol, ISO 14064 e ISO 14067).',
     highlights: [['+40', 'inventarios de GEI realizados'], ['Alcances 1, 2 y 3', 'de la operación a la cadena de valor'], ['GHG Protocol', 'e ISO 14064 e ISO 14067']],
     blocks: [
