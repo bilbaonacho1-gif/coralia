@@ -17,8 +17,11 @@ así que no dependen de Google Fonts. Se declaran al principio de styles.css (@f
   Botón "Conocé nuestros servicios". Tarjetas enfocadas en servicio: Huella de carbono, Mercados de carbono
   (350k toneladas removidas: NÚMERO A CONFIRMAR) y Riesgo climático.
 - Menú: "Apps" pasó a "Servicios" (#servicios; #apps sigue funcionando).
-- Qué es Coralia: debajo de la frase, "Nuestros servicios" (#servicios, el menú lleva acá): tres carpetas, Medir,
-  Mitigar y Adaptar (como en el deck), cada una abre su página (servicio.html?s=medir | mitigar | adaptar). La
+- Qué es Coralia: debajo de la frase, "Nuestros servicios" (#servicios, el menú lleva acá): Medir, Mitigar y Adaptar
+  (como en el deck), cada uno abre su página (servicio.html?s=medir | mitigar | adaptar). Se muestran con uno en
+  grande (foto, número 01/02/03 calado, texto y "Ver servicio →") y los otros dos como tarjetas a la derecha con su
+  número asomando cortado arriba; al tocar una, pasa a ser la grande. Sola va pasando cada 6 s hasta que alguien la
+  toca. Markup en index.html (#svx), comportamiento en main.js ("Servicios"), estilos al final de styles.css. La
   consultoría no es un servicio aparte: es cómo trabajamos en los tres (portada, "Cómo trabajamos").
   Cada servicio tiene su app: Medir → Carbon Footprint, Mitigar → Carbon Markets Hub, Adaptar → Climate Risk App.
 - Páginas de servicio (servicio.html + servicio.js, contenido en SERVICIOS): el texto de la web actual,
@@ -26,12 +29,13 @@ así que no dependen de Google Fonts. Se declaran al principio de styles.css (@f
   Mitigación con Mercados de carbono (13M+ tCO₂e del Company deck 2026: ECO2 Misiones 10M+ más los proyectos
   anteriores por sector, 3,2M; proyecto destacado ECO2 Misiones con sus datos, reparto de beneficios y ratings; y los 14 pasos); Adaptación con el análisis de riesgo,
   sus 3 pilares y los 5 pasos. Cada bloque termina con su app y la página con sus casos.
-  Diseño de cada página (bloque "Páginas de servicio: diseño por dentro" en styles.css): cada servicio tiene el color
-  de su app (Medir verde, Mitigar ámbar, Adaptar azul). Arriba, tres destacados sobre la foto (highlights en
-  SERVICIOS). "Cómo lo hacemos": los pasos en una línea de tiempo en zigzag que se llena y enciende cada paso al
+  Diseño de cada página (bloques "Páginas de servicio" en styles.css): cada servicio tiene el color de su app
+  (Medir verde, Mitigar ámbar, Adaptar azul). Arriba, el número del servicio calado y, a la derecha, los otros dos
+  servicios para pasar directo. Cortes en diagonal: el encabezado, la franja de destacados (highlights en SERVICIOS,
+  sobre la foto de la app) y la franja de la app. "Cómo lo hacemos": los pasos en una línea de tiempo en zigzag que se llena y enciende cada paso al
   bajar (en el celu, la línea va a la izquierda); en Medición, pestañas para elegir huella de producto o corporativa;
   en Mitigación, las dos etapas seguidas. En Adaptación, los 3 pilares como recorrido con íconos. Después, la app
-  del servicio en grande (foto de su color, pantalla y "Conocé la app →"), los casos y "Otros servicios".
+  del servicio en grande (pantalla y "Conocé la app →") y los casos.
   Traducciones: i18n/fuente/6-servicios.py.
 - La rueda es "Herramientas propias · Nuestras apps" (#apps; el menú tiene "Apps"): cada porción es una app, con
   el servicio al que pertenece en el panel ("Servicio: Medir →" lleva a su página). Fotos reales con el mismo

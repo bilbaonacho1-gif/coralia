@@ -724,7 +724,14 @@
 "alerta temprana y respuesta": "alerta precoce e resposta",
 "Cómo lo hacemos": "Como fazemos",
 "Conocé la app →": "Conheça o app →",
-"Otros servicios": "Outros serviços"
+"Otros servicios": "Outros serviços",
+"De punta a punta": "De ponta a ponta",
+"de la factibilidad a la emisión de los créditos": "da viabilidade à emissão dos créditos",
+"Voluntarios y regulados": "Voluntários e regulados",
+"los dos mercados de carbono": "os dois mercados de carbono",
+"Alta integridad": "Alta integridade",
+"con foco en soluciones basadas en la naturaleza": "com foco em soluções baseadas na natureza",
+"Ver servicio →": "Ver serviço →"
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 trabalho'],

@@ -182,4 +182,13 @@ T = [
 ("Cómo lo hacemos", "How we do it", "Como fazemos", "So gehen wir vor"),
 ("Conocé la app →", "Discover the app →", "Conheça o app →", "Die App entdecken →"),
 ("Otros servicios", "Other services", "Outros serviços", "Weitere Leistungen"),
+("GHG Protocol", "GHG Protocol", "GHG Protocol", "GHG Protocol"),
+("e ISO 14064 e ISO 14067", "plus ISO 14064 and ISO 14067", "e ISO 14064 e ISO 14067", "sowie ISO 14064 und ISO 14067"),
+("De punta a punta", "End to end", "De ponta a ponta", "Von A bis Z"),
+("de la factibilidad a la emisión de los créditos", "from feasibility to credit issuance", "da viabilidade à emissão dos créditos", "von der Machbarkeit bis zur Ausgabe der Zertifikate"),
+("Voluntarios y regulados", "Voluntary and compliance", "Voluntários e regulados", "Freiwillig und reguliert"),
+("los dos mercados de carbono", "both carbon markets", "os dois mercados de carbono", "beide CO₂-Märkte"),
+("Alta integridad", "High integrity", "Alta integridade", "Hohe Integrität"),
+("con foco en soluciones basadas en la naturaleza", "focused on nature-based solutions", "com foco em soluções baseadas na natureza", "mit Fokus auf naturbasierte Lösungen"),
+("Ver servicio →", "See service →", "Ver serviço →", "Zur Leistung →"),
 ]

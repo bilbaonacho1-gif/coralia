@@ -787,7 +787,15 @@
 "alerta temprana y respuesta": "early warning and response",
 "Cómo lo hacemos": "How we do it",
 "Conocé la app →": "Discover the app →",
-"Otros servicios": "Other services"
+"Otros servicios": "Other services",
+"e ISO 14064 e ISO 14067": "plus ISO 14064 and ISO 14067",
+"De punta a punta": "End to end",
+"de la factibilidad a la emisión de los créditos": "from feasibility to credit issuance",
+"Voluntarios y regulados": "Voluntary and compliance",
+"los dos mercados de carbono": "both carbon markets",
+"Alta integridad": "High integrity",
+"con foco en soluciones basadas en la naturaleza": "focused on nature-based solutions",
+"Ver servicio →": "See service →"
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 engagement'],

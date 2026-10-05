@@ -794,7 +794,15 @@
 "alerta temprana y respuesta": "Frühwarnung und Reaktion",
 "Cómo lo hacemos": "So gehen wir vor",
 "Conocé la app →": "Die App entdecken →",
-"Otros servicios": "Weitere Leistungen"
+"Otros servicios": "Weitere Leistungen",
+"e ISO 14064 e ISO 14067": "sowie ISO 14064 und ISO 14067",
+"De punta a punta": "Von A bis Z",
+"de la factibilidad a la emisión de los créditos": "von der Machbarkeit bis zur Ausgabe der Zertifikate",
+"Voluntarios y regulados": "Freiwillig und reguliert",
+"los dos mercados de carbono": "beide CO₂-Märkte",
+"Alta integridad": "Hohe Integrität",
+"con foco en soluciones basadas en la naturaleza": "mit Fokus auf naturbasierte Lösungen",
+"Ver servicio →": "Zur Leistung →"
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 Auftrag'],

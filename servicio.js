@@ -11,7 +11,7 @@ const SERVICIOS = {
   medir: {
     title: 'Medición', sub: 'de la huella de carbono', img: 'assets/proyectos/andromaco-1.jpg', intro: INTRO, cases: ['medir'],
     card: 'Huella de carbono de empresas, productos y eventos, con estándares internacionales (GHG Protocol, ISO 14064 e ISO 14067).',
-    highlights: [['+40', 'inventarios de GEI realizados'], ['Alcances 1, 2 y 3', 'de la operación a la cadena de valor'], ['ISO 14064 · 14067', 'y GHG Protocol']],
+    highlights: [['+40', 'inventarios de GEI realizados'], ['Alcances 1, 2 y 3', 'de la operación a la cadena de valor'], ['GHG Protocol', 'e ISO 14064 e ISO 14067']],
     blocks: [
       {
         id: 'huella', eyebrow: 'Medir', name: 'Huella de carbono', app: 'footprint', tabs: true, // producto o corporativa: se elige con pestañas
@@ -40,7 +40,7 @@ const SERVICIOS = {
   mitigar: {
     title: 'Mitigación', sub: 'del cambio climático', img: 'assets/proyectos/mercuria-1.jpg', intro: INTRO, cases: ['mitigar'],
     card: 'Mercados de carbono: desarrollamos proyectos de punta a punta, de la factibilidad a la emisión de los créditos.',
-    highlights: [['13M+', 'tCO₂e reducidas o removidas'], ['10M+', 'VCUs emitidos por ECO2 Misiones'], ['A–AA', 'rating de Sylvera']],
+    highlights: [['De punta a punta', 'de la factibilidad a la emisión de los créditos'], ['Voluntarios y regulados', 'los dos mercados de carbono'], ['Alta integridad', 'con foco en soluciones basadas en la naturaleza']],
     blocks: [
       {
         id: 'mercados', eyebrow: 'Mitigar', name: 'Mercados de carbono', app: 'markets',
@@ -159,8 +159,15 @@ function feature(f) {
     <div class="sv-feat__ratings"><span class="sv-feat__rtitle">Calificados antes de la emisión</span>${f.ratings.map((r) => `<figure><img src="${r[0]}" alt="" loading="lazy"><figcaption><b>${r[2]}</b>${r[1]}</figcaption></figure>`).join('')}</div>
   </article>`;
 }
-// destacados del encabezado
-if (S.highlights) $('#sHigh').innerHTML = S.highlights.map((h, i) => `<div class="sv-high__it in d${i + 2}"><b>${h[0]}</b><span>${h[1]}</span></div>`).join('');
+// número del servicio (01 Medir, 02 Mitigar, 03 Adaptar) y los otros dos al costado, con su número asomando
+const KEYS = Object.keys(SERVICIOS), num = (k) => String(KEYS.indexOf(k) + 1).padStart(2, '0');
+$('#sNum').textContent = num(key);
+$('#sSide').innerHTML = KEYS.filter((k) => k !== key).map((k) => `<a class="sv-side sv--${k}" href="servicio.html?s=${k}"><img src="${SERVICIOS[k].img}" alt="" loading="lazy"><span class="sv-side__n" aria-hidden="true">${num(k)}</span><span class="sv-side__t"><b>${SERVICIOS[k].title}</b><em>${SERVICIOS[k].sub}</em></span></a>`).join('');
+// franja de datos destacados, en diagonal sobre la foto de la app del servicio
+const facts = (b) => S.highlights && b.app ? `<section class="sv-facts">
+  <img class="sv-facts__bg" src="assets/apps/fondo-${b.app}.webp" alt="" loading="lazy">
+  <div class="wrap sv-facts__in">${S.highlights.map((h, i) => `<div class="sv-fact reveal" style="--d:${i * 0.12}s"><b>${h[0]}</b><span>${h[1]}</span></div>`).join('')}</div>
+</section>` : '';
 
 // Pasos: línea de tiempo que se va encendiendo al bajar. Si el bloque tiene "tabs", cada grupo es una opción
 // (pestañas); si no, los grupos son etapas seguidas de un mismo recorrido.
@@ -185,11 +192,10 @@ const ICONS = [
 ];
 const flow = (ps) => `<div class="sv-flow">${ps.map((p, i) => `${i ? '<span class="sv-flow__arrow" aria-hidden="true">→</span>' : ''}<article class="sv-flow__it reveal" style="--d:${i * 0.12}s"><span class="sv-flow__ic"><svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[i % ICONS.length]}</svg></span><small>${String(i + 1).padStart(2, '0')}</small><h3>${p[0]}</h3><p>${p[1]}</p></article>`).join('')}</div>`;
 // la app de este servicio, en grande: foto de fondo en su color, pantalla de la app y acceso
-const showcase = (k) => `<a class="sv-show reveal" href="index.html#apps">
-  <img class="sv-show__bg" src="assets/apps/fondo-${k}.webp" alt="" loading="lazy">
+const showcase = (k) => `<section class="sv-appband"><div class="wrap"><a class="sv-show reveal" href="index.html#apps">
   <div class="sv-show__txt"><small>Con nuestra app</small><span class="sv-show__name"><img src="assets/apps/icon-${k}-claro.png" alt="">${APP[k][0]}</span><p>${APP[k][1]}</p><span class="btn btn--lime btn--sm">Conocé la app →</span></div>
   <div class="sv-show__shot"><img src="assets/apps/card-${k}.webp" alt="" loading="lazy"></div>
-</a>`;
+</a></div></section>`;
 
 $('#sBlocks').innerHTML = S.blocks.map((b, bi) => `
   <section class="section sv-block${bi % 2 ? ' section--band' : ''}" id="${b.id}">
@@ -201,10 +207,13 @@ $('#sBlocks').innerHTML = S.blocks.map((b, bi) => `
       ${b.stat ? `<div class="sv-stat reveal"><div><b class="sv-stat__n">${b.stat.n}</b><p>${b.stat.label}</p></div>${donut(b.stat.parts)}</div>` : ''}
       ${b.feature ? feature(b.feature) : ''}
       ${b.pillars ? flow(b.pillars) : ''}
-      ${timeline(b)}
-      ${b.app ? showcase(b.app) : ''}
     </div>
-  </section>`).join('');
+  </section>
+  ${facts(b)}
+  <section class="section sv-block sv-block--steps">
+    <div class="wrap">${timeline(b)}</div>
+  </section>
+  ${b.app ? showcase(b.app) : ''}`).join('');
 
 // pestañas (producto / corporativa)
 $$('.sv-tabs').forEach((tabs) => tabs.addEventListener('click', (e) => {
@@ -229,10 +238,6 @@ function railTick() {
 let railT = false;
 addEventListener('scroll', () => { if (!railT) { railT = true; requestAnimationFrame(() => { railT = false; railTick(); }); } }, { passive: true });
 addEventListener('resize', railTick); railTick();
-
-// otros servicios
-const others = Object.keys(SERVICIOS).filter((k) => k !== key);
-$('#sOthers').innerHTML = others.map((k) => { const o = SERVICIOS[k]; return `<a class="sv-other sv--${k} reveal" href="servicio.html?s=${k}"><img src="${o.img}" alt="" loading="lazy"><span class="sv-other__txt"><b>${o.title}</b><em>${o.card}</em></span><i aria-hidden="true">→</i></a>`; }).join('');
 
 // casos publicados de este servicio
 const cs = (typeof CASES !== 'undefined' ? CASES : []).filter((c) => S.cases.includes(c.svc)).slice(0, 6);

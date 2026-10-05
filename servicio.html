@@ -48,12 +48,16 @@
   <section class="d-hero sv-hero">
     <img class="d-hero__bg" id="sHeroImg" alt="">
     <div class="d-hero__shade"></div>
-    <div class="wrap d-hero__in">
-      <nav class="crumbs in" aria-label="Ruta"><a href="index.html#servicios">Servicios</a><span>/</span><span id="sCrumb"></span></nav>
-      <h1 class="in d1 sv-hero__title"><span id="sTitle"></span> <em id="sSub"></em></h1>
-      <p class="in d2" id="sIntro"></p>
-      <div class="sv-jump in d3" id="sJump"></div>
-      <div class="sv-high" id="sHigh"></div>
+    <div class="wrap d-hero__in sv-hero__in">
+      <div class="sv-hero__main">
+        <nav class="crumbs in" aria-label="Ruta"><a href="index.html#servicios">Servicios</a><span>/</span><span id="sCrumb"></span></nav>
+        <span class="sv-hero__num in d1" id="sNum" aria-hidden="true"></span>
+        <h1 class="in d1 sv-hero__title"><span id="sTitle"></span> <em id="sSub"></em></h1>
+        <p class="in d2" id="sIntro"></p>
+        <div class="sv-jump in d3" id="sJump"></div>
+      </div>
+      <!-- los otros dos servicios, para pasar directo (servicio.js) -->
+      <nav class="sv-hero__side in d3" id="sSide" aria-label="Otros servicios"></nav>
     </div>
   </section>
   <div id="sBlocks"></div>
@@ -61,12 +65,6 @@
     <div class="wrap">
       <div class="head"><div><span class="eyebrow">CASOS</span><h2 class="h2--sm">Proyectos de este servicio</h2></div><a class="link" href="proyectos.html">Ver todos →</a></div>
       <div class="sv-cases" id="sCases"></div>
-    </div>
-  </section>
-  <section class="section sv-others">
-    <div class="wrap">
-      <div class="head"><div><span class="eyebrow">Nuestros servicios</span><h2 class="h2--sm">Otros servicios</h2></div></div>
-      <div class="sv-others__grid" id="sOthers"></div>
     </div>
   </section>
   <section id="contacto" class="cta">
