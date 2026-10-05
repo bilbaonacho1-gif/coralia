@@ -159,10 +159,9 @@ function feature(f) {
     <div class="sv-feat__ratings"><span class="sv-feat__rtitle">Calificados antes de la emisión</span>${f.ratings.map((r) => `<figure><img src="${r[0]}" alt="" loading="lazy"><figcaption><b>${r[2]}</b>${r[1]}</figcaption></figure>`).join('')}</div>
   </article>`;
 }
-// número del servicio (01 Medir, 02 Mitigar, 03 Adaptarse) y los otros dos al costado, con su número asomando
-const KEYS = Object.keys(SERVICIOS), num = (k) => String(KEYS.indexOf(k) + 1).padStart(2, '0');
-$('#sNum').textContent = num(key);
-$('#sSide').innerHTML = KEYS.filter((k) => k !== key).map((k) => `<a class="sv-side sv--${k}" href="servicio.html?s=${k}"><img src="${SERVICIOS[k].img}" alt="" loading="lazy"><span class="sv-side__n" aria-hidden="true">${num(k)}</span><span class="sv-side__t"><b>${SERVICIOS[k].title}</b><em>${SERVICIOS[k].sub}</em></span></a>`).join('');
+// los otros dos servicios al costado, para pasar directo
+const KEYS = Object.keys(SERVICIOS);
+$('#sSide').innerHTML = KEYS.filter((k) => k !== key).map((k) => `<a class="sv-side sv--${k}" href="servicio.html?s=${k}"><img src="${SERVICIOS[k].img}" alt="" loading="lazy"><span class="sv-side__t"><b>${SERVICIOS[k].title}</b><em>${SERVICIOS[k].sub}</em></span></a>`).join('');
 // franja de datos destacados, en diagonal sobre la foto de la app del servicio
 const facts = (b) => S.highlights && b.app ? `<section class="sv-facts">
   <img class="sv-facts__bg" src="assets/apps/fondo-${b.app}.webp" alt="" loading="lazy">

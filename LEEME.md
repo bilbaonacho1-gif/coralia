@@ -29,8 +29,7 @@ así que no dependen de Google Fonts. Se declaran al principio de styles.css (@f
   anteriores por sector, 3,2M; proyecto destacado ECO2 Misiones con sus datos, reparto de beneficios y ratings; y los 14 pasos); Adaptación con el análisis de riesgo,
   sus 3 pilares y los 5 pasos. Cada bloque termina con su app y la página con sus casos.
   Diseño de cada página (bloques "Páginas de servicio" en styles.css): cada servicio tiene el color de su app
-  (Medir verde, Mitigar ámbar, Adaptarse azul). Arriba, el número del servicio calado y, a la derecha, los otros dos
-  servicios para pasar directo. Cortes en diagonal: el encabezado, la franja de destacados (highlights en SERVICIOS,
+  (Medir verde, Mitigar ámbar, Adaptarse azul). Arriba, a la derecha, los otros dos servicios para pasar directo. Cortes en diagonal: el encabezado, la franja de destacados (highlights en SERVICIOS,
   sobre la foto de la app) y la franja de la app. "Cómo lo hacemos": los pasos en una línea de tiempo en zigzag que se llena y enciende cada paso al
   bajar (en el celu, la línea va a la izquierda); en Medición, pestañas para elegir huella de producto o corporativa;
   en Mitigación, las dos etapas seguidas. En Adaptación, los 3 pilares como recorrido con íconos. Después, la app
