@@ -142,9 +142,9 @@ if (wheel) {
     const pts = []; for (let a = ap.a0; a <= ap.a1; a += 5) pts.push(P(RON, a), P(R0, a));
     const xs = pts.map((p) => p[0]), ys = pts.map((p) => p[1]);
     const x = Math.min(...xs), y = Math.min(...ys), w = Math.max(...xs) - x, h = Math.max(...ys) - y;
-    // fondo: la foto de la app si la tiene; si no, su pantalla en blanco y negro
+    // fondo: la foto de la app si la tiene (versión de 900 px, alcanza para la rueda); si no, su pantalla en blanco y negro
     if (ap.bg) g.classList.add('wseg--foto');
-    el('image', { href: `assets/apps/${ap.bg || 'card-' + ap.k}.webp`, x, y, width: w, height: h, preserveAspectRatio: `${ap.pos || 'xMidYMid'} slice`, 'clip-path': `url(#wclip-${ap.k})`, ...(ap.bg ? {} : { filter: 'url(#wgray)' }) }, g);
+    el('image', { href: `assets/apps/${ap.bg ? ap.bg + '-900' : 'card-' + ap.k}.webp`, x, y, width: w, height: h, preserveAspectRatio: `${ap.pos || 'xMidYMid'} slice`, 'clip-path': `url(#wclip-${ap.k})`, ...(ap.bg ? {} : { filter: 'url(#wgray)' }) }, g);
     const shade = el('path', { class: 'wseg__shade' }, g);
     const edge = el('path', { class: 'wseg__edge' }, g);
     // ícono de la app y el nombre en dos líneas (la segunda, en el color de la app)

@@ -201,3 +201,13 @@ Cumple los límites de Wix Headless: sin videos, cada archivo pesa menos de 3 MB
 - Misiones (REDD+): fotos del kit en la galería del caso (proyecto.html?p=misiones) y en el proyecto destacado de
   Mitigación. Dato actualizado: 10,1M VCUs verificados por Verra para 2017–2022 (antes decía 10M+).
 - Medir: la foto de la carpeta y de la página es la de Ruuts, el ganado entre los árboles (assets/proyectos/ruuts-1.jpg).
+
+## Celu: peso y botones (octubre 2026)
+- Fotos del inicio con versión chica para el celu (mismo nombre con -900 o -800 al final, .webp): las de las
+  carpetas de servicios, los fondos de las apps y el paisaje del contacto. En index.html van con srcset, así el
+  celu baja la chica y la compu la grande. La rueda de apps usa siempre la de 900 px (main.js).
+- Se recomprimieron algunas fotos grandes (portada, pipeline) sin cambiarles el tamaño.
+- Al abrir el inicio en el celu baja ~1,4 MB (antes ~2,2 MB).
+- Zona táctil más grande en los puntitos de los carruseles, links subrayados, migas de pan, links del contacto y
+  del pie, y las barras de los simuladores. No cambia cómo se ven (bloque "Celu: zona táctil" al final de styles.css).
+- Si se agrega una foto nueva a esos lugares, conviene hacerle también su versión chica.
