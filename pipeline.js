@@ -25,7 +25,7 @@ if (!p) {
   $('#pFacts').innerHTML = [['Tipo', p.type], ['Ubicación', p.place], ['Superficie', p.ha], ['Etapa', p.stage]]
     .map(([k, v]) => `<div><span>${k}</span><b>${v}</b></div>`).join('');
   $('#pBody').innerHTML = p.desc.map((t) => `<p>${t}</p>`).join('');
-  $('#pKpi').textContent = p.credits;
+  $('#pKpi').textContent = p.kpi[0]; $('#pKpiLabel').textContent = p.kpi[1];
   $('#pContact').href = `mailto:contacto@coraliae.com?subject=${encodeURIComponent('Inversión en ' + p.name)}`;
   if (p.gallery && p.gallery.length) {
     $('#pGalleryWrap').hidden = false;

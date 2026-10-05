@@ -16,7 +16,7 @@ así que no dependen de Google Fonts. Se declaran al principio de styles.css (@f
   para cada organización." (TODO en index.html: la definitiva la pasa Coralia; la línea del medio va en lima).
   Botón "Conocé nuestros servicios". Tarjetas enfocadas en servicio: Huella de carbono, Mercados de carbono
   (350k toneladas removidas: NÚMERO A CONFIRMAR) y Riesgo climático.
-- Menú: "Apps" pasó a "Servicios" (#servicios; #apps sigue funcionando).
+- Menú: "Apps" pasó a "Servicios" (#servicios; #apps sigue funcionando). "Proyectos" lleva a proyectos.html.
 - Qué es Coralia: debajo de la frase, "Nuestros servicios" (#servicios, el menú lleva acá): Medir, Mitigar y Adaptarse
   (como en el deck), cada uno abre su página (servicio.html?s=medir | mitigar | adaptar). Son tres tarjetas con
   forma de carpeta (foto, nombre y la flecha en el hueco de la esquina; la forma es el clipPath #folder en
@@ -43,10 +43,15 @@ así que no dependen de Google Fonts. Se declaran al principio de styles.css (@f
 - Mercados de carbono, al tocarlo: "Restauramos ecosistemas naturales." + antes y después (Blue Carbon, ARR, REDD+;
   pasa solo y también se arrastra) + "Para clientes" (prediagnóstico con los pasos del Carbon Markets Hub y
   "Acceder a la demo", TODO link) y "Para inversores" (tarjetas del pipeline).
-  - Fotos del antes y después: TODO. Guardarlas como assets/servicios/<blue-carbon|arr|redd>-antes.webp y
-    -despues.webp y poner foto: true en BA_TYPES (main.js). Mientras tanto se ven fondos de color.
-- Pipeline (pipeline.html): lista de proyectos propios y ficha de cada uno (pipeline.html?p=proyecto-1).
-  Datos PROVISORIOS en data.js (PIPELINE): nombre, tipo, ubicación, etapa, hectáreas, créditos, descripción, fotos.
+  - Fotos del antes y después (assets/servicios/<blue-carbon|arr|redd>-antes|despues.webp), sacadas de los kits de
+    comunicación de cada proyecto: Blue Carbon = manglar muerto en pie / manglar sano (DBCX, República Dominicana);
+    ARR = bosque quemado / bosque nativo no afectado (Chubut); REDD+ = extracción de madera / selva en pie (Misiones).
+    Textos en BA_TYPES (main.js).
+- Pipeline (pipeline.html): lista de proyectos propios y ficha de cada uno (pipeline.html?p=remonte | chubut | dbcx).
+  Datos en data.js (PIPELINE), tomados de los kits de comunicación: ReMonte (ARR, Chaco, 24.024 ha, rating Sylvera A),
+  Chubut ARR (7.240 ha en restauración de 42.000 ha quemadas) y Dominican Blue Carbon (2.784 ha de manglar).
+  Fotos en assets/pipeline/. TODO Coralia: créditos estimados de cada uno y los demás proyectos (son 6–7).
+  En "Para inversores" (Carbon Markets) aparecen los mismos proyectos.
 - El botón del panel de la rueda dice "Conocé la app" (abre su recorrido).
 - "Niveles de acceso" pasó a "Cómo trabajamos" (también en el menú): Consultoría primera y destacada
   ("Con nuestro equipo") y después Profesional, Análisis y Demo ("Solo apps").
@@ -192,3 +197,9 @@ La tarjeta del premio tiene "Conocé más del premio →", que abre la publicaci
 
 ## Wix
 Cumple los límites de Wix Headless: sin videos, cada archivo pesa menos de 3 MB.
+
+## Fotos de los proyectos (kits de comunicación, octubre 2026)
+- Misiones (REDD+): fotos del kit en la galería del caso (proyecto.html?p=misiones) y en el proyecto destacado de
+  Mitigación. Dato actualizado: 10,1M VCUs verificados por Verra para 2017–2022 (antes decía 10M+).
+- Medir: la foto de la carpeta y de la página es de Phoenix Global Resources (inventario de GEI real), en vez de los
+  cubos de stock.

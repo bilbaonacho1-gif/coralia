@@ -9,7 +9,7 @@ const INTRO = 'El cambio climático ya no es una amenaza futura, es una realidad
 
 const SERVICIOS = {
   medir: {
-    title: 'Medición', sub: 'de la huella de carbono', img: 'assets/proyectos/andromaco-1.jpg', intro: INTRO, cases: ['medir'],
+    title: 'Medición', sub: 'de la huella de carbono', img: 'assets/proyectos/phoenix-1.jpg', intro: INTRO, cases: ['medir'],
     card: 'Huella de carbono de empresas, productos y eventos, con estándares internacionales (GHG Protocol, ISO 14064 e ISO 14067).',
     highlights: [['+40', 'inventarios de GEI realizados'], ['Alcances 1, 2 y 3', 'de la operación a la cadena de valor'], ['GHG Protocol', 'e ISO 14064 e ISO 14067']],
     blocks: [
@@ -45,17 +45,17 @@ const SERVICIOS = {
       {
         id: 'mercados', eyebrow: 'Mitigar', name: 'Mercados de carbono', app: 'markets',
         text: 'Ofrecemos apoyo integral en el desarrollo de proyectos de mercado de carbono, desde la planificación hasta la implementación, facilitando la participación tanto en mercados voluntarios como regulados.',
-        // Fuente: Company deck 2026 (13M+ tCO₂e) = proyectos anteriores por sector (web actual, 3,2M) + ECO2 Misiones (10M+ VCUs)
+        // Fuente: Company deck 2026 (13M+ tCO₂e) = proyectos anteriores por sector (web actual, 3,2M) + ECO2 Misiones (10,1M VCUs, período 2017–2022)
         stat: {
           n: '13M+', label: 'toneladas de CO₂e reducidas o removidas de la atmósfera en proyectos desarrollados por Coralia.',
-          parts: [['Bosque nativo · ECO2 Misiones', 10000000, '10M+'], ['Generación eléctrica', 1949660], ['Energías renovables', 675403], ['Agroindustria', 581347], ['Oil & Gas', 31496]],
+          parts: [['Bosque nativo · ECO2 Misiones', 10100000, '10,1M'], ['Generación eléctrica', 1949660], ['Energías renovables', 675403], ['Agroindustria', 581347], ['Oil & Gas', 31496]],
         },
         // Proyecto destacado (datos del Company deck 2026)
         feature: {
-          eyebrow: 'Proyecto destacado · Verra JNR · VCS 4648', name: 'ECO2 Misiones', case: 'misiones', img: 'assets/proyectos/misiones.jpg',
+          eyebrow: 'Proyecto destacado · Verra JNR · VCS 4648', name: 'ECO2 Misiones', case: 'misiones', img: 'assets/proyectos/misiones-aerea.webp',
           text: 'Programa jurisdiccional REDD+ de la provincia de Misiones: el primero del mundo liderado por un gobierno subnacional en emitir créditos de carbono.',
           stats: [
-            ['10M+', 'VCUs', 'en el primer período de monitoreo: la mayor emisión de un solo período en la historia de Verra'],
+            ['10,1M', 'VCUs', 'verificados por Verra para 2017–2022: la mayor emisión de un solo período en su historia'],
             ['2,8M', 'VCUs elegibles para CORSIA', ''],
             ['A–AA', 'rating de Sylvera', 'antes de la emisión: el 0,03% superior entre más de 24.000 proyectos'],
             ['1,5M', 'hectáreas de bosque nativo', 'verificado por AENOR'],

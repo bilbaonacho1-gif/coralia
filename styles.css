@@ -1275,3 +1275,5 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
   .sv-fact+.sv-fact{border-left:0;border-top:1px solid rgba(255,255,255,.18);padding-top:24px}
 }
 .sv-block:has(+ .sv-facts){padding-bottom:30px}
+/* las fotos del pipeline tienen distintas proporciones: todas se recortan al mismo 16:9 */
+.pipe__media{overflow:hidden}.pipe__media img{position:absolute;inset:0}

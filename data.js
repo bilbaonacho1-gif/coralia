@@ -5,7 +5,7 @@ const CASES = [
   // img: tarjeta con el logo del cliente ya incluido (de la web actual).
   // tallImg: foto para tarjetas verticales cuando la tarjeta original es muy ancha ('' = fondo de color con el nombre).
   // hero / gallery: fotos de la página de detalle. quote: índice en QUOTES.
-  { id: 'misiones', hero: 'assets/proyectos/misiones.jpg', gallery: [], role: ['Redacción del documento de programa (PD).', 'Datos de actividad del nivel de referencia de emisiones forestales (FREL).', 'Aplicación de la metodología y sistema MRV.', 'Datos de actividad del período de monitoreo.', 'Marco legal de titularidad de los VCUs.', 'Análisis de incertidumbre, fugas y no permanencia.', 'Respuestas a hallazgos de AENOR, Verra y Sylvera.'], period: '2017–2022', featured: true, img: 'assets/proyectos/misiones.jpg', client: 'Provincia de Misiones', country: 'Argentina', svc: 'mitigar', ind: 'Mercados de carbono',
+  { id: 'misiones', hero: 'assets/proyectos/misiones.jpg', gallery: ['assets/proyectos/misiones-selva.webp', 'assets/proyectos/misiones-aerea.webp', 'assets/proyectos/misiones-comunidades.webp'], role: ['Redacción del documento de programa (PD).', 'Datos de actividad del nivel de referencia de emisiones forestales (FREL).', 'Aplicación de la metodología y sistema MRV.', 'Datos de actividad del período de monitoreo.', 'Marco legal de titularidad de los VCUs.', 'Análisis de incertidumbre, fugas y no permanencia.', 'Respuestas a hallazgos de AENOR, Verra y Sylvera.'], period: '2017–2022', featured: true, img: 'assets/proyectos/misiones.jpg', client: 'Provincia de Misiones', country: 'Argentina', svc: 'mitigar', ind: 'Mercados de carbono',
     title: 'Programa Jurisdiccional REDD+ ECO2', kpi: ['10.175.209', 'VCUs emitidos · 2017–2022'],
     short: 'El primer programa JNR del mundo en emitir créditos de carbono, liderado por un gobierno subnacional.',
     body: ['Verra aprobó la emisión de los primeros 10.175.209 VCUs del Programa JNR de la Provincia de Misiones, una de las mayores emisiones para un solo período de verificación. Detrás hay más de 3 millones de hectáreas de Selva Paranaense protegidas por décadas de política pública.',
@@ -213,8 +213,23 @@ const TEAM_GROUPS = { all: 'Todos', direccion: 'Dirección', tecnico: 'Equipo t�
 
 // Pipeline de proyectos propios (para inversores). TODO: completar con la info que pasa Coralia.
 // Cada uno: id (para el link), nombre, tipo, ubicación, etapa, hectáreas, créditos estimados, descripción y fotos.
-const PIPELINE = [1, 2, 3, 4, 5, 6].map((n) => ({
-  id: `proyecto-${n}`, name: `Proyecto ${n}`, type: ['ARR', 'REDD+', 'Blue Carbon', 'ARR', 'REDD+', 'ALM'][n - 1],
-  place: '[Ubicación a completar]', stage: '[Etapa a completar]', ha: '[A completar]', credits: '[A completar]',
-  desc: ['[Descripción del proyecto a completar: qué se hace, dónde y con qué impacto esperado.]'], img: '', gallery: [],
-}));
+// Pipeline de proyectos propios (para inversores). Datos de los kits de comunicación de cada proyecto.
+// kpi: el número grande de la ficha. TODO Coralia: créditos estimados de cada proyecto y los que faltan del pipeline (son 6–7).
+const PIPELINE = [
+  { id: 'remonte', name: 'ReMonte', type: 'ARR', place: 'Gran Chaco · Santiago del Estero, Argentina', stage: 'Rating Sylvera A previo a la emisión',
+    ha: '24.024 ha', kpi: ['24.024 ha', 'de Chaco donde el bosque nativo vuelve con la hacienda adentro'],
+    desc: ['El monte chaqueño no se planta: se deja volver. ReMonte es un programa de regeneración natural asistida del bosque nativo del Chaco Seco, con la ganadería adentro.',
+      'El renoval no es una maleza: es el bosque volviendo. En el campo medimos cuánto monte queda y cuánto puede volver: cobertura leñosa nativa, renoval, suelo y forraje en El Tumé, La Colonia y Tres Flores.',
+      'Sylvera le otorgó un rating A previo a la emisión (junio de 2026).'],
+    img: 'assets/pipeline/remonte-3.webp', gallery: ['assets/pipeline/remonte-1.webp', 'assets/pipeline/remonte-2.webp', 'assets/pipeline/remonte-4.webp', 'assets/pipeline/remonte-5.webp'] },
+  { id: 'chubut', name: 'Chubut ARR', type: 'ARR', place: 'Cholila · Chubut, Argentina', stage: 'Primera instancia de restauración',
+    ha: '7.240 ha', kpi: ['7.240 ha', 'en restauración, dentro de 42.000 ha afectadas por el fuego'],
+    desc: ['El fuego se midió en hectáreas. La recuperación también. Proyecto ARR sobre el paisaje del bosque andino-patagónico afectado por los incendios de 2014-2015, junto al Gobierno del Chubut.',
+      'Cada hectárea se verifica en el terreno: muestreo de suelo y parcelas de monitoreo en el área afectada por los incendios.'],
+    img: 'assets/pipeline/chubut-1.webp', gallery: ['assets/pipeline/chubut-2.webp', 'assets/pipeline/chubut-3.webp', 'assets/servicios/arr-antes.webp', 'assets/servicios/arr-despues.webp'] },
+  { id: 'dbcx', name: 'Dominican Blue Carbon', type: 'Blue Carbon', place: 'Montecristi y Puerto Plata, República Dominicana', stage: 'Medición en campo · octubre 2025',
+    ha: '2.784 ha', kpi: ['2.784 ha', 'de manglar bajo un proyecto de conservación y restauración a 40 años'],
+    desc: ['De mercados climáticos de alto riesgo a soluciones climáticas de bajo riesgo: desarrollo de un proyecto de carbono en manglar, con el Dominican Blue Carbon Exchange Fund Trust.',
+      'La degradación se mide; la recuperación también. Cada hectárea se verifica en el terreno: inventario de parcelas y muestreo de suelo en Montecristi y Puerto Plata (relevamiento de octubre de 2025).'],
+    img: 'assets/pipeline/dbcx-1.webp', gallery: ['assets/pipeline/dbcx-2.webp', 'assets/pipeline/dbcx-3.webp', 'assets/servicios/blue-carbon-antes.webp', 'assets/servicios/blue-carbon-despues.webp'] },
+];

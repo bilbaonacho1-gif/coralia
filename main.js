@@ -253,9 +253,10 @@ $('#appDetailClose').addEventListener('click', closeApp);
    TODO: fotos reales (las pasa Coralia). Mientras tanto se ven fondos de color con el texto de la foto que falta.
    Para sumar las fotos: guardarlas como assets/servicios/<k>-antes.webp y <k>-despues.webp y poner foto: true. */
 const BA_TYPES = [
-  { k: 'blue-carbon', foto: false, name: 'Blue Carbon', antes: 'Antes · manglar degradado', despues: 'Después · manglar restaurado' },
-  { k: 'arr', foto: false, name: 'ARR', antes: 'Antes · bosque quemado', despues: 'Después · bosque restaurado' },
-  { k: 'redd', foto: false, name: 'REDD+', antes: 'Sin proyecto · bosque amenazado', despues: 'Con proyecto · bosque conservado' },
+  // fotos de los proyectos (assets/servicios/<k>-antes|despues.webp): DBCX (República Dominicana), Chubut y Misiones
+  { k: 'blue-carbon', foto: true, name: 'Blue Carbon', antes: 'Manglar muerto en pie', despues: 'Manglar sano' },
+  { k: 'arr', foto: true, name: 'ARR', antes: 'Bosque quemado', despues: 'Bosque nativo no afectado' },
+  { k: 'redd', foto: true, name: 'REDD+', antes: 'Extracción de madera', despues: 'Selva en pie' },
 ];
 (() => {
   const ba = $('#ba'); if (!ba) return;
