@@ -94,6 +94,13 @@
 <section class="section intro intro2" id="plataforma">
   <!-- decoración: mariposas de hojas (assets/deco); se mueven apenas con el scroll (data-par, motion.js) -->
   <img class="deco deco--intro" src="assets/deco/hojas-costado.webp" alt="" aria-hidden="true" loading="lazy" data-par="-0.04">
+  <!-- Forma de "carpeta" de las tarjetas (pestaña arriba a la izquierda y hueco abajo a la derecha para la flecha).
+       Coordenadas relativas a la tarjeta: sirve para cualquier tamaño con la misma proporción (5:4). -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <clipPath id="folder" clipPathUnits="objectBoundingBox">
+      <path d="M0 .06Q0 0 .048 0L.44 0Q.48 0 .5 .03L.53 .075Q.55 .1 .59 .1L.952 .1Q1 .1 1 .16L1 .7Q1 .76 .952 .76L.84 .76Q.8 .76 .8 .81L.8 .94Q.8 1 .752 1L.048 1Q0 1 0 .94Z"/>
+    </clipPath>
+  </svg>
   <div class="wrap intro2__in">
     <span class="eyebrow reveal">Qué es Coralia</span>
     <p class="statement" data-words>Coralia combina <b>conocimiento climático</b>, <b>datos</b> y <b>tecnología</b> para que las organizaciones tomen mejores decisiones frente al cambio climático.</p>
@@ -104,56 +111,21 @@
       <img class="deco leaf leaf--3" src="assets/deco/hoja-chica-3.webp" alt="" loading="lazy" data-par="-0.03">
       <img class="deco leaf leaf--4" src="assets/deco/hoja-media.webp" alt="" loading="lazy" data-par="-0.05">
     </div>
+    <!-- Nuestros servicios: cada carpeta lleva a la página que explica el servicio (servicio.html?s=...) -->
     <span class="eyebrow folders__eyebrow reveal" id="servicios">Nuestros servicios</span>
-    <!-- Servicios: uno en grande y los otros al costado; al tocar uno de la derecha pasa a ser el grande
-         (main.js, "Servicios"). Cada uno lleva a su página: servicio.html?s=medir | mitigar | adaptar -->
-    <div class="svx reveal" id="svx">
-      <div class="svx__main">
-        <article class="svx__slide sv--medir is-on" data-svc="medir">
-          <img src="assets/proyectos/andromaco-1.jpg" alt="" loading="lazy">
-          <div class="svx__body">
-            <span class="svx__num" aria-hidden="true">01</span>
-            <span class="svx__eyebrow">Medir</span>
-            <h3>Huella de carbono</h3>
-            <p>Huella de carbono de empresas, productos y eventos, con estándares internacionales (GHG Protocol, ISO 14064 e ISO 14067).</p>
-            <a class="btn btn--lime" href="servicio.html?s=medir">Ver servicio →</a>
-          </div>
-        </article>
-        <article class="svx__slide sv--mitigar" data-svc="mitigar" aria-hidden="true">
-          <img src="assets/proyectos/mercuria-1.jpg" alt="" loading="lazy">
-          <div class="svx__body">
-            <span class="svx__num" aria-hidden="true">02</span>
-            <span class="svx__eyebrow">Mitigar</span>
-            <h3>Mercados de carbono</h3>
-            <p>Mercados de carbono: desarrollamos proyectos de punta a punta, de la factibilidad a la emisión de los créditos.</p>
-            <a class="btn btn--lime" href="servicio.html?s=mitigar" tabindex="-1">Ver servicio →</a>
-          </div>
-        </article>
-        <article class="svx__slide sv--adaptar" data-svc="adaptar" aria-hidden="true">
-          <img src="assets/proyectos/pluspetrol-2.jpg" alt="" loading="lazy">
-          <div class="svx__body">
-            <span class="svx__num" aria-hidden="true">03</span>
-            <span class="svx__eyebrow">Adaptarse</span>
-            <h3>Riesgo climático</h3>
-            <p>Análisis de riesgo climático y planes de adaptación para cada activo y organización.</p>
-            <a class="btn btn--lime" href="servicio.html?s=adaptar" tabindex="-1">Ver servicio →</a>
-          </div>
-        </article>
-      </div>
-      <div class="svx__side">
-        <button type="button" class="svx__card sv--medir is-on" data-svc="medir" aria-label="Medir: Huella de carbono">
-          <img src="assets/proyectos/andromaco-1.jpg" alt="" loading="lazy"><span class="svx__cnum" aria-hidden="true">01</span>
-          <span class="svx__ctxt"><b>Medir</b><em>Huella de carbono</em></span>
-        </button>
-        <button type="button" class="svx__card sv--mitigar" data-svc="mitigar" aria-label="Mitigar: Mercados de carbono">
-          <img src="assets/proyectos/mercuria-1.jpg" alt="" loading="lazy"><span class="svx__cnum" aria-hidden="true">02</span>
-          <span class="svx__ctxt"><b>Mitigar</b><em>Mercados de carbono</em></span>
-        </button>
-        <button type="button" class="svx__card sv--adaptar" data-svc="adaptar" aria-label="Adaptarse: Riesgo climático">
-          <img src="assets/proyectos/pluspetrol-2.jpg" alt="" loading="lazy"><span class="svx__cnum" aria-hidden="true">03</span>
-          <span class="svx__ctxt"><b>Adaptarse</b><em>Riesgo climático</em></span>
-        </button>
-      </div>
+    <div class="folders">
+      <a class="folder reveal" href="servicio.html?s=medir">
+        <span class="folder__box"><span class="folder__card"><img src="assets/proyectos/andromaco-1.jpg" alt="" loading="lazy"><span class="folder__label"><i class="dot dot--lime"></i>Medir</span></span><span class="folder__go" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
+        <span class="folder__txt">Huella de carbono de empresas, productos y eventos, con estándares internacionales (GHG Protocol, ISO 14064 e ISO 14067).</span>
+      </a>
+      <a class="folder reveal" href="servicio.html?s=mitigar">
+        <span class="folder__box"><span class="folder__card"><img src="assets/proyectos/mercuria-1.jpg" alt="" loading="lazy"><span class="folder__label"><i class="dot dot--lime"></i>Mitigar</span></span><span class="folder__go" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
+        <span class="folder__txt">Mercados de carbono: desarrollamos proyectos de punta a punta, de la factibilidad a la emisión de los créditos.</span>
+      </a>
+      <a class="folder reveal" href="servicio.html?s=adaptar">
+        <span class="folder__box"><span class="folder__card"><img src="assets/proyectos/pluspetrol-2.jpg" alt="" loading="lazy"><span class="folder__label"><i class="dot dot--lime"></i>Adaptarse</span></span><span class="folder__go" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
+        <span class="folder__txt">Análisis de riesgo climático y planes de adaptación para cada activo y organización.</span>
+      </a>
     </div>
   </div>
 </section>

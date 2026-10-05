@@ -18,10 +18,9 @@ así que no dependen de Google Fonts. Se declaran al principio de styles.css (@f
   (350k toneladas removidas: NÚMERO A CONFIRMAR) y Riesgo climático.
 - Menú: "Apps" pasó a "Servicios" (#servicios; #apps sigue funcionando).
 - Qué es Coralia: debajo de la frase, "Nuestros servicios" (#servicios, el menú lleva acá): Medir, Mitigar y Adaptarse
-  (como en el deck), cada uno abre su página (servicio.html?s=medir | mitigar | adaptar). Se muestran con uno en
-  grande (foto, número 01/02/03 calado, texto y "Ver servicio →") y los otros dos como tarjetas a la derecha con su
-  número asomando cortado arriba; al tocar una, pasa a ser la grande. Sola va pasando cada 6 s hasta que alguien la
-  toca. Markup en index.html (#svx), comportamiento en main.js ("Servicios"), estilos al final de styles.css. La
+  (como en el deck), cada uno abre su página (servicio.html?s=medir | mitigar | adaptar). Son tres tarjetas con
+  forma de carpeta (foto, nombre y la flecha en el hueco de la esquina; la forma es el clipPath #folder en
+  index.html, proporción 5:4) con su texto abajo. La
   consultoría no es un servicio aparte: es cómo trabajamos en los tres (portada, "Cómo trabajamos").
   Cada servicio tiene su app: Medir → Carbon Footprint, Mitigar → Carbon Markets Hub, Adaptar → Climate Risk App.
 - Páginas de servicio (servicio.html + servicio.js, contenido en SERVICIOS): el texto de la web actual,
