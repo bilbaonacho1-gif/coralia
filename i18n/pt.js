@@ -708,7 +708,23 @@
 "Con nuestra app": "Com nosso app",
 "Calculá y gestioná la huella con la misma herramienta que usan nuestros consultores.": "Calcule e gerencie a pegada com a mesma ferramenta que nossos consultores usam.",
 "Diagnosticá tu tierra en cinco minutos: qué proyecto de carbono es posible y cuánto vale.": "Diagnostique sua terra em cinco minutos: que projeto de carbono é possível e quanto vale.",
-"Proyectos de este servicio": "Projetos deste serviço"
+"Proyectos de este servicio": "Projetos deste serviço",
+"Servicios de Coralia Environmental: medición, mitigación y adaptación al cambio climático.": "Serviços da Coralia Environmental: medição, mitigação e adaptação às mudanças climáticas.",
+"inventarios de GEI realizados": "inventários de GEE realizados",
+"Alcances 1, 2 y 3": "Escopos 1, 2 e 3",
+"de la operación a la cadena de valor": "da operação à cadeia de valor",
+"y GHG Protocol": "e GHG Protocol",
+"tCO₂e reducidas o removidas": "tCO₂e reduzidas ou removidas",
+"VCUs emitidos por ECO2 Misiones": "VCUs emitidos pelo ECO2 Misiones",
+"Físico y de transición": "Físico e de transição",
+"los dos tipos de riesgo climático": "os dois tipos de risco climático",
+"Activo por activo": "Ativo por ativo",
+"con escenarios en el territorio": "com cenários no território",
+"Plan de adaptación": "Plano de adaptação",
+"alerta temprana y respuesta": "alerta precoce e resposta",
+"Cómo lo hacemos": "Como fazemos",
+"Conocé la app →": "Conheça o app →",
+"Otros servicios": "Outros serviços"
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 trabalho'],

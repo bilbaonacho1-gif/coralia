@@ -1158,3 +1158,96 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
 .sv-feat__ratings figcaption b{font-size:16px;color:var(--ink)}
 @media (max-width:1000px){.sv-feat{grid-template-columns:1fr}.sv-feat__media{min-height:220px}.sv-feat__ratings{grid-template-columns:1fr 1fr}.sv-feat__rtitle{grid-column:1/-1;max-width:none}}
 @media (max-width:640px){.sv-feat__body{padding:24px}.sv-feat__stats{grid-template-columns:1fr}.sv-feat__ratings{grid-template-columns:1fr;padding:18px 24px}}
+
+/* ================= Páginas de servicio: diseño por dentro ================= */
+/* un color por servicio, el mismo de su app en la rueda: Medir verde, Mitigar ámbar, Adaptar azul */
+.sv--medir{--c:#a9dc6c;--cd:#3f7a22;--cs:rgba(169,220,108,.16)}
+.sv--mitigar{--c:#eab765;--cd:#94621a;--cs:rgba(234,183,101,.18)}
+.sv--adaptar{--c:#82c4ee;--cd:#1f6a9e;--cs:rgba(130,196,238,.18)}
+.sv .sv-hero__title em{color:var(--c)}
+.sv .sv-block .eyebrow,.sv .sv-how .eyebrow{color:var(--cd)}
+/* destacados del encabezado */
+.sv-hero{min-height:700px}
+.sv-high{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;max-width:900px;margin-top:30px}
+.sv-high:empty{display:none}
+.sv-high__it{display:flex;flex-direction:column;gap:4px;padding:16px 18px;border-radius:18px;background:rgba(12,26,19,.38);border:1px solid rgba(255,255,255,.18);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.sv-high__it b{font-family:var(--display);font-weight:500;font-size:clamp(22px,2.2vw,30px);line-height:1.05;color:var(--c)}
+.sv-high__it span{font-size:13.5px;line-height:1.4;color:rgba(255,255,255,.82)}
+/* "Cómo lo hacemos" + pestañas */
+.sv-how{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px 24px;margin:8px 0 28px}
+.sv-how .eyebrow{margin:0;font-size:13px}
+.sv-tabs{display:inline-flex;padding:5px;border-radius:999px;background:var(--paper);border:1px solid var(--line)}
+.sv-tab{padding:10px 18px;border-radius:999px;font-size:14.5px;font-weight:600;color:var(--ink2);transition:background .3s,color .3s}
+.sv-tab:hover{color:var(--ink)}
+.sv-tab.is-on{background:var(--forest);color:#fff}
+/* línea de tiempo en zigzag: la línea del centro se llena al bajar y cada paso se enciende */
+.tl{--p:0;position:relative;list-style:none;margin:0 0 64px;padding:10px 0;display:grid;grid-template-columns:1fr 64px 1fr;row-gap:14px}
+.tl__rail{position:absolute;left:50%;top:0;bottom:0;width:3px;translate:-50% 0;border-radius:3px;background:var(--line)}
+.tl__rail i{position:absolute;inset:0;border-radius:3px;background:linear-gradient(180deg,var(--c),var(--cd));transform-origin:top;scale:1 var(--p)}
+.tl__item{display:contents}
+.tl__dot{grid-column:2;justify-self:center;align-self:start;position:relative;z-index:1;display:grid;place-items:center;width:46px;height:46px;margin-top:14px;border-radius:50%;
+  background:var(--bg);border:2px solid var(--line2);color:var(--ink3,#7b857c);font-weight:700;font-size:14px;font-variant-numeric:tabular-nums;transition:background .4s,border-color .4s,color .4s,box-shadow .4s}
+.tl__card{position:relative;padding:20px 22px;border-radius:20px;background:var(--paper);border:1px solid var(--line);box-shadow:0 18px 36px -30px rgba(18,38,30,.5);
+  opacity:.35;translate:0 18px;transition:opacity .6s var(--ease),translate .6s var(--ease),border-color .4s}
+.tl__card h4{margin:0 0 6px;font-size:18px;font-weight:700;color:var(--ink)}
+.tl__card p{margin:0;font-size:14.5px;line-height:1.55;color:var(--ink2)}
+.tl__item:nth-of-type(odd) .tl__card{grid-column:1}
+.tl__item:nth-of-type(even) .tl__card{grid-column:3}
+.tl__item.is-on .tl__dot{background:var(--forest);border-color:var(--c);color:var(--c);box-shadow:0 0 0 6px var(--cs)}
+.tl__item.is-on .tl__card{opacity:1;translate:0 0;border-color:var(--line2)}
+/* cada paso ocupa su fila (--r, servicio.js); el punto queda a la altura de su tarjeta */
+.tl__dot,.tl__card,.tl__phase{grid-row:var(--r)}
+.tl__phase{grid-column:1/-1;justify-self:center;position:relative;z-index:1;margin:18px 0 6px}
+.tl__phase span{display:inline-block;padding:8px 18px;border-radius:999px;background:var(--forest);color:#fff;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+/* pilares como recorrido (adaptación) */
+.sv-flow{display:grid;grid-template-columns:minmax(0,1fr) 40px minmax(0,1fr) 40px minmax(0,1fr);align-items:stretch;margin:0 0 64px}
+.sv-flow__it{position:relative;padding:26px 24px;border-radius:24px;background:var(--paper);border:1px solid var(--line);transition-delay:var(--d,0s)}
+.sv-flow__it small{position:absolute;right:22px;top:22px;font-weight:700;font-size:13px;color:var(--cd)}
+.sv-flow__ic{display:grid;place-items:center;width:52px;height:52px;margin-bottom:18px;border-radius:16px;background:var(--forest)}
+.sv-flow__ic svg{width:26px;height:26px;fill:none;stroke:var(--c);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sv-flow__it h3{margin:0 0 8px;font-family:var(--display);font-weight:500;font-size:23px;line-height:1.15}
+.sv-flow__it p{margin:0;color:var(--ink2);font-size:15px;line-height:1.55}
+.sv-flow__arrow{display:grid;place-items:center;font-size:22px;color:var(--cd)}
+/* la app del servicio, en grande */
+.sv-show{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:center;gap:30px;min-height:380px;padding:44px;border-radius:32px;overflow:hidden;isolation:isolate;color:#fff;background:var(--forest)}
+.sv-show__bg{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.sv-show::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(8,20,14,.9) 25%,rgba(8,20,14,.45) 70%,rgba(8,20,14,.25))}
+.sv-show:hover .sv-show__bg{transform:scale(1.04)}
+.sv-show__txt{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.sv-show__txt small{color:var(--c);font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.sv-show__name{display:flex;align-items:center;gap:14px;font-family:var(--display);font-weight:500;font-size:clamp(30px,3.2vw,44px);line-height:1}
+.sv-show__name img{width:52px;height:52px}
+.sv-show__txt p{margin:0 0 8px;font-size:16.5px;line-height:1.55;color:rgba(255,255,255,.85);max-width:420px}
+.sv-show__shot{justify-self:end;width:min(100%,520px);border-radius:16px;overflow:hidden;rotate:-3deg;box-shadow:0 30px 60px -20px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.15),0 0 60px -10px var(--c);transition:rotate .6s var(--ease),translate .6s var(--ease)}
+.sv-show__shot img{display:block;width:100%;height:auto}
+.sv-show:hover .sv-show__shot{rotate:0deg;translate:0 -6px}
+/* otros servicios */
+.sv-others__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.sv-other{position:relative;display:flex;align-items:flex-end;min-height:240px;padding:26px;border-radius:26px;overflow:hidden;isolation:isolate;color:#fff}
+.sv-other img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.sv-other::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(8,20,14,.88) 15%,rgba(8,20,14,.15) 75%)}
+.sv-other:hover img{transform:scale(1.05)}
+.sv-other__txt{display:flex;flex-direction:column;gap:6px;max-width:440px}
+.sv-other__txt b{font-family:var(--display);font-weight:500;font-size:32px;line-height:1;color:var(--c)}
+.sv-other__txt em{font-style:normal;font-size:15px;line-height:1.5;color:rgba(255,255,255,.85)}
+.sv-other i{position:absolute;right:24px;top:22px;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.14);font-style:normal;font-size:20px;transition:background .3s,color .3s}
+.sv-other:hover i{background:var(--c);color:var(--forest)}
+@media (max-width:1000px){
+  .sv-flow{grid-template-columns:1fr;gap:10px}.sv-flow__arrow{rotate:90deg;height:30px}
+  .sv-show{grid-template-columns:1fr;padding:32px}.sv-show__shot{justify-self:center}
+}
+@media (max-width:760px){
+  .sv-high{grid-template-columns:1fr;gap:8px}.sv-high__it{flex-direction:row;align-items:baseline;gap:10px;padding:12px 14px}
+  .sv-hero{min-height:0}
+  /* en el celu la línea va a la izquierda y las tarjetas a la derecha */
+  .tl{grid-template-columns:46px 1fr;column-gap:14px}
+  .tl__rail{left:23px}
+  .tl__dot{grid-column:1;margin-top:12px}
+  .tl__item:nth-of-type(odd) .tl__card,.tl__item:nth-of-type(even) .tl__card{grid-column:2}
+  .tl__phase{justify-self:start;margin-left:0}
+  .sv-tabs{width:100%}.sv-tab{flex:1;padding:10px 8px;font-size:13.5px}
+  .sv-others__grid{grid-template-columns:1fr}.sv-other{min-height:200px}
+  .sv-show{padding:26px 22px;gap:22px}.sv-show__shot{rotate:0deg}
+}
+@media (prefers-reduced-motion:reduce){.tl__card{opacity:1;translate:none;transition:none}.tl__rail i{scale:1}}
+.tl[hidden]{display:none}

@@ -10,9 +10,11 @@ const INTRO = 'El cambio climático ya no es una amenaza futura, es una realidad
 const SERVICIOS = {
   medir: {
     title: 'Medición', sub: 'de la huella de carbono', img: 'assets/proyectos/andromaco-1.jpg', intro: INTRO, cases: ['medir'],
+    card: 'Huella de carbono de empresas, productos y eventos, con estándares internacionales (GHG Protocol, ISO 14064 e ISO 14067).',
+    highlights: [['+40', 'inventarios de GEI realizados'], ['Alcances 1, 2 y 3', 'de la operación a la cadena de valor'], ['ISO 14064 · 14067', 'y GHG Protocol']],
     blocks: [
       {
-        id: 'huella', eyebrow: 'Medir', name: 'Huella de carbono', app: 'footprint',
+        id: 'huella', eyebrow: 'Medir', name: 'Huella de carbono', app: 'footprint', tabs: true, // producto o corporativa: se elige con pestañas
         text: 'Realizamos cálculos de huella de carbono y estrategias de reducción para empresas, productos, eventos y territorios, promoviendo la sostenibilidad y la mitigación del cambio climático.',
         groups: [
           { title: 'Huella de carbono de productos', steps: [
@@ -37,6 +39,8 @@ const SERVICIOS = {
   },
   mitigar: {
     title: 'Mitigación', sub: 'del cambio climático', img: 'assets/proyectos/mercuria-1.jpg', intro: INTRO, cases: ['mitigar'],
+    card: 'Mercados de carbono: desarrollamos proyectos de punta a punta, de la factibilidad a la emisión de los créditos.',
+    highlights: [['13M+', 'tCO₂e reducidas o removidas'], ['10M+', 'VCUs emitidos por ECO2 Misiones'], ['A–AA', 'rating de Sylvera']],
     blocks: [
       {
         id: 'mercados', eyebrow: 'Mitigar', name: 'Mercados de carbono', app: 'markets',
@@ -84,6 +88,8 @@ const SERVICIOS = {
   },
   adaptar: {
     title: 'Adaptación', sub: 'al cambio climático', img: 'assets/proyectos/pluspetrol-2.jpg', intro: INTRO, cases: ['adaptar'],
+    card: 'Análisis de riesgo climático y planes de adaptación para cada activo y organización.',
+    highlights: [['Físico y de transición', 'los dos tipos de riesgo climático'], ['Activo por activo', 'con escenarios en el territorio'], ['Plan de adaptación', 'alerta temprana y respuesta']],
     blocks: [
       {
         id: 'riesgo', eyebrow: 'Adaptar', name: 'Análisis de riesgo climático', app: 'risk',
@@ -153,7 +159,38 @@ function feature(f) {
     <div class="sv-feat__ratings"><span class="sv-feat__rtitle">Calificados antes de la emisión</span>${f.ratings.map((r) => `<figure><img src="${r[0]}" alt="" loading="lazy"><figcaption><b>${r[2]}</b>${r[1]}</figcaption></figure>`).join('')}</div>
   </article>`;
 }
-let n = 0;
+// destacados del encabezado
+if (S.highlights) $('#sHigh').innerHTML = S.highlights.map((h, i) => `<div class="sv-high__it in d${i + 2}"><b>${h[0]}</b><span>${h[1]}</span></div>`).join('');
+
+// Pasos: línea de tiempo que se va encendiendo al bajar. Si el bloque tiene "tabs", cada grupo es una opción
+// (pestañas); si no, los grupos son etapas seguidas de un mismo recorrido.
+// cada paso y cada etapa va en su propia fila de la grilla (--r): el punto al medio y la tarjeta a un costado
+let row = 0;
+const stepItems = (steps, from = 0) => steps.map((st, i) => `<li class="tl__item" style="--r:${++row}"><span class="tl__dot">${String(from + i + 1).padStart(2, '0')}</span><div class="tl__card"><h4>${st[0]}</h4><p>${st[1]}</p></div></li>`).join('');
+function timeline(b) {
+  const gs = b.groups || []; if (!gs.length) return '';
+  if (b.tabs) return `
+    <div class="sv-how reveal"><span class="eyebrow">Cómo lo hacemos</span>
+      <div class="sv-tabs" role="tablist">${gs.map((g, i) => `<button type="button" role="tab" class="sv-tab${i ? '' : ' is-on'}" aria-selected="${!i}" data-tab="${i}">${g.title}</button>`).join('')}</div></div>
+    ${gs.map((g, i) => { row = 0; return `<ol class="tl"${i ? ' hidden' : ''} data-pane="${i}"><li class="tl__rail" aria-hidden="true"><i></i></li>${stepItems(g.steps)}</ol>`; }).join('')}`;
+  let k = 0; row = 0;
+  return `<div class="sv-how reveal"><span class="eyebrow">Cómo lo hacemos</span></div>
+    <ol class="tl"><li class="tl__rail" aria-hidden="true"><i></i></li>${gs.map((g) => { const html = (gs.length > 1 ? `<li class="tl__phase" style="--r:${++row}"><span>${g.title}</span></li>` : '') + stepItems(g.steps, k); k += g.steps.length; return html; }).join('')}</ol>`;
+}
+// los pilares (adaptación) se muestran como un recorrido: uno lleva al otro
+const ICONS = [
+  '<path d="M12 3 5 6v5c0 4.4 3 8.2 7 9.5 4-1.3 7-5.1 7-9.5V6z"/><path d="M9 12l2 2 4-4"/>',
+  '<rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M4 15h16M10 4v16M15 4v16"/>',
+  '<path d="M4 15c3-6 13-6 16 0"/><path d="M12 15v5M9 20h6M12 4v3M5.6 7.6l2 2M18.4 7.6l-2 2"/>',
+];
+const flow = (ps) => `<div class="sv-flow">${ps.map((p, i) => `${i ? '<span class="sv-flow__arrow" aria-hidden="true">→</span>' : ''}<article class="sv-flow__it reveal" style="--d:${i * 0.12}s"><span class="sv-flow__ic"><svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[i % ICONS.length]}</svg></span><small>${String(i + 1).padStart(2, '0')}</small><h3>${p[0]}</h3><p>${p[1]}</p></article>`).join('')}</div>`;
+// la app de este servicio, en grande: foto de fondo en su color, pantalla de la app y acceso
+const showcase = (k) => `<a class="sv-show reveal" href="index.html#apps">
+  <img class="sv-show__bg" src="assets/apps/fondo-${k}.webp" alt="" loading="lazy">
+  <div class="sv-show__txt"><small>Con nuestra app</small><span class="sv-show__name"><img src="assets/apps/icon-${k}-claro.png" alt="">${APP[k][0]}</span><p>${APP[k][1]}</p><span class="btn btn--lime btn--sm">Conocé la app →</span></div>
+  <div class="sv-show__shot"><img src="assets/apps/card-${k}.webp" alt="" loading="lazy"></div>
+</a>`;
+
 $('#sBlocks').innerHTML = S.blocks.map((b, bi) => `
   <section class="section sv-block${bi % 2 ? ' section--band' : ''}" id="${b.id}">
     <div class="wrap">
@@ -163,15 +200,39 @@ $('#sBlocks').innerHTML = S.blocks.map((b, bi) => `
       </div>
       ${b.stat ? `<div class="sv-stat reveal"><div><b class="sv-stat__n">${b.stat.n}</b><p>${b.stat.label}</p></div>${donut(b.stat.parts)}</div>` : ''}
       ${b.feature ? feature(b.feature) : ''}
-      ${b.pillars ? `<div class="sv-pillars">${b.pillars.map((p) => `<article class="sv-pillar reveal"><h3>${p[0]}</h3><p>${p[1]}</p></article>`).join('')}</div>` : ''}
-      ${(b.groups || []).map((g) => { const start = n; n += g.steps.length; return `
-        <h3 class="sv-group reveal">${g.title}</h3>
-        <ol class="sv-steps" start="${start + 1}">${g.steps.map((st, i) => `<li class="sv-step reveal" style="--d:${(i % 3) * 0.08}s"><span class="sv-step__n">${String(start + i + 1).padStart(2, '0')}</span><h4>${st[0]}</h4><p>${st[1]}</p></li>`).join('')}</ol>`; }).join('')}
-      ${b.app ? `<a class="sv-app reveal" href="index.html#apps"><img src="assets/apps/icon-${b.app}-claro.png" alt=""><span><small>Con nuestra app</small><b>${APP[b.app][0]}</b><em>${APP[b.app][1]}</em></span><i aria-hidden="true">→</i></a>` : ''}
+      ${b.pillars ? flow(b.pillars) : ''}
+      ${timeline(b)}
+      ${b.app ? showcase(b.app) : ''}
     </div>
   </section>`).join('');
-// cada bloque reinicia la numeración de sus pasos
-$$('.sv-block').forEach((sec) => { let k = 0; $$('.sv-step__n', sec).forEach((el) => { el.textContent = String(++k).padStart(2, '0'); }); });
+
+// pestañas (producto / corporativa)
+$$('.sv-tabs').forEach((tabs) => tabs.addEventListener('click', (e) => {
+  const t = e.target.closest('.sv-tab'); if (!t) return;
+  const sec = tabs.closest('.sv-block');
+  $$('.sv-tab', tabs).forEach((x) => { const on = x === t; x.classList.toggle('is-on', on); x.setAttribute('aria-selected', on); });
+  $$('.tl[data-pane]', sec).forEach((tl) => { tl.hidden = tl.dataset.pane !== t.dataset.tab; tl.classList.remove('is-built'); });
+  railTick();
+}));
+// la línea se llena y cada paso se enciende cuando llega a la altura de la vista
+const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+function railTick() {
+  const H = innerHeight, mark = H * 0.62;
+  $$('.tl:not([hidden])').forEach((tl) => {
+    const r = tl.getBoundingClientRect(); if (r.bottom < -200 || r.top > H + 200) return;
+    tl.classList.add('is-built');
+    const p = calm ? 1 : Math.min(1, Math.max(0, (mark - r.top) / r.height));
+    tl.style.setProperty('--p', p.toFixed(3));
+    $$('.tl__item', tl).forEach((it) => it.classList.toggle('is-on', calm || it.getBoundingClientRect().top + 20 < mark));
+  });
+}
+let railT = false;
+addEventListener('scroll', () => { if (!railT) { railT = true; requestAnimationFrame(() => { railT = false; railTick(); }); } }, { passive: true });
+addEventListener('resize', railTick); railTick();
+
+// otros servicios
+const others = Object.keys(SERVICIOS).filter((k) => k !== key);
+$('#sOthers').innerHTML = others.map((k) => { const o = SERVICIOS[k]; return `<a class="sv-other sv--${k} reveal" href="servicio.html?s=${k}"><img src="${o.img}" alt="" loading="lazy"><span class="sv-other__txt"><b>${o.title}</b><em>${o.card}</em></span><i aria-hidden="true">→</i></a>`; }).join('');
 
 // casos publicados de este servicio
 const cs = (typeof CASES !== 'undefined' ? CASES : []).filter((c) => S.cases.includes(c.svc)).slice(0, 6);

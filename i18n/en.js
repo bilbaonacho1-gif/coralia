@@ -771,7 +771,23 @@
 "Calculá y gestioná la huella con la misma herramienta que usan nuestros consultores.": "Calculate and manage your footprint with the same tool our consultants use.",
 "Diagnosticá tu tierra en cinco minutos: qué proyecto de carbono es posible y cuánto vale.": "Assess your land in five minutes: which carbon project is possible and what it's worth.",
 "CASOS": "CASES",
-"Proyectos de este servicio": "Projects in this service"
+"Proyectos de este servicio": "Projects in this service",
+"Servicios de Coralia Environmental: medición, mitigación y adaptación al cambio climático.": "Coralia Environmental services: measuring, mitigating and adapting to climate change.",
+"inventarios de GEI realizados": "GHG inventories completed",
+"Alcances 1, 2 y 3": "Scopes 1, 2 and 3",
+"de la operación a la cadena de valor": "from operations to the value chain",
+"y GHG Protocol": "and GHG Protocol",
+"tCO₂e reducidas o removidas": "tCO₂e reduced or removed",
+"VCUs emitidos por ECO2 Misiones": "VCUs issued by ECO2 Misiones",
+"Físico y de transición": "Physical and transition",
+"los dos tipos de riesgo climático": "the two types of climate risk",
+"Activo por activo": "Asset by asset",
+"con escenarios en el territorio": "with scenarios mapped on the ground",
+"Plan de adaptación": "Adaptation plan",
+"alerta temprana y respuesta": "early warning and response",
+"Cómo lo hacemos": "How we do it",
+"Conocé la app →": "Discover the app →",
+"Otros servicios": "Other services"
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 engagement'],

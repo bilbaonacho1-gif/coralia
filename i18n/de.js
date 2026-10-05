@@ -778,7 +778,23 @@
 "Calculá y gestioná la huella con la misma herramienta que usan nuestros consultores.": "Berechnen und steuern Sie Ihren Fußabdruck mit demselben Werkzeug, das unsere Berater nutzen.",
 "Diagnosticá tu tierra en cinco minutos: qué proyecto de carbono es posible y cuánto vale.": "Prüfen Sie Ihr Land in fünf Minuten: welches CO₂-Projekt möglich ist und was es wert ist.",
 "CASOS": "FÄLLE",
-"Proyectos de este servicio": "Projekte dieser Leistung"
+"Proyectos de este servicio": "Projekte dieser Leistung",
+"Servicios de Coralia Environmental: medición, mitigación y adaptación al cambio climático.": "Leistungen von Coralia Environmental: Messung, Minderung und Anpassung an den Klimawandel.",
+"inventarios de GEI realizados": "erstellte THG-Inventare",
+"Alcances 1, 2 y 3": "Scope 1, 2 und 3",
+"de la operación a la cadena de valor": "vom Betrieb bis zur Wertschöpfungskette",
+"y GHG Protocol": "und GHG Protocol",
+"tCO₂e reducidas o removidas": "t CO₂e reduziert oder entnommen",
+"VCUs emitidos por ECO2 Misiones": "von ECO2 Misiones ausgegebene VCUs",
+"Físico y de transición": "Physisch und transitorisch",
+"los dos tipos de riesgo climático": "die beiden Arten von Klimarisiken",
+"Activo por activo": "Objekt für Objekt",
+"con escenarios en el territorio": "mit Szenarien vor Ort",
+"Plan de adaptación": "Anpassungsplan",
+"alerta temprana y respuesta": "Frühwarnung und Reaktion",
+"Cómo lo hacemos": "So gehen wir vor",
+"Conocé la app →": "Die App entdecken →",
+"Otros servicios": "Weitere Leistungen"
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 Auftrag'],
