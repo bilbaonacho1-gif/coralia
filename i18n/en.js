@@ -821,7 +821,27 @@
 "De mercados climáticos de alto riesgo a soluciones climáticas de bajo riesgo: desarrollo de un proyecto de carbono en manglar, con el Dominican Blue Carbon Exchange Fund Trust.": "From high-risk climate markets to low-risk climate solutions: developing a mangrove carbon project with the Dominican Blue Carbon Exchange Fund Trust.",
 "La degradación se mide; la recuperación también. Cada hectárea se verifica en el terreno: inventario de parcelas y muestreo de suelo en Montecristi y Puerto Plata (relevamiento de octubre de 2025).": "Degradation is measured; so is recovery. Every hectare is verified on the ground: plot inventory and soil sampling in Montecristi and Puerto Plata (October 2025 survey).",
 "verificados por Verra para 2017–2022: la mayor emisión de un solo período en su historia": "verified by Verra for 2017–2022: the largest single-period issuance in its history",
-"10,1M VCUs · ECO2 Misiones": "10.1M VCUs · ECO2 Misiones"
+"10,1M VCUs · ECO2 Misiones": "10.1M VCUs · ECO2 Misiones",
+"Ingresá a la plataforma de Coralia Environmental: Carbon Footprint, Carbon Markets Hub y Climate Risk App.": "Log in to the Coralia Environmental platform: Carbon Footprint, Carbon Markets Hub and Climate Risk App.",
+"Plataforma Coralia": "Coralia platform",
+"Tus apps y proyectos, <em>en un solo lugar.</em>": "Your apps and projects, <em>all in one place.</em>",
+"Entrá para usar nuestras apps y seguir el avance de tus proyectos junto a nuestro equipo.": "Log in to use our apps and follow your projects' progress with our team.",
+"Iniciá sesión": "Log in",
+"Con el email y la contraseña de tu cuenta Coralia.": "With the email and password of your Coralia account.",
+"Contraseña": "Password",
+"nombre@empresa.com": "name@company.com",
+"Ingresá un email válido.": "Enter a valid email.",
+"Ingresá tu contraseña.": "Enter your password.",
+"Mostrar contraseña": "Show password",
+"Ocultar contraseña": "Hide password",
+"Recordarme": "Remember me",
+"¿Olvidaste tu contraseña?": "Forgot your password?",
+"Ingresar": "Log in",
+"¿Todavía no tenés cuenta? <a class=\"link\" href=\"index.html#contacto\">Hablá con el equipo →</a>": "Don't have an account yet? <a class=\"link\" href=\"index.html#contacto\">Talk to the team →</a>",
+"El acceso a la plataforma se está habilitando. Mientras tanto, escribinos a": "Access to the platform is being set up. In the meantime, email us at",
+"y te damos acceso.": "and we'll give you access.",
+"Escribinos a": "Email us at",
+"y te ayudamos a recuperar el acceso.": "and we'll help you get back in."
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 engagement'],

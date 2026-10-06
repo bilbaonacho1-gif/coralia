@@ -169,7 +169,7 @@ Debajo de 1000 px el menú se abre con el botón ☰; se cierra al tocar un link
   separada "Cómo funcionan", las mini demos de la Home (ahora en simuladores.html) y la línea de tiempo.
 
 ## Pendientes (buscá TODO)
-- Link real de Iniciar sesión (plataforma).
+- Conectar el inicio de sesión con Wix Headless (ver "Iniciar sesión" más abajo).
 - Faltan páginas que existen en la web actual: Mitigación, Adaptación, Equipo completo,
   "What's Climate Change" y Política de privacidad.
 - Revisar con el equipo técnico los rangos ilustrativos de las mini demos y simuladores
@@ -211,3 +211,14 @@ Cumple los límites de Wix Headless: sin videos, cada archivo pesa menos de 3 MB
 - Zona táctil más grande en los puntitos de los carruseles, links subrayados, migas de pan, links del contacto y
   del pie, y las barras de los simuladores. No cambia cómo se ven (bloque "Celu: zona táctil" al final de styles.css).
 - Si se agrega una foto nueva a esos lugares, conviene hacerle también su versión chica.
+
+## Iniciar sesión (ingresar.html + ingresar.js)
+- Todos los botones "Iniciar sesión" del sitio (encabezado de cada página y "¿Ya tenés acceso?" en Cómo trabajamos)
+  tienen data-login y toman la dirección de un solo lugar: LOGIN_URL, al principio de nav.js. Hoy es ingresar.html.
+  Si se decide usar la pantalla de login de Wix en vez de la propia, se cambia solo esa línea.
+- ingresar.html: pantalla propia con la foto de la portada, "Tus apps y proyectos, en un solo lugar", las tres apps
+  y la tarjeta con email, contraseña (con el ojito para verla), Recordarme, ¿Olvidaste tu contraseña? e Ingresar.
+  Estilos: bloque "Iniciar sesión" al final de styles.css. Traducciones: i18n/fuente/7-ingresar.py.
+- TODAVÍA NO ESTÁ CONECTADA: revisa que el email y la contraseña estén completos y avisa que el acceso se está
+  habilitando (escribir a contacto@coraliae.com). Cuando esté el proyecto de Wix Headless, se completa la función
+  entrar() en ingresar.js (login de usuarios de Wix con email y contraseña) y qué se abre después de entrar.

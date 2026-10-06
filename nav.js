@@ -1,3 +1,8 @@
+// Coralia — "Iniciar sesión": a dónde llevan todos los botones del sitio (los que tienen data-login).
+// Hoy van a la pantalla propia (ingresar.html). Si se usa la pantalla de login de Wix, se cambia solo acá.
+const LOGIN_URL = 'ingresar.html';
+document.querySelectorAll('[data-login]').forEach((a) => { a.href = LOGIN_URL; });
+
 // Coralia — menú del encabezado en celular y tablet (debajo de 1000 px)
 (() => {
   const btn = document.querySelector('.nav-toggle'), nav = document.getElementById('nav');

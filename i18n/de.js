@@ -830,7 +830,27 @@
 "De mercados climáticos de alto riesgo a soluciones climáticas de bajo riesgo: desarrollo de un proyecto de carbono en manglar, con el Dominican Blue Carbon Exchange Fund Trust.": "Von risikoreichen Klimamärkten zu risikoarmen Klimalösungen: Entwicklung eines Mangroven-Kohlenstoffprojekts mit dem Dominican Blue Carbon Exchange Fund Trust.",
 "La degradación se mide; la recuperación también. Cada hectárea se verifica en el terreno: inventario de parcelas y muestreo de suelo en Montecristi y Puerto Plata (relevamiento de octubre de 2025).": "Die Degradation wird gemessen, die Erholung auch. Jeder Hektar wird vor Ort überprüft: Flächeninventur und Bodenproben in Montecristi und Puerto Plata (Erhebung Oktober 2025).",
 "verificados por Verra para 2017–2022: la mayor emisión de un solo período en su historia": "von Verra für 2017–2022 verifiziert: die größte Ausgabe eines einzelnen Zeitraums in ihrer Geschichte",
-"10,1M VCUs · ECO2 Misiones": "10,1 Mio. VCUs · ECO2 Misiones"
+"10,1M VCUs · ECO2 Misiones": "10,1 Mio. VCUs · ECO2 Misiones",
+"Ingresá a la plataforma de Coralia Environmental: Carbon Footprint, Carbon Markets Hub y Climate Risk App.": "Melden Sie sich bei der Plattform von Coralia Environmental an: Carbon Footprint, Carbon Markets Hub und Climate Risk App.",
+"Plataforma Coralia": "Coralia-Plattform",
+"Tus apps y proyectos, <em>en un solo lugar.</em>": "Ihre Apps und Projekte, <em>an einem Ort.</em>",
+"Entrá para usar nuestras apps y seguir el avance de tus proyectos junto a nuestro equipo.": "Melden Sie sich an, um unsere Apps zu nutzen und den Fortschritt Ihrer Projekte gemeinsam mit unserem Team zu verfolgen.",
+"Iniciá sesión": "Anmelden",
+"Con el email y la contraseña de tu cuenta Coralia.": "Mit der E-Mail-Adresse und dem Passwort Ihres Coralia-Kontos.",
+"Contraseña": "Passwort",
+"nombre@empresa.com": "name@firma.de",
+"Ingresá un email válido.": "Geben Sie eine gültige E-Mail-Adresse ein.",
+"Ingresá tu contraseña.": "Geben Sie Ihr Passwort ein.",
+"Mostrar contraseña": "Passwort anzeigen",
+"Ocultar contraseña": "Passwort verbergen",
+"Recordarme": "Angemeldet bleiben",
+"¿Olvidaste tu contraseña?": "Passwort vergessen?",
+"Ingresar": "Anmelden",
+"¿Todavía no tenés cuenta? <a class=\"link\" href=\"index.html#contacto\">Hablá con el equipo →</a>": "Noch kein Konto? <a class=\"link\" href=\"index.html#contacto\">Sprechen Sie mit dem Team →</a>",
+"El acceso a la plataforma se está habilitando. Mientras tanto, escribinos a": "Der Zugang zur Plattform wird gerade eingerichtet. Schreiben Sie uns in der Zwischenzeit an",
+"y te damos acceso.": "und wir richten Ihnen den Zugang ein.",
+"Escribinos a": "Schreiben Sie an",
+"y te ayudamos a recuperar el acceso.": "und wir helfen Ihnen, wieder Zugang zu erhalten."
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 Auftrag'],

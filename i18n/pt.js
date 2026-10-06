@@ -756,7 +756,26 @@
 "Cada hectárea se verifica en el terreno: muestreo de suelo y parcelas de monitoreo en el área afectada por los incendios.": "Cada hectare é verificado no terreno: amostragem de solo e parcelas de monitoramento na área afetada pelos incêndios.",
 "De mercados climáticos de alto riesgo a soluciones climáticas de bajo riesgo: desarrollo de un proyecto de carbono en manglar, con el Dominican Blue Carbon Exchange Fund Trust.": "De mercados climáticos de alto risco a soluções climáticas de baixo risco: desenvolvimento de um projeto de carbono em manguezal, com o Dominican Blue Carbon Exchange Fund Trust.",
 "La degradación se mide; la recuperación también. Cada hectárea se verifica en el terreno: inventario de parcelas y muestreo de suelo en Montecristi y Puerto Plata (relevamiento de octubre de 2025).": "A degradação se mede; a recuperação também. Cada hectare é verificado no terreno: inventário de parcelas e amostragem de solo em Montecristi e Puerto Plata (levantamento de outubro de 2025).",
-"verificados por Verra para 2017–2022: la mayor emisión de un solo período en su historia": "verificados pela Verra para 2017–2022: a maior emissão de um único período em sua história"
+"verificados por Verra para 2017–2022: la mayor emisión de un solo período en su historia": "verificados pela Verra para 2017–2022: a maior emissão de um único período em sua história",
+"Ingresá a la plataforma de Coralia Environmental: Carbon Footprint, Carbon Markets Hub y Climate Risk App.": "Acesse a plataforma da Coralia Environmental: Carbon Footprint, Carbon Markets Hub e Climate Risk App.",
+"Tus apps y proyectos, <em>en un solo lugar.</em>": "Seus apps e projetos, <em>em um só lugar.</em>",
+"Entrá para usar nuestras apps y seguir el avance de tus proyectos junto a nuestro equipo.": "Entre para usar nossos apps e acompanhar o andamento dos seus projetos com a nossa equipe.",
+"Iniciá sesión": "Faça login",
+"Con el email y la contraseña de tu cuenta Coralia.": "Com o e-mail e a senha da sua conta Coralia.",
+"Contraseña": "Senha",
+"nombre@empresa.com": "nome@empresa.com",
+"Ingresá un email válido.": "Digite um e-mail válido.",
+"Ingresá tu contraseña.": "Digite sua senha.",
+"Mostrar contraseña": "Mostrar senha",
+"Ocultar contraseña": "Ocultar senha",
+"Recordarme": "Lembrar de mim",
+"¿Olvidaste tu contraseña?": "Esqueceu sua senha?",
+"Ingresar": "Entrar",
+"¿Todavía no tenés cuenta? <a class=\"link\" href=\"index.html#contacto\">Hablá con el equipo →</a>": "Ainda não tem conta? <a class=\"link\" href=\"index.html#contacto\">Fale com a equipe →</a>",
+"El acceso a la plataforma se está habilitando. Mientras tanto, escribinos a": "O acesso à plataforma está sendo habilitado. Enquanto isso, escreva para",
+"y te damos acceso.": "e nós liberamos seu acesso.",
+"Escribinos a": "Escreva para",
+"y te ayudamos a recuperar el acceso.": "e ajudamos você a recuperar o acesso."
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 trabalho'],
