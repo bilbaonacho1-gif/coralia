@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f3f4ec">
+<title>Pipeline de proyectos | Coralia Environmental</title>
+<meta name="description" content="Pipeline de proyectos de carbono propios de Coralia Environmental.">
+<link rel="preload" href="assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script src="i18n.js"></script>
+</head>
+<body>
+
+<header class="header">
+  <div class="wrap header__in">
+    <a href="index.html" class="logo" aria-label="Coralia Environmental, inicio">
+      <img class="logo__light" src="assets/logo.png" alt="Coralia Environmental" height="40">
+      <img class="logo__dark" src="assets/logo-oscuro.webp" alt="" height="40">
+    </a>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="index.html#servicios">Servicios</a><a href="index.html#apps">Apps</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="index.html#equipo">Nosotros</a>
+      <a href="index.html#accesos">Cómo trabajamos</a>
+      <a href="simuladores.html">Simuladores</a>
+    </nav>
+    <div class="header__right">
+      <div class="langsel" translate="no">
+        <button type="button" class="langsel__btn" aria-haspopup="true" aria-expanded="false" aria-label="Idioma: Español"><span class="langsel__cur">ES</span><i aria-hidden="true">▾</i></button>
+        <ul class="langsel__menu" role="menu" hidden>
+          <li role="none"><a role="menuitem" href="?lang=es" data-lang="es"><b>ES</b>Español</a></li>
+          <li role="none"><a role="menuitem" href="?lang=en" data-lang="en"><b>EN</b>English</a></li>
+          <li role="none"><a role="menuitem" href="?lang=pt" data-lang="pt"><b>PT</b>Português</a></li>
+          <li role="none"><a role="menuitem" href="?lang=de" data-lang="de"><b>DE</b>Deutsch</a></li>
+        </ul>
+      </div>
+      <a href="ingresar.html" class="btn btn--ghost-light btn--sm" data-login>Iniciar sesión</a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="pipeline">
+  <!-- Pipeline de proyectos propios. Sin ?p= muestra todos; con ?p=<id> muestra la ficha. Datos: PIPELINE en data.js -->
+  <section class="d-hero d-hero--pipe">
+    <img class="d-hero__bg" id="pHeroImg" alt="" src="assets/pipeline/remonte-3.webp">
+    <div class="d-hero__shade"></div>
+    <div class="wrap d-hero__in">
+      <nav class="crumbs in" aria-label="Ruta"><a href="index.html#servicios">Mercados de carbono</a><span>/</span><a href="pipeline.html">Pipeline</a><span id="pCrumbSep" hidden>/</span><span id="pCrumb"></span></nav>
+      <div class="tags in d1" id="pTags"><span class="tag tag--mitigar">Para inversores</span></div>
+      <h1 class="in d1" id="pTitle">Pipeline de proyectos propios</h1>
+      <p class="in d2" id="pShort">Proyectos de carbono de alta integridad que Coralia desarrolla. Elegí uno para ver su detalle.</p>
+      <div class="d-facts in d3" id="pFacts"></div>
+    </div>
+  </section>
+
+  <!-- Lista -->
+  <section class="section" id="pList">
+    <div class="wrap">
+      <div class="pipe pipe--page" id="pGrid"></div>
+    </div>
+  </section>
+
+  <!-- Ficha de un proyecto -->
+  <section class="section" id="pDetail" hidden>
+    <div class="wrap d-body">
+      <article class="d-text reveal">
+        <span class="eyebrow">EL PROYECTO</span>
+        <div id="pBody"></div>
+      </article>
+      <aside class="d-side glass reveal">
+        <span class="eyebrow">ÁREA DE PROYECTO</span>
+        <b class="d-side__kpi" id="pKpi"></b>
+        <span class="muted small" id="pKpiLabel"></span>
+        <a class="btn btn--mint" id="pContact" href="mailto:contacto@coraliae.com">Quiero invertir en este proyecto →</a>
+      </aside>
+    </div>
+  </section>
+  <section class="section section--band" id="pGalleryWrap" hidden>
+    <div class="wrap">
+      <span class="eyebrow">GALERÍA</span>
+      <div class="d-gallery" id="pGallery"></div>
+    </div>
+  </section>
+  <section class="section" id="pMore" hidden>
+    <div class="wrap">
+      <div class="head"><div><span class="eyebrow">PIPELINE</span><h2 class="h2--sm">Otros proyectos</h2></div><a class="link" href="pipeline.html">Ver todos →</a></div>
+      <div class="pipe" id="pOthers"></div>
+    </div>
+  </section>
+
+  <section id="contacto" class="cta">
+    <img src="assets/cta.webp" alt="">
+    <div class="cta__shade"></div>
+    <div class="wrap cta__in reveal">
+      <h2>¿Querés invertir<br>en proyectos de carbono?</h2>
+      <a href="mailto:contacto@coraliae.com?subject=Pipeline%20de%20proyectos" class="btn btn--mint">Hablemos →</a>
+    </div>
+  </section>
+</main>
+
+<dialog class="lightbox" id="lightbox"><button type="button" class="case-modal__x" id="lbClose" aria-label="Cerrar">×</button><img id="lbImg" alt=""></dialog>
+
+<footer class="footer">
+  <div class="wrap footer__in">
+    <img src="assets/logo-oscuro.webp" alt="Coralia Environmental" height="36">
+    <nav aria-label="Pie"><a href="index.html#servicios">Servicios</a><a href="index.html#apps">Apps</a><a href="proyectos.html">Proyectos</a><a href="index.html#equipo">Nosotros</a><a href="index.html#accesos">Cómo trabajamos</a><a href="simuladores.html">Simuladores</a></nav>
+    <div class="footer__meta"><span>Nogoyá 4169, CABA · contacto@coraliae.com · +54 9 11 3848-4171</span><a href="https://www.linkedin.com/company/coraliae/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.youtube.com/@coraliaenvironmental" target="_blank" rel="noopener">YouTube</a><span class="lang footlang" translate="no"><a href="?lang=es" data-lang="es">ES</a> · <a href="?lang=en" data-lang="en">EN</a> · <a href="?lang=pt" data-lang="pt">PT</a> · <a href="?lang=de" data-lang="de">DE</a></span></div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+<script src="data.js"></script>
+<script src="pipeline.js"></script>
+</body>
+</html>

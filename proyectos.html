@@ -3,30 +3,40 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f3f4ec">
 <title>Proyectos | Coralia Environmental</title>
 <meta name="description" content="Proyectos de Coralia Environmental en riesgo climático, huella de carbono y mercados de carbono.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
+<script src="i18n.js"></script>
 </head>
 <body>
 
 <header class="header">
   <div class="wrap header__in">
-    <a href="index.html" class="logo"><img src="assets/logo.png" alt="Coralia Environmental" height="40"></a>
+    <a href="index.html" class="logo" aria-label="Coralia Environmental, inicio">
+      <img class="logo__light" src="assets/logo.png" alt="Coralia Environmental" height="40">
+      <img class="logo__dark" src="assets/logo-oscuro.webp" alt="" height="40">
+    </a>
     <nav class="nav" id="nav" aria-label="Principal">
-      <a href="index.html#herramientas">Plataforma</a>
-      <a href="index.html#herramientas">Soluciones</a>
+      <a href="index.html#servicios">Servicios</a><a href="index.html#apps">Apps</a>
       <a href="proyectos.html" aria-current="page">Proyectos</a>
       <a href="index.html#equipo">Nosotros</a>
-      <a href="index.html#simuladores">Simuladores</a>
+      <a href="index.html#accesos">Cómo trabajamos</a>
+      <a href="simuladores.html">Simuladores</a>
     </nav>
     <div class="header__right">
-      <!-- TODO: versión en inglés -->
-      <a href="#" class="lang">ES →</a>
-      <!-- TODO: URL real de la plataforma -->
-      <a href="#" class="btn btn--ghost-light btn--sm">Iniciar sesión →</a>
+      <div class="langsel" translate="no">
+        <button type="button" class="langsel__btn" aria-haspopup="true" aria-expanded="false" aria-label="Idioma: Español"><span class="langsel__cur">ES</span><i aria-hidden="true">▾</i></button>
+        <ul class="langsel__menu" role="menu" hidden>
+          <li role="none"><a role="menuitem" href="?lang=es" data-lang="es"><b>ES</b>Español</a></li>
+          <li role="none"><a role="menuitem" href="?lang=en" data-lang="en"><b>EN</b>English</a></li>
+          <li role="none"><a role="menuitem" href="?lang=pt" data-lang="pt"><b>PT</b>Português</a></li>
+          <li role="none"><a role="menuitem" href="?lang=de" data-lang="de"><b>DE</b>Deutsch</a></li>
+        </ul>
+      </div>
+      <a href="ingresar.html" class="btn btn--ghost-light btn--sm" data-login>Iniciar sesión</a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú"><span></span></button>
     </div>
   </div>
@@ -77,7 +87,7 @@
         <button type="button" class="chip is-on" data-v="all">Todos</button>
         <button type="button" class="chip" data-v="medir">Medir</button>
         <button type="button" class="chip" data-v="mitigar">Mitigar</button>
-        <button type="button" class="chip" data-v="adaptar">Adaptar</button>
+        <button type="button" class="chip" data-v="adaptar">Adaptarse</button>
         <button type="button" class="chip" data-v="consultoria">Consultoría</button>
       </div>
       <label class="select">Industria <select id="fInd"><option value="all">Todas</option></select></label>
@@ -133,9 +143,9 @@
 
 <footer class="footer">
   <div class="wrap footer__in">
-    <img src="assets/logo.png" alt="Coralia Environmental" height="34">
-    <nav aria-label="Pie"><a href="index.html#herramientas">Plataforma</a><a href="index.html#herramientas">Soluciones</a><a href="proyectos.html">Proyectos</a><a href="index.html#equipo">Nosotros</a><a href="index.html#simuladores">Simuladores</a></nav>
-    <div class="footer__meta"><span>Nogoyá 4169, CABA · contacto@coraliae.com · +54 9 11 3848-4171</span><a href="https://www.linkedin.com/company/coraliae/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.youtube.com/@coraliaenvironmental" target="_blank" rel="noopener">YouTube</a><span class="lang">EN · <b>ES</b></span></div>
+    <img src="assets/logo-oscuro.webp" alt="Coralia Environmental" height="36">
+    <nav aria-label="Pie"><a href="index.html#servicios">Servicios</a><a href="index.html#apps">Apps</a><a href="proyectos.html">Proyectos</a><a href="index.html#equipo">Nosotros</a><a href="index.html#accesos">Cómo trabajamos</a><a href="simuladores.html">Simuladores</a></nav>
+    <div class="footer__meta"><span>Nogoyá 4169, CABA · contacto@coraliae.com · +54 9 11 3848-4171</span><a href="https://www.linkedin.com/company/coraliae/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.youtube.com/@coraliaenvironmental" target="_blank" rel="noopener">YouTube</a><span class="lang footlang" translate="no"><a href="?lang=es" data-lang="es">ES</a> · <a href="?lang=en" data-lang="en">EN</a> · <a href="?lang=pt" data-lang="pt">PT</a> · <a href="?lang=de" data-lang="de">DE</a></span></div>
   </div>
 </footer>
 

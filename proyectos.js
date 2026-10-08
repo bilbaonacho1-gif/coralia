@@ -2,7 +2,7 @@
 document.documentElement.classList.add('js');
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-const SVC = { mitigar: 'Mitigar', adaptar: 'Adaptar', medir: 'Medir', consultoria: 'Consultoría' };
+const SVC = { mitigar: 'Mitigar', adaptar: 'Adaptarse', medir: 'Medir', consultoria: 'Consultoría' };
 
 /* Aparición al scrollear */
 const io = 'IntersectionObserver' in window ? new IntersectionObserver((es) => es.forEach((e) => {
@@ -27,7 +27,7 @@ function card(c, big) {
       <span class="pcard__title">${c.title}</span>
       <span class="pcard__text">${c.short}</span>
       <span class="pcard__kpi"><b>${c.kpi[0]}</b> ${c.kpi[1]}</span>
-      <span class="pcard__go" aria-hidden="true">↗</span>
+      <span class="pcard__go" aria-hidden="true"><svg class="ico-ne" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
     </span>
   </button>`;
 }
@@ -45,7 +45,7 @@ $('#featured').innerHTML = featured.map((c) => card(c, true)).join('');
 /* Grilla + filtros */
 const grid = GRID_ORDER.map((id) => CASES.find((c) => c.id === id)).filter(Boolean);
 const all = [...featured, ...grid];
-const fill = (sel, vals) => { $(sel).insertAdjacentHTML('beforeend', vals.map((v) => `<option>${v}</option>`).join('')); };
+const fill = (sel, vals) => { $(sel).insertAdjacentHTML('beforeend', vals.map((v) => `<option value="${v}">${v}</option>`).join('')); };
 fill('#fInd', [...new Set(all.map((c) => c.ind))].sort());
 fill('#fCountry', countries.sort());
 const F = { svc: 'all', ind: 'all', country: 'all' };
@@ -64,8 +64,8 @@ $('#fSvc').addEventListener('click', (e) => {
   const b = e.target.closest('.chip'); if (!b) return;
   $$('#fSvc .chip').forEach((x) => x.classList.toggle('is-on', x === b)); F.svc = b.dataset.v; renderGrid();
 });
-$('#fInd').addEventListener('change', (e) => { F.ind = e.target.value === 'Todas' ? 'all' : e.target.value; renderGrid(); });
-$('#fCountry').addEventListener('change', (e) => { F.country = e.target.value === 'Todos' ? 'all' : e.target.value; renderGrid(); });
+$('#fInd').addEventListener('change', (e) => { F.ind = e.target.value; renderGrid(); });
+$('#fCountry').addEventListener('change', (e) => { F.country = e.target.value; renderGrid(); });
 $('#fReset').addEventListener('click', () => {
   F.svc = F.ind = F.country = 'all'; $('#fInd').value = 'all'; $('#fCountry').value = 'all';
   $$('#fSvc .chip').forEach((x, i) => x.classList.toggle('is-on', i === 0)); renderGrid();
