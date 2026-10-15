@@ -1340,19 +1340,36 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
 .login__go:disabled{opacity:.6;transform:none;cursor:default}
 .login__msg{margin:16px 0 0;padding:14px 16px;border-radius:14px;background:var(--bg2);color:var(--ink);font-size:14.5px;line-height:1.5}
 .login__msg a{color:var(--leaf);font-weight:600;border-bottom:1px solid currentColor}
+/* Tarjeta para elegir app: vidrio oscuro sobre la foto; cada app con el color de su logo (el de la rueda) */
+.login__card--apps{background:rgba(10,24,18,.6);color:#fff;border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2)}
+.login__card--apps .login__sub{color:rgba(255,255,255,.78)}
+.login__card--apps .login__foot{border-top-color:rgba(255,255,255,.16);color:rgba(255,255,255,.78)}
+.login__card--apps .login__foot .link{color:var(--lime)}
 .pick{list-style:none;margin:0;padding:0;display:grid;gap:12px}
-.pick__app{display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:14px;padding:16px 18px;border-radius:18px;background:#fff;border:1.5px solid var(--line2);color:var(--ink);transition:border-color .2s,box-shadow .2s,transform .2s}
-.pick__app:hover,.pick__app:focus-visible{border-color:var(--leaf);box-shadow:0 14px 28px -18px rgba(18,38,30,.45);transform:translateY(-2px)}
-.pick__app img{width:44px;height:44px;object-fit:contain}
+.pick__app{--c:#a9dc6c;--cs:rgba(169,220,108,.16);display:grid;grid-template-columns:56px 1fr auto;align-items:center;gap:16px;padding:16px 18px;border-radius:20px;color:#fff;background:linear-gradient(120deg,var(--cs),rgba(255,255,255,.03) 70%);border:1px solid color-mix(in srgb,var(--c) 45%,transparent);transition:border-color .2s,box-shadow .2s,transform .2s,background .2s}
+.pick__app[data-app=markets]{--c:#eab765;--cs:rgba(234,183,101,.18)}
+.pick__app[data-app=risk]{--c:#82c4ee;--cs:rgba(130,196,238,.18)}
+.pick__app:hover,.pick__app:focus-visible{border-color:var(--c);box-shadow:0 18px 34px -20px var(--c);transform:translateY(-2px)}
+.pick__ic{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--c) 22%,rgba(255,255,255,.08));box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--c) 50%,transparent)}
+.pick__ic img{width:36px;height:36px;object-fit:contain}
 .pick__txt{display:flex;flex-direction:column;gap:2px;min-width:0}
-.pick__txt b{font-size:16.5px}
-.pick__txt span{font-size:14px;color:var(--ink2)}
-.pick__how{margin-top:4px;font-size:12.5px;color:var(--leaf);font-weight:600}
-.pick__go{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--forest);color:var(--bg);font-size:16px}
-.pick__app.is-soon{background:var(--bg2);border-style:dashed}
-.pick__app.is-soon img{filter:grayscale(.6);opacity:.75}
-.pick__app.is-soon .pick__how{color:var(--dim)}
-.pick__app.is-soon .pick__go{background:transparent;color:var(--ink2);border:1.5px solid var(--line2)}
+.pick__txt b{font-size:17px}
+.pick__txt span{font-size:14px;color:rgba(255,255,255,.8)}
+.pick__how{margin-top:5px;font-size:12.5px;color:var(--c);font-weight:600}
+.pick__go{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--c);color:var(--forest)}
+.pick__go svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.pick__app.is-soon{background:rgba(255,255,255,.04);border-style:dashed;border-color:color-mix(in srgb,var(--c) 35%,transparent)}
+.pick__app.is-soon .pick__ic img{opacity:.8}
+.pick__app.is-soon .pick__how{color:rgba(255,255,255,.62);font-weight:500}
+.pick__app.is-soon .pick__go{background:transparent;color:var(--c);box-shadow:inset 0 0 0 1.5px color-mix(in srgb,var(--c) 60%,transparent)}
+/* En esta página el encabezado queda oscuro al bajar, para no mezclarse con la tarjeta */
+.page-login .header.is-scrolled{background:rgba(10,22,16,.82);box-shadow:0 1px 0 rgba(255,255,255,.08)}
+.page-login .header.is-scrolled .nav,.page-login .header.is-scrolled .lang,.page-login .header.is-scrolled .langsel__btn{color:rgba(255,255,255,.92)}
+.page-login .header.is-scrolled .nav a::after{background:var(--lime)}
+.page-login .header.is-scrolled .logo__light{opacity:1}
+.page-login .header.is-scrolled .logo__dark{opacity:0}
+.page-login .header.is-scrolled .btn--ghost-light{background:#fff;color:var(--forest)}
+.page-login .header.is-scrolled .nav-toggle{border-color:rgba(255,255,255,.55);background:rgba(18,38,30,.25);color:#fff}
 .login__foot{margin:24px 0 0;padding-top:22px;border-top:1px solid var(--line);font-size:14.5px;color:var(--ink2)}
 .login__foot .link{white-space:nowrap}
 @media (max-width:900px){
@@ -1365,6 +1382,7 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
   .login__intro p{font-size:16.5px}
   .login__apps li{font-size:13px}
   .login__card{padding:28px 22px;border-radius:24px}
-  .pick__app{grid-template-columns:38px 1fr auto;gap:12px;padding:14px}
-  .pick__app img{width:38px;height:38px}
+  .pick__app{grid-template-columns:46px 1fr auto;gap:12px;padding:14px}
+  .pick__ic{width:46px;height:46px}
+  .pick__ic img{width:30px;height:30px}
 }
