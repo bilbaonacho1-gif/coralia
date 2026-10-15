@@ -593,6 +593,9 @@
 "Análisis de riesgo climático y planes de adaptación para cada activo y organización.": "Análise de risco climático e planos de adaptação para cada ativo e organização.",
 "Estudios a medida y acompañamiento estratégico para empresas, gobiernos y organismos.": "Estudos sob medida e acompanhamento estratégico para empresas, governos e organismos.",
 "Herramientas propias": "Ferramentas próprias",
+"Nuestras apps": "Nossos apps",
+"Ir a la app": "Ir para o app",
+"Próximamente": "Em breve",
 "Apps desarrolladas por Coralia, cada una vinculada a uno de nuestros servicios.": "Apps desenvolvidos pela Coralia, cada um vinculado a um de nossos serviços.",
 "Huella de carbono de empresas, productos y eventos, con estándares internacionales (GHG Protocol, ISO 14064 e ISO 14067).": "Pegada de carbono de empresas, produtos e eventos, com padrões internacionais (GHG Protocol, ISO 14064 e ISO 14067).",
 "Mercados de carbono: desarrollamos proyectos de punta a punta, de la factibilidad a la emisión de los créditos.": "Mercados de carbono: desenvolvemos projetos de ponta a ponta, da viabilidade à emissão dos créditos.",
@@ -775,7 +778,16 @@
 "El acceso a la plataforma se está habilitando. Mientras tanto, escribinos a": "O acesso à plataforma está sendo habilitado. Enquanto isso, escreva para",
 "y te damos acceso.": "e nós liberamos seu acesso.",
 "Escribinos a": "Escreva para",
-"y te ayudamos a recuperar el acceso.": "e ajudamos você a recuperar o acesso."
+"y te ayudamos a recuperar el acceso.": "e ajudamos você a recuperar o acesso.",
+"Elegí la app a la que querés entrar. Cada una tiene su propio acceso, con el email y la contraseña de tu cuenta.": "Escolha o app que você quer acessar. Cada um tem seu próprio acesso, com o e-mail e a senha da sua conta.",
+"¿A qué app querés entrar?": "Qual app você quer acessar?",
+"Huella de productos, empresas y eventos.": "Pegada de produtos, empresas e eventos.",
+"Diagnóstico de proyectos de carbono.": "Diagnóstico de projetos de carbono.",
+"Riesgo climático, activo por activo.": "Risco climático, ativo por ativo.",
+"Entrás con el email y la contraseña de tu cuenta.": "Entre com o e-mail e a senha da sua conta.",
+"Próximamente. Escribinos y te avisamos cuando esté disponible.": "Em breve. Escreva para nós e avisaremos quando estiver disponível.",
+"¿Todavía no tenés cuenta o te falta acceso a una app? <a class=\"link\" href=\"index.html#contacto\">Hablá con el equipo →</a>": "Ainda não tem conta ou falta acesso a um app? <a class=\"link\" href=\"index.html#contacto\">Fale com a equipe →</a>",
+"Hablá con el equipo": "Fale com a equipe"
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 trabalho'],

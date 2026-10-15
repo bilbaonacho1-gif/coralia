@@ -652,6 +652,9 @@
 "Análisis de riesgo climático y planes de adaptación para cada activo y organización.": "Climate risk analysis and adaptation plans for every asset and organization.",
 "Estudios a medida y acompañamiento estratégico para empresas, gobiernos y organismos.": "Tailored studies and strategic support for companies, governments and institutions.",
 "Herramientas propias": "Our own tools",
+"Nuestras apps": "Our apps",
+"Ir a la app": "Go to the app",
+"Próximamente": "Coming soon",
 "Apps desarrolladas por Coralia, cada una vinculada a uno de nuestros servicios.": "Apps developed by Coralia, each linked to one of our services.",
 "Huella de carbono de empresas, productos y eventos, con estándares internacionales (GHG Protocol, ISO 14064 e ISO 14067).": "Carbon footprint of companies, products and events, using international standards (GHG Protocol, ISO 14064 and ISO 14067).",
 "Mercados de carbono: desarrollamos proyectos de punta a punta, de la factibilidad a la emisión de los créditos.": "Carbon markets: we develop projects end to end, from feasibility to credit issuance.",
@@ -841,7 +844,16 @@
 "El acceso a la plataforma se está habilitando. Mientras tanto, escribinos a": "Access to the platform is being set up. In the meantime, email us at",
 "y te damos acceso.": "and we'll give you access.",
 "Escribinos a": "Email us at",
-"y te ayudamos a recuperar el acceso.": "and we'll help you get back in."
+"y te ayudamos a recuperar el acceso.": "and we'll help you get back in.",
+"Elegí la app a la que querés entrar. Cada una tiene su propio acceso, con el email y la contraseña de tu cuenta.": "Choose the app you want to open. Each one has its own login, with your account email and password.",
+"¿A qué app querés entrar?": "Which app do you want to open?",
+"Huella de productos, empresas y eventos.": "Footprints of products, companies and events.",
+"Diagnóstico de proyectos de carbono.": "Carbon project diagnostics.",
+"Riesgo climático, activo por activo.": "Climate risk, asset by asset.",
+"Entrás con el email y la contraseña de tu cuenta.": "Log in with your account email and password.",
+"Próximamente. Escribinos y te avisamos cuando esté disponible.": "Coming soon. Email us and we'll let you know when it's available.",
+"¿Todavía no tenés cuenta o te falta acceso a una app? <a class=\"link\" href=\"index.html#contacto\">Hablá con el equipo →</a>": "Don't have an account yet, or missing access to an app? <a class=\"link\" href=\"index.html#contacto\">Talk to the team →</a>",
+"Hablá con el equipo": "Talk to the team"
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 engagement'],

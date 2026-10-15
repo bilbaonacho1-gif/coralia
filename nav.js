@@ -3,6 +3,14 @@
 const LOGIN_URL = 'ingresar.html';
 document.querySelectorAll('[data-login]').forEach((a) => { a.href = LOGIN_URL; });
 
+// A dónde lleva "Ir a la app" de cada una (sección Apps del inicio y pantalla Iniciar sesión).
+// null = todavía no tiene página: se muestra "Próximamente". Cambiar un link se hace solo acá.
+window.APP_LINKS = {
+  footprint: 'https://plataforma-huella-de-carbono.vercel.app/login',
+  markets: null,
+  risk: null,
+};
+
 // Coralia — menú del encabezado en celular y tablet (debajo de 1000 px)
 (() => {
   const btn = document.querySelector('.nav-toggle'), nav = document.getElementById('nav');

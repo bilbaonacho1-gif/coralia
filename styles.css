@@ -758,6 +758,9 @@ h3{font-size:22px;font-weight:600;letter-spacing:-.015em}
 .appview__name{margin:0;font-family:var(--display);font-size:clamp(34px,3.6vw,52px);font-weight:500;line-height:1;letter-spacing:-.015em}
 .appview__desc{margin:0 0 8px;font-size:16px;line-height:1.5;color:rgba(255,255,255,.85)}
 .appview.swap .appview__body>*{animation:fadeUp .6s var(--ease) both}
+.appview__ctas{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.appview__ctas [hidden]{display:none}
+.appview__soon{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;border:1px dashed rgba(255,255,255,.5);color:rgba(255,255,255,.85);font-size:14px;font-weight:600}
 .appview.swap .appview__name{animation-delay:.05s}.appview.swap .appview__desc{animation-delay:.1s}.appview.swap .btn{animation-delay:.15s}
 .wheel{grid-column:2;grid-row:1;position:relative;z-index:2;width:var(--w);aspect-ratio:1}
 .wheel__svg{width:100%;height:100%;overflow:visible}
@@ -1337,6 +1340,19 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
 .login__go:disabled{opacity:.6;transform:none;cursor:default}
 .login__msg{margin:16px 0 0;padding:14px 16px;border-radius:14px;background:var(--bg2);color:var(--ink);font-size:14.5px;line-height:1.5}
 .login__msg a{color:var(--leaf);font-weight:600;border-bottom:1px solid currentColor}
+.pick{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.pick__app{display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:14px;padding:16px 18px;border-radius:18px;background:#fff;border:1.5px solid var(--line2);color:var(--ink);transition:border-color .2s,box-shadow .2s,transform .2s}
+.pick__app:hover,.pick__app:focus-visible{border-color:var(--leaf);box-shadow:0 14px 28px -18px rgba(18,38,30,.45);transform:translateY(-2px)}
+.pick__app img{width:44px;height:44px;object-fit:contain}
+.pick__txt{display:flex;flex-direction:column;gap:2px;min-width:0}
+.pick__txt b{font-size:16.5px}
+.pick__txt span{font-size:14px;color:var(--ink2)}
+.pick__how{margin-top:4px;font-size:12.5px;color:var(--leaf);font-weight:600}
+.pick__go{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--forest);color:var(--bg);font-size:16px}
+.pick__app.is-soon{background:var(--bg2);border-style:dashed}
+.pick__app.is-soon img{filter:grayscale(.6);opacity:.75}
+.pick__app.is-soon .pick__how{color:var(--dim)}
+.pick__app.is-soon .pick__go{background:transparent;color:var(--ink2);border:1.5px solid var(--line2)}
 .login__foot{margin:24px 0 0;padding-top:22px;border-top:1px solid var(--line);font-size:14.5px;color:var(--ink2)}
 .login__foot .link{white-space:nowrap}
 @media (max-width:900px){
@@ -1349,4 +1365,6 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
   .login__intro p{font-size:16.5px}
   .login__apps li{font-size:13px}
   .login__card{padding:28px 22px;border-radius:24px}
+  .pick__app{grid-template-columns:38px 1fr auto;gap:12px;padding:14px}
+  .pick__app img{width:38px;height:38px}
 }

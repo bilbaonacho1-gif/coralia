@@ -226,6 +226,9 @@ if (wheel) {
     $('#avTag').innerHTML = `<img src="assets/apps/icon-${k}-claro.png" alt="">${ap.tag}`;
     $('#avName').textContent = APP_NAMES[k]; $('#avDesc').textContent = ap.desc;
     const sv = $('#avApp'); sv.href = `servicio.html?s=${ap.svc}`; sv.innerHTML = `Servicio: <b>${ap.svcName}</b> →`;
+    const url = (window.APP_LINKS || {})[k], go = $('#avGo');
+    if (url) go.href = url;
+    go.hidden = !url; $('#avSoon').hidden = !!url;
     $$('.apptab').forEach((t) => t.classList.toggle('is-hover', t.dataset.app === k));
     view.classList.remove('swap'); void view.offsetWidth; view.classList.add('swap');
     if (!anim) anim = requestAnimationFrame(tween);
@@ -340,7 +343,7 @@ function showCountry(i, zoom = false) {
   $('#mcRegion').textContent = region; $('#mcName').textContent = n;
   $('#mcCountLabel').textContent = workLabel(count);
   $('#mcTags').innerHTML = [...new Set(cs.map((c) => c.svc))].map((t) => `<span class="tag tag--${t}">${SVCN[t]}</span>`).join('');
-  $('#mcList').innerHTML = cs.map((c) => `<li class="mc-pub"><button type="button" class="mc-case" data-case="${c.id}"><span>Caso publicado</span><b>${c.client}</b> · ${c.title} →</button></li>`)
+  $('#mcList').innerHTML = cs.map((c) => `<li class="mc-pub"><button type="button" class="mc-case" data-case="${c.id}"><span>${tr('Caso publicado')}</span><b>${tr(c.client)}</b> · ${tr(c.title)} →</button></li>`)
     .concat((WORK[n] || []).map(([y, who, what]) => `<li><span class="mc-yr">${y}</span><div><b>${who}</b>${what}</div></li>`)).join('');
   $('#mcCount').textContent = `${cur + 1} / ${COUNTRIES.length}`;
   countryArt(cur);

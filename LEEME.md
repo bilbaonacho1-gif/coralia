@@ -169,7 +169,7 @@ Debajo de 1000 px el menú se abre con el botón ☰; se cierra al tocar un link
   separada "Cómo funcionan", las mini demos de la Home (ahora en simuladores.html) y la línea de tiempo.
 
 ## Pendientes (buscá TODO)
-- Conectar el inicio de sesión con Wix Headless (ver "Iniciar sesión" más abajo).
+- Links de Carbon Markets Hub y Climate Risk App: completarlos en APP_LINKS (nav.js). Hoy dicen "Próximamente".
 - Faltan páginas que existen en la web actual: Mitigación, Adaptación, Equipo completo,
   "What's Climate Change" y Política de privacidad.
 - Revisar con el equipo técnico los rangos ilustrativos de las mini demos y simuladores
@@ -216,9 +216,13 @@ Cumple los límites de Wix Headless: sin videos, cada archivo pesa menos de 3 MB
 - Todos los botones "Iniciar sesión" del sitio (encabezado de cada página y "¿Ya tenés acceso?" en Cómo trabajamos)
   tienen data-login y toman la dirección de un solo lugar: LOGIN_URL, al principio de nav.js. Hoy es ingresar.html.
   Si se decide usar la pantalla de login de Wix en vez de la propia, se cambia solo esa línea.
-- ingresar.html: pantalla propia con la foto de la portada, "Tus apps y proyectos, en un solo lugar", las tres apps
-  y la tarjeta con email, contraseña (con el ojito para verla), Recordarme, ¿Olvidaste tu contraseña? e Ingresar.
-  Estilos: bloque "Iniciar sesión" al final de styles.css. Traducciones: i18n/fuente/7-ingresar.py.
-- TODAVÍA NO ESTÁ CONECTADA: revisa que el email y la contraseña estén completos y avisa que el acceso se está
-  habilitando (escribir a contacto@coraliae.com). Cuando esté el proyecto de Wix Headless, se completa la función
-  entrar() en ingresar.js (login de usuarios de Wix con email y contraseña) y qué se abre después de entrar.
+- ingresar.html: pantalla para elegir a qué app entrar. Con la foto de la portada y "Tus apps y proyectos, en un solo
+  lugar"; la tarjeta "Iniciá sesión" muestra las tres apps, cada una con qué es y cómo se entra, y lleva a la página
+  de inicio de sesión de esa app (se abre en otra pestaña). Cada app tiene su propio acceso: no hay un login
+  único de Coralia.
+- Los links de las apps están en un solo lugar: APP_LINKS, al principio de nav.js. Los usa esta pantalla y el botón
+  "Ir a la app" del panel de la rueda en la Home. Hoy solo Carbon Footprint tiene link
+  (plataforma-huella-de-carbono.vercel.app/login); las otras dos muestran "Próximamente" y llevan a
+  contacto@coraliae.com. Cuando tengan página, se pone su link ahí y listo.
+  Estilos: bloque "Iniciar sesión" (.login, .pick) en styles.css. Traducciones: i18n/fuente/7-ingresar.py y,
+  para "Ir a la app" / "Próximamente", i18n/fuente/6-servicios.py.

@@ -45,7 +45,8 @@
 <main>
 
 <!-- ================= INICIAR SESIÓN =================
-     Pantalla propia, todavía sin conectar: la conexión con Wix Headless va en ingresar.js (función entrar). -->
+     Elegís a qué app entrar y cada tarjeta lleva a su página de inicio de sesión.
+     Los links están en nav.js (APP_LINKS); las que no tienen link muestran "Próximamente". -->
 <section class="login">
   <img class="login__bg" src="assets/hero-portada.webp" srcset="assets/hero-portada-960.webp 960w, assets/hero-portada.webp 1920w" sizes="100vw" alt="" fetchpriority="high">
   <div class="login__shade"></div>
@@ -53,41 +54,30 @@
     <div class="login__intro">
       <span class="eyebrow eyebrow--light in">Plataforma Coralia</span>
       <h1 class="in d1">Tus apps y proyectos, <em>en un solo lugar.</em></h1>
-      <p class="in d2">Entrá para usar nuestras apps y seguir el avance de tus proyectos junto a nuestro equipo.</p>
-      <ul class="login__apps in d3">
-        <li><img src="assets/apps/icon-footprint-claro.png" alt="" width="28" height="28">Carbon Footprint</li>
-        <li><img src="assets/apps/icon-markets-claro.png" alt="" width="28" height="28">Carbon Markets Hub</li>
-        <li><img src="assets/apps/icon-risk-claro.png" alt="" width="28" height="28">Climate Risk App</li>
-      </ul>
+      <p class="in d2">Elegí la app a la que querés entrar. Cada una tiene su propio acceso, con el email y la contraseña de tu cuenta.</p>
     </div>
 
     <div class="login__card in d2">
       <h2>Iniciá sesión</h2>
-      <p class="login__sub">Con el email y la contraseña de tu cuenta Coralia.</p>
-      <form id="loginForm" novalidate>
-        <label class="login__field">
-          <span>Email</span>
-          <input type="email" name="email" autocomplete="email" inputmode="email" placeholder="nombre@empresa.com" required>
-          <small class="login__err" data-for="email" hidden>Ingresá un email válido.</small>
-        </label>
-        <label class="login__field">
-          <span>Contraseña</span>
-          <span class="login__pass">
-            <input type="password" name="password" autocomplete="current-password" required>
-            <button type="button" class="login__eye" aria-label="Mostrar contraseña" aria-pressed="false">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
-            </button>
-          </span>
-          <small class="login__err" data-for="password" hidden>Ingresá tu contraseña.</small>
-        </label>
-        <div class="login__row">
-          <label class="login__check"><input type="checkbox" name="recordar" checked> Recordarme</label>
-          <a href="#" class="login__forgot" id="loginForgot">¿Olvidaste tu contraseña?</a>
-        </div>
-        <button type="submit" class="btn btn--mint login__go">Ingresar</button>
-        <p class="login__msg" id="loginMsg" role="status" hidden></p>
-      </form>
-      <p class="login__foot">¿Todavía no tenés cuenta? <a class="link" href="index.html#contacto">Hablá con el equipo →</a></p>
+      <p class="login__sub">¿A qué app querés entrar?</p>
+      <ul class="pick">
+        <li><a class="pick__app" data-app="footprint" href="https://plataforma-huella-de-carbono.vercel.app/login" target="_blank" rel="noopener">
+          <img src="assets/apps/icon-footprint-claro.png" alt="" width="40" height="40">
+          <span class="pick__txt"><b>Carbon Footprint</b><span>Huella de productos, empresas y eventos.</span><small class="pick__how">Entrás con el email y la contraseña de tu cuenta.</small></span>
+          <span class="pick__go" aria-hidden="true">↗</span>
+        </a></li>
+        <li><a class="pick__app" data-app="markets" href="#">
+          <img src="assets/apps/icon-markets-claro.png" alt="" width="40" height="40">
+          <span class="pick__txt"><b>Carbon Markets Hub</b><span>Diagnóstico de proyectos de carbono.</span><small class="pick__how">Entrás con el email y la contraseña de tu cuenta.</small></span>
+          <span class="pick__go" aria-hidden="true">↗</span>
+        </a></li>
+        <li><a class="pick__app" data-app="risk" href="#">
+          <img src="assets/apps/icon-risk-claro.png" alt="" width="40" height="40">
+          <span class="pick__txt"><b>Climate Risk App</b><span>Riesgo climático, activo por activo.</span><small class="pick__how">Entrás con el email y la contraseña de tu cuenta.</small></span>
+          <span class="pick__go" aria-hidden="true">↗</span>
+        </a></li>
+      </ul>
+      <p class="login__foot">¿Todavía no tenés cuenta o te falta acceso a una app? <a class="link" href="index.html#contacto">Hablá con el equipo →</a></p>
     </div>
   </div>
 </section>

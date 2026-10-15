@@ -659,6 +659,9 @@
 "Análisis de riesgo climático y planes de adaptación para cada activo y organización.": "Klimarisikoanalyse und Anpassungspläne für jeden Standort und jede Organisation.",
 "Estudios a medida y acompañamiento estratégico para empresas, gobiernos y organismos.": "Maßgeschneiderte Studien und strategische Begleitung für Unternehmen, Regierungen und Institutionen.",
 "Herramientas propias": "Eigene Werkzeuge",
+"Nuestras apps": "Unsere Apps",
+"Ir a la app": "Zur App",
+"Próximamente": "Demnächst",
 "Apps desarrolladas por Coralia, cada una vinculada a uno de nuestros servicios.": "Von Coralia entwickelte Apps, jede mit einer unserer Leistungen verbunden.",
 "Huella de carbono de empresas, productos y eventos, con estándares internacionales (GHG Protocol, ISO 14064 e ISO 14067).": "CO₂-Fußabdruck von Unternehmen, Produkten und Veranstaltungen nach internationalen Standards (GHG Protocol, ISO 14064 und ISO 14067).",
 "Mercados de carbono: desarrollamos proyectos de punta a punta, de la factibilidad a la emisión de los créditos.": "CO₂-Märkte: Wir entwickeln Projekte von Anfang bis Ende, von der Machbarkeit bis zur Ausgabe der Zertifikate.",
@@ -850,7 +853,16 @@
 "El acceso a la plataforma se está habilitando. Mientras tanto, escribinos a": "Der Zugang zur Plattform wird gerade eingerichtet. Schreiben Sie uns in der Zwischenzeit an",
 "y te damos acceso.": "und wir richten Ihnen den Zugang ein.",
 "Escribinos a": "Schreiben Sie an",
-"y te ayudamos a recuperar el acceso.": "und wir helfen Ihnen, wieder Zugang zu erhalten."
+"y te ayudamos a recuperar el acceso.": "und wir helfen Ihnen, wieder Zugang zu erhalten.",
+"Elegí la app a la que querés entrar. Cada una tiene su propio acceso, con el email y la contraseña de tu cuenta.": "Wählen Sie die App, die Sie öffnen möchten. Jede hat ihren eigenen Zugang mit der E-Mail-Adresse und dem Passwort Ihres Kontos.",
+"¿A qué app querés entrar?": "Welche App möchten Sie öffnen?",
+"Huella de productos, empresas y eventos.": "Fußabdruck von Produkten, Unternehmen und Veranstaltungen.",
+"Diagnóstico de proyectos de carbono.": "Diagnose von CO₂-Projekten.",
+"Riesgo climático, activo por activo.": "Klimarisiko, Standort für Standort.",
+"Entrás con el email y la contraseña de tu cuenta.": "Anmeldung mit der E-Mail-Adresse und dem Passwort Ihres Kontos.",
+"Próximamente. Escribinos y te avisamos cuando esté disponible.": "Demnächst. Schreiben Sie uns, und wir melden uns, sobald sie verfügbar ist.",
+"¿Todavía no tenés cuenta o te falta acceso a una app? <a class=\"link\" href=\"index.html#contacto\">Hablá con el equipo →</a>": "Noch kein Konto oder fehlt Ihnen der Zugang zu einer App? <a class=\"link\" href=\"index.html#contacto\">Sprechen Sie mit dem Team →</a>",
+"Hablá con el equipo": "Sprechen Sie mit dem Team"
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 Auftrag'],
