@@ -1586,3 +1586,10 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
 :is(.btn,.chip,.svc__btn,.cycle__arrow,.cycle__node,.apptab,.ba__tab,.sv-tab,.langsel__btn,.app-detail__close,.dot-btn):active,
 :is(.folder,.pipc):active :is(.folder__go,.pipc__go){box-shadow:0 0 0 3px rgba(200,240,74,.5),0 0 20px rgba(200,240,74,.5)}
 @media (prefers-reduced-motion:reduce){.is-tapped{animation:none}}
+/* el menú de planes queda por encima de la sección de contacto */
+#accesos:has(.plans[open]){z-index:3}
+/* con las 4 tarjetas en fila, los tres planes van uno al lado del otro (menú más bajito) */
+@media (min-width:1001px){
+  .plans[open] ul{right:auto;width:min(860px,calc(300% + 30px));display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 22px}
+  .plans[open] ul li + li{padding-top:0;border-top:0;padding-left:22px;border-left:1px solid var(--line)}
+}
