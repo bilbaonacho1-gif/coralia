@@ -6,7 +6,7 @@ document.querySelectorAll('[data-login]').forEach((a) => { a.href = LOGIN_URL; }
 // A dónde lleva "Ir a la app" de cada una (sección Apps del inicio y pantalla Iniciar sesión).
 // null = todavía no tiene página: se muestra "Próximamente". Cambiar un link se hace solo acá.
 window.APP_LINKS = {
-  footprint: 'https://plataforma-huella-de-carbono.vercel.app/login',
+  footprint: 'https://carbonfootprint.coraliae.com/login',
   markets: null,
   risk: null,
 };

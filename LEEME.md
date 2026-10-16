@@ -242,7 +242,7 @@ Cumple los límites de Wix Headless: sin videos, cada archivo pesa menos de 3 MB
   único de Coralia.
 - Los links de las apps están en un solo lugar: APP_LINKS, al principio de nav.js. Los usa esta pantalla y el botón
   "Ir a la app" del panel de la rueda en la Home. Hoy solo Carbon Footprint tiene link
-  (plataforma-huella-de-carbono.vercel.app/login); las otras dos muestran "Próximamente" y llevan a
+  (carbonfootprint.coraliae.com/login); las otras dos muestran "Próximamente" y llevan a
   contacto@coraliae.com. Cuando tengan página, se pone su link ahí y listo.
   Estilos: bloque "Iniciar sesión" (.login, .pick) en styles.css. Traducciones: i18n/fuente/7-ingresar.py y,
   para "Ir a la app" / "Próximamente", i18n/fuente/6-servicios.py.
