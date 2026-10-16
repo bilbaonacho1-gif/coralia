@@ -67,7 +67,7 @@ así que no dependen de Google Fonts. Se declaran al principio de styles.css (@f
 - "Qué es Coralia": equipo con base científica (opción A). Frase nueva debajo de Mitigar (insetting / offsetting).
 - Apps → plataformas en toda la web y en los 4 idiomas. "Climate Risk App" → "Climate Risk".
 - Sylvera: bloque "Alta integridad" y ReMonte con A–AA (bloque, página de Mitigar, etapa del pipeline y alt de la imagen).
-  Ojo: la imagen assets/marca/sylvera-remonte.webp todavía dice "Pre-Issuance Rating: A"; hay que reemplazarla.
+  El sello assets/marca/sylvera-remonte.webp ya es el nuevo ("Pre-Issuance Rating: AA–A"), sacado de la presentación de Climate Week NYC 2026.
 - Mitigar: cifra unificada en +13,2M y decimales con punto en inglés (10.1M, 2.8M, 1.5M).
 - "Cómo trabajamos" → "Trabajemos juntos" (EN Work with us): cuatro tarjetas (servicios, plataformas, socios, inversores).
   Los tres planes (Profesional, Análisis, Demo) quedan en el desplegable "Ver los planes" de la tarjeta de plataformas.
