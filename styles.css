@@ -1428,3 +1428,9 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
   .simpick{padding:16px 18px}
   .simpick__title{font-size:19px}
 }
+/* Revisión 02 · punto 25: un verde distinto para cada servicio en las carpetas de la home.
+   Variables propias: --medir, --mitigar y --adaptar siguen siendo las de los tags de casos y el mapa. */
+:root{--svc-medir:#86c95b;--svc-mitigar:#c8f04a;--svc-adaptar:#4fd1b0}
+.dot--svc-medir{background:var(--svc-medir);box-shadow:0 0 0 4px rgba(134,201,91,.28)}
+.dot--svc-mitigar{background:var(--svc-mitigar);box-shadow:0 0 0 4px rgba(200,240,74,.25)}
+.dot--svc-adaptar{background:var(--svc-adaptar);box-shadow:0 0 0 4px rgba(79,209,176,.28)}

@@ -78,7 +78,9 @@ así que no dependen de Google Fonts. Se declaran al principio de styles.css (@f
 - Tanda 2 · Simuladores → Descubrí (punto 1): la página ahora es discover.html (EN Discover, PT Descubra, DE Entdecken).
   simuladores.html quedó solo como redirección a discover.html (conserva ?lang= y el #simulador), para no romper links viejos.
   Cada tarjeta lleva arriba el nombre de la herramienta y como título la pregunta. El código sigue en simuladores.js.
-- Quedan para las próximas tandas: puntitos y logos (25, 13), cards del pipeline (20, 23),
+- Tanda 3 · puntitos (punto 25): Medir #86C95B, Mitigar #C8F04A, Adaptarse #4FD1B0, con variables propias
+  (--svc-medir, --svc-mitigar, --svc-adaptar). --medir, --mitigar y --adaptar no cambian (tags de casos y mapa).
+- Quedan para las próximas tandas: logos faltantes (13; coraliae.com no se puede abrir desde la sesión), cards del pipeline (20, 23),
   servicios desplegables (19), equipo (15) y notas de casos (11, 12, 24).
 
 ## Recorrido de la Home (de arriba a abajo)
