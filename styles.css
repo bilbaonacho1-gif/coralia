@@ -1644,7 +1644,7 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
 :root[data-theme="dark"] .cycle__core,:root[data-theme="dark"] .pipc__go,:root[data-theme="dark"] .folder__go{background:#1e3a2b}
 :root[data-theme="dark"] .cycle__arrow--next{background:var(--lime);border-color:var(--lime);color:#0c1712}
 :root[data-theme="dark"] .svx__btns .svc__btn[aria-pressed="true"]{background:var(--lime);border-color:var(--lime);color:#0c1712}
-:root[data-theme="dark"] :is(.pipc__title){filter:brightness(1.9) saturate(.8)}
+:root[data-theme="dark"] .pipc__title{color:color-mix(in srgb,var(--tc) 45%,#f3f4ec)}
 :root[data-theme="dark"] :is(.logos__item img,.note-side__logo,.pipc__stds img){filter:grayscale(1) invert(1) brightness(1.6);mix-blend-mode:screen}
 :root[data-theme="dark"] .ui-card{background:rgba(22,38,30,.86);border-color:rgba(255,255,255,.08);color:var(--ink)}
 :root[data-theme="dark"] .plans-toggle{background:transparent}
@@ -1685,3 +1685,16 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
 .pipc__row--meth{align-items:baseline}
 .pipc__row--meth small{margin:0}
 .pipc__row--meth .pipc__meth{max-width:none;text-align:right}
+/* modo oscuro: lo que estaba escrito con el color del fondo (cards y botones "invertidos") o en verde muy oscuro */
+:root[data-theme="dark"] :is(.level--hl,.simpick.is-active,.langsel__menu a.is-on){color:var(--ink)}
+:root[data-theme="dark"] .simpick.is-active{background:#1e3a2b;border-color:#2c5a40}
+:root[data-theme="dark"] .round--mint{background:var(--lime);border-color:var(--lime);color:#0c1712}
+:root[data-theme="dark"] .header.is-scrolled .btn--ghost-light{color:#0c1712}
+:root[data-theme="dark"] .plans-toggle{color:var(--ink)}
+:root[data-theme="dark"] .js .statement .w{color:rgba(233,239,227,.16)}
+:root[data-theme="dark"] .mc-coord{color:rgba(233,239,227,.42)}
+:root[data-theme="dark"] .sil__line{stroke:rgba(233,239,227,.32)}
+:root[data-theme="dark"]{--mitigar:#5cc2ad;--adaptar:#ec9a6c;--consultoria:#a99ce6;--medir:#a9dc6c}
+:root[data-theme="dark"] .sv--medir,:root[data-theme="dark"] .svx-detail:has(.sv--medir:not([hidden])){--cd:#a9dc6c}
+:root[data-theme="dark"] .sv--mitigar,:root[data-theme="dark"] .svx-detail:has(.sv--mitigar:not([hidden])){--cd:#eab765}
+:root[data-theme="dark"] .sv--adaptar,:root[data-theme="dark"] .svx-detail:has(.sv--adaptar:not([hidden])){--cd:#82c4ee}
