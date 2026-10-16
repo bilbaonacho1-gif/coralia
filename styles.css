@@ -1409,19 +1409,6 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
 .levels--ways .level h3{font-size:24px;line-height:1.12}
 .levels--ways .level>p{margin:10px 0 22px;font-size:14.5px;line-height:1.5;color:var(--ink2)}
 .levels--ways .level--hl>p{color:rgba(243,244,236,.78)}
-/* los tres planes de la plataforma, como desplegable adentro de la tarjeta */
-.plans{margin:-8px 0 18px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.plans summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:11px 0;font-size:14px;font-weight:600;color:var(--forest)}
-.plans summary::-webkit-details-marker{display:none}
-.plans summary::after{content:"+";font-size:18px;font-weight:400;transition:transform .3s var(--ease)}
-.plans[open] summary::after{transform:rotate(45deg)}
-.plans ul{margin:0 0 14px;gap:12px}
-.plans li{display:grid;gap:2px}
-.plans li::before{display:none}
-.plans li b{font-size:15px;color:var(--ink)}
-.plans li span{font-size:13px;color:var(--dim)}
-.plans li small{font-size:13px;color:var(--ink2)}
-.plans li .link{font-size:13px;margin-top:2px;justify-self:start}
 /* Descubrí: arriba de cada tarjeta, el número y el nombre de la herramienta */
 .simpick__top{display:flex;align-items:baseline;gap:8px}
 .simpick__tool{font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--dim)}
@@ -1565,19 +1552,6 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
 .svx__btns .svc__btn{transition:background .3s,color .3s,border-color .3s}
 .svx__btns .svc__btn:hover{border-color:var(--forest)}
 .svx__btns .svc__btn[aria-pressed="true"]{background:var(--forest);border-color:var(--forest);color:#fff;box-shadow:none}
-/* Ver los planes: en la compu se abre flotando encima (como un menú), así la tarjeta no se estira y la fila
-   no queda con huecos; en el celu (una tarjeta por fila) se sigue abriendo adentro de la tarjeta */
-@media (min-width:761px){
-  .plans{position:relative}
-  .level:has(.plans[open]){z-index:6}
-  .plans[open] summary{color:var(--leaf)}
-  .plans[open] ul{position:absolute;left:-12px;right:-12px;top:calc(100% + 6px);z-index:6;margin:0;padding:18px 20px;
-    background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 30px 60px -24px rgba(18,38,30,.35);
-    animation:plansIn .28s var(--ease) both}
-  .plans[open] ul li + li{padding-top:12px;border-top:1px solid var(--line)}
-}
-@keyframes plansIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){.plans[open] ul{animation:none}}
 /* Al tocar un botón: destello de luz verde clarita (la clase la pone nav.js) */
 .is-tapped{animation:tapGlow .65s cubic-bezier(.2,.7,.3,1)}
 @keyframes tapGlow{
@@ -1586,13 +1560,6 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
 :is(.btn,.chip,.svc__btn,.cycle__arrow,.cycle__node,.apptab,.ba__tab,.sv-tab,.langsel__btn,.app-detail__close,.dot-btn):active,
 :is(.folder,.pipc):active :is(.folder__go,.pipc__go){box-shadow:0 0 0 3px rgba(200,240,74,.5),0 0 20px rgba(200,240,74,.5)}
 @media (prefers-reduced-motion:reduce){.is-tapped{animation:none}}
-/* el menú de planes queda por encima de la sección de contacto */
-#accesos:has(.plans[open]){z-index:3}
-/* con las 4 tarjetas en fila, los tres planes van uno al lado del otro (menú más bajito) */
-@media (min-width:1001px){
-  .plans[open] ul{right:auto;width:min(860px,calc(300% + 30px));display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 22px}
-  .plans[open] ul li + li{padding-top:0;border-top:0;padding-left:22px;border-left:1px solid var(--line)}
-}
 /* Revisión 02 · punto 15: al pasar el mouse por una persona, un borde finito con degradé de verdes
    (lima → verde agua → verde bosque) que aparece y gira despacio, con la forma del hexágono */
 @property --hexa{syntax:'<angle>';inherits:false;initial-value:0deg}
@@ -1642,3 +1609,16 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
 }
 .note-side__name{display:block;font-family:var(--display);font-weight:500;font-size:24px;line-height:1.15;color:var(--ink);margin-bottom:6px}
 @media (max-width:1000px){.is-note .d-side{order:-1}}
+
+/* Ver los planes: botón en la tarjeta de plataformas; abre debajo una fila con los tres planes, mismas tarjetas */
+.plans-toggle{display:flex;justify-content:space-between;align-items:center;width:100%;margin:-8px 0 18px;padding:11px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:14px;font-weight:600;color:var(--forest)}
+.plans-toggle i{font-style:normal;font-size:18px;font-weight:400;transition:transform .3s var(--ease)}
+.plans-toggle[aria-expanded="true"]{color:var(--leaf)}
+.plans-toggle[aria-expanded="true"] i{transform:rotate(45deg)}
+.levels--plans{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:14px}
+.levels--plans[hidden]{display:none}
+.levels--plans .level{animation:planIn .5s var(--ease) both}
+.levels--plans .level:nth-child(2){animation-delay:.08s}.levels--plans .level:nth-child(3){animation-delay:.16s}
+@keyframes planIn{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+@media (max-width:760px){.levels--plans{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.levels--plans .level{animation:none}}

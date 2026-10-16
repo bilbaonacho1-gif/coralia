@@ -258,4 +258,5 @@ T = [
  "Benefits are shared between the provincial fund (40%), landowners (30%) and communities (30%), with free, prior and informed consent.",
  "Os benefícios são repartidos entre o fundo provincial (40%), os proprietários (30%) e as comunidades (30%), com consentimento livre, prévio e informado.",
  "Die Erträge werden zwischen dem Provinzfonds (40 %), den Eigentümern (30 %) und den Gemeinschaften (30 %) aufgeteilt, mit freier, vorheriger und informierter Zustimmung."),
+("Plan", "Plan", "Plano", "Tarif"),
 ]

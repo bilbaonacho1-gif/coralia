@@ -101,12 +101,13 @@ function closeApp() {
   if (on) { on.scrollIntoView({ block: 'center' }); on.focus({ preventScroll: true }); }
 }
 $$('.appcard').forEach((c) => c.addEventListener('click', () => openApp(c.dataset.app)));
-// "Ver los planes" (Trabajemos juntos): se cierra al tocar afuera o con Esc
-const plans = $('.plans');
-if (plans) {
-  document.addEventListener('click', (e) => { if (plans.open && !plans.contains(e.target)) plans.open = false; });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && plans.open) { plans.open = false; $('summary', plans).focus(); } });
-}
+// "Ver los planes" (Trabajemos juntos): abre debajo una fila con los tres planes, iguales a las tarjetas de arriba
+const plansBtn = $('.plans-toggle'), plansRow = $('#plansRow');
+if (plansBtn && plansRow) plansBtn.addEventListener('click', () => {
+  const open = plansRow.hidden;
+  plansRow.hidden = !open; plansBtn.setAttribute('aria-expanded', open);
+  if (open) requestAnimationFrame(() => plansRow.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'nearest' }));
+});
 
 /* ---------- Nuestros servicios: cada carpeta despliega su panel abajo (Revisión 02, punto 19) ----------
    Contenido en servicio.js. Links directos: index.html#servicio-medir | #servicio-mitigar | #servicio-adaptar */

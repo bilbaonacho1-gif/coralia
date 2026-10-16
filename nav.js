@@ -54,7 +54,7 @@ window.APP_LINKS = {
 // Al tocar un botón: un destello de luz verde clarita (anillo que sale y se desvanece). Estilo en styles.css (.is-tapped).
 // En las carpetas y las cards del pipeline el destello va en su flecha.
 (() => {
-  const SEL = '.btn, .chip, .svc__btn, .plans summary, .cycle__arrow, .cycle__node, .cycle__head, .apptab, .ba__tab, .sv-tab, .simpick, .langsel__btn, .nav-toggle, .app-detail__close, .dot-btn, .folder, .pipc, .sv-case, .pick__app';
+  const SEL = '.btn, .chip, .svc__btn, .plans-toggle, .cycle__arrow, .cycle__node, .cycle__head, .apptab, .ba__tab, .sv-tab, .simpick, .langsel__btn, .nav-toggle, .app-detail__close, .dot-btn, .folder, .pipc, .sv-case, .pick__app';
   const ARROW = { folder: '.folder__go', pipc: '.pipc__go' };
   document.addEventListener('pointerdown', (e) => {
     let el = e.target.closest && e.target.closest(SEL); if (!el) return;

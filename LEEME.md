@@ -70,7 +70,8 @@ así que no dependen de Google Fonts. Se declaran al principio de styles.css (@f
   El sello assets/marca/sylvera-remonte.webp ya es el nuevo ("Pre-Issuance Rating: AA–A"), sacado de la presentación de Climate Week NYC 2026.
 - Mitigar: cifra unificada en +13,2M y decimales con punto en inglés (10.1M, 2.8M, 1.5M).
 - "Cómo trabajamos" → "Trabajemos juntos" (EN Work with us): cuatro tarjetas (servicios, plataformas, socios, inversores).
-  Los tres planes (Profesional, Análisis, Demo) quedan en el desplegable "Ver los planes" de la tarjeta de plataformas.
+  Los tres planes (Profesional, Análisis, Demo): "Ver los planes", en la tarjeta de plataformas, abre debajo otra fila
+  de tarjetas iguales (#plansRow en index.html).
   Abajo: "¿No sabés por dónde empezar? Descubrí tu camino climático →" (lleva a discover.html).
 - Teléfono nuevo: +54 9 11 5056 0687. "Nosotros" lleva a los logos (#trusted-by). "Confían en nosotros" (EN Trusted by).
 - Pipeline: "Invertí en nuestro pipeline de proyectos" con su bajada (opción A), en la home y en pipeline.html.

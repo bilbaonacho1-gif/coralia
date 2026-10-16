@@ -1020,6 +1020,7 @@
 "Emisión de 10.175.209 VCUs": "Ausgabe von 10.175.209 VCUs",
 "Verra aprobó la emisión de los primeros 10.175.209 VCUs del programa: una de las mayores emisiones para un solo período de verificación, y la primera de un programa jurisdiccional liderado por un gobierno subnacional.": "Verra genehmigte die Ausgabe der ersten 10.175.209 VCUs des Programms: eine der größten Ausgaben für einen einzigen Verifizierungszeitraum und die erste eines jurisdiktionalen Programms unter Führung einer subnationalen Regierung.",
 "Los beneficios se reparten entre el fondo provincial (40%), los propietarios (30%) y las comunidades (30%), con consentimiento libre, previo e informado.": "Die Erträge werden zwischen dem Provinzfonds (40 %), den Eigentümern (30 %) und den Gemeinschaften (30 %) aufgeteilt, mit freier, vorheriger und informierter Zustimmung.",
+"Plan": "Tarif",
 "Argentina · 8 operaciones": "Argentinien · 8 Standorte",
 "de horizonte en los mapas de riesgo futuro": "Horizont der Karten künftiger Risiken",
 "operaciones analizadas en todo el país": "landesweit analysierte Standorte",

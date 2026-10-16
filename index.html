@@ -566,15 +566,7 @@
         <span class="level__n">Por tu cuenta</span>
         <h3>Usá nuestras plataformas</h3>
         <p>Carbon Footprint, Carbon Markets Hub y Climate Risk, con planes para cada etapa: demo, análisis y profesional.</p>
-        <!-- los tres planes de antes quedan adentro, como desplegable -->
-        <details class="plans">
-          <summary>Ver los planes</summary>
-          <ul>
-            <li><b>Profesional</b><span>Para gestión avanzada</span><small>Plataforma completa · Reportes avanzados · Soporte técnico</small><a class="link" href="#contacto">Contactar ventas →</a></li>
-            <li><b>Análisis</b><span>Para análisis internos</span><small>Funcionalidades básicas · Tus propios datos · Reportes simples</small><a class="link" href="#contacto">Solicitar acceso →</a></li>
-            <li><b>Demo</b><span>Explorá la herramienta</span><small>Acceso limitado · Datos de ejemplo · Sin costo</small><a class="link" href="#contacto">Probar demo →</a></li>
-          </ul>
-        </details>
+        <button type="button" class="plans-toggle" aria-expanded="false" aria-controls="plansRow">Ver los planes <i aria-hidden="true">+</i></button>
         <a href="#apps" class="btn btn--ghost-light">Conocé las plataformas</a>
       </article>
       <article class="level reveal">
@@ -588,6 +580,27 @@
         <h3>Invertí en nuestros proyectos</h3>
         <p>Proyectos de carbono de alta integridad de nuestro pipeline propio, abiertos a inversores y compradores de créditos.</p>
         <a href="pipeline.html" class="btn btn--ghost-light">Ver el pipeline</a>
+      </article>
+    </div>
+    <!-- Ver los planes (tarjeta "Usá nuestras plataformas"): los tres planes se abren abajo, como otra fila de tarjetas -->
+    <div class="levels levels--plans" id="plansRow" hidden>
+      <article class="level level--plan">
+        <span class="level__n">Plan</span>
+        <h3>Profesional</h3><span class="muted">Para gestión avanzada</span>
+        <ul><li>Plataforma completa</li><li>Reportes avanzados</li><li>Soporte técnico</li></ul>
+        <a href="#contacto" class="btn btn--ghost-light">Contactar ventas</a>
+      </article>
+      <article class="level level--plan">
+        <span class="level__n">Plan</span>
+        <h3>Análisis</h3><span class="muted">Para análisis internos</span>
+        <ul><li>Funcionalidades básicas</li><li>Tus propios datos</li><li>Reportes simples</li></ul>
+        <a href="#contacto" class="btn btn--ghost-light">Solicitar acceso</a>
+      </article>
+      <article class="level level--plan">
+        <span class="level__n">Plan</span>
+        <h3>Demo</h3><span class="muted">Explorá la herramienta</span>
+        <ul><li>Acceso limitado</li><li>Datos de ejemplo</li><li>Sin costo</li></ul>
+        <a href="#contacto" class="btn btn--ghost-light">Probar demo</a>
       </article>
     </div>
     <div class="access__more reveal">
