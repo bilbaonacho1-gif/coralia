@@ -954,7 +954,10 @@
 "Validación y registro": "Validation & registration",
 "Emisión de VCUs": "VCU issuance",
 "Trayectoria": "Track record",
-"Proyectos que ya <em>desarrollamos.</em>": "Projects we’ve <em>already developed.</em>"
+"Proyectos que ya <em>desarrollamos.</em>": "Projects we’ve <em>already developed.</em>",
+"Tocá una etapa o usá las flechas para ver sus pasos.": "Tap a stage or use the arrows to see its steps.",
+"Etapa anterior": "Previous stage",
+"Etapa siguiente": "Next stage"
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 engagement'],

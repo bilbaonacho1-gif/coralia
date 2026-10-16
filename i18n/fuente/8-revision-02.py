@@ -177,4 +177,7 @@ T = [
 # --- Mitigar: tercer botón con las cifras, ECO2 Misiones y los proyectos
 ("Trayectoria", "Track record", "Trajetória", "Erfolgsbilanz"),
 ("Proyectos que ya <em>desarrollamos.</em>", "Projects we’ve <em>already developed.</em>", "Projetos que já <em>desenvolvemos.</em>", "Projekte, die wir <em>bereits entwickelt haben.</em>"),
+("Tocá una etapa o usá las flechas para ver sus pasos.", "Tap a stage or use the arrows to see its steps.", "Toque uma etapa ou use as setas para ver seus passos.", "Tippen Sie auf eine Phase oder nutzen Sie die Pfeile, um ihre Schritte zu sehen."),
+("Etapa anterior", "Previous stage", "Etapa anterior", "Vorherige Phase"),
+("Etapa siguiente", "Next stage", "Próxima etapa", "Nächste Phase"),
 ]

@@ -880,7 +880,9 @@
 "Validación y registro": "Validação e registro",
 "Emisión de VCUs": "Emissão de VCUs",
 "Trayectoria": "Trajetória",
-"Proyectos que ya <em>desarrollamos.</em>": "Projetos que já <em>desenvolvemos.</em>"
+"Proyectos que ya <em>desarrollamos.</em>": "Projetos que já <em>desenvolvemos.</em>",
+"Tocá una etapa o usá las flechas para ver sus pasos.": "Toque uma etapa ou use as setas para ver seus passos.",
+"Etapa siguiente": "Próxima etapa"
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 trabalho'],

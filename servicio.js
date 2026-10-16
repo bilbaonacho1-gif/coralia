@@ -213,7 +213,7 @@ function renderService(key) {
 }
 
 // Para clientes (Mitigar): el ciclo completo de un proyecto de carbono, en 7 etapas que agrupan los 14 pasos
-// de "Desarrollo del proyecto" y "Monitoreo y verificación". Al pasar el mouse (o tocar) una etapa se ven sus pasos.
+// de "Desarrollo del proyecto" y "Monitoreo y verificación". Al tocar una etapa (o con las flechas) se ven sus pasos.
 const ETAPAS = [
   ['Factibilidad', ['Estudio de factibilidad']],
   ['Línea de base y diseño', ['Línea de base', 'No permanencia', 'Análisis de fugas', 'Plan de monitoreo']],
@@ -231,13 +231,18 @@ function renderCycle() {
       <button type="button" class="cycle__head" aria-expanded="false"><span class="cycle__n">${i + 1}</span><b>${e[0]}</b></button>
       <ul class="cycle__steps">${e[1].map((n) => `<li><b>${n}</b><span>${byName[n] || ''}</span></li>`).join('')}</ul>
     </li>`).join('');
-  box.innerHTML = `<div class="cycle__ring">
+  box.innerHTML = `<div class="cycle__left"><div class="cycle__ring">
       <svg viewBox="0 0 100 100" aria-hidden="true"><circle class="cycle__track" cx="50" cy="50" r="40"/><circle class="cycle__prog" cx="50" cy="50" r="40" pathLength="${ETAPAS.length}"/></svg>
       <span class="cycle__orbit" aria-hidden="true"><i></i></span>
       ${nodes}
       <div class="cycle__core"><img src="assets/logo.png" alt="Coralia Environmental"><b>Ciclo completo</b><small>7 etapas · 14 pasos</small></div>
     </div>
-    <div class="cycle__side"><p class="cycle__hint">Tocá o pasá el mouse por cada etapa para ver sus pasos.</p><ol class="cycle__list">${list}</ol></div>`;
+    <div class="cycle__nav">
+      <button type="button" class="cycle__arrow" data-go="-1" aria-label="Etapa anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <span class="cycle__count" aria-live="polite"><b>1</b> / ${ETAPAS.length}</span>
+      <button type="button" class="cycle__arrow cycle__arrow--next" data-go="1" aria-label="Etapa siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div></div>
+    <div class="cycle__side"><p class="cycle__hint">Tocá una etapa o usá las flechas para ver sus pasos.</p><ol class="cycle__list">${list}</ol></div>`;
   let cur = -1, touched = false, timer = 0;
   const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
   function show(i) {
@@ -245,14 +250,20 @@ function renderCycle() {
     $$('.cycle__node', box).forEach((n, j) => { n.classList.toggle('is-on', j === cur); n.classList.toggle('is-done', j < cur); });
     $$('.cycle__st', box).forEach((s, j) => { s.classList.toggle('is-on', j === cur); $('.cycle__head', s).setAttribute('aria-expanded', j === cur); });
     box.style.setProperty('--done', cur + 1);
+    $('.cycle__count b', box).textContent = cur + 1;
   }
-  const pick = (e) => { const t = e.target.closest('[data-i]'); if (!t || !box.contains(t)) return; touched = true; clearTimeout(timer); show(+t.dataset.i); };
-  box.addEventListener('mouseover', pick); box.addEventListener('click', pick); box.addEventListener('focusin', pick);
-  // mientras nadie la toca, la rueda avanza sola cuando está a la vista
-  const tick = () => { if (touched || calm) return; show(cur + 1); timer = setTimeout(tick, 3200); };
+  // se cambia de etapa solo al tocar (un número de la rueda, una etapa de la lista o las flechas), no al pasar el mouse
+  const stop = () => { touched = true; clearTimeout(timer); };
+  box.addEventListener('click', (e) => {
+    const go = e.target.closest('[data-go]'); if (go) { stop(); show(cur + +go.dataset.go); return; }
+    const t = e.target.closest('[data-i]'); if (t && box.contains(t)) { stop(); show(+t.dataset.i); }
+  });
+  box.addEventListener('keydown', (e) => { if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { stop(); show(cur + (e.key === 'ArrowRight' ? 1 : -1)); } });
+  // mientras nadie la toca, la rueda avanza sola (despacio) cuando está a la vista
+  const tick = () => { if (touched || calm) return; show(cur + 1); timer = setTimeout(tick, 4500); };
   show(0);
   if (calm || !('IntersectionObserver' in window)) box.classList.add('is-in');
-  else new IntersectionObserver((es) => { if (!es[0].isIntersecting) return; box.classList.add('is-in'); if (!timer && !touched) timer = setTimeout(tick, 2400); }, { threshold: 0.4 }).observe(box);
+  else new IntersectionObserver((es) => { if (!es[0].isIntersecting) return; box.classList.add('is-in'); if (!timer && !touched) timer = setTimeout(tick, 3500); }, { threshold: 0.4 }).observe(box);
 }
 
 // la línea de pasos se llena y cada paso se enciende cuando llega a la altura de la vista (solo en el panel abierto)
