@@ -874,7 +874,7 @@
 "huellas corporativas, de productos y eventos": "Fußabdrücke von Unternehmen, Produkten und Veranstaltungen",
 "activos evaluados por riesgo climático": "auf Klimarisiko bewertete Standorte",
 "riesgo físico y de transición · escenarios SSP": "physisches und transitorisches Risiko · SSP-Szenarien",
-"Coralia es un <b>equipo con base científica</b> que combina <b>expertise climático</b>, <b>datos</b> y <b>tecnología</b> para que las organizaciones tomen mejores decisiones frente al cambio climático.": "Coralia ist ein <b>wissenschaftlich fundiertes Team</b>, das <b>Klimaexpertise</b>, <b>Daten</b> und <b>Technologie</b> verbindet, damit Organisationen im Klimawandel bessere Entscheidungen treffen.",
+"Coralia es un <b>equipo con base científica</b> que combina <b>conocimiento climático</b>, <b>datos</b> y <b>tecnología</b> para que las organizaciones tomen mejores decisiones frente al cambio climático.": "Coralia ist ein <b>wissenschaftlich fundiertes Team</b>, das <b>Klimawissen</b>, <b>Daten</b> und <b>Technologie</b> verbindet, damit Organisationen im Klimawandel bessere Entscheidungen treffen.",
 "Definí tu camino de descarbonización, reducí emisiones dentro de tu cadena de valor (insetting) y explorá los mercados de carbono para compensar lo que quede (offsetting).": "Legen Sie Ihren Dekarbonisierungspfad fest, senken Sie Emissionen in Ihrer Wertschöpfungskette (Insetting) und nutzen Sie CO₂-Märkte, um den Rest auszugleichen (Offsetting).",
 "Plataformas": "Plattformen",
 "Nuestras plataformas": "Unsere Plattformen",
@@ -923,7 +923,7 @@
 "Para desarrolladores, propietarios de tierras, ONG y empresas: co-desarrollá proyectos con nosotros o llevá nuestras herramientas a tus clientes.": "Für Projektentwickler, Landbesitzer, NGOs und Unternehmen: Entwickeln Sie Projekte gemeinsam mit uns oder bringen Sie unsere Tools zu Ihren Kunden.",
 "Sumate como socio": "Partner werden",
 "Invertí en nuestros proyectos": "In unsere Projekte investieren",
-"Proyectos de carbono de alta integridad de nuestro pipeline propio, abiertos a inversores y offtakers.": "CO₂-Projekte mit hoher Integrität aus unserer eigenen Pipeline, offen für Investoren und Abnehmer.",
+"Proyectos de carbono de alta integridad de nuestro pipeline propio, abiertos a inversores y compradores de créditos.": "CO₂-Projekte mit hoher Integrität aus unserer eigenen Pipeline, offen für Investoren und Abnehmer.",
 "Ver el pipeline": "Zur Pipeline",
 "¿No sabés por dónde empezar? Descubrí tu camino climático →": "Nicht sicher, wo Sie anfangen sollen? Entdecken Sie Ihren Klimapfad →",
 "Proyecto": "Projekt"

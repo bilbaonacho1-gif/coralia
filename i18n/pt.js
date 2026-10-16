@@ -797,7 +797,7 @@
 "huellas corporativas, de productos y eventos": "pegadas corporativas, de produtos e eventos",
 "activos evaluados por riesgo climático": "ativos avaliados quanto ao risco climático",
 "riesgo físico y de transición · escenarios SSP": "risco físico e de transição · cenários SSP",
-"Coralia es un <b>equipo con base científica</b> que combina <b>expertise climático</b>, <b>datos</b> y <b>tecnología</b> para que las organizaciones tomen mejores decisiones frente al cambio climático.": "A Coralia é uma <b>equipe com base científica</b> que combina <b>expertise climática</b>, <b>dados</b> e <b>tecnologia</b> para que as organizações tomem decisões melhores diante das mudanças climáticas.",
+"Coralia es un <b>equipo con base científica</b> que combina <b>conocimiento climático</b>, <b>datos</b> y <b>tecnología</b> para que las organizaciones tomen mejores decisiones frente al cambio climático.": "A Coralia é uma <b>equipe com base científica</b> que combina <b>conhecimento climático</b>, <b>dados</b> e <b>tecnologia</b> para que as organizações tomem decisões melhores diante das mudanças climáticas.",
 "Definí tu camino de descarbonización, reducí emisiones dentro de tu cadena de valor (insetting) y explorá los mercados de carbono para compensar lo que quede (offsetting).": "Defina seu caminho de descarbonização, reduza emissões dentro da sua cadeia de valor (insetting) e explore os mercados de carbono para compensar o que restar (offsetting).",
 "Nuestras plataformas": "Nossas plataformas",
 "Plataformas desarrolladas por Coralia, cada una vinculada a uno de nuestros servicios.": "Plataformas desenvolvidas pela Coralia, cada uma vinculada a um dos nossos serviços.",
@@ -842,7 +842,7 @@
 "Para desarrolladores, propietarios de tierras, ONG y empresas: co-desarrollá proyectos con nosotros o llevá nuestras herramientas a tus clientes.": "Para desenvolvedores, proprietários de terras, ONGs e empresas: desenvolva projetos conosco ou leve nossas ferramentas aos seus clientes.",
 "Sumate como socio": "Torne-se parceiro",
 "Invertí en nuestros proyectos": "Invista em nossos projetos",
-"Proyectos de carbono de alta integridad de nuestro pipeline propio, abiertos a inversores y offtakers.": "Projetos de carbono de alta integridade do nosso próprio pipeline, abertos a investidores e offtakers.",
+"Proyectos de carbono de alta integridad de nuestro pipeline propio, abiertos a inversores y compradores de créditos.": "Projetos de carbono de alta integridade do nosso próprio pipeline, abertos a investidores e compradores de créditos.",
 "Ver el pipeline": "Ver o pipeline",
 "¿No sabés por dónde empezar? Descubrí tu camino climático →": "Não sabe por onde começar? Descubra seu caminho climático →",
 "Proyecto": "Projeto"

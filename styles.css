@@ -839,8 +839,8 @@ h3{font-size:22px;font-weight:600;letter-spacing:-.015em}
 @media (prefers-reduced-motion:reduce){.js .hive:not(.is-visible) .hex{opacity:1}.hive.is-visible :is(.hex,.hex__color,.hex__glow,.hex__in::before){animation:none}}
 
 /* ================= Decoración: mariposas de hojas en los espacios en blanco ================= */
-#plataforma,#apps,#proyectos,#equipo,#accesos,#confianza,#contacto{position:relative}
-#plataforma>.wrap,#apps>.wrap,#proyectos>.wrap,#equipo>.wrap,#accesos>.wrap,#confianza>.wrap,#contacto>.wrap,#confianza>.logos{position:relative;z-index:1}
+#plataforma,#apps,#proyectos,#equipo,#accesos,#trusted-by,#contacto{position:relative}
+#plataforma>.wrap,#apps>.wrap,#proyectos>.wrap,#equipo>.wrap,#accesos>.wrap,#trusted-by>.wrap,#contacto>.wrap,#trusted-by>.logos{position:relative;z-index:1}
 .deco{position:absolute;z-index:0;pointer-events:none;user-select:none;max-width:none;height:auto;will-change:transform}
 .deco-anchor{position:relative;height:0}
 .deco--intro{right:14px;top:60px;width:clamp(170px,16vw,240px)}

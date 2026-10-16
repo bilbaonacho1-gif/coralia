@@ -865,7 +865,7 @@
 "huellas corporativas, de productos y eventos": "corporate, product and event footprints",
 "activos evaluados por riesgo climático": "assets assessed for climate risk",
 "riesgo físico y de transición · escenarios SSP": "physical and transition risk · SSP scenarios",
-"Coralia es un <b>equipo con base científica</b> que combina <b>expertise climático</b>, <b>datos</b> y <b>tecnología</b> para que las organizaciones tomen mejores decisiones frente al cambio climático.": "Coralia is a <b>science-backed team</b> that combines <b>climate expertise</b>, <b>data</b> and <b>technology</b> so organizations can make better decisions in the face of climate change.",
+"Coralia es un <b>equipo con base científica</b> que combina <b>conocimiento climático</b>, <b>datos</b> y <b>tecnología</b> para que las organizaciones tomen mejores decisiones frente al cambio climático.": "Coralia is a <b>science-backed team</b> that combines <b>climate expertise</b>, <b>data</b> and <b>technology</b> so organizations can make better decisions in the face of climate change.",
 "Definí tu camino de descarbonización, reducí emisiones dentro de tu cadena de valor (insetting) y explorá los mercados de carbono para compensar lo que quede (offsetting).": "Define your decarbonization pathway, cut emissions within your value chain (insetting) and explore carbon markets to offset what’s left (offsetting).",
 "Plataformas": "Platforms",
 "Nuestras plataformas": "Our platforms",
@@ -914,7 +914,7 @@
 "Para desarrolladores, propietarios de tierras, ONG y empresas: co-desarrollá proyectos con nosotros o llevá nuestras herramientas a tus clientes.": "For developers, landowners, NGOs and companies: co-develop projects with us or bring our tools to your clients.",
 "Sumate como socio": "Become a partner",
 "Invertí en nuestros proyectos": "Invest in our projects",
-"Proyectos de carbono de alta integridad de nuestro pipeline propio, abiertos a inversores y offtakers.": "High-integrity carbon projects from our own pipeline, open to investors and offtakers.",
+"Proyectos de carbono de alta integridad de nuestro pipeline propio, abiertos a inversores y compradores de créditos.": "High-integrity carbon projects from our own pipeline, open to investors and offtakers.",
 "Ver el pipeline": "See the pipeline",
 "¿No sabés por dónde empezar? Descubrí tu camino climático →": "Not sure where to start? Discover your climate pathway →",
 "Proyecto": "Project"
