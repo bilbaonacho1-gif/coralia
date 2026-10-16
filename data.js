@@ -10,6 +10,19 @@ const CASES = [
     short: 'El primer programa JNR del mundo en emitir créditos de carbono, liderado por un gobierno subnacional.',
     body: ['Verra aprobó la emisión de los primeros 10.175.209 VCUs del Programa JNR de la Provincia de Misiones, una de las mayores emisiones para un solo período de verificación. Detrás hay más de 3 millones de hectáreas de Selva Paranaense protegidas por décadas de política pública.',
       'Coralia acompañó el proceso de punta a punta: redacción del documento de programa (PD), datos de actividad del nivel de referencia (FREL), sistema MRV, datos del período de monitoreo, marco legal de titularidad de los VCUs, análisis de incertidumbre, fugas y no permanencia, y respuestas a AENOR, Verra y Sylvera.'],
+    // Nota con el formato nuevo (Revisión 02, punto 24): solo datos ya publicados (Company deck 2026, Verra, Sylvera).
+    // TODO: fechas de cada etapa (las pasa Nico); las del boceto eran ilustrativas
+    note: {
+      logo: 'assets/logos/gobierno-misiones.webp', place: 'Provincia de Misiones, Argentina',
+      metrics: [['10.175.209', 'VCUs emitidos'], ['1,5M ha', 'de bosque nativo, verificado por AENOR'], ['A–AA', 'rating de Sylvera antes de la emisión'], ['2,8M', 'VCUs elegibles para CORSIA']],
+      facts: [['Estándar', 'Verra JNR · VCS 4648'], ['Período', '2017–2022']],
+      challenge: ['Detrás del programa hay más de 3 millones de hectáreas de Selva Paranaense protegidas por décadas de política pública.',
+        'El desafío: convertir esa conservación en créditos de carbono verificables a escala de toda una provincia, con un gobierno subnacional al frente, algo que nadie había logrado antes.'],
+      did: 'Coralia acompañó el proceso de punta a punta, del documento de programa a las respuestas a los auditores.',
+      steps: [['2017–2022', 'Período de monitoreo'], ['', 'Documento de programa (PD) y nivel de referencia (FREL)'], ['', 'Validación y verificación · AENOR y Verra'], ['Enero 2026', 'Rating Sylvera A–AA previo a la emisión'], ['', 'Emisión de 10.175.209 VCUs']],
+      result: ['Verra aprobó la emisión de los primeros 10.175.209 VCUs del programa: una de las mayores emisiones para un solo período de verificación, y la primera de un programa jurisdiccional liderado por un gobierno subnacional.',
+        'Los beneficios se reparten entre el fondo provincial (40%), los propietarios (30%) y las comunidades (30%), con consentimiento libre, previo e informado.'],
+    },
     url: 'https://www.coraliae.com/projects-jnrmisiones' },
   { id: 'ypf', hero: 'assets/proyectos/ypf.jpg', gallery: [], period: '2020 · 2024 · 2025', featured: true, img: 'assets/proyectos/ypf.jpg', client: 'YPF', country: 'Argentina', svc: 'adaptar', ind: 'Oil & Gas',
     title: 'Riesgo climático en operaciones estratégicas', kpi: ['100 años', 'de horizonte en los mapas de riesgo'],

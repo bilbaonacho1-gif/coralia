@@ -1002,7 +1002,24 @@
 "Redes sociales y LinkedIn": "Social Media und LinkedIn",
 "Prensa y relación con medios": "Presse- und Medienarbeit",
 "Contenido audiovisual": "Audiovisuelle Inhalte",
-"Comunicación de proyectos de carbono": "Kommunikation von CO₂-Projekten"
+"Comunicación de proyectos de carbono": "Kommunikation von CO₂-Projekten",
+"LA NOTA": "DIE GESCHICHTE",
+"El desafío": "Die Herausforderung",
+"Qué hicimos": "Was wir getan haben",
+"1,5M ha": "1,5 Mio. ha",
+"de bosque nativo, verificado por AENOR": "einheimischer Wald, von AENOR verifiziert",
+"rating de Sylvera antes de la emisión": "Sylvera-Rating vor der Ausgabe",
+"Provincia de Misiones, Argentina": "Provinz Misiones, Argentinien",
+"Detrás del programa hay más de 3 millones de hectáreas de Selva Paranaense protegidas por décadas de política pública.": "Hinter dem Programm stehen mehr als 3 Millionen Hektar Paraná-Regenwald, geschützt durch jahrzehntelange öffentliche Politik.",
+"El desafío: convertir esa conservación en créditos de carbono verificables a escala de toda una provincia, con un gobierno subnacional al frente, algo que nadie había logrado antes.": "Die Herausforderung: diesen Schutz in verifizierbare CO₂-Zertifikate für eine ganze Provinz zu verwandeln, angeführt von einer subnationalen Regierung, was zuvor niemandem gelungen war.",
+"Coralia acompañó el proceso de punta a punta, del documento de programa a las respuestas a los auditores.": "Coralia begleitete den Prozess von Anfang bis Ende, vom Programmdokument bis zu den Antworten an die Prüfer.",
+"Período de monitoreo": "Monitoringzeitraum",
+"Documento de programa (PD) y nivel de referencia (FREL)": "Programmdokument (PD) und Referenzniveau (FREL)",
+"Validación y verificación · AENOR y Verra": "Validierung und Verifizierung · AENOR und Verra",
+"Enero 2026": "Januar 2026",
+"Emisión de 10.175.209 VCUs": "Ausgabe von 10.175.209 VCUs",
+"Verra aprobó la emisión de los primeros 10.175.209 VCUs del programa: una de las mayores emisiones para un solo período de verificación, y la primera de un programa jurisdiccional liderado por un gobierno subnacional.": "Verra genehmigte die Ausgabe der ersten 10.175.209 VCUs des Programms: eine der größten Ausgaben für einen einzigen Verifizierungszeitraum und die erste eines jurisdiktionalen Programms unter Führung einer subnationalen Regierung.",
+"Los beneficios se reparten entre el fondo provincial (40%), los propietarios (30%) y las comunidades (30%), con consentimiento libre, previo e informado.": "Die Erträge werden zwischen dem Provinzfonds (40 %), den Eigentümern (30 %) und den Gemeinschaften (30 %) aufgeteilt, mit freier, vorheriger und informierter Zustimmung."
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 Auftrag'],

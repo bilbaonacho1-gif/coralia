@@ -994,7 +994,24 @@
 "Redes sociales y LinkedIn": "Social media and LinkedIn",
 "Prensa y relación con medios": "Press and media relations",
 "Contenido audiovisual": "Audiovisual content",
-"Comunicación de proyectos de carbono": "Carbon project communications"
+"Comunicación de proyectos de carbono": "Carbon project communications",
+"LA NOTA": "THE STORY",
+"El desafío": "The challenge",
+"Qué hicimos": "What we did",
+"1,5M ha": "1.5M ha",
+"de bosque nativo, verificado por AENOR": "of native forest, verified by AENOR",
+"rating de Sylvera antes de la emisión": "Sylvera rating before issuance",
+"Provincia de Misiones, Argentina": "Province of Misiones, Argentina",
+"Detrás del programa hay más de 3 millones de hectáreas de Selva Paranaense protegidas por décadas de política pública.": "Behind the programme are more than 3 million hectares of Paraná Atlantic Forest protected by decades of public policy.",
+"El desafío: convertir esa conservación en créditos de carbono verificables a escala de toda una provincia, con un gobierno subnacional al frente, algo que nadie había logrado antes.": "The challenge: turning that conservation into verifiable carbon credits at the scale of an entire province, led by a subnational government, something no one had achieved before.",
+"Coralia acompañó el proceso de punta a punta, del documento de programa a las respuestas a los auditores.": "Coralia supported the process end to end, from the programme document to the answers to the auditors.",
+"Período de monitoreo": "Monitoring period",
+"Documento de programa (PD) y nivel de referencia (FREL)": "Programme document (PD) and reference level (FREL)",
+"Validación y verificación · AENOR y Verra": "Validation and verification · AENOR and Verra",
+"Enero 2026": "January 2026",
+"Emisión de 10.175.209 VCUs": "Issuance of 10,175,209 VCUs",
+"Verra aprobó la emisión de los primeros 10.175.209 VCUs del programa: una de las mayores emisiones para un solo período de verificación, y la primera de un programa jurisdiccional liderado por un gobierno subnacional.": "Verra approved the issuance of the programme's first 10,175,209 VCUs: one of the largest issuances for a single verification period, and the first for a jurisdictional programme led by a subnational government.",
+"Los beneficios se reparten entre el fondo provincial (40%), los propietarios (30%) y las comunidades (30%), con consentimiento libre, previo e informado.": "Benefits are shared between the provincial fund (40%), landowners (30%) and communities (30%), with free, prior and informed consent."
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 engagement'],

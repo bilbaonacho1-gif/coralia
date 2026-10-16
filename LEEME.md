@@ -95,6 +95,14 @@ así que no dependen de Google Fonts. Se declaran al principio de styles.css (@f
   "A confirmar" (TODO en data.js): datos de Iberá, hectáreas/créditos/descripción de ChaCo, fotos de Iberá,
   Biochar y ChaCo y foto de ReMonte con las vacas. Logos de BioCarbon, Puro.earth y VCS (en alta): de la presentación
   de Climate Week NYC 2026, igual que las fotos nuevas de Fabián y Nico y el sello de Green Cross en 600 px.
+- Equipo (punto 15): al pasar el mouse, borde con degradé de verdes que gira (estilo .hex::before). Fotos nuevas de
+  Fabián, Nico, Kieffer, Ignacio y Lucas. Las fichas siguen a 400 px: para 1000 px hacen falta los originales.
+- Imágenes (punto 23): portada, fondos de plataformas y paisaje ya estaban en alta (las medidas de Nico eran de una
+  versión vieja). Carga diferida para todo lo que está más abajo. Siguen chicas las imágenes de casos hechas en Canva
+  (900 px), los banners de sesu.ai y Ruuts y las fotos del antes y después (952 px): necesitan los originales.
+- Nota de caso nueva (punto 24): si un caso en data.js tiene "note", proyecto.html lo arma con El desafío → Qué hicimos
+  (con línea de tiempo) → Resultado y una columna fija con logo, ubicación y métricas grandes. Por ahora solo Misiones;
+  las etapas sin fecha esperan las fechas de Nico (las del boceto eran ilustrativas).
 - Quedan para las próximas tandas: logos faltantes (13; coraliae.com no se puede abrir desde la sesión), cards del pipeline (20, 23),
   servicios desplegables (19), equipo (15) y notas de casos (11, 12, 24).
 
