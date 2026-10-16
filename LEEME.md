@@ -58,6 +58,26 @@ así que no dependen de Google Fonts. Se declaran al principio de styles.css (@f
 - Equipo: salieron Ignacio Duhourq y Sebastián Kamin.
 - Traducciones de todo lo nuevo: i18n/fuente/5-revision-01.py.
 
+## Revisión 02 (Nico, 15/10/2026): tanda 1, textos y datos
+- Portada: "Donde la naturaleza / crea valor." (la segunda línea en lima) y la bajada nueva (opción A).
+  Botón "Hablemos" (EN Talk to us), también en las otras páginas.
+- Tarjetas de la portada con el mismo formato: número + qué es + aclaración chica. +13,2M t (mercados),
+  +[X]M t medidas (huella, provisorio) y +100 activos (riesgo, provisorio). Los dos provisorios tienen TODO.
+  El número que sube al aparecer es el de la tarjeta con data-count (motion.js).
+- "Qué es Coralia": equipo con base científica (opción A). Frase nueva debajo de Mitigar (insetting / offsetting).
+- Apps → plataformas en toda la web y en los 4 idiomas. "Climate Risk App" → "Climate Risk".
+- Sylvera: bloque "Alta integridad" y ReMonte con A–AA (bloque, página de Mitigar, etapa del pipeline y alt de la imagen).
+  Ojo: la imagen assets/marca/sylvera-remonte.webp todavía dice "Pre-Issuance Rating: A"; hay que reemplazarla.
+- Mitigar: cifra unificada en +13,2M y decimales con punto en inglés (10.1M, 2.8M, 1.5M).
+- "Cómo trabajamos" → "Trabajemos juntos" (EN Work with us): cuatro tarjetas (servicios, plataformas, socios, inversores).
+  Los tres planes (Profesional, Análisis, Demo) quedan en el desplegable "Ver los planes" de la tarjeta de plataformas.
+  Abajo: "¿No sabés por dónde empezar? Descubrí tu camino climático →" (por ahora a simuladores.html).
+- Teléfono nuevo: +54 9 11 5056 0687. "Nosotros" lleva a los logos (#trusted-by). "Confían en nosotros" (EN Trusted by).
+- Pipeline: "Invertí en nuestro pipeline de proyectos" con su bajada (opción A), en la home y en pipeline.html.
+- Traducciones nuevas en i18n/fuente/8-revision-02.py.
+- Quedan para las próximas tandas: Discover (1), puntitos y logos (25, 13), cards del pipeline (20, 23),
+  servicios desplegables (19), equipo (15) y notas de casos (11, 12, 24).
+
 ## Recorrido de la Home (de arriba a abajo)
 0. **Apertura (mariposa)**: lo primero que se ve es la mariposa mitad datos, mitad naturaleza, con
    CORALIA ENVIRONMENTAL (sin textos a los costados). Al bajar, las dos mitades se abren como puertas haciendo zoom y aparece la
@@ -169,13 +189,13 @@ Debajo de 1000 px el menú se abre con el botón ☰; se cierra al tocar un link
   separada "Cómo funcionan", las mini demos de la Home (ahora en simuladores.html) y la línea de tiempo.
 
 ## Pendientes (buscá TODO)
-- Links de Carbon Markets Hub y Climate Risk App: completarlos en APP_LINKS (nav.js). Hoy dicen "Próximamente".
+- Links de Carbon Markets Hub y Climate Risk: completarlos en APP_LINKS (nav.js). Hoy dicen "Próximamente".
 - Faltan páginas que existen en la web actual: Mitigación, Adaptación, Equipo completo,
   "What's Climate Change" y Política de privacidad.
 - Revisar con el equipo técnico los rangos ilustrativos de las mini demos y simuladores
   (simuladores.js: F, M, RB, REF_RATE, P_STD, P_HQ).
 
-## Premio y ratings (Confían en Coralia)
+## Premio y ratings (Confían en nosotros, ancla #trusted-by)
 Cuando las tarjetas aparecen en pantalla: el sello de Green Cross cae como un sello de goma, deja una onda verde
 lima y lo cruza un brillo dorado (vuelve a brillar al pasar el mouse). Las dos calificaciones de Sylvera llegan
 apiladas, se abren en abanico y aparece una tilde de verificado. Bloque "Premio y ratings" al final de styles.css.

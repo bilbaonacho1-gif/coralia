@@ -216,7 +216,7 @@ const TEAM_GROUPS = { all: 'Todos', direccion: 'Dirección', tecnico: 'Equipo t�
 // Pipeline de proyectos propios (para inversores). Datos de los kits de comunicación de cada proyecto.
 // kpi: el número grande de la ficha. TODO Coralia: créditos estimados de cada proyecto y los que faltan del pipeline (son 6–7).
 const PIPELINE = [
-  { id: 'remonte', name: 'ReMonte', type: 'ARR', place: 'Gran Chaco · Santiago del Estero, Argentina', stage: 'Rating Sylvera A previo a la emisión',
+  { id: 'remonte', name: 'ReMonte', type: 'ARR', place: 'Gran Chaco · Santiago del Estero, Argentina', stage: 'Rating Sylvera A–AA previo a la emisión',
     ha: '24.024 ha', kpi: ['24.024 ha', 'de Chaco donde el bosque nativo vuelve con la hacienda adentro'],
     desc: ['El monte chaqueño no se planta: se deja volver. ReMonte es un programa de regeneración natural asistida del bosque nativo del Chaco Seco, con la ganadería adentro.',
       'El renoval no es una maleza: es el bosque volviendo. En el campo medimos cuánto monte queda y cuánto puede volver: cobertura leñosa nativa, renoval, suelo y forraje en El Tumé, La Colonia y Tres Flores.',

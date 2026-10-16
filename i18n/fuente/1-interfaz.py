@@ -17,7 +17,7 @@ T = [
 ("Idioma: English", "Language: English", "Idioma: English", "Sprache: English"),
 ("Idioma: Português", "Language: Português", "Idioma: Português", "Sprache: Português"),
 ("Idioma: Deutsch", "Language: Deutsch", "Idioma: Deutsch", "Sprache: Deutsch"),
-("Nogoyá 4169, CABA · contacto@coraliae.com · +54 9 11 3848-4171", "Nogoyá 4169, Buenos Aires · contacto@coraliae.com · +54 9 11 3848-4171", "Nogoyá 4169, Buenos Aires · contacto@coraliae.com · +54 9 11 3848-4171", "Nogoyá 4169, Buenos Aires · contacto@coraliae.com · +54 9 11 3848-4171"),
+("Nogoyá 4169, CABA · contacto@coraliae.com · +54 9 11 5056 0687", "Nogoyá 4169, Buenos Aires · contacto@coraliae.com · +54 9 11 5056 0687", "Nogoyá 4169, Buenos Aires · contacto@coraliae.com · +54 9 11 5056 0687", "Nogoyá 4169, Buenos Aires · contacto@coraliae.com · +54 9 11 5056 0687"),
 
 # --- Títulos de pestaña y descripciones
 ("Coralia Environmental — Plataforma de inteligencia climática", "Coralia Environmental — Climate intelligence platform", "Coralia Environmental — Plataforma de inteligência climática", "Coralia Environmental — Plattform für Klimaintelligenz"),
@@ -320,7 +320,6 @@ T = [
 ("Email", "Email", "E-mail", "E-Mail"),
 ("Teléfono", "Phone", "Telefone", "Telefon"),
 ("Oficina", "Office", "Escritório", "Büro"),
-("Hablemos →", "Let's talk →", "Vamos conversar →", "Sprechen wir →"),
 ("Hablemos de<br>tu proyecto.", "Let's talk about<br>your project.", "Vamos falar do<br>seu projeto.", "Sprechen wir über<br>Ihr Projekt."),
 ("¿Querés el cálculo<br>con tus datos reales?", "Want the calculation<br>with your real data?", "Quer o cálculo<br>com seus dados reais?", "Die Berechnung<br>mit Ihren echten Daten?"),
 ("¿Tenés un desafío<br>parecido?", "Facing a similar<br>challenge?", "Tem um desafio<br>parecido?", "Eine ähnliche<br>Herausforderung?"),

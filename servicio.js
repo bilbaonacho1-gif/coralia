@@ -39,15 +39,15 @@ const SERVICIOS = {
   },
   mitigar: {
     title: 'Mitigación', sub: 'del cambio climático', img: 'assets/proyectos/mercuria-1.jpg', intro: INTRO, cases: ['mitigar'],
-    card: 'Mercados de carbono: desarrollamos proyectos de punta a punta, de la factibilidad a la emisión de los créditos.',
+    card: 'Definí tu camino de descarbonización, reducí emisiones dentro de tu cadena de valor (insetting) y explorá los mercados de carbono para compensar lo que quede (offsetting).',
     highlights: [['De punta a punta', 'de la factibilidad a la emisión de los créditos'], ['Voluntarios y regulados', 'los dos mercados de carbono'], ['Alta integridad', 'con foco en soluciones basadas en la naturaleza']],
     blocks: [
       {
         id: 'mercados', eyebrow: 'Mitigar', name: 'Mercados de carbono', app: 'markets',
         text: 'Ofrecemos apoyo integral en el desarrollo de proyectos de mercado de carbono, desde la planificación hasta la implementación, facilitando la participación tanto en mercados voluntarios como regulados.',
-        // Fuente: Company deck 2026 (13M+ tCO₂e) = proyectos anteriores por sector (web actual, 3,2M) + ECO2 Misiones (10,1M VCUs, período 2017–2022)
+        // Fuente: Company deck 2026 (13M+ tCO₂e; Revisión 02: unificar en +13,2M) = proyectos anteriores por sector (web actual, 3,2M) + ECO2 Misiones (10,1M VCUs, período 2017–2022)
         stat: {
-          n: '13M+', label: 'toneladas de CO₂e reducidas o removidas de la atmósfera en proyectos desarrollados por Coralia.',
+          n: '+13,2M', label: 'toneladas de CO₂e reducidas o removidas de la atmósfera en proyectos desarrollados por Coralia.',
           parts: [['Bosque nativo · ECO2 Misiones', 10100000, '10,1M'], ['Generación eléctrica', 1949660], ['Energías renovables', 675403], ['Agroindustria', 581347], ['Oil & Gas', 31496]],
         },
         // Proyecto destacado (datos del Company deck 2026)
@@ -61,7 +61,7 @@ const SERVICIOS = {
             ['1,5M', 'hectáreas de bosque nativo', 'verificado por AENOR'],
           ],
           share: [['40%', 'fondo provincial'], ['30%', 'propietarios'], ['30%', 'comunidades (CLPI)']],
-          ratings: [['assets/marca/sylvera-misiones.webp', 'ECO2 Misiones', 'A–AA'], ['assets/marca/sylvera-remonte.webp', 'ReMonte Chaco Seco', 'A'], ['assets/marca/premio-green-cross.webp', 'Best Global NbS Developer', 'Green Cross UK · 2025']],
+          ratings: [['assets/marca/sylvera-misiones.webp', 'ECO2 Misiones', 'A–AA'], ['assets/marca/sylvera-remonte.webp', 'ReMonte Chaco Seco', 'A–AA'], ['assets/marca/premio-green-cross.webp', 'Best Global NbS Developer', 'Green Cross UK · 2025']],
         },
         groups: [
           { title: 'Desarrollo del proyecto', steps: [
@@ -116,7 +116,7 @@ const SERVICIOS = {
 const APP = {
   footprint: ['Carbon Footprint', 'Calculá y gestioná la huella con la misma herramienta que usan nuestros consultores.'],
   markets: ['Carbon Markets Hub', 'Diagnosticá tu tierra en cinco minutos: qué proyecto de carbono es posible y cuánto vale.'],
-  risk: ['Climate Risk App', 'Riesgo climático físico y de transición, activo por activo, con planes de adaptación.'],
+  risk: ['Climate Risk', 'Riesgo climático físico y de transición, activo por activo, con planes de adaptación.'],
 };
 
 const key = new URLSearchParams(location.search).get('s');
@@ -192,7 +192,7 @@ const ICONS = [
 const flow = (ps) => `<div class="sv-flow">${ps.map((p, i) => `${i ? '<span class="sv-flow__arrow" aria-hidden="true">→</span>' : ''}<article class="sv-flow__it reveal" style="--d:${i * 0.12}s"><span class="sv-flow__ic"><svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[i % ICONS.length]}</svg></span><small>${String(i + 1).padStart(2, '0')}</small><h3>${p[0]}</h3><p>${p[1]}</p></article>`).join('')}</div>`;
 // la app de este servicio, en grande: foto de fondo en su color, pantalla de la app y acceso
 const showcase = (k) => `<section class="sv-appband"><div class="wrap"><a class="sv-show reveal" href="index.html#apps">
-  <div class="sv-show__txt"><small>Con nuestra app</small><span class="sv-show__name"><img src="assets/apps/icon-${k}-claro.png" alt="">${APP[k][0]}</span><p>${APP[k][1]}</p><span class="btn btn--lime btn--sm">Conocé la app →</span></div>
+  <div class="sv-show__txt"><small>Con nuestra plataforma</small><span class="sv-show__name"><img src="assets/apps/icon-${k}-claro.png" alt="">${APP[k][0]}</span><p>${APP[k][1]}</p><span class="btn btn--lime btn--sm">Conocé la plataforma →</span></div>
   <div class="sv-show__shot"><img src="assets/apps/card-${k}.webp" alt="" loading="lazy"></div>
 </a></div></section>`;
 

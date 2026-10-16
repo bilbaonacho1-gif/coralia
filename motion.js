@@ -68,17 +68,20 @@
 
   if (calm) { if (hero) hero.style.setProperty('--q', '1'); return; }
   // Portada que se arma de a poco: se oculta hasta que la mariposa se abre (y se rearma si se vuelve a cerrar)
-  const num = $('.ui-card--a .ui-card__num');
+  // el número de la tarjeta que tenga data-count sube hasta su valor (data-dec decimales, data-pre / data-suf alrededor)
+  const num = $('.ui-card [data-count]');
   let revealed = false;
   function countUp() {
     if (!num) return;
-    const end = 0.4644, t0 = performance.now() + 1100, dur = 1300;
+    const end = +num.dataset.count, dec = +(num.dataset.dec || 0), pre = num.dataset.pre || '', suf = num.dataset.suf || '';
+    const t0 = performance.now() + 1100, dur = 1300;
+    const show = (v) => { num.textContent = pre + v.toLocaleString(window.LOCALE || 'es-AR', { minimumFractionDigits: dec, maximumFractionDigits: dec }) + suf; };
     const step = (now) => {
-      const t = clamp((now - t0) / dur), v = end * (1 - Math.pow(1 - t, 3));
-      num.textContent = v.toLocaleString(window.LOCALE || 'es-AR', { minimumFractionDigits: 4, maximumFractionDigits: 4 });
+      const t = clamp((now - t0) / dur);
+      show(end * (1 - Math.pow(1 - t, 3)));
       if (t < 1 && revealed) requestAnimationFrame(step);
     };
-    num.textContent = (0).toLocaleString(window.LOCALE || 'es-AR', { minimumFractionDigits: 4 }); requestAnimationFrame(step);
+    show(0); requestAnimationFrame(step);
   }
   if (hero && run) hero.classList.add('rv-on');
   let ticking = false;

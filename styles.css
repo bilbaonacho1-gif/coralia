@@ -1396,3 +1396,25 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
   .pick__ic{width:46px;height:46px}
   .pick__ic img{width:30px;height:30px}
 }
+
+/* ---------- Revisión 02 ---------- */
+/* tarjetas del hero: número + qué es + aclaración chica */
+.ui-card small{display:block}
+.ui-card .ui-card__note{margin-top:6px;font-size:11.5px;color:var(--dim)}
+/* Trabajemos juntos: cuatro formas, con texto en vez de lista */
+.levels--ways .level h3{font-size:24px;line-height:1.12}
+.levels--ways .level>p{margin:10px 0 22px;font-size:14.5px;line-height:1.5;color:var(--ink2)}
+.levels--ways .level--hl>p{color:rgba(243,244,236,.78)}
+/* los tres planes de la plataforma, como desplegable adentro de la tarjeta */
+.plans{margin:-8px 0 18px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.plans summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:11px 0;font-size:14px;font-weight:600;color:var(--forest)}
+.plans summary::-webkit-details-marker{display:none}
+.plans summary::after{content:"+";font-size:18px;font-weight:400;transition:transform .3s var(--ease)}
+.plans[open] summary::after{transform:rotate(45deg)}
+.plans ul{margin:0 0 14px;gap:12px}
+.plans li{display:grid;gap:2px}
+.plans li::before{display:none}
+.plans li b{font-size:15px;color:var(--ink)}
+.plans li span{font-size:13px;color:var(--dim)}
+.plans li small{font-size:13px;color:var(--ink2)}
+.plans li .link{font-size:13px;margin-top:2px;justify-self:start}

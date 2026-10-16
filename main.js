@@ -70,7 +70,7 @@ if ('ResizeObserver' in window) {
 }
 
 /* ---------- 1) Nuestros servicios (consultoría primero; cada uno con su app) ---------- */
-const APP_NAMES = { footprint: 'Carbon Footprint', markets: 'Carbon Markets Hub', risk: 'Climate Risk App' };
+const APP_NAMES = { footprint: 'Carbon Footprint', markets: 'Carbon Markets Hub', risk: 'Climate Risk' };
 const SVC_NAMES = { footprint: 'Huella de carbono', markets: 'Mercados de carbono', risk: 'Riesgo climático' };
 // traduce un texto armado desde acá (si se eligió otro idioma)
 const tr = (s) => (window.I18N && I18N.t ? I18N.t(s) : s);
@@ -107,7 +107,7 @@ const APPS = [
   // svc: página del servicio al que pertenece la app (servicio.html?s=...)
   { k: 'footprint', a0: -60, a1: 60, lines: ['Carbon', 'Footprint'], bg: 'fondo-footprint', tag: 'Huella de carbono', svc: 'medir', svcName: 'Medir', dot: 'medir', desc: 'Huella de productos, empresas y eventos, de la fórmula al reporte verificable.' },
   { k: 'markets', a0: 60, a1: 180, lines: ['Carbon', 'Markets'], bg: 'fondo-markets', tag: 'Mercados de carbono', svc: 'mitigar', svcName: 'Mitigar', dot: 'mitigar', desc: 'Tu tierra diagnosticada en cinco minutos: qué proyecto de carbono es posible y cuánto vale.' },
-  { k: 'risk', a0: 180, a1: 300, lines: ['Climate', 'Risk App'], bg: 'fondo-risk', tag: 'Riesgo climático', svc: 'adaptar', svcName: 'Adaptarse', dot: 'adaptar', desc: 'Riesgo climático físico y de transición, activo por activo, con planes de adaptación.' },
+  { k: 'risk', a0: 180, a1: 300, lines: ['Climate', 'Risk'], bg: 'fondo-risk', tag: 'Riesgo climático', svc: 'adaptar', svcName: 'Adaptarse', dot: 'adaptar', desc: 'Riesgo climático físico y de transición, activo por activo, con planes de adaptación.' },
 ];
 const R0 = 104, R1 = 228, RON = 250, RC = 22, GAP = 9, CORE = 92;
 const wheel = $('#wheel');
@@ -159,11 +159,11 @@ if (wheel) {
     return s;
   });
   // centro: logo de Coralia y acceso a los simuladores
-  const core = el('a', { class: 'wcore', href: 'simuladores.html', 'aria-label': 'Probá las apps de Coralia' });
+  const core = el('a', { class: 'wcore', href: 'simuladores.html', 'aria-label': 'Probá las plataformas de Coralia' });
   el('circle', { class: 'wcore__pulse', r: CORE }, core);
   el('circle', { class: 'wcore__bg', r: CORE }, core);
   el('image', { href: 'assets/logo.png', x: -62, y: -58, width: 124, height: 70.6 }, core);
-  const cta = el('text', { class: 'wcore__cta', x: 0, y: 40 }, core); cta.textContent = 'Probá las apps →';
+  const cta = el('text', { class: 'wcore__cta', x: 0, y: 40 }, core); cta.textContent = 'Probá las plataformas →';
   el('circle', { class: 'wheel__core', r: CORE }, core);
   // "Probá las apps →" se achica si en otro idioma no entra en el círculo
   const fitCta = () => {
