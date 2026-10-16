@@ -1640,3 +1640,5 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
   .note-tl__d{grid-column:1/-1;height:auto}
   .note-tl__d:empty{display:none}
 }
+.note-side__name{display:block;font-family:var(--display);font-weight:500;font-size:24px;line-height:1.15;color:var(--ink);margin-bottom:6px}
+@media (max-width:1000px){.is-note .d-side{order:-1}}

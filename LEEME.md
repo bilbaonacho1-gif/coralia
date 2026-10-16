@@ -101,8 +101,9 @@ así que no dependen de Google Fonts. Se declaran al principio de styles.css (@f
   versión vieja). Carga diferida para todo lo que está más abajo. Siguen chicas las imágenes de casos hechas en Canva
   (900 px), los banners de sesu.ai y Ruuts y las fotos del antes y después (952 px): necesitan los originales.
 - Nota de caso nueva (punto 24): si un caso en data.js tiene "note", proyecto.html lo arma con El desafío → Qué hicimos
-  (con línea de tiempo) → Resultado y una columna fija con logo, ubicación y métricas grandes. Por ahora solo Misiones;
-  las etapas sin fecha esperan las fechas de Nico (las del boceto eran ilustrativas).
+  (con línea de tiempo) → Resultado y una columna fija con logo, ubicación y métricas grandes. Los 10 casos tienen nota
+  (los textos de los 9 nuevos salen de las páginas de la web vieja; traducciones en i18n/fuente/9-notas.py). Las etapas
+  sin fecha esperan las fechas de Nico. Sin logo cargado (Mercuria, sesu.ai, Ruuts, WIPO) va el nombre del cliente.
 - Quedan para las próximas tandas: logos faltantes (13; coraliae.com no se puede abrir desde la sesión), cards del pipeline (20, 23),
   servicios desplegables (19), equipo (15) y notas de casos (11, 12, 24).
 
