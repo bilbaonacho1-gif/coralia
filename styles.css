@@ -1578,3 +1578,11 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
 }
 @keyframes plansIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.plans[open] ul{animation:none}}
+/* Al tocar un botón: destello de luz verde clarita (la clase la pone nav.js) */
+.is-tapped{animation:tapGlow .65s cubic-bezier(.2,.7,.3,1)}
+@keyframes tapGlow{
+  0%{box-shadow:0 0 0 0 rgba(200,240,74,.75),0 0 0 0 rgba(200,240,74,.45)}
+  100%{box-shadow:0 0 0 14px rgba(200,240,74,0),0 0 34px 10px rgba(200,240,74,0)}}
+:is(.btn,.chip,.svc__btn,.cycle__arrow,.cycle__node,.apptab,.ba__tab,.sv-tab,.langsel__btn,.app-detail__close,.dot-btn):active,
+:is(.folder,.pipc):active :is(.folder__go,.pipc__go){box-shadow:0 0 0 3px rgba(200,240,74,.5),0 0 20px rgba(200,240,74,.5)}
+@media (prefers-reduced-motion:reduce){.is-tapped{animation:none}}

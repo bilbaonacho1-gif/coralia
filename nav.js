@@ -50,3 +50,16 @@ window.APP_LINKS = {
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menu.hidden) { set(false); btn.focus(); } });
   document.querySelectorAll('[data-lang]').forEach((a) => a.addEventListener('click', (e) => { e.preventDefault(); I.set(a.dataset.lang); }));
 })();
+
+// Al tocar un botón: un destello de luz verde clarita (anillo que sale y se desvanece). Estilo en styles.css (.is-tapped).
+// En las carpetas y las cards del pipeline el destello va en su flecha.
+(() => {
+  const SEL = '.btn, .chip, .svc__btn, .plans summary, .cycle__arrow, .cycle__node, .cycle__head, .apptab, .ba__tab, .sv-tab, .simpick, .langsel__btn, .nav-toggle, .app-detail__close, .dot-btn, .folder, .pipc, .sv-case, .pick__app';
+  const ARROW = { folder: '.folder__go', pipc: '.pipc__go' };
+  document.addEventListener('pointerdown', (e) => {
+    let el = e.target.closest && e.target.closest(SEL); if (!el) return;
+    for (const [cls, inner] of Object.entries(ARROW)) if (el.classList.contains(cls)) el = el.querySelector(inner) || el;
+    el.classList.remove('is-tapped'); void el.offsetWidth; el.classList.add('is-tapped');
+    el.addEventListener('animationend', () => el.classList.remove('is-tapped'), { once: true });
+  }, { passive: true });
+})();
