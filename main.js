@@ -351,10 +351,7 @@ const BA_TYPES = [
   }));
   // pipeline de proyectos propios (tarjetitas que llevan a su ficha)
   const grid = $('#pipeGrid');
-  if (grid && typeof PIPELINE !== 'undefined') grid.innerHTML = PIPELINE.map((p) => `<a class="pipe__card" href="pipeline.html?p=${p.id}">
-    <span class="pipe__media">${p.img ? `<img src="${p.img}" alt="" loading="lazy">` : ''}<span class="pipe__type">${p.type}</span></span>
-    <span class="pipe__body"><b>${p.name}</b><small>${p.place}</small><span class="pipe__stage">${p.stage}</span></span>
-    <span class="pipe__go" aria-hidden="true"><svg class="ico-ne" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a>`).join('');
+  if (grid && typeof PIPELINE !== 'undefined') grid.innerHTML = PIPELINE.map(pipeCard).join(''); // card en data.js
 })();
 
 function showStep(story, n) {

@@ -86,6 +86,14 @@ así que no dependen de Google Fonts. Se declaran al principio de styles.css (@f
   después, y abajo tres botones: Para clientes (rueda del ciclo completo: 7 etapas con los 14 pasos, ETAPAS en
   servicio.js), Para inversores (pipeline) y Trayectoria (el +13,2M con su gráfico, ECO2 Misiones y los proyectos). Carbon Markets Hub volvió al paso a paso del diagnóstico.
   Links directos: index.html#servicio-medir | #servicio-mitigar | #servicio-adaptar. servicio.html?s=... redirige ahí.
+- Tanda 4 · cards del pipeline (puntos 20 y 23): una sola card para la home y pipeline.html (pipeCard, en data.js),
+  con el formato de la referencia de Nico: foto con el tipo, bandera y país, título en Bricolage Grotesque 800 con
+  el color de cada proyecto, descripción, hectáreas | créditos (en Spectral), estándar (logos) | metodología y etapa.
+  Fuentes nuevas en assets/fonts (bricolage-800, spectral-500). Logos de VCS y CCB en assets/estandares (recortados
+  de la referencia; conviene reemplazarlos por los oficiales en SVG). Seis proyectos: ReMonte, Chubut ARR,
+  Dominican Blue Carbon, Resilient Iberá, Argentina Biochar Initiative y ChaCo-ReForest. Lo que falta va como
+  "A confirmar" (TODO en data.js): datos de Iberá, hectáreas/créditos/descripción de ChaCo, fotos de Iberá,
+  Biochar y ChaCo, foto de ReMonte con las vacas, y logos de BioCarbon y Puro.earth (por ahora van en texto).
 - Quedan para las próximas tandas: logos faltantes (13; coraliae.com no se puede abrir desde la sesión), cards del pipeline (20, 23),
   servicios desplegables (19), equipo (15) y notas de casos (11, 12, 24).
 

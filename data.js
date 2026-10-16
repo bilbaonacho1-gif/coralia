@@ -218,19 +218,82 @@ const TEAM_GROUPS = { all: 'Todos', direccion: 'Dirección', tecnico: 'Equipo t�
 // kpi: el número grande de la ficha. TODO Coralia: créditos estimados de cada proyecto y los que faltan del pipeline (son 6–7).
 const PIPELINE = [
   { id: 'remonte', name: 'ReMonte', type: 'ARR', place: 'Gran Chaco · Santiago del Estero, Argentina', stage: 'Rating Sylvera A–AA previo a la emisión',
+    // card (Revisión 02): datos del PD ReMonte v4.4 (ago-2026). 156.000 ha = meta del proyecto agrupado; 8,3 M VCUs = estimado a 40 años
+    // TODO: foto de la card con las vacas en El Tumé (la pasa Nico); por ahora va la foto del monte
+    country: 'Argentina', flag: 'ar', color: '#8a6a32',
+    card: { desc: 'Regeneración del bosque nativo y ganadería regenerativa en campos degradados del Chaco Seco.',
+      a: ['Hectáreas', '156.000'], b: ['Créditos (40 años)', '8,3 millones'], std: ['vcs', 'ccb'], meth: ['Metodología', 'VM0047 v1.1'] },
     ha: '24.024 ha', kpi: ['24.024 ha', 'de Chaco donde el bosque nativo vuelve con la hacienda adentro'],
     desc: ['El monte chaqueño no se planta: se deja volver. ReMonte es un programa de regeneración natural asistida del bosque nativo del Chaco Seco, con la ganadería adentro.',
       'El renoval no es una maleza: es el bosque volviendo. En el campo medimos cuánto monte queda y cuánto puede volver: cobertura leñosa nativa, renoval, suelo y forraje en El Tumé, La Colonia y Tres Flores.',
-      'Sylvera le otorgó un rating A previo a la emisión (junio de 2026).'],
+      'Sylvera le otorgó un rating A–AA previo a la emisión (junio de 2026).'],
     img: 'assets/pipeline/remonte-3.webp', gallery: ['assets/pipeline/remonte-1.webp', 'assets/pipeline/remonte-2.webp', 'assets/pipeline/remonte-4.webp', 'assets/pipeline/remonte-5.webp'] },
   { id: 'chubut', name: 'Chubut ARR', type: 'ARR', place: 'Cholila · Chubut, Argentina', stage: 'Primera instancia de restauración',
+    // card: Coralia Q&A 2 - Chubut ARR v2.0. 33.170 ha elegibles (3 PAIs); 5.211.444 VCUs a 40 años
+    country: 'Argentina', flag: 'ar', color: '#2f5f4c',
+    card: { desc: 'Restauración del bosque nativo andino-patagónico quemado en los incendios de 2014–2015.',
+      a: ['Hectáreas', '33.170'], b: ['Créditos (40 años)', '5,2 millones'], std: ['vcs', 'ccb'], meth: ['Metodología', 'VM0047 v1.1'] },
     ha: '7.240 ha', kpi: ['7.240 ha', 'en restauración, dentro de 42.000 ha afectadas por el fuego'],
     desc: ['El fuego se midió en hectáreas. La recuperación también. Proyecto ARR sobre el paisaje del bosque andino-patagónico afectado por los incendios de 2014-2015, junto al Gobierno del Chubut.',
       'Cada hectárea se verifica en el terreno: muestreo de suelo y parcelas de monitoreo en el área afectada por los incendios.'],
     img: 'assets/pipeline/chubut-1.webp', gallery: ['assets/pipeline/chubut-2.webp', 'assets/pipeline/chubut-3.webp', 'assets/servicios/arr-antes.webp', 'assets/servicios/arr-despues.webp'] },
   { id: 'dbcx', name: 'Dominican Blue Carbon', type: 'Blue Carbon', place: 'Montecristi y Puerto Plata, República Dominicana', stage: 'Medición en campo · octubre 2025',
+    // card: PD "Datos degradados (13.10.26)". 4.011,9 ha (conservación + restauración). Créditos: cifra de la card de referencia de Nico
+    // (2,8 M); Nico avisa que hay que actualizarla cuando se cierre la cuantificación (leakage, incertidumbre, buffer y restauración)
+    country: 'República Dominicana', flag: 'do', color: '#1f5a72',
+    card: { desc: 'Restauración y conservación de manglares en Estero Balsa y Estero Hondo.',
+      a: ['Hectáreas', '4.012'], b: ['Créditos (40 años)', '2,8 millones'], std: ['vcs'], meth: ['Metodologías', 'VM0033 v2.1 · VM0007 v1.8'] },
     ha: '2.784 ha', kpi: ['2.784 ha', 'de manglar bajo un proyecto de conservación y restauración a 40 años'],
     desc: ['De mercados climáticos de alto riesgo a soluciones climáticas de bajo riesgo: desarrollo de un proyecto de carbono en manglar, con el Dominican Blue Carbon Exchange Fund Trust.',
       'La degradación se mide; la recuperación también. Cada hectárea se verifica en el terreno: inventario de parcelas y muestreo de suelo en Montecristi y Puerto Plata (relevamiento de octubre de 2025).'],
     img: 'assets/pipeline/dbcx-1.webp', gallery: ['assets/pipeline/dbcx-2.webp', 'assets/pipeline/dbcx-3.webp', 'assets/servicios/blue-carbon-antes.webp', 'assets/servicios/blue-carbon-despues.webp'] },
+  // Proyectos nuevos de la Revisión 02 (datos de "Cards proyectos - info para Nacho"). Lo que falta va como "A confirmar".
+  // TODO: fotos de las cards de Iberá, Biochar y ChaCo-ReForest y logos de BioCarbon y Puro.earth (los pasa Nico)
+  { id: 'ibera', name: 'Resilient Iberá', type: 'Humedales', place: 'Corrientes, Argentina', stage: 'A confirmar',
+    // TODO: todos los datos de Iberá (lo que vino como Iberá en la info eran los datos de Biochar)
+    country: 'Argentina', flag: 'ar', color: '#44607e',
+    card: { desc: 'Descripción a confirmar.', a: ['Hectáreas', 'A confirmar'], b: ['Créditos', 'A confirmar'], std: ['BioCarbon'], meth: ['Metodología', 'A confirmar'] },
+    ha: 'A confirmar', kpi: ['Iberá', 'humedales de Corrientes · estándar BioCarbon'],
+    desc: ['Descripción a confirmar.'], img: null, gallery: [] },
+  { id: 'biochar', name: 'Argentina Biochar Initiative', type: 'Biochar', place: 'Chaco y Formosa, Argentina', stage: 'Factibilidad completa · Lista para inversión',
+    // card: Concept Note y Estudio de factibilidad v1.0 (Unitán). ~5.000 CORCs/año; período de Puro de 10 años, renovable 2 veces
+    country: 'Argentina', flag: 'ar', color: '#5b4636',
+    card: { desc: 'Remoción de carbono durable a partir de residuos forestales, convertidos en biochar y aplicados en las plantaciones propias de Unitán.',
+      a: ['Biochar', '~2.500 t/año'], b: ['Créditos (10 años)', '~50.000 CORCs'], std: ['Puro.earth'], meth: ['Metodología', 'Puro.earth Biochar Methodology, Edition 2025 v1'] },
+    ha: 'No aplica (proyecto industrial)', kpi: ['~50.000 CORCs', 'en 10 años de acreditación, renovables hasta 30'],
+    desc: ['Remoción de carbono durable a partir de residuos forestales, convertidos en biochar y aplicados en las plantaciones propias de Unitán.',
+      'La planta va en el predio industrial de Unitán y el biochar se aplica en sus tierras forestales entre Chaco y Formosa: unas 5.000 CORCs por año, con unas 10.000 toneladas anuales de residuos de biomasa.'],
+    img: null, gallery: [] },
+  { id: 'chaco-reforest', name: 'ChaCo-ReForest', type: 'ARR', place: 'Chaco Seco, Argentina', stage: 'Etapa inicial · Buscando USD 750K para el registro y un piloto de 50 ha',
+    // card: deck de inversores y web prototipo (sept-oct 2026), con ReForest LatAm. CCB "a evaluar": por ahora solo VCS.
+    // TODO: hectáreas, créditos y descripción (en los decks siguen como placeholders)
+    country: 'Argentina', flag: 'ar', color: '#6b7a2e',
+    card: { desc: 'Descripción a confirmar.', a: ['Hectáreas', 'A confirmar'], b: ['Créditos', 'A confirmar'], std: ['vcs'], meth: ['Metodología', 'VM0047 v1.1'] },
+    ha: 'A confirmar', kpi: ['50 ha', 'de piloto, junto a ReForest LatAm'],
+    desc: ['Proyecto ARR en el Chaco Seco junto a ReForest LatAm, en etapa inicial: buscando USD 750K para el registro y un piloto de 50 ha.'],
+    img: null, gallery: [] },
 ];
+
+// Card de un proyecto del pipeline (Revisión 02, punto 20): foto con el tipo, bandera y país, título en su color,
+// descripción, hectáreas | créditos, estándar (logos) | metodología, y la etapa con la flecha.
+const FLAGS = {
+  ar: '<svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#74acdf"/><rect y="6.67" width="30" height="6.67" fill="#fff"/><circle cx="15" cy="10" r="2.2" fill="#f6b40e"/></svg>',
+  do: '<svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#fff"/><rect width="13" height="8" fill="#002d62"/><rect x="17" width="13" height="8" fill="#ce1126"/><rect y="12" width="13" height="8" fill="#ce1126"/><rect x="17" y="12" width="13" height="8" fill="#002d62"/></svg>',
+};
+const STD_LOGOS = { vcs: ['assets/estandares/vcs.png', 'Verified Carbon Standard'], ccb: ['assets/estandares/ccb.png', 'Climate, Community & Biodiversity Standards'] };
+const TBC = 'A confirmar';
+function pipeCard(p) {
+  const c = p.card || {}, val = (v) => `<b class="pipc__v${v === TBC ? ' is-tbc' : ''}">${v}</b>`;
+  const std = (c.std || []).map((k) => STD_LOGOS[k] ? `<img src="${STD_LOGOS[k][0]}" alt="${STD_LOGOS[k][1]}" loading="lazy">` : `<span class="pipc__stdtxt" translate="no">${k}</span>`).join('<i></i>');
+  return `<a class="pipc" href="pipeline.html?p=${p.id}" style="--tc:${p.color || 'var(--forest)'}">
+  <span class="pipc__media">${p.img ? `<img src="${p.img}" alt="" loading="lazy">` : '<span class="pipc__ph">Foto a cargar</span>'}<span class="pipc__type">${p.type}</span></span>
+  <span class="pipc__body">
+    <span class="pipc__country">${FLAGS[p.flag] || ''}<span>${p.country || ''}</span></span>
+    <b class="pipc__title">${p.name}</b>
+    <span class="pipc__desc${c.desc === 'Descripción a confirmar.' ? ' is-tbc' : ''}">${c.desc || ''}</span>
+    <span class="pipc__row"><span><small>${c.a ? c.a[0] : ''}</small>${c.a ? val(c.a[1]) : ''}</span><span class="pipc__r"><small>${c.b ? c.b[0] : ''}</small>${c.b ? val(c.b[1]) : ''}</span></span>
+    <span class="pipc__row pipc__row--std"><span><small>Estándar</small><span class="pipc__stds">${std}</span></span><span class="pipc__r"><small>${c.meth ? c.meth[0] : ''}</small><b class="pipc__meth${c.meth && c.meth[1] === TBC ? ' is-tbc' : ''}">${c.meth ? c.meth[1] : ''}</b></span></span>
+    <span class="pipc__foot"><span class="pipc__stage">${p.stage}</span><span class="pipc__go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
+  </span></a>`;
+}
+

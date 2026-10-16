@@ -1,6 +1,10 @@
 /* ===== Coralia — plataforma de inteligencia climática (tema claro) =====
    Paleta tomada del deck institucional: crema, verde bosque y verde hoja, con lima de acento. */
 /* Tipografías instaladas en el proyecto (licencia SIL OFL): Fraunces para títulos, Figtree para textos */
+@font-face{font-family:"Bricolage Grotesque";src:url(assets/fonts/bricolage-800-latin-ext.woff2) format("woff2");font-weight:800;font-style:normal;font-display:swap;unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:"Bricolage Grotesque";src:url(assets/fonts/bricolage-800-latin.woff2) format("woff2");font-weight:800;font-style:normal;font-display:swap;unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:"Spectral";src:url(assets/fonts/spectral-500-latin-ext.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap;unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:"Spectral";src:url(assets/fonts/spectral-500-latin.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap;unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
 @font-face{font-family:"Fraunces";src:url(assets/fonts/fraunces-latin-ext.woff2) format("woff2");font-weight:300 600;font-style:normal;font-display:swap;unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
 @font-face{font-family:"Fraunces";src:url(assets/fonts/fraunces-latin.woff2) format("woff2");font-weight:300 600;font-style:normal;font-display:swap;unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
 @font-face{font-family:"Figtree";src:url(assets/fonts/figtree-latin-ext.woff2) format("woff2");font-weight:400 700;font-style:normal;font-display:swap;unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
@@ -1523,3 +1527,35 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
 .cycle__arrow--next:hover{background:var(--forest2);transform:translateX(2px)}
 .cycle__count{min-width:52px;text-align:center;font-size:14px;color:var(--dim)}
 .cycle__count b{font-size:17px;color:var(--ink)}
+
+/* ---------- Revisión 02 · puntos 20 y 23: cards del pipeline ----------
+   Título en Bricolage Grotesque 800 con el color de cada proyecto (--tc), números en Spectral, etiquetas en mayúsculas espaciadas */
+.pipc{position:relative;display:flex;flex-direction:column;border-radius:20px;overflow:hidden;background:#fff;border:1px solid var(--line);color:var(--ink);transition:transform .4s var(--ease),box-shadow .4s}
+.pipc:hover{transform:translateY(-4px);box-shadow:0 26px 44px -30px rgba(18,38,30,.5)}
+.pipc__media{position:relative;aspect-ratio:2.4/1;overflow:hidden;background:linear-gradient(135deg,#e2e8d6,#c3d1ac)}
+.pipc__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.pipc:hover .pipc__media img{transform:scale(1.04)}
+.pipc__ph{position:absolute;inset:0;display:grid;place-items:center;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(18,38,30,.45)}
+.pipc__type{position:absolute;left:14px;top:14px;padding:6px 11px;border-radius:999px;background:rgba(18,38,30,.86);color:#fff;font-size:12.5px;font-weight:600}
+.pipc__body{display:flex;flex-direction:column;flex:1;padding:22px 24px 22px}
+.pipc__country{display:flex;align-items:center;gap:9px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.pipc__country svg{width:20px;height:13px;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+.pipc__title{margin:6px 0 8px;font-family:"Bricolage Grotesque",var(--font);font-weight:800;font-size:clamp(21px,1.9vw,26px);line-height:1.08;letter-spacing:-.01em;color:var(--tc)}
+.pipc__desc{font-size:14.5px;line-height:1.55;color:var(--ink2);margin-bottom:16px}
+.pipc__row{display:grid;grid-template-columns:1fr auto;gap:12px;padding:14px 0;border-top:1px solid var(--line)}
+.pipc__row small{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:4px}
+.pipc__r{text-align:right}
+.pipc__v{font-family:"Spectral",Georgia,serif;font-weight:500;font-size:clamp(21px,1.75vw,27px);line-height:1.1;color:var(--ink);white-space:nowrap}
+.pipc__meth{font-size:13.5px;font-weight:600;line-height:1.35;color:var(--ink);display:block;max-width:22ch;margin-left:auto}
+.pipc .is-tbc{font-family:var(--font);font-size:14px;font-weight:600;color:var(--dim);font-style:normal}
+.pipc__desc.is-tbc{font-weight:400;font-style:italic}
+.pipc__stds{display:flex;align-items:center;gap:10px;min-height:26px}
+.pipc__stds img{height:24px;width:auto}
+.pipc__stds i{width:1px;height:22px;background:var(--line2)}
+.pipc__stdtxt{font-size:13.5px;font-weight:700;color:var(--ink)}
+.pipc__foot{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:auto;padding-top:14px}
+.pipc__stage{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--leaf);line-height:1.45}
+.pipc__go{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--forest);color:#fff;transition:background .3s,color .3s}
+.pipc__go svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.pipc:hover .pipc__go{background:var(--lime);color:var(--forest)}
+@media (max-width:640px){.pipc__body{padding:18px 18px 18px}.pipc__media{aspect-ratio:2/1}}
