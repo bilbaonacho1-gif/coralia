@@ -1471,9 +1471,26 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
   transform:rotate(var(--a)) translateY(-40cqw) rotate(calc(-1 * var(--a)));transition:background .3s,color .3s,border-color .3s,scale .3s var(--ease);cursor:pointer}
 .cycle__node.is-done{border-color:var(--leaf);color:var(--leaf)}
 .cycle__node.is-on{background:var(--forest);border-color:var(--forest);color:var(--lime);scale:1.15}
-.cycle__core{position:absolute;inset:27%;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center;background:var(--forest);color:#fff}
-.cycle__core b{font-family:var(--display);font-weight:500;font-size:clamp(17px,6.4cqw,26px);line-height:1.05}
-.cycle__core small{font-size:clamp(11px,3.4cqw,13px);color:rgba(243,244,236,.7)}
+/* centro: el logo de Coralia, como en la rueda de plataformas, con un pulso que sale hacia afuera */
+.cycle__core{position:absolute;inset:25%;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2cqw;text-align:center;background:var(--forest);color:#fff;box-shadow:0 4cqw 8cqw -4cqw rgba(18,38,30,.55)}
+.cycle__core img{width:58%;height:auto;margin-bottom:.8cqw}
+.cycle__core b{font-size:clamp(11px,3.6cqw,14px);font-weight:700;letter-spacing:.02em;color:var(--lime)}
+.cycle__core small{font-size:clamp(10px,2.9cqw,12px);color:rgba(243,244,236,.65)}
+.cycle__core::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--lime);opacity:0;animation:cyclePulse 2.8s ease-out infinite;pointer-events:none}
+/* movimiento: anillo punteado que gira, un punto lima que recorre el ciclo y la etapa activa que late */
+.cycle__ring::before{content:"";position:absolute;inset:3%;border-radius:50%;border:1.5px dashed var(--line2);animation:cycleSpin 70s linear infinite}
+.cycle__orbit{position:absolute;inset:0;animation:cycleSpin 9s linear infinite;pointer-events:none}
+.cycle__orbit i{position:absolute;left:50%;top:10%;width:2.6cqw;height:2.6cqw;margin:-1.3cqw 0 0 -1.3cqw;border-radius:50%;background:var(--lime);box-shadow:0 0 0 1.2cqw rgba(200,240,74,.28),0 0 5cqw rgba(200,240,74,.9)}
+.cycle__node.is-on::after{content:"";position:absolute;inset:-3px;border-radius:50%;border:2px solid var(--leaf);animation:cyclePulse 1.8s ease-out infinite;pointer-events:none}
+.cycle__node:hover{border-color:var(--leaf)}
+/* entrada: las etapas aparecen de a una cuando la rueda entra en pantalla */
+.cycle:not(.is-in) .cycle__node{opacity:0;scale:.3}
+.cycle .cycle__node{transition:background .3s,color .3s,border-color .3s,scale .5s cubic-bezier(.3,1.6,.5,1) calc(var(--i) * 90ms),opacity .4s calc(var(--i) * 90ms)}
+.cycle.is-in .cycle__node.is-on{transition-delay:0s}
+.cycle:not(.is-in) .cycle__core{scale:.6;opacity:0}
+.cycle__core{transition:scale .8s cubic-bezier(.3,1.5,.5,1),opacity .5s}
+@keyframes cyclePulse{0%{transform:scale(1);opacity:.75}100%{transform:scale(1.32);opacity:0}}
+@keyframes cycleSpin{to{rotate:360deg}}
 .cycle__hint{margin:0 0 12px;font-size:13.5px;color:var(--dim)}
 .cycle__list{list-style:none;margin:0;padding:0;display:grid;gap:6px}
 .cycle__st{border-radius:16px;border:1px solid var(--line);background:var(--paper);transition:border-color .3s,background .3s}
@@ -1488,4 +1505,4 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
 #svcClientes > .btn{margin-bottom:6px}
 @media (max-width:1000px){.cycle{grid-template-columns:1fr;gap:26px}.cycle__ring{max-width:320px;margin:0 auto}.svx__facts{grid-template-columns:1fr}}
 @media (max-width:640px){.svx{padding-top:22px}.svx__btns{width:100%}.svx__btns .btn{flex:1;min-width:0}.svx-detail .app-detail__title{font-size:20px}}
-@media (prefers-reduced-motion:reduce){.cycle__prog,.cycle__steps{transition:none}}
+@media (prefers-reduced-motion:reduce){.cycle__prog,.cycle__steps{transition:none}.cycle__ring::before,.cycle__orbit,.cycle__core::after,.cycle__node.is-on::after{animation:none}.cycle__orbit{display:none}}

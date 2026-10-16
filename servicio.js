@@ -226,15 +226,16 @@ const ETAPAS = [
 function renderCycle() {
   const box = $('#cycle'); if (!box) return;
   const all = SERVICIOS.mitigar.blocks[0].groups.flatMap((g) => g.steps), byName = Object.fromEntries(all.map((s) => [s[0], s[1]]));
-  const nodes = ETAPAS.map((e, i) => `<button type="button" class="cycle__node" style="--a:${(360 / ETAPAS.length) * i}deg" data-i="${i}" aria-label="${e[0]}">${i + 1}</button>`).join('');
+  const nodes = ETAPAS.map((e, i) => `<button type="button" class="cycle__node" style="--a:${(360 / ETAPAS.length) * i}deg;--i:${i}" data-i="${i}" aria-label="${e[0]}">${i + 1}</button>`).join('');
   const list = ETAPAS.map((e, i) => `<li class="cycle__st" data-i="${i}">
       <button type="button" class="cycle__head" aria-expanded="false"><span class="cycle__n">${i + 1}</span><b>${e[0]}</b></button>
       <ul class="cycle__steps">${e[1].map((n) => `<li><b>${n}</b><span>${byName[n] || ''}</span></li>`).join('')}</ul>
     </li>`).join('');
   box.innerHTML = `<div class="cycle__ring">
       <svg viewBox="0 0 100 100" aria-hidden="true"><circle class="cycle__track" cx="50" cy="50" r="40"/><circle class="cycle__prog" cx="50" cy="50" r="40" pathLength="${ETAPAS.length}"/></svg>
+      <span class="cycle__orbit" aria-hidden="true"><i></i></span>
       ${nodes}
-      <div class="cycle__core"><b>Ciclo completo</b><small>7 etapas · 14 pasos</small></div>
+      <div class="cycle__core"><img src="assets/logo.png" alt="Coralia Environmental"><b>Ciclo completo</b><small>7 etapas · 14 pasos</small></div>
     </div>
     <div class="cycle__side"><p class="cycle__hint">Tocá o pasá el mouse por cada etapa para ver sus pasos.</p><ol class="cycle__list">${list}</ol></div>`;
   let cur = -1, touched = false, timer = 0;
@@ -250,7 +251,8 @@ function renderCycle() {
   // mientras nadie la toca, la rueda avanza sola cuando está a la vista
   const tick = () => { if (touched || calm) return; show(cur + 1); timer = setTimeout(tick, 3200); };
   show(0);
-  if (!calm && 'IntersectionObserver' in window) new IntersectionObserver((es) => { if (es[0].isIntersecting && !timer && !touched) timer = setTimeout(tick, 2400); }, { threshold: 0.4 }).observe(box);
+  if (calm || !('IntersectionObserver' in window)) box.classList.add('is-in');
+  else new IntersectionObserver((es) => { if (!es[0].isIntersecting) return; box.classList.add('is-in'); if (!timer && !touched) timer = setTimeout(tick, 2400); }, { threshold: 0.4 }).observe(box);
 }
 
 // la línea de pasos se llena y cada paso se enciende cuando llega a la altura de la vista (solo en el panel abierto)
