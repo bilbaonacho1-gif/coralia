@@ -989,7 +989,12 @@
 "No aplica (proyecto industrial)": "Not applicable (industrial project)",
 "en 10 años de acreditación, renovables hasta 30": "over a 10-year crediting period, renewable up to 30",
 "humedales de Corrientes · estándar BioCarbon": "Corrientes wetlands · BioCarbon standard",
-"de piloto, junto a ReForest LatAm": "pilot, with ReForest LatAm"
+"de piloto, junto a ReForest LatAm": "pilot, with ReForest LatAm",
+"Comunicación institucional": "Corporate communications",
+"Redes sociales y LinkedIn": "Social media and LinkedIn",
+"Prensa y relación con medios": "Press and media relations",
+"Contenido audiovisual": "Audiovisual content",
+"Comunicación de proyectos de carbono": "Carbon project communications"
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 engagement'],

@@ -217,4 +217,9 @@ T = [
 ("en 10 años de acreditación, renovables hasta 30", "over a 10-year crediting period, renewable up to 30", "em 10 anos de creditação, renováveis até 30", "über einen Anrechnungszeitraum von 10 Jahren, verlängerbar auf bis zu 30"),
 ("humedales de Corrientes · estándar BioCarbon", "Corrientes wetlands · BioCarbon standard", "áreas úmidas de Corrientes · padrão BioCarbon", "Feuchtgebiete in Corrientes · BioCarbon-Standard"),
 ("de piloto, junto a ReForest LatAm", "pilot, with ReForest LatAm", "de piloto, com a ReForest LatAm", "Pilotfläche, gemeinsam mit ReForest LatAm"),
+("Comunicación institucional", "Corporate communications", "Comunicação institucional", "Unternehmenskommunikation"),
+("Redes sociales y LinkedIn", "Social media and LinkedIn", "Redes sociais e LinkedIn", "Social Media und LinkedIn"),
+("Prensa y relación con medios", "Press and media relations", "Imprensa e relação com a mídia", "Presse- und Medienarbeit"),
+("Contenido audiovisual", "Audiovisual content", "Conteúdo audiovisual", "Audiovisuelle Inhalte"),
+("Comunicación de proyectos de carbono", "Carbon project communications", "Comunicação de projetos de carbono", "Kommunikation von CO₂-Projekten"),
 ]

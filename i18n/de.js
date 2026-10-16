@@ -997,7 +997,12 @@
 "No aplica (proyecto industrial)": "Entfällt (Industrieprojekt)",
 "en 10 años de acreditación, renovables hasta 30": "über einen Anrechnungszeitraum von 10 Jahren, verlängerbar auf bis zu 30",
 "humedales de Corrientes · estándar BioCarbon": "Feuchtgebiete in Corrientes · BioCarbon-Standard",
-"de piloto, junto a ReForest LatAm": "Pilotfläche, gemeinsam mit ReForest LatAm"
+"de piloto, junto a ReForest LatAm": "Pilotfläche, gemeinsam mit ReForest LatAm",
+"Comunicación institucional": "Unternehmenskommunikation",
+"Redes sociales y LinkedIn": "Social Media und LinkedIn",
+"Prensa y relación con medios": "Presse- und Medienarbeit",
+"Contenido audiovisual": "Audiovisuelle Inhalte",
+"Comunicación de proyectos de carbono": "Kommunikation von CO₂-Projekten"
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 Auftrag'],
