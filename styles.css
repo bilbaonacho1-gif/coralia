@@ -1694,3 +1694,4 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
 .pipc__stds.is-icons img{height:26px}
 /* modo oscuro: los íconos de colores de los estándares se ven bien así, sin pasarlos a blanco */
 :root[data-theme="dark"] .pipc__stds.is-icons img{filter:none;mix-blend-mode:normal}
+.pipc__stds img[src*="ccb-icono"]{border-radius:50%}
