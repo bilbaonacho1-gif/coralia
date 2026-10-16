@@ -1593,3 +1593,13 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
   .plans[open] ul{right:auto;width:min(860px,calc(300% + 30px));display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 22px}
   .plans[open] ul li + li{padding-top:0;border-top:0;padding-left:22px;border-left:1px solid var(--line)}
 }
+/* Revisión 02 · punto 15: al pasar el mouse por una persona, un borde finito con degradé de verdes
+   (lima → verde agua → verde bosque) que aparece y gira despacio, con la forma del hexágono */
+@property --hexa{syntax:'<angle>';inherits:false;initial-value:0deg}
+.hex{background:transparent}
+.hex .hex__in{inset:3px}
+.hex::before{content:"";position:absolute;inset:0;clip-path:inherit;opacity:0;transition:opacity .35s;
+  background:conic-gradient(from var(--hexa),#c8f04a,#5fd6b0,#1f6b4f,#c8f04a)}
+.hex:hover::before,.hex:focus-visible::before{opacity:1;animation:hexSpin 3.5s linear infinite}
+@keyframes hexSpin{to{--hexa:360deg}}
+@media (prefers-reduced-motion:reduce){.hex:hover::before,.hex:focus-visible::before{animation:none}}
