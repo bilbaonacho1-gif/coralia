@@ -158,8 +158,8 @@ if (wheel) {
     g.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openApp(ap.k); } });
     return s;
   });
-  // centro: logo de Coralia y acceso a los simuladores
-  const core = el('a', { class: 'wcore', href: 'simuladores.html', 'aria-label': 'Probá las plataformas de Coralia' });
+  // centro: logo de Coralia y acceso a Descubrí (evaluaciones rápidas)
+  const core = el('a', { class: 'wcore', href: 'discover.html', 'aria-label': 'Probá las plataformas de Coralia' });
   el('circle', { class: 'wcore__pulse', r: CORE }, core);
   el('circle', { class: 'wcore__bg', r: CORE }, core);
   el('image', { href: 'assets/logo.png', x: -62, y: -58, width: 124, height: 70.6 }, core);

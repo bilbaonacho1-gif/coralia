@@ -1,4 +1,4 @@
-// Coralia — página de simuladores
+// Coralia — página Descubrí (discover.html): las cinco evaluaciones rápidas
 document.documentElement.classList.add('js');
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -11,7 +11,7 @@ const io = 'IntersectionObserver' in window ? new IntersectionObserver((es) => e
 }), { threshold: 0.12 }) : null;
 $$('.reveal').forEach((el) => (io ? io.observe(el) : el.classList.add('is-visible')));
 
-/* Elegir simulador: tarjetas de arriba. Link directo: simuladores.html#trayectoria o #neutralidad */
+/* Elegir simulador: tarjetas de arriba. Link directo: discover.html#trayectoria o #neutralidad */
 const picks = $$('[data-sim]');
 function pick(k, scroll) {
   const b = picks.find((x) => x.dataset.sim === k) || picks[0];

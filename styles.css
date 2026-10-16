@@ -1418,3 +1418,13 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
 .plans li span{font-size:13px;color:var(--dim)}
 .plans li small{font-size:13px;color:var(--ink2)}
 .plans li .link{font-size:13px;margin-top:2px;justify-self:start}
+/* Descubrí: arriba de cada tarjeta, el número y el nombre de la herramienta */
+.simpick__top{display:flex;align-items:baseline;gap:8px}
+.simpick__tool{font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--dim)}
+.simpick.is-active .simpick__tool{color:rgba(243,244,236,.7)}
+@media (max-width:560px){
+  /* las preguntas son largas: en el celu, una tarjeta por fila y el nombre de la herramienta en una línea */
+  .simpicks{grid-template-columns:1fr;gap:10px}
+  .simpick{padding:16px 18px}
+  .simpick__title{font-size:19px}
+}

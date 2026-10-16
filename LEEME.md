@@ -71,11 +71,14 @@ así que no dependen de Google Fonts. Se declaran al principio de styles.css (@f
 - Mitigar: cifra unificada en +13,2M y decimales con punto en inglés (10.1M, 2.8M, 1.5M).
 - "Cómo trabajamos" → "Trabajemos juntos" (EN Work with us): cuatro tarjetas (servicios, plataformas, socios, inversores).
   Los tres planes (Profesional, Análisis, Demo) quedan en el desplegable "Ver los planes" de la tarjeta de plataformas.
-  Abajo: "¿No sabés por dónde empezar? Descubrí tu camino climático →" (por ahora a simuladores.html).
+  Abajo: "¿No sabés por dónde empezar? Descubrí tu camino climático →" (lleva a discover.html).
 - Teléfono nuevo: +54 9 11 5056 0687. "Nosotros" lleva a los logos (#trusted-by). "Confían en nosotros" (EN Trusted by).
 - Pipeline: "Invertí en nuestro pipeline de proyectos" con su bajada (opción A), en la home y en pipeline.html.
 - Traducciones nuevas en i18n/fuente/8-revision-02.py.
-- Quedan para las próximas tandas: Discover (1), puntitos y logos (25, 13), cards del pipeline (20, 23),
+- Tanda 2 · Simuladores → Descubrí (punto 1): la página ahora es discover.html (EN Discover, PT Descubra, DE Entdecken).
+  simuladores.html quedó solo como redirección a discover.html (conserva ?lang= y el #simulador), para no romper links viejos.
+  Cada tarjeta lleva arriba el nombre de la herramienta y como título la pregunta. El código sigue en simuladores.js.
+- Quedan para las próximas tandas: puntitos y logos (25, 13), cards del pipeline (20, 23),
   servicios desplegables (19), equipo (15) y notas de casos (11, 12, 24).
 
 ## Recorrido de la Home (de arriba a abajo)
@@ -97,7 +100,7 @@ así que no dependen de Google Fonts. Se declaran al principio de styles.css (@f
    esquina. La forma es el clipPath #folder en index.html (proporción 5:4).
 3. **Conocé nuestras apps** (#apps): rueda con las tres apps como porciones redondeadas (con su pantalla
    adentro). Entra girando media vuelta, las porciones se abren en abanico y al final aparece el centro: logo
-   de Coralia y "Probá las apps →", que lleva a simuladores.html (TODO: URL de la plataforma, en main.js, 'wcore') y un panel grande a la izquierda recortado por la curva de la rueda.
+   de Coralia y "Probá las plataformas →", que lleva a discover.html (TODO: URL de la plataforma, en main.js, 'wcore') y un panel grande a la izquierda recortado por la curva de la rueda.
    Al pasar por una porción, crece hacia afuera y el panel muestra esa app; sola va rotando cada 4,5 s hasta
    que alguien la toca. Al tocar una porción, una pestaña o "Ver cómo funciona" se abre abajo su recorrido de 6 pasos: al bajar por los pasos cambia la pantalla.
    Tocar la misma tarjeta o "Cerrar" lo cierra. Link a los simuladores.
@@ -165,9 +168,10 @@ Portada que se achica y frase que se enciende. Sin librerías. Con "reducir movi
 - **proyectos.html**: 3 destacados, texto institucional, grilla con filtros por servicio, industria y país, ficha
   de cada proyecto. Link directo: proyectos.html#ypf, #misiones, etc.
 - **proyecto.html?p=ypf**: página de cada proyecto (portada, datos, resumen, galería, testimonio, relacionados).
-- **simuladores.html**: cinco simuladores: Trayectoria de reducción, Neutralidad y créditos, Huella rápida,
-  ¿Tu tierra puede ser un proyecto de carbono? y Riesgo climático. Links directos: simuladores.html#trayectoria,
-  #neutralidad, #huella, #tierra y #riesgo. Código: simuladores.js.
+- **discover.html** (Descubrí): cinco evaluaciones rápidas: Camino de descarbonización, Estrategia de créditos de carbono,
+  Chequeo de huella de carbono, Potencial de carbono de tu tierra y Chequeo de riesgo climático. Links directos:
+  discover.html#trayectoria, #neutralidad, #huella, #tierra y #riesgo. Código: simuladores.js.
+  simuladores.html solo redirige a discover.html.
 - Los datos de los proyectos están en data.js (los usan todas las páginas).
 
 ## Encabezado y menú (nav.js)
@@ -186,7 +190,7 @@ Debajo de 1000 px el menú se abre con el botón ☰; se cierra al tocar un link
 - Las mariposas de fondo (deco.js y assets/deco/).
 - La tira de logos en una sola imagen (clientes.webp), el fondo de hojas del equipo y el sello viejo del premio.
 - Segunda vuelta: la fila de números, la sección horizontal de herramientas con ilustraciones 3D, la sección
-  separada "Cómo funcionan", las mini demos de la Home (ahora en simuladores.html) y la línea de tiempo.
+  separada "Cómo funcionan", las mini demos de la Home (ahora en discover.html) y la línea de tiempo.
 
 ## Pendientes (buscá TODO)
 - Links de Carbon Markets Hub y Climate Risk: completarlos en APP_LINKS (nav.js). Hoy dicen "Próximamente".
