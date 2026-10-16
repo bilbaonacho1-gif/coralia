@@ -63,3 +63,32 @@ window.APP_LINKS = {
     el.addEventListener('animationend', () => el.classList.remove('is-tapped'), { once: true });
   }, { passive: true });
 })();
+
+// Modo claro / oscuro (PRUEBA): botón sol/luna en el encabezado. El cambio se abre como un círculo desde el botón.
+(() => {
+  const right = document.querySelector('.header__right'); if (!right) return;
+  const root = document.documentElement;
+  const btn = document.createElement('button');
+  btn.type = 'button'; btn.className = 'theme-btn';
+  btn.innerHTML = '<svg class="theme-btn__sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>'
+    + '<svg class="theme-btn__moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>';
+  const label = () => { const dark = root.dataset.theme === 'dark'; const t = (s) => (window.I18N && I18N.t ? I18N.t(s) : s);
+    btn.setAttribute('aria-label', t(dark ? 'Pasar a modo claro' : 'Pasar a modo oscuro')); btn.setAttribute('aria-pressed', dark); };
+  label();
+  right.insertBefore(btn, right.firstChild);
+  btn.addEventListener('click', (e) => {
+    const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    const apply = () => { root.dataset.theme = next; label(); try { localStorage.setItem('coralia-theme', next); } catch (er) { /* solo por esta visita */ } };
+    const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!document.startViewTransition || calm) {
+      // sin transición de vista: fundido suave de colores
+      root.classList.add('theme-fade'); apply(); setTimeout(() => root.classList.remove('theme-fade'), 700); return;
+    }
+    const r = btn.getBoundingClientRect(), x = r.left + r.width / 2, y = r.top + r.height / 2;
+    const end = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+    document.startViewTransition(apply).ready.then(() => {
+      root.animate({ clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${end}px at ${x}px ${y}px)`] },
+        { duration: 750, easing: 'cubic-bezier(.4,0,.2,1)', pseudoElement: '::view-transition-new(root)' });
+    });
+  });
+})();

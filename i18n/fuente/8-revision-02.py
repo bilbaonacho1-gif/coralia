@@ -270,4 +270,6 @@ T = [
 ("de Chaco Seco donde el bosque nativo vuelve con la hacienda adentro", "of Dry Chaco where native forest returns with cattle grazing inside", "de Chaco Seco onde a floresta nativa volta com o gado dentro", "Trockener Chaco, wo der einheimische Wald mit dem Vieh zurückkehrt"),
 ("33.170 ha", "33,170 ha", "33.170 ha", "33.170 ha"),
 ("elegibles para restaurar, en tres áreas del bosque andino-patagónico", "eligible for restoration, across three areas of Andean–Patagonian forest", "elegíveis para restauração, em três áreas da floresta andino-patagônica", "für die Wiederherstellung geeignet, in drei Gebieten des andin-patagonischen Waldes"),
+("Pasar a modo oscuro", "Switch to dark mode", "Mudar para o modo escuro", "Zum dunklen Modus wechseln"),
+("Pasar a modo claro", "Switch to light mode", "Mudar para o modo claro", "Zum hellen Modus wechseln"),
 ]

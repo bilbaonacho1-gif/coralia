@@ -1,3 +1,11 @@
+// Coralia — modo claro / oscuro (PRUEBA): se aplica antes de pintar la página para que no parpadee.
+// Se elige con el botón del encabezado (nav.js) y queda guardado; si no hay elección, sigue al sistema.
+(() => {
+  let t = null;
+  try { t = localStorage.getItem('coralia-theme'); } catch (e) { /* sin almacenamiento */ }
+  if (t !== 'dark' && t !== 'light') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  document.documentElement.dataset.theme = t;
+})();
 // Coralia — idiomas. El español es el texto base de las páginas; las traducciones están en
 // i18n/en.js, i18n/pt.js e i18n/de.js y se cargan solo si se eligió ese idioma.
 // Va en el <head>: traduce el contenido a medida que el navegador arma la página y también

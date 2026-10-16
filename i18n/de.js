@@ -1026,6 +1026,8 @@
 "Sylvera le otorgó un rating AA–A previo a la emisión (junio de 2026).": "Sylvera vergab vor der Ausgabe ein AA–A-Rating (Juni 2026).",
 "de Chaco Seco donde el bosque nativo vuelve con la hacienda adentro": "Trockener Chaco, wo der einheimische Wald mit dem Vieh zurückkehrt",
 "elegibles para restaurar, en tres áreas del bosque andino-patagónico": "für die Wiederherstellung geeignet, in drei Gebieten des andin-patagonischen Waldes",
+"Pasar a modo oscuro": "Zum dunklen Modus wechseln",
+"Pasar a modo claro": "Zum hellen Modus wechseln",
 "Argentina · 8 operaciones": "Argentinien · 8 Standorte",
 "de horizonte en los mapas de riesgo futuro": "Horizont der Karten künftiger Risiken",
 "operaciones analizadas en todo el país": "landesweit analysierte Standorte",

@@ -1019,6 +1019,8 @@
 "de Chaco Seco donde el bosque nativo vuelve con la hacienda adentro": "of Dry Chaco where native forest returns with cattle grazing inside",
 "33.170 ha": "33,170 ha",
 "elegibles para restaurar, en tres áreas del bosque andino-patagónico": "eligible for restoration, across three areas of Andean–Patagonian forest",
+"Pasar a modo oscuro": "Switch to dark mode",
+"Pasar a modo claro": "Switch to light mode",
 "Argentina · 8 operaciones": "Argentina · 8 operations",
 "de horizonte en los mapas de riesgo futuro": "horizon in the future risk maps",
 "operaciones analizadas en todo el país": "operations assessed across the country",

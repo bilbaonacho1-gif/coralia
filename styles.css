@@ -1622,3 +1622,50 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
 @keyframes planIn{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
 @media (max-width:760px){.levels--plans{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){.levels--plans .level{animation:none}}
+/* ================= PRUEBA · modo oscuro (data-theme en <html>, lo pone i18n.js / nav.js) ================= */
+:root[data-theme="dark"]{
+  --bg:#0c1712; --bg2:#122019; --paper:#16261e; --forest:#0a1510; --forest2:#1e3a2b;
+  --ink:#e9efe3; --ink2:#b4c2b5; --dim:#87998b;
+  --line:rgba(233,239,227,.12); --line2:rgba(233,239,227,.24);
+  --leaf:#9fd06a; --mint:#9fd06a;
+  color-scheme:dark;
+}
+:root[data-theme="dark"] body{background:var(--bg);color:var(--ink)}
+/* superficies que eran blancas fijas */
+:root[data-theme="dark"] :is(.pipc,.cycle__st.is-on,.note-tl i,.cycle__node,.cycle__arrow,.plans-toggle){background-color:var(--paper)}
+:root[data-theme="dark"] .pipc{border-color:var(--line)}
+:root[data-theme="dark"] .header.is-scrolled{background:rgba(12,23,18,.86)}
+:root[data-theme="dark"] .header.is-scrolled .logo__light{opacity:1}
+:root[data-theme="dark"] .header.is-scrolled .logo__dark{opacity:0}
+:root[data-theme="dark"] .header .btn--ghost-light{background:var(--lime);color:#0c1712}
+:root[data-theme="dark"] .btn--ghost-light{border-color:var(--line2);color:var(--ink)}
+:root[data-theme="dark"] .btn--mint{background:var(--lime);color:#0c1712}
+:root[data-theme="dark"] .level--hl{background:#1e3a2b;border-color:#1e3a2b}
+:root[data-theme="dark"] .cycle__core,:root[data-theme="dark"] .pipc__go,:root[data-theme="dark"] .folder__go{background:#1e3a2b}
+:root[data-theme="dark"] .cycle__arrow--next{background:var(--lime);border-color:var(--lime);color:#0c1712}
+:root[data-theme="dark"] .svx__btns .svc__btn[aria-pressed="true"]{background:var(--lime);border-color:var(--lime);color:#0c1712}
+:root[data-theme="dark"] :is(.pipc__title){filter:brightness(1.9) saturate(.8)}
+:root[data-theme="dark"] :is(.logos__item img,.note-side__logo,.pipc__stds img){filter:grayscale(1) invert(1) brightness(1.6);mix-blend-mode:screen}
+:root[data-theme="dark"] .ui-card{background:rgba(22,38,30,.86);border-color:rgba(255,255,255,.08);color:var(--ink)}
+:root[data-theme="dark"] .plans-toggle{background:transparent}
+/* botón sol / luna */
+.theme-btn{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;border:1.5px solid rgba(255,255,255,.45);color:#fff;background:rgba(255,255,255,.08);transition:background .3s,border-color .3s,color .3s,transform .4s var(--ease)}
+.theme-btn svg{grid-area:1/1;width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;transition:opacity .4s,transform .6s var(--ease)}
+.theme-btn__moon{fill:currentColor;stroke:none}
+.theme-btn:hover{transform:rotate(-14deg)}
+.header.is-scrolled .theme-btn{border-color:var(--line2);color:var(--ink);background:transparent}
+:root[data-theme="light"] .theme-btn__sun,:root:not([data-theme]) .theme-btn__sun{opacity:0;transform:rotate(-90deg) scale(.4)}
+:root[data-theme="dark"] .theme-btn__moon{opacity:0;transform:rotate(90deg) scale(.4)}
+:root[data-theme="dark"] .theme-btn{color:var(--lime)}
+/* cambio sin transición de vista: fundido de colores */
+.theme-fade,.theme-fade *{transition:background-color .6s ease,color .6s ease,border-color .6s ease!important}
+::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+@media (max-width:640px){.theme-btn{width:34px;height:34px}}
+:root[data-theme="dark"] .chip.is-on{background:var(--lime);border-color:var(--lime);color:#0c1712}
+:root[data-theme="dark"] .insight{background:rgba(159,208,106,.1);border-color:rgba(159,208,106,.25)}
+:root[data-theme="dark"] .map{background:radial-gradient(circle at 50% 46%,#1f3529 0%,#142319 55%,#0e1a13 100%)}
+:root[data-theme="dark"] .map-card{background:var(--paper)}
+:root[data-theme="dark"] .pipc__media{background:linear-gradient(135deg,#1c3024,#2a4532)}
+:root[data-theme="dark"] .pipc__ph{color:rgba(233,239,227,.4)}
+:root[data-theme="dark"] .mc-case{background:rgba(233,239,227,.06);border-color:var(--line);color:var(--ink)}
+:root[data-theme="dark"] .mc-art{opacity:.22;filter:invert(1) hue-rotate(180deg)}
