@@ -882,7 +882,9 @@
 "Trayectoria": "Trajetória",
 "Proyectos que ya <em>desarrollamos.</em>": "Projetos que já <em>desenvolvemos.</em>",
 "Tocá una etapa o usá las flechas para ver sus pasos.": "Toque uma etapa ou use as setas para ver seus passos.",
-"Etapa siguiente": "Próxima etapa"
+"Etapa siguiente": "Próxima etapa",
+"Medios y comunicación": "Mídia e comunicação",
+"Responsable de medios y comunicación": "Responsável por mídia e comunicação"
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 trabalho'],

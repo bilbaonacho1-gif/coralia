@@ -198,8 +198,9 @@ const TEAM = [
     skills: ['Asistencia en proyectos NbS', 'Vínculo con productores', 'I+D en tecnologías verdes', 'AFOLU: REDD, ALM, ARR', 'Uso sostenible del suelo'] },
   { id: 'agustina-blazquez', name: 'Agustina Blázquez', linkedin: 'https://www.linkedin.com/in/agustina-bl%C3%A1zquez-0b179b26b/', group: 'tecnico', area: 'Equipo técnico · Mercados de carbono', title: 'Analista técnica Jr. de proyectos de carbono azul',
     skills: ['Desarrollo de proyectos NbS', 'Monitoreo de carbono azul', 'Herramientas SIG', 'Degradación y deforestación', 'Documentos de proyecto (PD)', 'Modelado de riesgo climático'] },
-  { id: 'fernando-amar', name: 'Fernando Amar', linkedin: 'https://www.linkedin.com/in/feramar/', group: 'relaciones', area: 'Relaciones internacionales', title: 'Gerente de proyectos de carbono LatAm',
-    skills: ['Búsqueda de proyectos en LatAm', 'Vinculación con actores', 'Desarrollo de alianzas', 'Documentos de proyecto', 'Mercado de carbono', 'Financiamiento'] },
+  // TODO: habilidades de Lucas (las pasa Nacho)
+  { id: 'lucas-gaioli', name: 'Lucas Gaioli', linkedin: 'https://www.linkedin.com/in/lucas-gaioli/', group: 'gestion', area: 'Medios y comunicación', title: 'Responsable de medios y comunicación',
+    skills: [] },
   { id: 'hernan-lopez', name: 'Hernán Lopez', linkedin: 'https://www.linkedin.com/in/hernan-lopez-4367036/', group: 'relaciones', area: 'Relaciones internacionales', title: 'Gerente de proyectos de carbono Norteamérica',
     skills: ['Búsqueda de proyectos en Norteamérica', 'Vinculación con actores', 'Desarrollo de alianzas', 'Documentos de proyecto', 'Mercado de carbono', 'Financiamiento'] },
   { id: 'rosario-lombardi', name: 'Rosario Lombardi', linkedin: 'https://www.linkedin.com/in/mar%C3%ADa-del-rosario-lombardi-22bbb218b/', group: 'gestion', area: 'Finanzas y contabilidad', title: 'Asistente financiera',

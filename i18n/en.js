@@ -957,7 +957,9 @@
 "Proyectos que ya <em>desarrollamos.</em>": "Projects we’ve <em>already developed.</em>",
 "Tocá una etapa o usá las flechas para ver sus pasos.": "Tap a stage or use the arrows to see its steps.",
 "Etapa anterior": "Previous stage",
-"Etapa siguiente": "Next stage"
+"Etapa siguiente": "Next stage",
+"Medios y comunicación": "Media and communications",
+"Responsable de medios y comunicación": "Media and Communications Officer"
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 engagement'],

@@ -180,4 +180,7 @@ T = [
 ("Tocá una etapa o usá las flechas para ver sus pasos.", "Tap a stage or use the arrows to see its steps.", "Toque uma etapa ou use as setas para ver seus passos.", "Tippen Sie auf eine Phase oder nutzen Sie die Pfeile, um ihre Schritte zu sehen."),
 ("Etapa anterior", "Previous stage", "Etapa anterior", "Vorherige Phase"),
 ("Etapa siguiente", "Next stage", "Próxima etapa", "Nächste Phase"),
+# --- Equipo: Lucas Gaioli reemplaza a Fernando Amar
+("Medios y comunicación", "Media and communications", "Mídia e comunicação", "Medien und Kommunikation"),
+("Responsable de medios y comunicación", "Media and Communications Officer", "Responsável por mídia e comunicação", "Verantwortlich für Medien und Kommunikation"),
 ]

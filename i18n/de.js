@@ -966,7 +966,9 @@
 "Proyectos que ya <em>desarrollamos.</em>": "Projekte, die wir <em>bereits entwickelt haben.</em>",
 "Tocá una etapa o usá las flechas para ver sus pasos.": "Tippen Sie auf eine Phase oder nutzen Sie die Pfeile, um ihre Schritte zu sehen.",
 "Etapa anterior": "Vorherige Phase",
-"Etapa siguiente": "Nächste Phase"
+"Etapa siguiente": "Nächste Phase",
+"Medios y comunicación": "Medien und Kommunikation",
+"Responsable de medios y comunicación": "Verantwortlich für Medien und Kommunikation"
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 Auftrag'],
