@@ -404,7 +404,8 @@ function pipeCard(p) {
     <b class="pipc__title">${p.name}</b>
     <span class="pipc__desc${c.desc === 'Descripción a confirmar.' ? ' is-tbc' : ''}">${c.desc || ''}</span>
     <span class="pipc__row"><span><small>${c.a ? c.a[0] : ''}</small>${c.a ? val(c.a[1]) : ''}</span><span class="pipc__r"><small>${c.b ? c.b[0] : ''}</small>${c.b ? val(c.b[1]) : ''}</span></span>
-    <span class="pipc__row pipc__row--std"><span><small>Estándar</small><span class="pipc__stds">${std}</span></span><span class="pipc__r"><small>${c.meth ? c.meth[0] : ''}</small><b class="pipc__meth${c.meth && c.meth[1] === TBC ? ' is-tbc' : ''}">${c.meth ? c.meth[1] : ''}</b></span></span>
+    <span class="pipc__row pipc__row--std"><small>Estándar</small><span class="pipc__stds">${std}</span></span>
+    <span class="pipc__row pipc__row--meth"><small>${c.meth ? c.meth[0] : ''}</small><b class="pipc__meth${c.meth && c.meth[1] === TBC ? ' is-tbc' : ''}">${c.meth ? c.meth[1] : ''}</b></span>
     <span class="pipc__foot"><span class="pipc__stage">${p.stage}</span><span class="pipc__go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
   </span></a>`;
 }
