@@ -63,7 +63,7 @@ const SERVICIOS = {
             ['1,5M', 'hectáreas de bosque nativo', 'verificado por AENOR'],
           ],
           share: [['40%', 'fondo provincial'], ['30%', 'propietarios'], ['30%', 'comunidades (CLPI)']],
-          ratings: [['assets/marca/sylvera-misiones.webp', 'ECO2 Misiones', 'A–AA'], ['assets/marca/sylvera-remonte.webp', 'ReMonte Chaco Seco', 'A–AA'], ['assets/marca/premio-green-cross.webp', 'Best Global NbS Developer', 'Green Cross UK · 2025']],
+          ratings: [['assets/marca/sylvera-misiones.webp', 'ECO2 Misiones', 'A–AA'], ['assets/marca/sylvera-remonte.webp', 'ReMonte Chaco Seco', 'AA–A'], ['assets/marca/premio-green-cross.webp', 'Best Global NbS Developer', 'Green Cross UK · 2025']],
         },
         groups: [
           { title: 'Desarrollo del proyecto', steps: [

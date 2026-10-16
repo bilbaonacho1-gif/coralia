@@ -328,23 +328,23 @@ const TEAM_GROUPS = { all: 'Todos', direccion: 'Dirección', tecnico: 'Equipo t�
 // Pipeline de proyectos propios (para inversores). Datos de los kits de comunicación de cada proyecto.
 // kpi: el número grande de la ficha. TODO Coralia: créditos estimados de cada proyecto y los que faltan del pipeline (son 6–7).
 const PIPELINE = [
-  { id: 'remonte', name: 'ReMonte', type: 'ARR', place: 'Gran Chaco · Santiago del Estero, Argentina', stage: 'Rating Sylvera A–AA previo a la emisión',
+  { id: 'remonte', name: 'ReMonte', type: 'ARR', place: 'Gran Chaco · Santiago del Estero, Argentina', stage: 'Rating Sylvera AA–A previo a la emisión',
     // card (Revisión 02): datos del PD ReMonte v4.4 (ago-2026). 156.000 ha = meta del proyecto agrupado; 8,3 M VCUs = estimado a 40 años
     // TODO: foto de la card con las vacas en El Tumé (la pasa Nico); por ahora va la foto del monte
     country: 'Argentina', flag: 'ar', color: '#8a6a32',
     card: { desc: 'Regeneración del bosque nativo y ganadería regenerativa en campos degradados del Chaco Seco.',
       a: ['Hectáreas', '156.000'], b: ['Créditos (40 años)', '8,3 millones'], std: ['vcs', 'ccb'], meth: ['Metodología', 'VM0047 v1.1'] },
-    ha: '24.024 ha', kpi: ['24.024 ha', 'de Chaco donde el bosque nativo vuelve con la hacienda adentro'],
+    ha: '156.000 ha', kpi: ['156.000 ha', 'de Chaco Seco donde el bosque nativo vuelve con la hacienda adentro'],
     desc: ['El monte chaqueño no se planta: se deja volver. ReMonte es un programa de regeneración natural asistida del bosque nativo del Chaco Seco, con la ganadería adentro.',
       'El renoval no es una maleza: es el bosque volviendo. En el campo medimos cuánto monte queda y cuánto puede volver: cobertura leñosa nativa, renoval, suelo y forraje en El Tumé, La Colonia y Tres Flores.',
-      'Sylvera le otorgó un rating A–AA previo a la emisión (junio de 2026).'],
+      'Sylvera le otorgó un rating AA–A previo a la emisión (junio de 2026).'],
     img: 'assets/pipeline/remonte-3.webp', gallery: ['assets/pipeline/remonte-1.webp', 'assets/pipeline/remonte-2.webp', 'assets/pipeline/remonte-4.webp', 'assets/pipeline/remonte-5.webp'] },
   { id: 'chubut', name: 'Chubut ARR', type: 'ARR', place: 'Cholila · Chubut, Argentina', stage: 'Primera instancia de restauración',
     // card: Coralia Q&A 2 - Chubut ARR v2.0. 33.170 ha elegibles (3 PAIs); 5.211.444 VCUs a 40 años
     country: 'Argentina', flag: 'ar', color: '#2f5f4c',
     card: { desc: 'Restauración del bosque nativo andino-patagónico quemado en los incendios de 2014–2015.',
       a: ['Hectáreas', '33.170'], b: ['Créditos (40 años)', '5,2 millones'], std: ['vcs', 'ccb'], meth: ['Metodología', 'VM0047 v1.1'] },
-    ha: '7.240 ha', kpi: ['7.240 ha', 'en restauración, dentro de 42.000 ha afectadas por el fuego'],
+    ha: '33.170 ha', kpi: ['33.170 ha', 'elegibles para restaurar, en tres áreas del bosque andino-patagónico'],
     desc: ['El fuego se midió en hectáreas. La recuperación también. Proyecto ARR sobre el paisaje del bosque andino-patagónico afectado por los incendios de 2014-2015, junto al Gobierno del Chubut.',
       'Cada hectárea se verifica en el terreno: muestreo de suelo y parcelas de monitoreo en el área afectada por los incendios.'],
     img: 'assets/pipeline/chubut-1.webp', gallery: ['assets/pipeline/chubut-2.webp', 'assets/pipeline/chubut-3.webp', 'assets/servicios/arr-antes.webp', 'assets/servicios/arr-despues.webp'] },
