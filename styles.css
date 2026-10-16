@@ -1621,4 +1621,19 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
 .levels--plans .level:nth-child(2){animation-delay:.08s}.levels--plans .level:nth-child(3){animation-delay:.16s}
 @keyframes planIn{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
 @media (max-width:760px){.levels--plans{grid-template-columns:1fr}}
-@media (prefers-reduced-motion:reduce){.levels--plans .level{animation:none}}
+@media (prefers-reduced-motion:reduce){.levels--plans .level{animation:none}}/* Pipeline: las tarjetas de una misma fila quedan alineadas (cada franja a la misma altura)
+   y los sellos del estándar van en su propia franja, separados de la metodología */
+@supports (grid-template-rows:subgrid){
+  .pipc{display:grid;grid-template-rows:subgrid;grid-row:span 8;row-gap:0}
+  .pipc__body{display:grid;grid-template-rows:subgrid;grid-row:span 7;row-gap:0}
+  .pipc__desc{align-self:start}
+  .pipc__foot{align-self:end;margin-top:0}
+}
+.pipc__row--std{display:block}
+.pipc__row--std small{margin-bottom:10px}
+.pipc__stds{flex-wrap:wrap;gap:12px 16px;min-height:22px}
+.pipc__stds img{height:21px}
+.pipc__stds i{height:18px}
+.pipc__row--meth{align-items:baseline}
+.pipc__row--meth small{margin:0}
+.pipc__row--meth .pipc__meth{max-width:none;text-align:right}
