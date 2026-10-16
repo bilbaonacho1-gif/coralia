@@ -248,18 +248,18 @@ const PIPELINE = [
       'La degradación se mide; la recuperación también. Cada hectárea se verifica en el terreno: inventario de parcelas y muestreo de suelo en Montecristi y Puerto Plata (relevamiento de octubre de 2025).'],
     img: 'assets/pipeline/dbcx-1.webp', gallery: ['assets/pipeline/dbcx-2.webp', 'assets/pipeline/dbcx-3.webp', 'assets/servicios/blue-carbon-antes.webp', 'assets/servicios/blue-carbon-despues.webp'] },
   // Proyectos nuevos de la Revisión 02 (datos de "Cards proyectos - info para Nacho"). Lo que falta va como "A confirmar".
-  // TODO: fotos de las cards de Iberá, Biochar y ChaCo-ReForest y logos de BioCarbon y Puro.earth (los pasa Nico)
+  // TODO: fotos de las cards de Iberá, Biochar y ChaCo-ReForest (las pasa Nico). Logos de BioCarbon y Puro.earth: de la presentación de Climate Week NYC 2026
   { id: 'ibera', name: 'Resilient Iberá', type: 'Humedales', place: 'Corrientes, Argentina', stage: 'A confirmar',
     // TODO: todos los datos de Iberá (lo que vino como Iberá en la info eran los datos de Biochar)
     country: 'Argentina', flag: 'ar', color: '#44607e',
-    card: { desc: 'Descripción a confirmar.', a: ['Hectáreas', 'A confirmar'], b: ['Créditos', 'A confirmar'], std: ['BioCarbon'], meth: ['Metodología', 'A confirmar'] },
+    card: { desc: 'Descripción a confirmar.', a: ['Hectáreas', 'A confirmar'], b: ['Créditos', 'A confirmar'], std: ['biocarbon'], meth: ['Metodología', 'A confirmar'] },
     ha: 'A confirmar', kpi: ['Iberá', 'humedales de Corrientes · estándar BioCarbon'],
     desc: ['Descripción a confirmar.'], img: null, gallery: [] },
   { id: 'biochar', name: 'Argentina Biochar Initiative', type: 'Biochar', place: 'Chaco y Formosa, Argentina', stage: 'Factibilidad completa · Lista para inversión',
     // card: Concept Note y Estudio de factibilidad v1.0 (Unitán). ~5.000 CORCs/año; período de Puro de 10 años, renovable 2 veces
     country: 'Argentina', flag: 'ar', color: '#5b4636',
     card: { desc: 'Remoción de carbono durable a partir de residuos forestales, convertidos en biochar y aplicados en las plantaciones propias de Unitán.',
-      a: ['Biochar', '~2.500 t/año'], b: ['Créditos (10 años)', '~50.000 CORCs'], std: ['Puro.earth'], meth: ['Metodología', 'Puro.earth Biochar Methodology, Edition 2025 v1'] },
+      a: ['Biochar', '~2.500 t/año'], b: ['Créditos (10 años)', '~50.000 CORCs'], std: ['puro'], meth: ['Metodología', 'Puro.earth Biochar Methodology, Edition 2025 v1'] },
     ha: 'No aplica (proyecto industrial)', kpi: ['~50.000 CORCs', 'en 10 años de acreditación, renovables hasta 30'],
     desc: ['Remoción de carbono durable a partir de residuos forestales, convertidos en biochar y aplicados en las plantaciones propias de Unitán.',
       'La planta va en el predio industrial de Unitán y el biochar se aplica en sus tierras forestales entre Chaco y Formosa: unas 5.000 CORCs por año, con unas 10.000 toneladas anuales de residuos de biomasa.'],
@@ -280,7 +280,8 @@ const FLAGS = {
   ar: '<svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#74acdf"/><rect y="6.67" width="30" height="6.67" fill="#fff"/><circle cx="15" cy="10" r="2.2" fill="#f6b40e"/></svg>',
   do: '<svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#fff"/><rect width="13" height="8" fill="#002d62"/><rect x="17" width="13" height="8" fill="#ce1126"/><rect y="12" width="13" height="8" fill="#ce1126"/><rect x="17" y="12" width="13" height="8" fill="#002d62"/></svg>',
 };
-const STD_LOGOS = { vcs: ['assets/estandares/vcs.png', 'Verified Carbon Standard'], ccb: ['assets/estandares/ccb.png', 'Climate, Community & Biodiversity Standards'] };
+const STD_LOGOS = { vcs: ['assets/estandares/vcs.png', 'Verified Carbon Standard'], ccb: ['assets/estandares/ccb.png', 'Climate, Community & Biodiversity Standards'],
+  biocarbon: ['assets/estandares/biocarbon.png', 'BioCarbon Standard'], puro: ['assets/estandares/puro.png', 'Puro.earth'] };
 const TBC = 'A confirmar';
 function pipeCard(p) {
   const c = p.card || {}, val = (v) => `<b class="pipc__v${v === TBC ? ' is-tbc' : ''}">${v}</b>`;

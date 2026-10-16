@@ -93,7 +93,8 @@ así que no dependen de Google Fonts. Se declaran al principio de styles.css (@f
   de la referencia; conviene reemplazarlos por los oficiales en SVG). Seis proyectos: ReMonte, Chubut ARR,
   Dominican Blue Carbon, Resilient Iberá, Argentina Biochar Initiative y ChaCo-ReForest. Lo que falta va como
   "A confirmar" (TODO en data.js): datos de Iberá, hectáreas/créditos/descripción de ChaCo, fotos de Iberá,
-  Biochar y ChaCo, foto de ReMonte con las vacas, y logos de BioCarbon y Puro.earth (por ahora van en texto).
+  Biochar y ChaCo y foto de ReMonte con las vacas. Logos de BioCarbon, Puro.earth y VCS (en alta): de la presentación
+  de Climate Week NYC 2026, igual que las fotos nuevas de Fabián y Nico y el sello de Green Cross en 600 px.
 - Quedan para las próximas tandas: logos faltantes (13; coraliae.com no se puede abrir desde la sesión), cards del pipeline (20, 23),
   servicios desplegables (19), equipo (15) y notas de casos (11, 12, 24).
 
