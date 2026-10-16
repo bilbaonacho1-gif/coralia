@@ -101,6 +101,12 @@ function closeApp() {
   if (on) { on.scrollIntoView({ block: 'center' }); on.focus({ preventScroll: true }); }
 }
 $$('.appcard').forEach((c) => c.addEventListener('click', () => openApp(c.dataset.app)));
+// "Ver los planes" (Trabajemos juntos): se cierra al tocar afuera o con Esc
+const plans = $('.plans');
+if (plans) {
+  document.addEventListener('click', (e) => { if (plans.open && !plans.contains(e.target)) plans.open = false; });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && plans.open) { plans.open = false; $('summary', plans).focus(); } });
+}
 
 /* ---------- Nuestros servicios: cada carpeta despliega su panel abajo (Revisión 02, punto 19) ----------
    Contenido en servicio.js. Links directos: index.html#servicio-medir | #servicio-mitigar | #servicio-adaptar */

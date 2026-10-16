@@ -1565,3 +1565,16 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
 .svx__btns .svc__btn{transition:background .3s,color .3s,border-color .3s}
 .svx__btns .svc__btn:hover{border-color:var(--forest)}
 .svx__btns .svc__btn[aria-pressed="true"]{background:var(--forest);border-color:var(--forest);color:#fff;box-shadow:none}
+/* Ver los planes: en la compu se abre flotando encima (como un menú), así la tarjeta no se estira y la fila
+   no queda con huecos; en el celu (una tarjeta por fila) se sigue abriendo adentro de la tarjeta */
+@media (min-width:761px){
+  .plans{position:relative}
+  .level:has(.plans[open]){z-index:6}
+  .plans[open] summary{color:var(--leaf)}
+  .plans[open] ul{position:absolute;left:-12px;right:-12px;top:calc(100% + 6px);z-index:6;margin:0;padding:18px 20px;
+    background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 30px 60px -24px rgba(18,38,30,.35);
+    animation:plansIn .28s var(--ease) both}
+  .plans[open] ul li + li{padding-top:12px;border-top:1px solid var(--line)}
+}
+@keyframes plansIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.plans[open] ul{animation:none}}
