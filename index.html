@@ -111,21 +111,83 @@
       <img class="deco leaf leaf--3" src="assets/deco/hoja-chica-3.webp" alt="" loading="lazy" data-par="-0.03">
       <img class="deco leaf leaf--4" src="assets/deco/hoja-media.webp" alt="" loading="lazy" data-par="-0.05">
     </div>
-    <!-- Nuestros servicios: cada carpeta lleva a la página que explica el servicio (servicio.html?s=...) -->
+    <!-- Nuestros servicios: cada carpeta despliega su panel abajo (#svcDetail; contenido en servicio.js, se abre desde main.js).
+         Los links viejos servicio.html?s=... redirigen a index.html#servicio-... -->
     <span class="eyebrow folders__eyebrow reveal" id="servicios">Nuestros servicios</span>
     <div class="folders">
-      <a class="folder reveal" href="servicio.html?s=medir">
+      <a class="folder reveal" href="#servicio-medir" data-svc="medir" aria-expanded="false" aria-controls="svcDetail">
         <span class="folder__box"><span class="folder__card"><img src="assets/proyectos/ruuts-1.jpg" srcset="assets/proyectos/ruuts-1-900.webp 900w, assets/proyectos/ruuts-1.jpg 1200w" sizes="(max-width: 700px) 92vw, 380px" alt="" loading="lazy"><span class="folder__label"><i class="dot dot--svc-medir"></i>Medir</span></span><span class="folder__go" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
         <span class="folder__txt">Huella de carbono de empresas, productos y eventos, con estándares internacionales (GHG Protocol, ISO 14064 e ISO 14067).</span>
       </a>
-      <a class="folder reveal" href="servicio.html?s=mitigar">
+      <a class="folder reveal" href="#servicio-mitigar" data-svc="mitigar" aria-expanded="false" aria-controls="svcDetail">
         <span class="folder__box"><span class="folder__card"><img src="assets/proyectos/mercuria-1.jpg" srcset="assets/proyectos/mercuria-1-900.webp 900w, assets/proyectos/mercuria-1.jpg 1200w" sizes="(max-width: 700px) 92vw, 380px" alt="" loading="lazy"><span class="folder__label"><i class="dot dot--svc-mitigar"></i>Mitigar</span></span><span class="folder__go" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
         <span class="folder__txt">Definí tu camino de descarbonización, reducí emisiones dentro de tu cadena de valor (insetting) y explorá los mercados de carbono para compensar lo que quede (offsetting).</span>
       </a>
-      <a class="folder reveal" href="servicio.html?s=adaptar">
+      <a class="folder reveal" href="#servicio-adaptar" data-svc="adaptar" aria-expanded="false" aria-controls="svcDetail">
         <span class="folder__box"><span class="folder__card"><img src="assets/proyectos/pluspetrol-2.jpg" srcset="assets/proyectos/pluspetrol-2-900.webp 900w, assets/proyectos/pluspetrol-2.jpg 1425w" sizes="(max-width: 700px) 92vw, 380px" alt="" loading="lazy"><span class="folder__label"><i class="dot dot--svc-adaptar"></i>Adaptarse</span></span><span class="folder__go" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
         <span class="folder__txt">Análisis de riesgo climático y planes de adaptación para cada activo y organización.</span>
       </a>
+    </div>
+    <div class="app-detail svx-detail" id="svcDetail" hidden>
+      <div class="app-detail__bar">
+        <span class="app-detail__title" id="svcDetailTitle"></span>
+        <button type="button" class="app-detail__close" id="svcDetailClose">Cerrar ×</button>
+      </div>
+      <div class="svx sv sv--medir" data-svc-pane="medir" hidden></div>
+      <!-- Mitigar: qué hacemos, antes y después, cifras y ECO2 Misiones; después Para clientes / Para inversores -->
+      <div class="svx sv sv--mitigar" data-svc-pane="mitigar" hidden>
+        <div class="svc">
+          <div class="svc__grid">
+            <div class="svc__text">
+              <span class="eyebrow">Mitigar · Mercados de carbono</span>
+              <!-- Texto propuesto por Coralia (a pulir) -->
+              <h3 class="svc__title">Restauramos ecosistemas naturales.</h3>
+              <p class="svc__lead">Acompañamos a propietarios y desarrolladores en todo el ciclo de un proyecto de carbono de alta integridad, principalmente de soluciones basadas en la naturaleza: desde la factibilidad inicial hasta la validación, la verificación y la emisión de los créditos.</p>
+            </div>
+            <!-- Antes y después de cada tipo de proyecto. Fotos de los proyectos (DBCX, Chubut, Misiones): assets/servicios/<tipo>-antes.webp y -despues.webp; textos en BA_TYPES (main.js) -->
+            <div class="ba-wrap">
+              <div class="ba" id="ba" style="--x:50%">
+                <div class="ba__layer ba__layer--antes"></div>
+                <div class="ba__layer ba__layer--despues"></div>
+                <span class="ba__label ba__label--antes" id="baAntes"></span>
+                <span class="ba__label ba__label--despues" id="baDespues"></span>
+                <input class="ba__range" id="baRange" type="range" min="0" max="100" value="50" aria-label="Deslizá para comparar antes y después">
+                <span class="ba__handle" aria-hidden="true">◂ ▸</span>
+              </div>
+              <div class="ba__tabs" role="tablist" aria-label="Tipos de proyecto" id="baTabs"></div>
+            </div>
+          </div>
+        </div>
+        <div data-svc-fill="mitigar"></div>
+        <div class="svx__who">
+          <div class="svc__btns svx__btns" role="group" aria-label="Elegí tu perfil">
+            <button type="button" class="btn btn--mint svc__btn" data-panel="clientes" aria-pressed="false" aria-controls="svcClientes">Para clientes</button>
+            <button type="button" class="btn btn--ghost-light svc__btn" data-panel="inversores" aria-pressed="false" aria-controls="svcInversores">Para inversores</button>
+          </div>
+        </div>
+        <!-- Para clientes: el ciclo completo de un proyecto de carbono (7 etapas, servicio.js arma la rueda) -->
+        <div class="svc__panel" id="svcClientes" hidden>
+          <div class="svc__phead">
+            <span class="eyebrow">Para clientes</span>
+            <h3>¿Querés desarrollar tu <em>propio proyecto de carbono?</em></h3>
+            <p>Llevamos proyectos por cada etapa, desde el primer estudio de factibilidad hasta la emisión de VCUs. Contanos sobre tu tierra o tu proyecto y te acompañamos en todo el ciclo.</p>
+          </div>
+          <div class="cycle" id="cycle"></div>
+          <a class="btn btn--mint" href="#contacto">Hablemos →</a>
+        </div>
+        <!-- Para inversores: pipeline de proyectos propios (datos en data.js, PIPELINE) -->
+        <div class="svc__panel" id="svcInversores" hidden>
+          <div class="svc__phead">
+            <span class="eyebrow">Para inversores</span>
+            <h3>Invertí en nuestro <em>pipeline de proyectos.</em></h3>
+            <p>Estamos construyendo un pipeline de remociones y reducciones de carbono de alta integridad a escala, para destrabar el financiamiento que la naturaleza y la acción climática necesitan.</p>
+          </div>
+          <div class="pipe" id="pipeGrid"></div>
+          <a class="btn btn--mint" href="pipeline.html">Ver pipeline de proyectos →</a>
+        </div>
+        <div data-svc-cases="mitigar"></div>
+      </div>
+      <div class="svx sv sv--adaptar" data-svc-pane="adaptar" hidden></div>
     </div>
   </div>
 </section>
@@ -157,7 +219,7 @@
           <span class="appview__tag" id="avTag"><img src="assets/apps/icon-footprint-claro.png" alt="">Huella de carbono</span>
           <h3 class="appview__name" id="avName">Carbon Footprint</h3>
           <p class="appview__desc" id="avDesc">Huella de productos, empresas y eventos, de la fórmula al reporte verificable.</p>
-          <a class="appview__app" id="avApp" href="servicio.html?s=medir">Servicio: <b>Medir</b> →</a>
+          <a class="appview__app" id="avApp" href="#servicio-medir">Servicio: <b>Medir</b> →</a>
           <div class="appview__ctas">
             <button type="button" class="btn btn--lime" id="avOpen">Conocé la plataforma <i aria-hidden="true">↓</i></button>
             <a class="btn btn--glass" id="avGo" href="https://carbonfootprint.coraliae.com/login" target="_blank" rel="noopener">Ir a la plataforma <i aria-hidden="true">↗</i></a>
@@ -175,7 +237,7 @@
       </div>
     </div>
 
-    <!-- Se abre al tocar un servicio. Huella y Riesgo: recorrido de su app. Mercados: qué hacemos + clientes / inversores -->
+    <!-- Se abre al tocar una plataforma: el recorrido paso a paso de cada una -->
     <div class="app-detail" id="app-detail" role="tabpanel" hidden>
       <div class="app-detail__bar">
         <span class="app-detail__title" id="appDetailTitle"></span>
@@ -229,41 +291,8 @@
         </li>
       </ol>
     </div>
-    <div class="svc" data-story="markets" hidden>
-      <div class="svc__grid">
-        <div class="svc__text">
-          <span class="eyebrow">Qué hacemos</span>
-          <!-- Texto propuesto por Coralia (a pulir) -->
-          <h3 class="svc__title">Restauramos ecosistemas naturales.</h3>
-          <p class="svc__lead">Acompañamos a propietarios y desarrolladores en todo el ciclo de un proyecto de carbono de alta integridad, principalmente de soluciones basadas en la naturaleza: desde la factibilidad inicial hasta la validación, la verificación y la emisión de los créditos.</p>
-          <div class="svc__btns" role="group" aria-label="Elegí tu perfil">
-            <button type="button" class="btn btn--mint svc__btn" data-panel="clientes" aria-pressed="false" aria-controls="svcClientes">Para clientes</button>
-            <button type="button" class="btn btn--ghost-light svc__btn" data-panel="inversores" aria-pressed="false" aria-controls="svcInversores">Para inversores</button>
-          </div>
-        </div>
-        <!-- Antes y después de cada tipo de proyecto. Fotos de los proyectos (DBCX, Chubut, Misiones): assets/servicios/<tipo>-antes.webp y -despues.webp; textos en BA_TYPES (main.js) -->
-        <div class="ba-wrap">
-          <div class="ba" id="ba" style="--x:50%">
-            <div class="ba__layer ba__layer--antes"></div>
-            <div class="ba__layer ba__layer--despues"></div>
-            <span class="ba__label ba__label--antes" id="baAntes"></span>
-            <span class="ba__label ba__label--despues" id="baDespues"></span>
-            <input class="ba__range" id="baRange" type="range" min="0" max="100" value="50" aria-label="Deslizá para comparar antes y después">
-            <span class="ba__handle" aria-hidden="true">◂ ▸</span>
-          </div>
-          <div class="ba__tabs" role="tablist" aria-label="Tipos de proyecto" id="baTabs"></div>
-        </div>
-      </div>
-      <!-- Para clientes: el prediagnóstico (los pasos del Carbon Markets Hub) -->
-      <div class="svc__panel" id="svcClientes" hidden>
-        <div class="svc__phead">
-          <span class="eyebrow">Para clientes</span>
-          <h3>¿No sabés qué proyecto podés hacer? <em>Diagnosticalo en 5 minutos.</em></h3>
-          <p>Con Carbon Markets Hub hacés un prediagnóstico de tu tierra y sabés qué tipo de proyecto de carbono es posible.</p>
-          <!-- TODO: link real de la demo -->
-          <a class="btn btn--lime" href="#" id="svcDemo">Acceder a la demo →</a>
-        </div>
-    <div class="story" data-story="markets-demo">
+    <!-- Carbon Markets Hub: el paso a paso del diagnóstico (Revisión 02, punto 19) -->
+    <div class="story" data-story="markets" hidden>
             <div class="story__screen">
               <div class="device">
                 <div class="device__bar"><i></i><i></i><i></i><span>Carbon Markets Hub</span></div>
@@ -311,18 +340,6 @@
               </li>
             </ol>
           </div>
-      </div>
-      <!-- Para inversores: pipeline de proyectos propios (datos en data.js, PIPELINE) -->
-      <div class="svc__panel" id="svcInversores" hidden>
-        <div class="svc__phead">
-          <span class="eyebrow">Para inversores</span>
-          <h3>Invertí en nuestro <em>pipeline de proyectos.</em></h3>
-          <p>Estamos construyendo un pipeline de remociones y reducciones de carbono de alta integridad a escala, para destrabar el financiamiento que la naturaleza y la acción climática necesitan.</p>
-        </div>
-        <div class="pipe" id="pipeGrid"></div>
-        <a class="btn btn--mint" href="pipeline.html">Ver pipeline de proyectos →</a>
-      </div>
-    </div>
     <div class="story" data-story="risk" hidden>
       <div class="story__screen">
         <div class="device">
@@ -618,6 +635,7 @@
 
 <script src="nav.js"></script>
 <script src="data.js"></script>
+<script src="servicio.js"></script>
 <script src="main.js"></script>
 <script src="globe.js"></script>
 <script src="motion.js"></script>

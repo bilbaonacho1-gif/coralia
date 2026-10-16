@@ -88,7 +88,7 @@ function openApp(k) {
   if (window.setApp) setApp(k);
   $$('.appcard').forEach((c) => { const on = c === card; c.classList.toggle('is-on', on); c.setAttribute('aria-selected', on); });
   $$(':scope > [data-story]', detail).forEach((st) => { st.hidden = st.dataset.story !== k; });
-  // Mercados muestra qué hacemos; Huella y Riesgo, el recorrido de su app
+  // cada plataforma muestra su recorrido paso a paso
   $('#appDetailTitle').textContent = `${APP_NAMES[k]} · ${tr(SVC_NAMES[k])}`;
   detail.hidden = false;
   const st = $(`.story[data-story="${k}"]`); if (st) showStep(st, 0);
@@ -102,9 +102,49 @@ function closeApp() {
 }
 $$('.appcard').forEach((c) => c.addEventListener('click', () => openApp(c.dataset.app)));
 
+/* ---------- Nuestros servicios: cada carpeta despliega su panel abajo (Revisión 02, punto 19) ----------
+   Contenido en servicio.js. Links directos: index.html#servicio-medir | #servicio-mitigar | #servicio-adaptar */
+const svcDetail = $('#svcDetail');
+const smooth = () => (matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth');
+function openSvc(k, scroll = true) {
+  const folder = $(`.folder[data-svc="${k}"]`); if (!svcDetail || !folder) return;
+  if (folder.classList.contains('is-on') && !svcDetail.hidden) return closeSvc();
+  $$('.folder[data-svc]').forEach((f) => { const on = f === folder; f.classList.toggle('is-on', on); f.setAttribute('aria-expanded', on); });
+  $$('[data-svc-pane]', svcDetail).forEach((p) => { p.hidden = p.dataset.svcPane !== k; });
+  const S = (window.SERVICIOS_INFO || {})[k];
+  if (S) $('#svcDetailTitle').innerHTML = `<span>${S.title}</span> <em>${S.sub}</em>`;
+  svcDetail.hidden = false;
+  history.replaceState(null, '', `#servicio-${k}`);
+  if (window.svcRailTick) requestAnimationFrame(svcRailTick);
+  if (scroll) requestAnimationFrame(() => svcDetail.scrollIntoView({ behavior: smooth(), block: 'start' }));
+}
+function closeSvc() {
+  const on = $('.folder.is-on');
+  svcDetail.hidden = true;
+  $$('.folder[data-svc]').forEach((f) => { f.classList.remove('is-on'); f.setAttribute('aria-expanded', false); });
+  history.replaceState(null, '', '#servicios');
+  if (on) { on.scrollIntoView({ block: 'center' }); on.focus({ preventScroll: true }); }
+}
+if (svcDetail) {
+  $('#svcDetailClose').addEventListener('click', closeSvc);
+  // carpetas, el link "Servicio: ... →" de las plataformas y cualquier otro link a #servicio-...
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href^="#servicio-"]'); if (!a) return;
+    e.preventDefault(); openSvc(a.getAttribute('href').slice('#servicio-'.length));
+  });
+  // "Conocé la plataforma →" adentro de un servicio: abre esa plataforma más abajo
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('[data-open-app]'); if (!a) return;
+    e.preventDefault(); openApp(a.dataset.openApp);
+  });
+  const fromHash = () => { const m = location.hash.match(/^#servicio-(medir|mitigar|adaptar)$/); if (m) openSvc(m[1]); };
+  addEventListener('hashchange', fromHash);
+  if (location.hash.startsWith('#servicio-')) addEventListener('load', fromHash, { once: true });
+}
+
 /* Rueda de apps: porciones de anillo con bordes redondeados (SVG). Ángulos en grados, 0 = arriba. */
 const APPS = [
-  // svc: página del servicio al que pertenece la app (servicio.html?s=...)
+  // svc: servicio al que pertenece la plataforma (abre su panel en #servicios)
   { k: 'footprint', a0: -60, a1: 60, lines: ['Carbon', 'Footprint'], bg: 'fondo-footprint', tag: 'Huella de carbono', svc: 'medir', svcName: 'Medir', dot: 'medir', desc: 'Huella de productos, empresas y eventos, de la fórmula al reporte verificable.' },
   { k: 'markets', a0: 60, a1: 180, lines: ['Carbon', 'Markets'], bg: 'fondo-markets', tag: 'Mercados de carbono', svc: 'mitigar', svcName: 'Mitigar', dot: 'mitigar', desc: 'Tu tierra diagnosticada en cinco minutos: qué proyecto de carbono es posible y cuánto vale.' },
   { k: 'risk', a0: 180, a1: 300, lines: ['Climate', 'Risk'], bg: 'fondo-risk', tag: 'Riesgo climático', svc: 'adaptar', svcName: 'Adaptarse', dot: 'adaptar', desc: 'Riesgo climático físico y de transición, activo por activo, con planes de adaptación.' },
@@ -225,7 +265,7 @@ if (wheel) {
     $$('.appview__shots img', view).forEach((im) => { const on = im.dataset.app === k; im.classList.toggle('is-on', on); if (on) im.loading = 'eager'; });
     $('#avTag').innerHTML = `<img src="assets/apps/icon-${k}-claro.png" alt="">${ap.tag}`;
     $('#avName').textContent = APP_NAMES[k]; $('#avDesc').textContent = ap.desc;
-    const sv = $('#avApp'); sv.href = `servicio.html?s=${ap.svc}`; sv.innerHTML = `Servicio: <b>${ap.svcName}</b> →`;
+    const sv = $('#avApp'); sv.href = `#servicio-${ap.svc}`; sv.innerHTML = `Servicio: <b>${ap.svcName}</b> →`;
     const url = (window.APP_LINKS || {})[k], go = $('#avGo');
     if (url) go.href = url;
     go.hidden = !url; $('#avSoon').hidden = !!url;

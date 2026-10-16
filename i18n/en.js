@@ -940,7 +940,19 @@
 "¿Qué tan expuestos están tus activos a las amenazas climáticas?": "How exposed are your assets to climate hazards?",
 "Nivel de riesgo por amenaza, escenario y horizonte de tiempo.": "Risk level by hazard, scenario and time horizon.",
 "¿Querés el panorama completo,<br>con tus datos reales?": "Want the full picture,<br>with your real data?",
-"Descubrí: evaluaciones rápidas de Coralia Environmental →": "Discover: quick assessments from Coralia Environmental →"
+"Descubrí: evaluaciones rápidas de Coralia Environmental →": "Discover: quick assessments from Coralia Environmental →",
+"Mitigar · Mercados de carbono": "Mitigate · Carbon markets",
+"¿Querés desarrollar tu <em>propio proyecto de carbono?</em>": "Want to develop your <em>own carbon project?</em>",
+"Llevamos proyectos por cada etapa, desde el primer estudio de factibilidad hasta la emisión de VCUs. Contanos sobre tu tierra o tu proyecto y te acompañamos en todo el ciclo.": "We’ve taken projects through every step, from the first feasibility check to the issuance of VCUs. Tell us about your land or your project and we’ll guide you through the full cycle.",
+"Ciclo completo": "Full cycle",
+"7 etapas · 14 pasos": "7 stages · 14 steps",
+"Tocá o pasá el mouse por cada etapa para ver sus pasos.": "Tap or hover over each stage to see its steps.",
+"Factibilidad": "Feasibility",
+"Línea de base y diseño": "Baseline & design",
+"Actores y salvaguardas": "Stakeholders & safeguards",
+"Documento de proyecto": "Project document",
+"Validación y registro": "Validation & registration",
+"Emisión de VCUs": "VCU issuance"
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 engagement'],

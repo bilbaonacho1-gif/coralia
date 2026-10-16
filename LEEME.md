@@ -18,16 +18,16 @@ así que no dependen de Google Fonts. Se declaran al principio de styles.css (@f
   (350k toneladas removidas: NÚMERO A CONFIRMAR) y Riesgo climático.
 - Menú: "Apps" pasó a "Servicios" (#servicios; #apps sigue funcionando). "Proyectos" lleva a proyectos.html.
 - Qué es Coralia: debajo de la frase, "Nuestros servicios" (#servicios, el menú lleva acá): Medir, Mitigar y Adaptarse
-  (como en el deck), cada uno abre su página (servicio.html?s=medir | mitigar | adaptar). Son tres tarjetas con
+  (como en el deck), cada uno despliega su panel abajo (Revisión 02, punto 19; ver más abajo). Son tres tarjetas con
   forma de carpeta (foto, nombre y la flecha en el hueco de la esquina; la forma es el clipPath #folder en
   index.html, proporción 5:4) con su texto abajo. La
-  consultoría no es un servicio aparte: es cómo trabajamos en los tres (portada, "Cómo trabajamos").
-  Cada servicio tiene su app: Medir → Carbon Footprint, Mitigar → Carbon Markets Hub, Adaptar → Climate Risk App.
-- Páginas de servicio (servicio.html + servicio.js, contenido en SERVICIOS): el texto de la web actual,
+  consultoría no es un servicio aparte: es cómo trabajamos en los tres (portada, "Trabajemos juntos").
+  Cada servicio tiene su plataforma: Medir → Carbon Footprint, Mitigar → Carbon Markets Hub, Adaptar → Climate Risk.
+- Paneles de servicio (servicio.js, contenido en SERVICIOS; antes eran páginas aparte): el texto de la web actual,
   Medición con la Huella de carbono (producto y corporativa, 6 pasos cada una);
-  Mitigación con Mercados de carbono (13M+ tCO₂e del Company deck 2026: ECO2 Misiones 10M+ más los proyectos
+  Mitigación con Mercados de carbono (+13,2M tCO₂e; Company deck 2026: ECO2 Misiones 10M+ más los proyectos
   anteriores por sector, 3,2M; proyecto destacado ECO2 Misiones con sus datos, reparto de beneficios y ratings; y los 14 pasos); Adaptación con el análisis de riesgo,
-  sus 3 pilares y los 5 pasos. Cada bloque termina con su app y la página con sus casos.
+  sus 3 pilares y los 5 pasos. Cada panel termina con su plataforma y sus casos.
   Diseño de cada página (bloques "Páginas de servicio" en styles.css): cada servicio tiene el color de su app
   (Medir verde, Mitigar ámbar, Adaptarse azul). Arriba, a la derecha, los otros dos servicios para pasar directo. Cortes en diagonal: el encabezado, la franja de destacados (highlights en SERVICIOS,
   sobre la foto de la app) y la franja de la app. "Cómo lo hacemos": los pasos en una línea de tiempo en zigzag que se llena y enciende cada paso al
@@ -80,6 +80,12 @@ así que no dependen de Google Fonts. Se declaran al principio de styles.css (@f
   Cada tarjeta lleva arriba el nombre de la herramienta y como título la pregunta. El código sigue en simuladores.js.
 - Tanda 3 · puntitos (punto 25): Medir #86C95B, Mitigar #C8F04A, Adaptarse #4FD1B0, con variables propias
   (--svc-medir, --svc-mitigar, --svc-adaptar). --medir, --mitigar y --adaptar no cambian (tags de casos y mapa).
+- Tanda 5 · servicios desplegables (punto 19, opción A): las carpetas Medir, Mitigar y Adaptarse abren su panel abajo
+  (#svcDetail en index.html). El contenido sale de servicio.js (SERVICIOS): texto, datos destacados, cifras, caso
+  destacado, cómo lo hacemos, plataforma y casos. Mitigar lleva "Restauramos ecosistemas naturales.", el antes y
+  después, el +13,2M y ECO2 Misiones, y los botones Para clientes (rueda del ciclo completo: 7 etapas con los 14 pasos,
+  ETAPAS en servicio.js) y Para inversores (pipeline). Carbon Markets Hub volvió al paso a paso del diagnóstico.
+  Links directos: index.html#servicio-medir | #servicio-mitigar | #servicio-adaptar. servicio.html?s=... redirige ahí.
 - Quedan para las próximas tandas: logos faltantes (13; coraliae.com no se puede abrir desde la sesión), cards del pipeline (20, 23),
   servicios desplegables (19), equipo (15) y notas de casos (11, 12, 24).
 

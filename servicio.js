@@ -1,7 +1,9 @@
-// Coralia — página de un servicio (servicio.html?s=medir | mitigar | adaptar)
+// Coralia — servicios (Medir, Mitigar y Adaptarse) desplegables en la home (index.html, sección #servicios).
+// Revisión 02, punto 19: antes cada servicio tenía su página (servicio.html?s=...); ahora se abre abajo de su carpeta.
 // Contenido tomado de la web actual de Coralia (páginas de Mitigación y Adaptación). Para editar textos: SERVICIOS abajo.
 // Si cambiás un texto, cambialo también en i18n/fuente/6-servicios.py (traducciones).
-document.documentElement.classList.add('js');
+// Todo va adentro de una función para no chocar con los nombres de main.js ($, io, fmt...).
+(() => {
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
@@ -119,17 +121,6 @@ const APP = {
   risk: ['Climate Risk', 'Riesgo climático físico y de transición, activo por activo, con planes de adaptación.'],
 };
 
-const key = new URLSearchParams(location.search).get('s');
-const S = SERVICIOS[key];
-if (!S) { location.replace('index.html#servicios'); throw new Error('Servicio no encontrado'); }
-document.title = `${S.title} | Coralia Environmental`;
-$('#servicio').className = `sv sv--${key}`;
-$('#sHeroImg').src = S.img;
-$('#sCrumb').textContent = S.title;
-$('#sTitle').textContent = S.title; $('#sSub').textContent = S.sub;
-$('#sIntro').textContent = S.intro;
-// accesos directos a cada bloque de la página
-if (S.blocks.length > 1) $('#sJump').innerHTML = S.blocks.map((b) => `<a class="btn btn--glass btn--sm" href="#${b.id}">${b.name}</a>`).join('');
 
 const fmt = (n) => n.toLocaleString(window.LOCALE || 'es-AR');
 // gráfico de anillo con el reparto de toneladas por sector
@@ -146,7 +137,7 @@ function donut(parts) {
 }
 // proyecto destacado: datos clave, reparto de beneficios y ratings
 function feature(f) {
-  return `<article class="sv-feat reveal">
+  return `<article class="sv-feat">
     <div class="sv-feat__media"><img src="${f.img}" alt="" loading="lazy"></div>
     <div class="sv-feat__body">
       <span class="eyebrow">${f.eyebrow}</span>
@@ -159,14 +150,8 @@ function feature(f) {
     <div class="sv-feat__ratings"><span class="sv-feat__rtitle">Calificados antes de la emisión</span>${f.ratings.map((r) => `<figure><img src="${r[0]}" alt="" loading="lazy"><figcaption><b>${r[2]}</b>${r[1]}</figcaption></figure>`).join('')}</div>
   </article>`;
 }
-// los otros dos servicios al costado, para pasar directo
-const KEYS = Object.keys(SERVICIOS);
-$('#sSide').innerHTML = KEYS.filter((k) => k !== key).map((k) => `<a class="sv-side sv--${k}" href="servicio.html?s=${k}"><img src="${SERVICIOS[k].img}" alt="" loading="lazy"><span class="sv-side__t"><b>${SERVICIOS[k].title}</b><em>${SERVICIOS[k].sub}</em></span></a>`).join('');
-// franja de datos destacados, en diagonal sobre la foto de la app del servicio
-const facts = (b) => S.highlights && b.app ? `<section class="sv-facts">
-  <img class="sv-facts__bg" src="assets/apps/fondo-${b.app}.webp" alt="" loading="lazy">
-  <div class="wrap sv-facts__in">${S.highlights.map((h, i) => `<div class="sv-fact reveal" style="--d:${i * 0.12}s"><b>${h[0]}</b><span>${h[1]}</span></div>`).join('')}</div>
-</section>` : '';
+// datos destacados del servicio, en una fila
+const facts = (S) => S.highlights ? `<div class="svx__facts">${S.highlights.map((h) => `<div class="svx__fact"><b>${h[0]}</b><span>${h[1]}</span></div>`).join('')}</div>` : '';
 
 // Pasos: línea de tiempo que se va encendiendo al bajar. Si el bloque tiene "tabs", cada grupo es una opción
 // (pestañas); si no, los grupos son etapas seguidas de un mismo recorrido.
@@ -176,11 +161,11 @@ const stepItems = (steps, from = 0) => steps.map((st, i) => `<li class="tl__item
 function timeline(b) {
   const gs = b.groups || []; if (!gs.length) return '';
   if (b.tabs) return `
-    <div class="sv-how reveal"><span class="eyebrow">Cómo lo hacemos</span>
+    <div class="sv-how"><span class="eyebrow">Cómo lo hacemos</span>
       <div class="sv-tabs" role="tablist">${gs.map((g, i) => `<button type="button" role="tab" class="sv-tab${i ? '' : ' is-on'}" aria-selected="${!i}" data-tab="${i}">${g.title}</button>`).join('')}</div></div>
     ${gs.map((g, i) => { row = 0; return `<ol class="tl"${i ? ' hidden' : ''} data-pane="${i}"><li class="tl__rail" aria-hidden="true"><i></i></li>${stepItems(g.steps)}</ol>`; }).join('')}`;
   let k = 0; row = 0;
-  return `<div class="sv-how reveal"><span class="eyebrow">Cómo lo hacemos</span></div>
+  return `<div class="sv-how"><span class="eyebrow">Cómo lo hacemos</span></div>
     <ol class="tl"><li class="tl__rail" aria-hidden="true"><i></i></li>${gs.map((g) => { const html = (gs.length > 1 ? `<li class="tl__phase" style="--r:${++row}"><span>${g.title}</span></li>` : '') + stepItems(g.steps, k); k += g.steps.length; return html; }).join('')}</ol>`;
 }
 // los pilares (adaptación) se muestran como un recorrido: uno lleva al otro
@@ -189,45 +174,92 @@ const ICONS = [
   '<rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M4 15h16M10 4v16M15 4v16"/>',
   '<path d="M4 15c3-6 13-6 16 0"/><path d="M12 15v5M9 20h6M12 4v3M5.6 7.6l2 2M18.4 7.6l-2 2"/>',
 ];
-const flow = (ps) => `<div class="sv-flow">${ps.map((p, i) => `${i ? '<span class="sv-flow__arrow" aria-hidden="true">→</span>' : ''}<article class="sv-flow__it reveal" style="--d:${i * 0.12}s"><span class="sv-flow__ic"><svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[i % ICONS.length]}</svg></span><small>${String(i + 1).padStart(2, '0')}</small><h3>${p[0]}</h3><p>${p[1]}</p></article>`).join('')}</div>`;
-// la app de este servicio, en grande: foto de fondo en su color, pantalla de la app y acceso
-const showcase = (k) => `<section class="sv-appband"><div class="wrap"><a class="sv-show reveal" href="index.html#apps">
+const flow = (ps) => `<div class="sv-flow">${ps.map((p, i) => `${i ? '<span class="sv-flow__arrow" aria-hidden="true">→</span>' : ''}<article class="sv-flow__it"><span class="sv-flow__ic"><svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[i % ICONS.length]}</svg></span><small>${String(i + 1).padStart(2, '0')}</small><h3>${p[0]}</h3><p>${p[1]}</p></article>`).join('')}</div>`;
+// la plataforma de este servicio, en grande: foto de fondo en su color, pantalla y acceso (abre la plataforma más abajo)
+const showcase = (k) => `<a class="sv-show svx__show" href="#apps" data-open-app="${k}">
   <div class="sv-show__txt"><small>Con nuestra plataforma</small><span class="sv-show__name"><img src="assets/apps/icon-${k}-claro.png" alt="">${APP[k][0]}</span><p>${APP[k][1]}</p><span class="btn btn--lime btn--sm">Conocé la plataforma →</span></div>
   <div class="sv-show__shot"><img src="assets/apps/card-${k}.webp" alt="" loading="lazy"></div>
-</a></div></section>`;
+</a>`;
+// casos publicados de este servicio
+function cases(S) {
+  const cs = (typeof CASES !== 'undefined' ? CASES : []).filter((c) => S.cases.includes(c.svc)).slice(0, 6);
+  if (!cs.length) return '';
+  return `<div class="svx__cases"><div class="head"><div><span class="eyebrow">CASOS</span><h3 class="h2--sm">Proyectos de este servicio</h3></div><a class="link" href="proyectos.html">Ver todos →</a></div>
+    <div class="sv-cases">${cs.map((c) => { const src = typeof tallOf === 'function' ? tallOf(c) : (c.hero || c.img); return `<a class="sv-case" href="proyecto.html?p=${c.id}"><span class="sv-case__img">${src ? `<img src="${src}" alt="" loading="lazy">` : ''}</span><span class="sv-case__body"><small>${c.client}</small><b>${c.title}</b></span></a>`; }).join('')}</div></div>`;
+}
+const cta = (S) => `<div class="svx__cta"><a href="mailto:contacto@coraliae.com?subject=${encodeURIComponent('Consulta por ' + S.title)}" class="btn btn--mint">Hablemos →</a></div>`;
 
-$('#sBlocks').innerHTML = S.blocks.map((b, bi) => `
-  <section class="section sv-block${bi % 2 ? ' section--band' : ''}" id="${b.id}">
-    <div class="wrap">
-      <div class="sv-intro reveal">
-        <div><span class="eyebrow">${b.eyebrow}</span><h2>${b.name}</h2></div>
-        <p>${b.text}</p>
-      </div>
-      ${b.stat ? `<div class="sv-stat reveal"><div><b class="sv-stat__n">${b.stat.n}</b><p>${b.stat.label}</p></div>${donut(b.stat.parts)}</div>` : ''}
-      ${b.feature ? feature(b.feature) : ''}
-      ${b.pillars ? flow(b.pillars) : ''}
+// Panel completo de un servicio (Medir y Adaptarse). Mitigar tiene su propio armado en index.html
+// (antes y después, Para clientes / Para inversores) y acá solo se le suman las cifras y los casos.
+function renderService(key) {
+  const S = SERVICIOS[key], pane = $(`[data-svc-pane="${key}"]`); if (!S || !pane) return;
+  if (key === 'mitigar') {
+    const b = S.blocks[0], fill = $('[data-svc-fill="mitigar"]', pane), cs = $('[data-svc-cases="mitigar"]', pane);
+    if (fill) fill.innerHTML = (b.stat ? `<div class="sv-stat"><div><b class="sv-stat__n">${b.stat.n}</b><p>${b.stat.label}</p></div>${donut(b.stat.parts)}</div>` : '') + (b.feature ? feature(b.feature) : '');
+    if (cs) cs.innerHTML = cases(S) + cta(S);
+    return;
+  }
+  pane.innerHTML = S.blocks.map((b) => `
+    <div class="sv-intro svx__intro">
+      <div><span class="eyebrow">${b.eyebrow}</span><h3 class="svx__title">${b.name}</h3></div>
+      <p>${b.text}</p>
     </div>
-  </section>
-  ${facts(b)}
-  <section class="section sv-block sv-block--steps">
-    <div class="wrap">${timeline(b)}</div>
-  </section>
-  ${b.app ? showcase(b.app) : ''}`).join('');
+    ${facts(S)}
+    ${b.stat ? `<div class="sv-stat"><div><b class="sv-stat__n">${b.stat.n}</b><p>${b.stat.label}</p></div>${donut(b.stat.parts)}</div>` : ''}
+    ${b.feature ? feature(b.feature) : ''}
+    ${b.pillars ? flow(b.pillars) : ''}
+    ${timeline(b)}
+    ${b.app ? showcase(b.app) : ''}`).join('') + cases(S) + cta(S);
+}
 
-// pestañas (producto / corporativa)
-$$('.sv-tabs').forEach((tabs) => tabs.addEventListener('click', (e) => {
-  const t = e.target.closest('.sv-tab'); if (!t) return;
-  const sec = tabs.closest('.sv-block');
-  $$('.sv-tab', tabs).forEach((x) => { const on = x === t; x.classList.toggle('is-on', on); x.setAttribute('aria-selected', on); });
-  $$('.tl[data-pane]', sec).forEach((tl) => { tl.hidden = tl.dataset.pane !== t.dataset.tab; tl.classList.remove('is-built'); });
-  railTick();
-}));
-// la línea se llena y cada paso se enciende cuando llega a la altura de la vista
+// Para clientes (Mitigar): el ciclo completo de un proyecto de carbono, en 7 etapas que agrupan los 14 pasos
+// de "Desarrollo del proyecto" y "Monitoreo y verificación". Al pasar el mouse (o tocar) una etapa se ven sus pasos.
+const ETAPAS = [
+  ['Factibilidad', ['Estudio de factibilidad']],
+  ['Línea de base y diseño', ['Línea de base', 'No permanencia', 'Análisis de fugas', 'Plan de monitoreo']],
+  ['Actores y salvaguardas', ['Consulta a actores', 'Salvaguardas']],
+  ['Documento de proyecto', ['Preparación del PD']],
+  ['Validación y registro', ['Validación', 'Registro del proyecto']],
+  ['Monitoreo y verificación', ['Monitoreo', 'Informe de monitoreo', 'Verificación']],
+  ['Emisión de VCUs', ['Emisión de créditos']],
+];
+function renderCycle() {
+  const box = $('#cycle'); if (!box) return;
+  const all = SERVICIOS.mitigar.blocks[0].groups.flatMap((g) => g.steps), byName = Object.fromEntries(all.map((s) => [s[0], s[1]]));
+  const nodes = ETAPAS.map((e, i) => `<button type="button" class="cycle__node" style="--a:${(360 / ETAPAS.length) * i}deg" data-i="${i}" aria-label="${e[0]}">${i + 1}</button>`).join('');
+  const list = ETAPAS.map((e, i) => `<li class="cycle__st" data-i="${i}">
+      <button type="button" class="cycle__head" aria-expanded="false"><span class="cycle__n">${i + 1}</span><b>${e[0]}</b></button>
+      <ul class="cycle__steps">${e[1].map((n) => `<li><b>${n}</b><span>${byName[n] || ''}</span></li>`).join('')}</ul>
+    </li>`).join('');
+  box.innerHTML = `<div class="cycle__ring">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><circle class="cycle__track" cx="50" cy="50" r="40"/><circle class="cycle__prog" cx="50" cy="50" r="40" pathLength="${ETAPAS.length}"/></svg>
+      ${nodes}
+      <div class="cycle__core"><b>Ciclo completo</b><small>7 etapas · 14 pasos</small></div>
+    </div>
+    <div class="cycle__side"><p class="cycle__hint">Tocá o pasá el mouse por cada etapa para ver sus pasos.</p><ol class="cycle__list">${list}</ol></div>`;
+  let cur = -1, touched = false, timer = 0;
+  const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function show(i) {
+    cur = (i + ETAPAS.length) % ETAPAS.length;
+    $$('.cycle__node', box).forEach((n, j) => { n.classList.toggle('is-on', j === cur); n.classList.toggle('is-done', j < cur); });
+    $$('.cycle__st', box).forEach((s, j) => { s.classList.toggle('is-on', j === cur); $('.cycle__head', s).setAttribute('aria-expanded', j === cur); });
+    box.style.setProperty('--done', cur + 1);
+  }
+  const pick = (e) => { const t = e.target.closest('[data-i]'); if (!t || !box.contains(t)) return; touched = true; clearTimeout(timer); show(+t.dataset.i); };
+  box.addEventListener('mouseover', pick); box.addEventListener('click', pick); box.addEventListener('focusin', pick);
+  // mientras nadie la toca, la rueda avanza sola cuando está a la vista
+  const tick = () => { if (touched || calm) return; show(cur + 1); timer = setTimeout(tick, 3200); };
+  show(0);
+  if (!calm && 'IntersectionObserver' in window) new IntersectionObserver((es) => { if (es[0].isIntersecting && !timer && !touched) timer = setTimeout(tick, 2400); }, { threshold: 0.4 }).observe(box);
+}
+
+// la línea de pasos se llena y cada paso se enciende cuando llega a la altura de la vista (solo en el panel abierto)
 const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
 function railTick() {
   const H = innerHeight, mark = H * 0.62;
   $$('.tl:not([hidden])').forEach((tl) => {
-    const r = tl.getBoundingClientRect(); if (r.bottom < -200 || r.top > H + 200) return;
+    if (!tl.offsetParent) return;
+    const r = tl.getBoundingClientRect(); if (r.bottom < -200 || r.top > H + 200 || !r.height) return;
     tl.classList.add('is-built');
     const p = calm ? 1 : Math.min(1, Math.max(0, (mark - r.top) / r.height));
     tl.style.setProperty('--p', p.toFixed(3));
@@ -236,18 +268,19 @@ function railTick() {
 }
 let railT = false;
 addEventListener('scroll', () => { if (!railT) { railT = true; requestAnimationFrame(() => { railT = false; railTick(); }); } }, { passive: true });
-addEventListener('resize', railTick); railTick();
+addEventListener('resize', railTick);
+// pestañas (huella de producto / corporativa)
+document.addEventListener('click', (e) => {
+  const t = e.target.closest('.sv-tab'); if (!t) return;
+  const tabs = t.closest('.sv-tabs'), pane = t.closest('[data-svc-pane]');
+  $$('.sv-tab', tabs).forEach((x) => { const on = x === t; x.classList.toggle('is-on', on); x.setAttribute('aria-selected', on); });
+  $$('.tl[data-pane]', pane).forEach((tl) => { tl.hidden = tl.dataset.pane !== t.dataset.tab; tl.classList.remove('is-built'); });
+  railTick();
+});
 
-// casos publicados de este servicio
-const cs = (typeof CASES !== 'undefined' ? CASES : []).filter((c) => S.cases.includes(c.svc)).slice(0, 6);
-if (cs.length) {
-  $('#sCasesWrap').hidden = false;
-  $('#sCases').innerHTML = cs.map((c) => { const src = typeof tallOf === 'function' ? tallOf(c) : (c.hero || c.img); return `<a class="sv-case" href="proyecto.html?p=${c.id}"><span class="sv-case__img">${src ? `<img src="${src}" alt="" loading="lazy">` : ''}</span><span class="sv-case__body"><small>${c.client}</small><b>${c.title}</b></span></a>`; }).join('');
-}
-$('#sCta').href = `mailto:contacto@coraliae.com?subject=${encodeURIComponent('Consulta por ' + S.title)}`;
-
-// Aparición al scrollear
-const io = 'IntersectionObserver' in window ? new IntersectionObserver((es) => es.forEach((e) => {
-  if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
-}), { threshold: 0.12 }) : null;
-$$('.reveal').forEach((el) => (io ? io.observe(el) : el.classList.add('is-visible')));
+Object.keys(SERVICIOS).forEach(renderService);
+renderCycle();
+// main.js abre y cierra los paneles; acá se exponen los nombres y el refresco de la línea de pasos
+window.SERVICIOS_INFO = Object.fromEntries(Object.entries(SERVICIOS).map(([k, S]) => [k, { title: S.title, sub: S.sub }]));
+window.svcRailTick = railTick;
+})();

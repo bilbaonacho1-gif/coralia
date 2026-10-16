@@ -949,7 +949,19 @@
 "¿Qué tan expuestos están tus activos a las amenazas climáticas?": "Wie stark sind Ihre Standorte Klimagefahren ausgesetzt?",
 "Nivel de riesgo por amenaza, escenario y horizonte de tiempo.": "Risikoniveau nach Gefahr, Szenario und Zeithorizont.",
 "¿Querés el panorama completo,<br>con tus datos reales?": "Das ganze Bild,<br>mit Ihren echten Daten?",
-"Descubrí: evaluaciones rápidas de Coralia Environmental →": "Entdecken: Schnellanalysen von Coralia Environmental →"
+"Descubrí: evaluaciones rápidas de Coralia Environmental →": "Entdecken: Schnellanalysen von Coralia Environmental →",
+"Mitigar · Mercados de carbono": "Mindern · CO₂-Märkte",
+"¿Querés desarrollar tu <em>propio proyecto de carbono?</em>": "Möchten Sie Ihr <em>eigenes CO₂-Projekt entwickeln?</em>",
+"Llevamos proyectos por cada etapa, desde el primer estudio de factibilidad hasta la emisión de VCUs. Contanos sobre tu tierra o tu proyecto y te acompañamos en todo el ciclo.": "Wir haben Projekte durch jeden Schritt begleitet, von der ersten Machbarkeitsprüfung bis zur Ausgabe der VCUs. Erzählen Sie uns von Ihrer Fläche oder Ihrem Projekt, und wir begleiten Sie durch den gesamten Zyklus.",
+"Ciclo completo": "Gesamter Zyklus",
+"7 etapas · 14 pasos": "7 Phasen · 14 Schritte",
+"Tocá o pasá el mouse por cada etapa para ver sus pasos.": "Tippen Sie auf eine Phase oder fahren Sie darüber, um ihre Schritte zu sehen.",
+"Factibilidad": "Machbarkeit",
+"Línea de base y diseño": "Baseline und Design",
+"Actores y salvaguardas": "Stakeholder und Schutzmaßnahmen",
+"Documento de proyecto": "Projektdokument",
+"Validación y registro": "Validierung und Registrierung",
+"Emisión de VCUs": "Ausgabe der VCUs"
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 Auftrag'],
