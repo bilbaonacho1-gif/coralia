@@ -393,10 +393,13 @@ const FLAGS = {
 };
 const STD_LOGOS = { vcs: ['assets/estandares/vcs.png', 'Verified Carbon Standard'], ccb: ['assets/estandares/ccb.png', 'Climate, Community & Biodiversity Standards'],
   biocarbon: ['assets/estandares/biocarbon.png', 'BioCarbon Standard'], puro: ['assets/estandares/puro.png', 'Puro.earth'] };
+const STD_ICONS = { vcs: 'assets/estandares/vcs-icono.png', ccb: 'assets/estandares/ccb-icono.png' };
 const TBC = 'A confirmar';
 function pipeCard(p) {
   const c = p.card || {}, val = (v) => `<b class="pipc__v${v === TBC ? ' is-tbc' : ''}">${v}</b>`;
-  const std = (c.std || []).map((k) => STD_LOGOS[k] ? `<img src="${STD_LOGOS[k][0]}" alt="${STD_LOGOS[k][1]}" loading="lazy">` : `<span class="pipc__stdtxt" translate="no">${k}</span>`).join('<i></i>');
+  // un solo estándar: logo completo (ícono + nombre); dos o más: solo los íconos, para que entren al lado de la metodología
+  const solo = (c.std || []).length < 2;
+  const std = (c.std || []).map((k) => STD_LOGOS[k] ? `<img src="${!solo && STD_ICONS[k] ? STD_ICONS[k] : STD_LOGOS[k][0]}" alt="${STD_LOGOS[k][1]}" title="${STD_LOGOS[k][1]}" loading="lazy">` : `<span class="pipc__stdtxt" translate="no">${k}</span>`).join('<i></i>');
   return `<a class="pipc" href="pipeline.html?p=${p.id}" style="--tc:${p.color || 'var(--forest)'}">
   <span class="pipc__media">${p.img ? `<img src="${p.img}" alt="" loading="lazy">` : '<span class="pipc__ph">Foto a cargar</span>'}<span class="pipc__type">${p.type}</span></span>
   <span class="pipc__body">
@@ -404,8 +407,7 @@ function pipeCard(p) {
     <b class="pipc__title">${p.name}</b>
     <span class="pipc__desc${c.desc === 'Descripción a confirmar.' ? ' is-tbc' : ''}">${c.desc || ''}</span>
     <span class="pipc__row"><span><small>${c.a ? c.a[0] : ''}</small>${c.a ? val(c.a[1]) : ''}</span><span class="pipc__r"><small>${c.b ? c.b[0] : ''}</small>${c.b ? val(c.b[1]) : ''}</span></span>
-    <span class="pipc__row pipc__row--std"><small>Estándar</small><span class="pipc__stds">${std}</span></span>
-    <span class="pipc__row pipc__row--meth"><small>${c.meth ? c.meth[0] : ''}</small><b class="pipc__meth${c.meth && c.meth[1] === TBC ? ' is-tbc' : ''}">${c.meth ? c.meth[1] : ''}</b></span>
+    <span class="pipc__row pipc__row--std"><span><small>Estándar</small><span class="pipc__stds${solo ? '' : ' is-icons'}">${std}</span></span><span class="pipc__r"><small>${c.meth ? c.meth[0] : ''}</small><b class="pipc__meth${c.meth && c.meth[1] === TBC ? ' is-tbc' : ''}">${c.meth ? c.meth[1] : ''}</b></span></span>
     <span class="pipc__foot"><span class="pipc__stage">${p.stage}</span><span class="pipc__go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
   </span></a>`;
 }
