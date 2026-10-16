@@ -174,4 +174,7 @@ T = [
 ("Documento de proyecto", "Project document", "Documento de projeto", "Projektdokument"),
 ("Validación y registro", "Validation & registration", "Validação e registro", "Validierung und Registrierung"),
 ("Emisión de VCUs", "VCU issuance", "Emissão de VCUs", "Ausgabe der VCUs"),
+# --- Mitigar: tercer botón con las cifras, ECO2 Misiones y los proyectos
+("Trayectoria", "Track record", "Trajetória", "Erfolgsbilanz"),
+("Proyectos que ya <em>desarrollamos.</em>", "Projects we’ve <em>already developed.</em>", "Projetos que já <em>desenvolvemos.</em>", "Projekte, die wir <em>bereits entwickelt haben.</em>"),
 ]

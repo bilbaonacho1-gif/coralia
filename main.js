@@ -338,9 +338,9 @@ const BA_TYPES = [
     let started = false;
     new IntersectionObserver((es) => { if (es[0].isIntersecting && !started) { started = true; cycle(); } }, { threshold: 0.5 }).observe(ba);
   }
-  // Para clientes / Para inversores: abre su panel debajo (el otro se cierra)
+  // Para clientes / Para inversores / Trayectoria: abre su panel debajo (los otros se cierran)
   $$('.svc__btn').forEach((b) => b.addEventListener('click', () => {
-    const k = b.dataset.panel, panel = $(k === 'clientes' ? '#svcClientes' : '#svcInversores'), open = panel.hidden;
+    const panel = $('#' + b.getAttribute('aria-controls')), open = panel.hidden;
     $$('.svc__panel').forEach((p) => { p.hidden = true; });
     $$('.svc__btn').forEach((x) => x.setAttribute('aria-pressed', 'false'));
     if (open) {

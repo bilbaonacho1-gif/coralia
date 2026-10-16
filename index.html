@@ -134,7 +134,7 @@
         <button type="button" class="app-detail__close" id="svcDetailClose">Cerrar ×</button>
       </div>
       <div class="svx sv sv--medir" data-svc-pane="medir" hidden></div>
-      <!-- Mitigar: qué hacemos, antes y después, cifras y ECO2 Misiones; después Para clientes / Para inversores -->
+      <!-- Mitigar: qué hacemos y el antes y después; abajo, Para clientes / Para inversores / Trayectoria -->
       <div class="svx sv sv--mitigar" data-svc-pane="mitigar" hidden>
         <div class="svc">
           <div class="svc__grid">
@@ -158,11 +158,11 @@
             </div>
           </div>
         </div>
-        <div data-svc-fill="mitigar"></div>
         <div class="svx__who">
           <div class="svc__btns svx__btns" role="group" aria-label="Elegí tu perfil">
             <button type="button" class="btn btn--mint svc__btn" data-panel="clientes" aria-pressed="false" aria-controls="svcClientes">Para clientes</button>
             <button type="button" class="btn btn--ghost-light svc__btn" data-panel="inversores" aria-pressed="false" aria-controls="svcInversores">Para inversores</button>
+            <button type="button" class="btn btn--ghost-light svc__btn" data-panel="trayectoria" aria-pressed="false" aria-controls="svcTrayectoria">Trayectoria</button>
           </div>
         </div>
         <!-- Para clientes: el ciclo completo de un proyecto de carbono (7 etapas, servicio.js arma la rueda) -->
@@ -185,7 +185,15 @@
           <div class="pipe" id="pipeGrid"></div>
           <a class="btn btn--mint" href="pipeline.html">Ver pipeline de proyectos →</a>
         </div>
-        <div data-svc-cases="mitigar"></div>
+        <!-- Trayectoria: el gráfico de toneladas, el proyecto destacado (ECO2 Misiones) y los proyectos de Mitigar (servicio.js) -->
+        <div class="svc__panel" id="svcTrayectoria" hidden>
+          <div class="svc__phead">
+            <span class="eyebrow">Trayectoria</span>
+            <h3>Proyectos que ya <em>desarrollamos.</em></h3>
+          </div>
+          <div data-svc-fill="mitigar"></div>
+          <div data-svc-cases="mitigar"></div>
+        </div>
       </div>
       <div class="svx sv sv--adaptar" data-svc-pane="adaptar" hidden></div>
     </div>

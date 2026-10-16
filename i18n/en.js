@@ -952,7 +952,9 @@
 "Actores y salvaguardas": "Stakeholders & safeguards",
 "Documento de proyecto": "Project document",
 "Validación y registro": "Validation & registration",
-"Emisión de VCUs": "VCU issuance"
+"Emisión de VCUs": "VCU issuance",
+"Trayectoria": "Track record",
+"Proyectos que ya <em>desarrollamos.</em>": "Projects we’ve <em>already developed.</em>"
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 engagement'],

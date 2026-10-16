@@ -878,7 +878,9 @@
 "Actores y salvaguardas": "Partes interessadas e salvaguardas",
 "Documento de proyecto": "Documento de projeto",
 "Validación y registro": "Validação e registro",
-"Emisión de VCUs": "Emissão de VCUs"
+"Emisión de VCUs": "Emissão de VCUs",
+"Trayectoria": "Trajetória",
+"Proyectos que ya <em>desarrollamos.</em>": "Projetos que já <em>desenvolvemos.</em>"
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 trabalho'],

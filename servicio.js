@@ -190,13 +190,13 @@ function cases(S) {
 const cta = (S) => `<div class="svx__cta"><a href="mailto:contacto@coraliae.com?subject=${encodeURIComponent('Consulta por ' + S.title)}" class="btn btn--mint">Hablemos →</a></div>`;
 
 // Panel completo de un servicio (Medir y Adaptarse). Mitigar tiene su propio armado en index.html
-// (antes y después, Para clientes / Para inversores) y acá solo se le suman las cifras y los casos.
+// (antes y después, Para clientes / Para inversores / Trayectoria) y acá se llena Trayectoria: cifras, ECO2 Misiones y casos.
 function renderService(key) {
   const S = SERVICIOS[key], pane = $(`[data-svc-pane="${key}"]`); if (!S || !pane) return;
   if (key === 'mitigar') {
     const b = S.blocks[0], fill = $('[data-svc-fill="mitigar"]', pane), cs = $('[data-svc-cases="mitigar"]', pane);
     if (fill) fill.innerHTML = (b.stat ? `<div class="sv-stat"><div><b class="sv-stat__n">${b.stat.n}</b><p>${b.stat.label}</p></div>${donut(b.stat.parts)}</div>` : '') + (b.feature ? feature(b.feature) : '');
-    if (cs) cs.innerHTML = cases(S) + cta(S);
+    if (cs) cs.innerHTML = cases(S);
     return;
   }
   pane.innerHTML = S.blocks.map((b) => `

@@ -1504,5 +1504,12 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
 .cycle__steps b{font-size:14px;color:var(--ink)}
 #svcClientes > .btn{margin-bottom:6px}
 @media (max-width:1000px){.cycle{grid-template-columns:1fr;gap:26px}.cycle__ring{max-width:320px;margin:0 auto}.svx__facts{grid-template-columns:1fr}}
-@media (max-width:640px){.svx{padding-top:22px}.svx__btns{width:100%}.svx__btns .btn{flex:1;min-width:0}.svx-detail .app-detail__title{font-size:20px}}
+@media (max-width:640px){.svx{padding-top:22px}.svx__btns{width:100%}.svx__btns .btn{flex:1 1 140px;min-width:0}.svx-detail .app-detail__title{font-size:20px}}
 @media (prefers-reduced-motion:reduce){.cycle__prog,.cycle__steps{transition:none}.cycle__ring::before,.cycle__orbit,.cycle__core::after,.cycle__node.is-on::after{animation:none}.cycle__orbit{display:none}}
+#svcTrayectoria .sv-stat{margin-top:4px}
+/* Mitigar: aire entre el antes y después y los tres botones; en el celu las etiquetas del antes y después no se pisan */
+.svx__who{padding:34px 0 10px}
+@media (max-width:640px){
+  .svx__who{padding-top:26px}
+  .ba__label{font-size:10px;letter-spacing:.06em;padding:5px 8px;max-width:46%;white-space:normal;line-height:1.25}
+}

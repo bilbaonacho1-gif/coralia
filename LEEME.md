@@ -83,8 +83,8 @@ así que no dependen de Google Fonts. Se declaran al principio de styles.css (@f
 - Tanda 5 · servicios desplegables (punto 19, opción A): las carpetas Medir, Mitigar y Adaptarse abren su panel abajo
   (#svcDetail en index.html). El contenido sale de servicio.js (SERVICIOS): texto, datos destacados, cifras, caso
   destacado, cómo lo hacemos, plataforma y casos. Mitigar lleva "Restauramos ecosistemas naturales.", el antes y
-  después, el +13,2M y ECO2 Misiones, y los botones Para clientes (rueda del ciclo completo: 7 etapas con los 14 pasos,
-  ETAPAS en servicio.js) y Para inversores (pipeline). Carbon Markets Hub volvió al paso a paso del diagnóstico.
+  después, y abajo tres botones: Para clientes (rueda del ciclo completo: 7 etapas con los 14 pasos, ETAPAS en
+  servicio.js), Para inversores (pipeline) y Trayectoria (el +13,2M con su gráfico, ECO2 Misiones y los proyectos). Carbon Markets Hub volvió al paso a paso del diagnóstico.
   Links directos: index.html#servicio-medir | #servicio-mitigar | #servicio-adaptar. servicio.html?s=... redirige ahí.
 - Quedan para las próximas tandas: logos faltantes (13; coraliae.com no se puede abrir desde la sesión), cards del pipeline (20, 23),
   servicios desplegables (19), equipo (15) y notas de casos (11, 12, 24).

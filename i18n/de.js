@@ -961,7 +961,9 @@
 "Actores y salvaguardas": "Stakeholder und Schutzmaßnahmen",
 "Documento de proyecto": "Projektdokument",
 "Validación y registro": "Validierung und Registrierung",
-"Emisión de VCUs": "Ausgabe der VCUs"
+"Emisión de VCUs": "Ausgabe der VCUs",
+"Trayectoria": "Erfolgsbilanz",
+"Proyectos que ya <em>desarrollamos.</em>": "Projekte, die wir <em>bereits entwickelt haben.</em>"
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 Auftrag'],
