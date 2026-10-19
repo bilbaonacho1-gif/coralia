@@ -8,7 +8,7 @@ document.querySelectorAll('[data-login]').forEach((a) => { a.href = LOGIN_URL; }
 window.APP_LINKS = {
   footprint: 'https://carbonfootprint.coraliae.com/login',
   markets: null,
-  risk: null,
+  risk: 'https://climaterisk.coraliae.com/login',
 };
 
 // Coralia — menú del encabezado en celular y tablet (debajo de 1000 px)

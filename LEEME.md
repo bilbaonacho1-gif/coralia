@@ -225,7 +225,8 @@ Debajo de 1000 px el menú se abre con el botón ☰; se cierra al tocar un link
   separada "Cómo funcionan", las mini demos de la Home (ahora en discover.html) y la línea de tiempo.
 
 ## Pendientes (buscá TODO)
-- Links de Carbon Markets Hub y Climate Risk: completarlos en APP_LINKS (nav.js). Hoy dicen "Próximamente".
+- Link de Carbon Markets Hub: completarlo en APP_LINKS (nav.js). Hoy dice "Próximamente". Climate Risk ya lleva a
+  https://climaterisk.coraliae.com/login (19/10/2026), y el «Probá las plataformas →» del centro de la rueda lleva a Iniciar sesión.
 - Faltan páginas que existen en la web actual: Mitigación, Adaptación, Equipo completo,
   "What's Climate Change" y Política de privacidad.
 - Revisar con el equipo técnico los rangos ilustrativos de las mini demos y simuladores
