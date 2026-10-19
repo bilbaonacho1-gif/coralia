@@ -267,6 +267,20 @@ Revisado el 19/10/2026: 228 archivos, 13,5 MB en total (contando LEEME y i18n/fu
   Mitigación. Dato actualizado: 10,1M VCUs verificados por Verra para 2017–2022 (antes decía 10M+).
 - Medir: la foto de la carpeta y de la página es la de Ruuts, el ganado entre los árboles (assets/proyectos/ruuts-1.jpg).
 
+### Tanda de fotos de Nico (19/10/2026)
+- Antes y después de Mitigar (assets/servicios/<tipo>-antes|despues.webp, recortadas a 16:10, 1280 px). Rótulos en BA_TYPES (main.js):
+  - REDD+: aérea con desmonte / monte entero → «Escenario sin proyecto» / «Con proyecto: deforestación evitada».
+  - Blue Carbon: par «Original» de la Fundación CI Atabey → «Manglar degradado» / «Manglar sano». OJO: en los pares de Atabey
+    las dos fotos son de sitios distintos y el cielo está igualado; nunca presentarlas como el mismo lugar antes y después.
+    Los otros tres pares (Laguna, Canal, Bosque) y los fundidos quedan para redes; los videos de barrido no se usan (pesan mucho).
+  - ARR: bosque quemado / bosque con helechos → «Bosque degradado» / «Bosque restaurado».
+- Galerías del pipeline (pipeline.html?p=...): ReMonte suma remonte-6 a 12 (campo, muestreo, pastizal y el par de suelo pelado /
+  pastizal con el marco de muestreo; se cortó la marca del teléfono de abajo), Chubut suma chubut-4 a 6 (fotos crudas del kit) y
+  Dominican Blue Carbon suma dbcx-4 a 6 (Atabey).
+- Misiones (proyecto.html?p=misiones): seis fotos crudas del kit (niebla, atardecer, río, mono, coatí y puma).
+- Los kits de comunicación (manifiesto, contraste, cifra y equipo, en ES y EN) son piezas para redes y no van a la web.
+  El de Chubut dice «7.240 ha en restauración, dentro de 42.000 ha afectadas», distinto de las 33.170 ha elegibles de la card.
+
 ## Celu: peso y botones (octubre 2026)
 - Fotos del inicio con versión chica para el celu (mismo nombre con -900 o -800 al final, .webp): las de las
   carpetas de servicios, los fondos de las apps y el paisaje del contacto. En index.html van con srcset, así el

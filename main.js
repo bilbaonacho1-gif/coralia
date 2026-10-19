@@ -306,10 +306,12 @@ $('#appDetailClose').addEventListener('click', closeApp);
    TODO: fotos reales (las pasa Coralia). Mientras tanto se ven fondos de color con el texto de la foto que falta.
    Para sumar las fotos: guardarlas como assets/servicios/<k>-antes.webp y <k>-despues.webp y poner foto: true. */
 const BA_TYPES = [
-  // fotos de los proyectos (assets/servicios/<k>-antes|despues.webp): DBCX (República Dominicana), Chubut y Misiones
-  { k: 'blue-carbon', foto: true, name: 'Blue Carbon', antes: 'Manglar muerto en pie', despues: 'Manglar sano' },
-  { k: 'arr', foto: true, name: 'ARR', antes: 'Bosque quemado', despues: 'Bosque nativo no afectado' },
-  { k: 'redd', foto: true, name: 'REDD+', antes: 'Extracción de madera', despues: 'Selva en pie' },
+  // fotos que eligió Nico (oct-2026), recortadas a 16:10 en assets/servicios/<k>-antes|despues.webp.
+  // Blue Carbon son de la Fundación CI Atabey: las dos fotos son de sitios distintos con el cielo igualado, así que
+  // se rotulan "degradado / sano" y nunca como el mismo lugar antes y después de restaurar.
+  { k: 'blue-carbon', foto: true, name: 'Blue Carbon', antes: 'Manglar degradado', despues: 'Manglar sano' },
+  { k: 'arr', foto: true, name: 'ARR', antes: 'Bosque degradado', despues: 'Bosque restaurado' },
+  { k: 'redd', foto: true, name: 'REDD+', antes: 'Escenario sin proyecto', despues: 'Con proyecto: deforestación evitada' },
 ];
 (() => {
   const ba = $('#ba'); if (!ba) return;
