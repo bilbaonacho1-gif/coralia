@@ -279,6 +279,10 @@ Revisado el 19/10/2026: 228 archivos, 13,5 MB en total (contando LEEME y i18n/fu
   pastizal con el marco de muestreo; se cortó la marca del teléfono de abajo), Chubut suma chubut-4 a 6 (fotos crudas del kit) y
   Dominican Blue Carbon suma dbcx-4 a 6 (Atabey).
 - Misiones (proyecto.html?p=misiones): seis fotos crudas del kit (niebla, atardecer, río, mono, coatí y puma).
+- Segunda pasada (19/10/2026), con todo lo que mandó Nico sin repetir: ReMonte suma remonte-13 a 20 (paisaje nublado, equipo,
+  monte, pastizal, recorrida y corrales), Chubut suma chubut-7 a 14 y chubut-mapa (fotos crudas del kit; varias son chicas, de
+  ~600 px, y se guardaron sin agrandar), DBCX suma dbcx-7 a 9 (Atabey: laguna degradada, tocones y canal sano, sueltas, sin los
+  fundidos) y Misiones suma siete (aéreas, interior de la selva, extracción de madera y el trabajo con la Provincia).
 - Los kits de comunicación (manifiesto, contraste, cifra y equipo, en ES y EN) son piezas para redes y no van a la web.
   El de Chubut dice «7.240 ha en restauración, dentro de 42.000 ha afectadas», distinto de las 33.170 ha elegibles de la card.
 
