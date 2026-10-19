@@ -1700,3 +1700,39 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
 :root[data-theme="dark"] .hero__frame::after{display:none}
 :root[data-theme="dark"] .hero__shade::after{content:"";position:absolute;left:0;right:0;bottom:0;height:38%;background:linear-gradient(0deg,var(--bg),rgba(12,23,18,0));pointer-events:none}
 :root[data-theme="dark"] #plataforma::before{content:"";position:absolute;left:0;right:0;bottom:100%;height:220px;background:linear-gradient(180deg,rgba(12,23,18,0),var(--bg));pointer-events:none}
+/* Iniciar sesión: la tarjeta con las tres plataformas, más ancha y siempre entera en una pantalla
+   (los tamaños verticales se achican con el alto de la ventana) */
+.login__in{grid-template-columns:minmax(0,1fr) minmax(0,580px);gap:clamp(32px,4vw,64px);padding-top:calc(76px + clamp(12px,3vh,40px));padding-bottom:clamp(12px,3vh,40px)}
+.login__card--apps{padding:clamp(18px,3.4vh,40px) clamp(20px,2.6vw,40px)}
+.login__card--apps h2{font-size:clamp(24px,3.8vh,38px)}
+.login__card--apps .login__sub{margin:clamp(2px,.8vh,10px) 0 clamp(10px,2.2vh,26px)}
+.login__card--apps .pick{gap:clamp(7px,1.3vh,12px)}
+.login__card--apps .pick__app{padding:clamp(9px,1.5vh,16px) clamp(14px,1.6vw,20px)}
+.login__card--apps .pick__how{margin-top:clamp(1px,.4vh,5px)}
+.login__card--apps .login__foot{margin-top:clamp(10px,2.2vh,24px);padding-top:clamp(10px,2vh,22px)}
+@media (max-height:700px) and (min-width:901px){
+  .login__card--apps .pick__ic{width:46px;height:46px}.login__card--apps .pick__ic img{width:30px;height:30px}
+  .login__card--apps .pick__app{grid-template-columns:46px 1fr auto}
+  .login__intro h1{font-size:clamp(36px,4.4vw,56px)}
+  .login__in{padding-top:calc(76px + 8px);padding-bottom:8px}
+  .login__card--apps .pick__how{font-size:12px;line-height:1.35}
+}
+/* celular y tablet: primero la tarjeta (es lo que se viene a buscar), el texto de bienvenida abajo */
+@media (max-width:900px){
+  .login__in{grid-template-columns:minmax(0,1fr);padding-top:calc(76px + 12px);padding-bottom:28px;gap:28px}
+  .login__card--apps{order:-1}
+  .login__card--apps h2{font-size:clamp(24px,3.6vh,32px)}
+}
+@media (max-width:640px){
+  .login__card--apps{padding:clamp(16px,2.6vh,26px) 16px}
+  .login__card--apps .pick__app{grid-template-columns:42px 1fr auto;gap:12px;padding:clamp(9px,1.4vh,14px) 12px}
+  .login__card--apps .pick__ic{width:42px;height:42px}.login__card--apps .pick__ic img{width:28px;height:28px}
+  .login__card--apps .pick__txt b{font-size:16px}
+  .login__card--apps .pick__txt span{font-size:13.5px}
+  .login__card--apps .pick__go{width:36px;height:36px}
+  .login__card--apps .login__foot{font-size:13.5px}
+}
+@media (max-width:640px) and (max-height:700px){
+  .login__card--apps .pick__how{display:none}
+  .login__card--apps .pick__txt span{font-size:13px;line-height:1.35}
+}
