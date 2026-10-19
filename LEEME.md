@@ -255,6 +255,13 @@ Cumple los límites de Wix Headless: sin videos, cada archivo pesa menos de 3 MB
 Revisado el 19/10/2026: 228 archivos, 13,5 MB en total (contando LEEME y i18n/fuente), el más pesado 0,48 MB
 (assets/cta.webp). Si se agregan fotos, conviene pasarlas a .webp y que no superen ~500 KB.
 
+## Vercel (prueba, octubre 2026)
+- Proyecto "coralia" en Vercel, conectado al repo de GitHub: https://coralia-sooty.vercel.app
+- Es una página estática: preset "Other", directorio raíz ./, sin comando de compilación ni variables.
+- Rama de producción: revision-5 (Ajustes → Entornos → Production → Seguimiento de sucursales). Cada vez que se
+  sube algo a esa rama, Vercel actualiza la web sola. Las otras ramas arman una vista previa con su propio link.
+- No toca la web de Wix: queda en el link de vercel.app hasta que se conecte un dominio.
+
 ## Fotos de los proyectos (kits de comunicación, octubre 2026)
 - Misiones (REDD+): fotos del kit en la galería del caso (proyecto.html?p=misiones) y en el proyecto destacado de
   Mitigación. Dato actualizado: 10,1M VCUs verificados por Verra para 2017–2022 (antes decía 10M+).
