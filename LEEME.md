@@ -211,8 +211,9 @@ Transparente sobre la foto de portada y claro al bajar (el logo cambia a la vers
 Debajo de 1000 px el menú se abre con el botón ☰; se cierra al tocar un link, afuera o con Escape.
 
 ## Imágenes
-- Ícono de la pestaña: favicon.ico y apple-touch-icon.png en la raíz y assets/icono/icon-192|512.png. Es la flecha lima de
-  Coralia sobre verde oscuro, el mismo de la plataforma de huella; va en el <head> de cada página, debajo del <title>.
+- Ícono de la pestaña: favicon.ico y apple-touch-icon.png en la raíz y assets/icono/icon-192|512.png. Es la mariposa del logo
+  original (assets/deco/mariposa.svg, sin el texto «Coralia Environmental»), sobre fondo transparente; en el celular
+  (apple-touch-icon) va sobre blanco. Está en el <head> de cada página, debajo del <title>.
 - assets/apps/: pantallas de las tres plataformas (de los videos de demo del deck).
 - assets/marca/: sello Green Cross, ratings Sylvera y paisaje del río (del deck institucional).
 - assets/logos/: 34 logos de clientes y socios (del deck).
