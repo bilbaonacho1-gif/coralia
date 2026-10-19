@@ -399,9 +399,9 @@ function pipeCard(p) {
   const c = p.card || {}, val = (v) => `<b class="pipc__v${v === TBC ? ' is-tbc' : ''}">${v}</b>`;
   // un solo estándar: logo completo (ícono + nombre); dos o más: solo los íconos, para que entren al lado de la metodología
   const solo = (c.std || []).length < 2;
-  const std = (c.std || []).map((k) => STD_LOGOS[k] ? `<img src="${!solo && STD_ICONS[k] ? STD_ICONS[k] : STD_LOGOS[k][0]}" alt="${STD_LOGOS[k][1]}" title="${STD_LOGOS[k][1]}" loading="lazy">` : `<span class="pipc__stdtxt" translate="no">${k}</span>`).join('<i></i>');
+  const std = (c.std || []).map((k) => STD_LOGOS[k] ? `<img src="${!solo && STD_ICONS[k] ? STD_ICONS[k] : STD_LOGOS[k][0]}" alt="${STD_LOGOS[k][1]}" title="${STD_LOGOS[k][1]}" loading="lazy" decoding="async">` : `<span class="pipc__stdtxt" translate="no">${k}</span>`).join('<i></i>');
   return `<a class="pipc" href="pipeline.html?p=${p.id}" style="--tc:${p.color || 'var(--forest)'}">
-  <span class="pipc__media">${p.img ? `<img src="${p.img}" alt="" loading="lazy">` : '<span class="pipc__ph">Foto a cargar</span>'}<span class="pipc__type">${p.type}</span></span>
+  <span class="pipc__media">${p.img ? `<img src="${p.img}" alt="" loading="lazy" decoding="async">` : '<span class="pipc__ph">Foto a cargar</span>'}<span class="pipc__type">${p.type}</span></span>
   <span class="pipc__body">
     <span class="pipc__country">${FLAGS[p.flag] || ''}<span>${p.country || ''}</span></span>
     <b class="pipc__title">${p.name}</b>

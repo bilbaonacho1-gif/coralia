@@ -1736,3 +1736,20 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
   .login__card--apps .pick__how{display:none}
   .login__card--apps .pick__txt span{font-size:13px;line-height:1.35}
 }
+
+/* ================= Celu fluido (octubre 2026) ================= */
+/* las animaciones que se repiten se pausan en las secciones que no se ven (la clase la pone nav.js) */
+.anim-off,.anim-off *,.anim-off *::before,.anim-off *::after{animation-play-state:paused!important}
+/* en pantallas táctiles chicas, sin desenfoque detrás de las cosas (es lo más pesado de dibujar al scrollear):
+   el fondo pasa a ser casi sólido y se ve prácticamente igual */
+@media (max-width:760px),(pointer:coarse) and (max-width:1024px){
+  .header.is-scrolled{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(243,244,236,.97)}
+  .page-login .header.is-scrolled{background:rgba(10,22,16,.96)}
+  .ui-card{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(251,251,247,.96)}
+  .btn--glass{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(255,255,255,.2)}
+  .d-facts div{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(10,22,16,.45)}
+  .login__apps li{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(10,22,16,.5)}
+  .login__card--apps{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(10,24,18,.86)}
+  :root[data-theme="dark"] .header.is-scrolled{background:rgba(12,23,18,.97)}
+  :root[data-theme="dark"] .ui-card{background:rgba(22,38,30,.96)}
+}

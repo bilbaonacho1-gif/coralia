@@ -31,9 +31,22 @@ window.APP_LINKS = {
   const header = document.querySelector('.header'); if (!header) return;
   // En la Home el fondo claro aparece recién después de que se abre la mariposa (.opening__run)
   const run = document.querySelector('.opening__run');
-  const onScroll = () => header.classList.toggle('is-scrolled', scrollY > (run ? run.offsetHeight : 0) + 40);
+  // el alto se mide una vez (y de nuevo si cambia el tamaño), no en cada movimiento del scroll
+  let edge = 0;
+  const measure = () => { edge = (run ? run.offsetHeight : 0) + 40; onScroll(); };
+  let was = null;
+  const onScroll = () => { const on = scrollY > edge; if (on !== was) { was = on; header.classList.toggle('is-scrolled', on); } };
   addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  addEventListener('resize', measure);
+  addEventListener('load', measure);
+  measure();
+})();
+
+// Animaciones que se repiten: se pausan en las secciones que no están en pantalla (no gastan batería ni traban el scroll)
+(() => {
+  if (!('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver((es) => es.forEach((e) => e.target.classList.toggle('anim-off', !e.isIntersecting)), { rootMargin: '200px 0px' });
+  document.querySelectorAll('main > section, body > section, footer').forEach((s) => io.observe(s));
 })();
 
 // Selector de idioma (los cambios de texto los hace i18n.js)

@@ -44,10 +44,13 @@
     const heads = [];
 
     const small = () => W < 640;
+    let fontOk = false; const widths = new Map();
+    if (document.fonts) document.fonts.ready.then(() => { fontOk = false; }); // cuando llega Figtree, se vuelve a fijar
     function size() {
-      const dpr = Math.min(devicePixelRatio || 1, small() ? 1.75 : 2);
+      const dpr = Math.min(devicePixelRatio || 1, small() ? 1.5 : 2);
       W = box.clientWidth; H = box.clientHeight;
-      cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+      proj.precision(small() ? 1.6 : 0.7); // en celu, menos detalle en las costas: no se nota y dibuja mucho más rápido
+      cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); fontOk = false; // al cambiar el tamaño, el canvas olvida la letra
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       draw();
     }
@@ -127,7 +130,8 @@
         }
         ctx.beginPath(); ctx.arc(tx, ty, on ? 6 : n > 1 ? 4.5 : 3.5, 0, Math.PI * 2);
         ctx.fillStyle = on ? `rgba(18,38,30,${a})` : `rgba(79,127,42,${a})`;
-        ctx.shadowColor = on ? 'rgba(200,240,74,.9)' : 'rgba(79,127,42,.5)'; ctx.shadowBlur = on ? 18 : 10; ctx.fill(); ctx.shadowBlur = 0;
+        if (on || !small()) { ctx.shadowColor = on ? 'rgba(200,240,74,.9)' : 'rgba(79,127,42,.5)'; ctx.shadowBlur = on ? 18 : 10; }
+        ctx.fill(); ctx.shadowBlur = 0; // en celu solo la activa lleva resplandor (es lo más caro de dibujar en canvas)
         heads[i] = { x: tx, y: ty, bx: px, by: py };
       });
       let label = null;
@@ -139,8 +143,11 @@
     function tag({ i, x, y }) {
       const n = nWork[i], T = (window.I18N && I18N.t) || ((x) => x);
       const txt = `${T(COUNTRIES[i][0])} · ${T(n >= 70 ? '70+ trabajos' : `${n} ${n === 1 ? 'trabajo' : 'trabajos'}`)}`;
-      ctx.font = '600 12px Figtree, system-ui, sans-serif';
-      const w = ctx.measureText(txt).width + 18, h = 24;
+      // la letra se fija una sola vez (cambiarla en cada cuadro hace recalcular la página entera)
+      if (!fontOk) { ctx.font = '600 12px Figtree, system-ui, sans-serif'; fontOk = true; widths.clear(); }
+      // el ancho de cada texto se mide una vez y se guarda (medirlo en cada cuadro también recalcula la página)
+      if (!widths.has(txt)) widths.set(txt, ctx.measureText(txt).width);
+      const w = widths.get(txt) + 18, h = 24;
       let lx = Math.max(8, Math.min(W - w - 8, x - w / 2)), ly = y - h - 12;
       if (ly < 8) ly = y + 14;
       ctx.beginPath(); ctx.roundRect ? ctx.roundRect(lx, ly, w, h, 7) : ctx.rect(lx, ly, w, h);
@@ -150,12 +157,12 @@
     }
 
     // Animación: solo corre mientras el globo está en pantalla
-    let raf = 0, visible = false;
+    let raf = 0, visible = false, drawnWait = false, odd = false;
     function tick() {
       raf = 0;
       if (!visible || document.hidden) return;
       const now = performance.now(), idle = now - lastTouch > 5000;
-      if (introWait) { draw(); raf = requestAnimationFrame(tick); return; } // quieto y lejos hasta que se ve
+      if (introWait) { if (!drawnWait) { draw(); drawnWait = true; } raf = requestAnimationFrame(tick); return; } // quieto y lejos hasta que se ve (se dibuja una vez)
       if (introT0) {
         const t = Math.min(1, (now - introT0) / 2600), e = easeOut(t);
         zoom = 0.16 + (1 - 0.16) * easeOut(Math.min(1, t * 1.15));
@@ -170,7 +177,10 @@
         rot[0] += dl * 0.08; rot[1] += dp * 0.08;
         if (Math.abs(dl) < 0.05 && Math.abs(dp) < 0.05) goal = null;
       } else if (Math.abs(vel) > 0.01) { rot[0] += vel; vel *= 0.94; }
-      else if (idle && !calm && zoomGoal === 1) rot[0] += 0.05;
+      else if (idle && !calm && zoomGoal === 1) {
+        // girando solo: en celu se dibuja un cuadro sí y uno no (30 por segundo), se ve igual de suave y gasta la mitad
+        if (small()) { odd = !odd; if (odd) { raf = requestAnimationFrame(tick); return; } rot[0] += 0.1; } else rot[0] += 0.05;
+      }
       zoom += (zoomGoal - zoom) * 0.08;
       draw();
       raf = requestAnimationFrame(tick);

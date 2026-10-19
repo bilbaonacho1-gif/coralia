@@ -296,6 +296,25 @@ Revisado el 19/10/2026: 228 archivos, 13,5 MB en total (contando LEEME y i18n/fu
   abajo; en celus bajitos (667 px de alto o menos) se oculta la línea "Entrás con el email…". Probado de 360×640
   a 1920×1080 en los cuatro idiomas.
 
+## Celu fluido (octubre 2026)
+Medido con un celu simulado (390 px, procesador 4 veces más lento). Qué se cambió y por qué:
+- Carrusel de casos (main.js): avanza solo mientras está en pantalla y ya no fuerza a recalcular toda la página
+  en cada cambio. Era lo que más gastaba con el celu quieto.
+- Decoración que acompaña el scroll (motion.js): primero se leen todas las posiciones y después se mueve
+  (antes recalculaba la página una vez por cada pieza, en cada movimiento del dedo).
+- Encabezado (nav.js): mide la portada una vez y no en cada scroll.
+- Animaciones que se repiten: se pausan en las secciones que no están en pantalla (clase .anim-off que pone nav.js).
+- Globo (globe.js): quieto mientras espera; en celu gira a 30 cuadros por segundo, con menos resolución y
+  menos detalle en las costas, y el resplandor solo en la columna del país activo. La letra y el ancho de la
+  etiqueta se calculan una vez (antes recalculaban la página en cada cuadro).
+- Mariposas (main.js): se ubican cuando el celu está libre y con menos cálculo en pantallas chicas; ya no se
+  rearman cada vez que termina de cargar una foto.
+- En pantallas táctiles chicas no hay desenfoque detrás del encabezado, las tarjetas de la portada, los botones
+  de vidrio ni la pantalla de iniciar sesión: el fondo es casi sólido y se ve prácticamente igual.
+- Todas las fotos se decodifican sin frenar la página (decoding="async").
+Resultado: quieto, la página recalcula ~15 veces menos; al bajar, pasa de recalcular la página en cada cuadro
+a una vez cada 7. Bloque "Celu fluido" al final de styles.css.
+
 ## Modo claro / oscuro (octubre 2026)
 - Botón sol/luna en el encabezado, a la izquierda del idioma (lo agrega nav.js en todas las páginas). Al tocarlo,
   el cambio se abre como un círculo desde el botón (si el navegador no lo soporta, es un fundido).

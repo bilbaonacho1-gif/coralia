@@ -16,8 +16,8 @@
 <header class="header">
   <div class="wrap header__in">
     <a href="#top" class="logo" aria-label="Coralia Environmental, inicio">
-      <img class="logo__light" src="assets/logo.png" alt="Coralia Environmental" height="40">
-      <img class="logo__dark" src="assets/logo-oscuro.webp" alt="" height="40">
+      <img decoding="async" class="logo__light" src="assets/logo.png" alt="Coralia Environmental" height="40">
+      <img decoding="async" class="logo__dark" src="assets/logo-oscuro.webp" alt="" height="40">
     </a>
     <nav class="nav" id="nav" aria-label="Principal">
       <a href="#servicios">Servicios</a><a href="#apps">Plataformas</a>
@@ -93,7 +93,7 @@
 <!-- ================= 2. PROPUESTA ================= -->
 <section class="section intro intro2" id="plataforma">
   <!-- decoración: mariposas de hojas (assets/deco); se mueven apenas con el scroll (data-par, motion.js) -->
-  <img class="deco deco--intro" src="assets/deco/hojas-costado.webp" alt="" aria-hidden="true" loading="lazy" data-par="-0.04">
+  <img decoding="async" class="deco deco--intro" src="assets/deco/hojas-costado.webp" alt="" aria-hidden="true" loading="lazy" data-par="-0.04">
   <!-- Forma de "carpeta" de las tarjetas (pestaña arriba a la izquierda y hueco abajo a la derecha para la flecha).
        Coordenadas relativas a la tarjeta: sirve para cualquier tamaño con la misma proporción (5:4). -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -106,25 +106,25 @@
     <p class="statement" data-words>Coralia es un <b>equipo con base científica</b> que combina <b>conocimiento climático</b>, <b>datos</b> y <b>tecnología</b> para que las organizaciones tomen mejores decisiones frente al cambio climático.</p>
     <!-- hojitas que flotan entre la frase y las tarjetas -->
     <div class="deco-anchor deco-floats" aria-hidden="true">
-      <img class="deco leaf leaf--1" src="assets/deco/hoja-chica-1.webp" alt="" loading="lazy" data-par="-0.04">
-      <img class="deco leaf leaf--2" src="assets/deco/hoja-chica-2.webp" alt="" loading="lazy" data-par="-0.06">
-      <img class="deco leaf leaf--3" src="assets/deco/hoja-chica-3.webp" alt="" loading="lazy" data-par="-0.03">
-      <img class="deco leaf leaf--4" src="assets/deco/hoja-media.webp" alt="" loading="lazy" data-par="-0.05">
+      <img decoding="async" class="deco leaf leaf--1" src="assets/deco/hoja-chica-1.webp" alt="" loading="lazy" data-par="-0.04">
+      <img decoding="async" class="deco leaf leaf--2" src="assets/deco/hoja-chica-2.webp" alt="" loading="lazy" data-par="-0.06">
+      <img decoding="async" class="deco leaf leaf--3" src="assets/deco/hoja-chica-3.webp" alt="" loading="lazy" data-par="-0.03">
+      <img decoding="async" class="deco leaf leaf--4" src="assets/deco/hoja-media.webp" alt="" loading="lazy" data-par="-0.05">
     </div>
     <!-- Nuestros servicios: cada carpeta despliega su panel abajo (#svcDetail; contenido en servicio.js, se abre desde main.js).
          Los links viejos servicio.html?s=... redirigen a index.html#servicio-... -->
     <span class="eyebrow folders__eyebrow reveal" id="servicios">Nuestros servicios</span>
     <div class="folders">
       <a class="folder reveal" href="#servicio-medir" data-svc="medir" aria-expanded="false" aria-controls="svcDetail">
-        <span class="folder__box"><span class="folder__card"><img src="assets/proyectos/ruuts-1.jpg" srcset="assets/proyectos/ruuts-1-900.webp 900w, assets/proyectos/ruuts-1.jpg 1200w" sizes="(max-width: 700px) 92vw, 380px" alt="" loading="lazy"><span class="folder__label"><i class="dot dot--svc-medir"></i>Medir</span></span><span class="folder__go" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
+        <span class="folder__box"><span class="folder__card"><img decoding="async" src="assets/proyectos/ruuts-1.jpg" srcset="assets/proyectos/ruuts-1-900.webp 900w, assets/proyectos/ruuts-1.jpg 1200w" sizes="(max-width: 700px) 92vw, 380px" alt="" loading="lazy"><span class="folder__label"><i class="dot dot--svc-medir"></i>Medir</span></span><span class="folder__go" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
         <span class="folder__txt">Huella de carbono de empresas, productos y eventos, con estándares internacionales (GHG Protocol, ISO 14064 e ISO 14067).</span>
       </a>
       <a class="folder reveal" href="#servicio-mitigar" data-svc="mitigar" aria-expanded="false" aria-controls="svcDetail">
-        <span class="folder__box"><span class="folder__card"><img src="assets/proyectos/mercuria-1.jpg" srcset="assets/proyectos/mercuria-1-900.webp 900w, assets/proyectos/mercuria-1.jpg 1200w" sizes="(max-width: 700px) 92vw, 380px" alt="" loading="lazy"><span class="folder__label"><i class="dot dot--svc-mitigar"></i>Mitigar</span></span><span class="folder__go" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
+        <span class="folder__box"><span class="folder__card"><img decoding="async" src="assets/proyectos/mercuria-1.jpg" srcset="assets/proyectos/mercuria-1-900.webp 900w, assets/proyectos/mercuria-1.jpg 1200w" sizes="(max-width: 700px) 92vw, 380px" alt="" loading="lazy"><span class="folder__label"><i class="dot dot--svc-mitigar"></i>Mitigar</span></span><span class="folder__go" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
         <span class="folder__txt">Definí tu camino de descarbonización, reducí emisiones dentro de tu cadena de valor (insetting) y explorá los mercados de carbono para compensar lo que quede (offsetting).</span>
       </a>
       <a class="folder reveal" href="#servicio-adaptar" data-svc="adaptar" aria-expanded="false" aria-controls="svcDetail">
-        <span class="folder__box"><span class="folder__card"><img src="assets/proyectos/pluspetrol-2.jpg" srcset="assets/proyectos/pluspetrol-2-900.webp 900w, assets/proyectos/pluspetrol-2.jpg 1425w" sizes="(max-width: 700px) 92vw, 380px" alt="" loading="lazy"><span class="folder__label"><i class="dot dot--svc-adaptar"></i>Adaptarse</span></span><span class="folder__go" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
+        <span class="folder__box"><span class="folder__card"><img decoding="async" src="assets/proyectos/pluspetrol-2.jpg" srcset="assets/proyectos/pluspetrol-2-900.webp 900w, assets/proyectos/pluspetrol-2.jpg 1425w" sizes="(max-width: 700px) 92vw, 380px" alt="" loading="lazy"><span class="folder__label"><i class="dot dot--svc-adaptar"></i>Adaptarse</span></span><span class="folder__go" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
         <span class="folder__txt">Análisis de riesgo climático y planes de adaptación para cada activo y organización.</span>
       </a>
     </div>
@@ -204,8 +204,8 @@
 <section class="section apps" id="apps">
   <div class="deco-scatter" data-n="8" aria-hidden="true"></div>
   <!-- decoración: mariposas de hojas (assets/deco); se mueven apenas con el scroll (data-par, motion.js) -->
-  <img class="deco deco--fly deco--fly1" src="assets/deco/hoja-chica-1.webp" alt="" aria-hidden="true" loading="lazy" data-par="-0.05">
-  <img class="deco deco--fly deco--fly2" src="assets/deco/hoja-chica-3.webp" alt="" aria-hidden="true" loading="lazy" data-par="-0.04">
+  <img decoding="async" class="deco deco--fly deco--fly1" src="assets/deco/hoja-chica-1.webp" alt="" aria-hidden="true" loading="lazy" data-par="-0.05">
+  <img decoding="async" class="deco deco--fly deco--fly2" src="assets/deco/hoja-chica-3.webp" alt="" aria-hidden="true" loading="lazy" data-par="-0.04">
   <div class="wrap">
     <div class="head reveal">
       <div>
@@ -219,12 +219,12 @@
     <div class="appwheel">
       <div class="appview reveal" id="appView" aria-live="polite">
         <div class="appview__shots">
-          <img class="is-on" data-app="footprint" src="assets/apps/fondo-footprint.webp" srcset="assets/apps/fondo-footprint-900.webp 900w, assets/apps/fondo-footprint.webp 1300w" sizes="(max-width: 700px) 100vw, 800px" alt="Bosque visto desde arriba, con un río y datos de carbono superpuestos" style="object-position:center" loading="lazy">
-          <img data-app="markets" src="assets/apps/fondo-markets.webp" srcset="assets/apps/fondo-markets-900.webp 900w, assets/apps/fondo-markets.webp 1600w" sizes="(max-width: 700px) 100vw, 800px" alt="La Tierra de noche con conexiones de luz sobre América y datos de créditos de carbono" style="object-position:center" loading="lazy">
-          <img data-app="risk" src="assets/apps/fondo-risk.webp" srcset="assets/apps/fondo-risk-900.webp 900w, assets/apps/fondo-risk.webp 1600w" sizes="(max-width: 700px) 100vw, 800px" alt="La Tierra desde el espacio con un huracán sobre el Atlántico y datos de riesgo climático" style="object-position:center" loading="lazy">
+          <img decoding="async" class="is-on" data-app="footprint" src="assets/apps/fondo-footprint.webp" srcset="assets/apps/fondo-footprint-900.webp 900w, assets/apps/fondo-footprint.webp 1300w" sizes="(max-width: 700px) 100vw, 800px" alt="Bosque visto desde arriba, con un río y datos de carbono superpuestos" style="object-position:center" loading="lazy">
+          <img decoding="async" data-app="markets" src="assets/apps/fondo-markets.webp" srcset="assets/apps/fondo-markets-900.webp 900w, assets/apps/fondo-markets.webp 1600w" sizes="(max-width: 700px) 100vw, 800px" alt="La Tierra de noche con conexiones de luz sobre América y datos de créditos de carbono" style="object-position:center" loading="lazy">
+          <img decoding="async" data-app="risk" src="assets/apps/fondo-risk.webp" srcset="assets/apps/fondo-risk-900.webp 900w, assets/apps/fondo-risk.webp 1600w" sizes="(max-width: 700px) 100vw, 800px" alt="La Tierra desde el espacio con un huracán sobre el Atlántico y datos de riesgo climático" style="object-position:center" loading="lazy">
         </div>
         <div class="appview__body">
-          <span class="appview__tag" id="avTag"><img src="assets/apps/icon-footprint-claro.png" alt="" loading="lazy">Huella de carbono</span>
+          <span class="appview__tag" id="avTag"><img decoding="async" src="assets/apps/icon-footprint-claro.png" alt="" loading="lazy">Huella de carbono</span>
           <h3 class="appview__name" id="avName">Carbon Footprint</h3>
           <p class="appview__desc" id="avDesc">Huella de productos, empresas y eventos, de la fórmula al reporte verificable.</p>
           <a class="appview__app" id="avApp" href="#servicio-medir">Servicio: <b>Medir</b> →</a>
@@ -239,9 +239,9 @@
         <svg class="wheel__svg" id="wheel" viewBox="-300 -300 600 600" aria-hidden="true"></svg>
       </div>
       <div class="apptabs" role="tablist" aria-label="Plataformas">
-        <button type="button" class="appcard apptab" role="tab" aria-selected="false" aria-controls="app-detail" data-app="footprint"><img src="assets/apps/icon-footprint-claro.png" alt="" loading="lazy">Carbon Footprint</button>
-        <button type="button" class="appcard apptab" role="tab" aria-selected="false" aria-controls="app-detail" data-app="markets"><img src="assets/apps/icon-markets-claro.png" alt="" loading="lazy">Carbon Markets Hub</button>
-        <button type="button" class="appcard apptab" role="tab" aria-selected="false" aria-controls="app-detail" data-app="risk"><img src="assets/apps/icon-risk-claro.png" alt="" loading="lazy">Climate Risk</button>
+        <button type="button" class="appcard apptab" role="tab" aria-selected="false" aria-controls="app-detail" data-app="footprint"><img decoding="async" src="assets/apps/icon-footprint-claro.png" alt="" loading="lazy">Carbon Footprint</button>
+        <button type="button" class="appcard apptab" role="tab" aria-selected="false" aria-controls="app-detail" data-app="markets"><img decoding="async" src="assets/apps/icon-markets-claro.png" alt="" loading="lazy">Carbon Markets Hub</button>
+        <button type="button" class="appcard apptab" role="tab" aria-selected="false" aria-controls="app-detail" data-app="risk"><img decoding="async" src="assets/apps/icon-risk-claro.png" alt="" loading="lazy">Climate Risk</button>
       </div>
     </div>
 
@@ -256,12 +256,12 @@
         <div class="device">
           <div class="device__bar"><i></i><i></i><i></i><span>Carbon Footprint Platform</span></div>
           <div class="device__view">
-            <img src="assets/apps/footprint-1.webp" alt="Carbon Footprint Platform: Tu huella hoy vive en planillas." class="is-on" width="1280" height="720" loading="lazy">
-            <img src="assets/apps/footprint-2.webp" alt="Carbon Footprint Platform: Paso a paso, según ISO 14067." loading="lazy" class="" width="1280" height="720">
-            <img src="assets/apps/footprint-3.webp" alt="Carbon Footprint Platform: La huella, explicada." loading="lazy" class="" width="1280" height="720">
-            <img src="assets/apps/footprint-4.webp" alt="Carbon Footprint Platform: Coral-IA acelera. Un consultor certifica." loading="lazy" class="" width="1280" height="720">
-            <img src="assets/apps/footprint-5.webp" alt="Carbon Footprint Platform: 30 palancas de reducción." loading="lazy" class="" width="1280" height="720">
-            <img src="assets/apps/footprint-6.webp" alt="Carbon Footprint Platform: Verificación externa ISO 17029." loading="lazy" class="" width="1280" height="720">
+            <img decoding="async" src="assets/apps/footprint-1.webp" alt="Carbon Footprint Platform: Tu huella hoy vive en planillas." class="is-on" width="1280" height="720" loading="lazy">
+            <img decoding="async" src="assets/apps/footprint-2.webp" alt="Carbon Footprint Platform: Paso a paso, según ISO 14067." loading="lazy" class="" width="1280" height="720">
+            <img decoding="async" src="assets/apps/footprint-3.webp" alt="Carbon Footprint Platform: La huella, explicada." loading="lazy" class="" width="1280" height="720">
+            <img decoding="async" src="assets/apps/footprint-4.webp" alt="Carbon Footprint Platform: Coral-IA acelera. Un consultor certifica." loading="lazy" class="" width="1280" height="720">
+            <img decoding="async" src="assets/apps/footprint-5.webp" alt="Carbon Footprint Platform: 30 palancas de reducción." loading="lazy" class="" width="1280" height="720">
+            <img decoding="async" src="assets/apps/footprint-6.webp" alt="Carbon Footprint Platform: Verificación externa ISO 17029." loading="lazy" class="" width="1280" height="720">
           </div>
         </div>
         <div class="story__dots" aria-hidden="true"><i class="is-on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
@@ -305,12 +305,12 @@
               <div class="device">
                 <div class="device__bar"><i></i><i></i><i></i><span>Carbon Markets Hub</span></div>
                 <div class="device__view">
-                  <img src="assets/apps/markets-1.webp" alt="Carbon Markets Hub: Dibujá tu tierra. Nada más." class="is-on" width="1280" height="720" loading="lazy">
-                  <img src="assets/apps/markets-2.webp" alt="Carbon Markets Hub: Lo que vio el satélite." loading="lazy" class="" width="1280" height="720">
-                  <img src="assets/apps/markets-3.webp" alt="Carbon Markets Hub: Seis preguntas, en lenguaje simple." loading="lazy" class="" width="1280" height="720">
-                  <img src="assets/apps/markets-4.webp" alt="Carbon Markets Hub: Qué proyecto es y cuánto vale." loading="lazy" class="" width="1280" height="720">
-                  <img src="assets/apps/markets-5.webp" alt="Carbon Markets Hub: Elegibilidad, filtro por filtro." loading="lazy" class="" width="1280" height="720">
-                  <img src="assets/apps/markets-6.webp" alt="Carbon Markets Hub: Y cuando decidís avanzar, todo esto." loading="lazy" class="" width="1280" height="720">
+                  <img decoding="async" src="assets/apps/markets-1.webp" alt="Carbon Markets Hub: Dibujá tu tierra. Nada más." class="is-on" width="1280" height="720" loading="lazy">
+                  <img decoding="async" src="assets/apps/markets-2.webp" alt="Carbon Markets Hub: Lo que vio el satélite." loading="lazy" class="" width="1280" height="720">
+                  <img decoding="async" src="assets/apps/markets-3.webp" alt="Carbon Markets Hub: Seis preguntas, en lenguaje simple." loading="lazy" class="" width="1280" height="720">
+                  <img decoding="async" src="assets/apps/markets-4.webp" alt="Carbon Markets Hub: Qué proyecto es y cuánto vale." loading="lazy" class="" width="1280" height="720">
+                  <img decoding="async" src="assets/apps/markets-5.webp" alt="Carbon Markets Hub: Elegibilidad, filtro por filtro." loading="lazy" class="" width="1280" height="720">
+                  <img decoding="async" src="assets/apps/markets-6.webp" alt="Carbon Markets Hub: Y cuando decidís avanzar, todo esto." loading="lazy" class="" width="1280" height="720">
                 </div>
               </div>
               <div class="story__dots" aria-hidden="true"><i class="is-on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
@@ -353,12 +353,12 @@
         <div class="device">
           <div class="device__bar"><i></i><i></i><i></i><span>Climate Risk</span></div>
           <div class="device__view">
-            <img src="assets/apps/risk-1.webp" alt="Climate Risk: Definí el alcance, como lo necesites." class="is-on" width="1280" height="720" loading="lazy">
-            <img src="assets/apps/risk-2.webp" alt="Climate Risk: Cómo está cambiando el clima, en cada lugar." loading="lazy" class="" width="1280" height="720">
-            <img src="assets/apps/risk-3.webp" alt="Climate Risk: Proyecciones a futuro." loading="lazy" class="" width="1280" height="720">
-            <img src="assets/apps/risk-4.webp" alt="Climate Risk: Qué tan severos pueden ser los impactos." loading="lazy" class="" width="1280" height="720">
-            <img src="assets/apps/risk-5.webp" alt="Climate Risk: Qué activos están más expuestos." loading="lazy" class="" width="1280" height="720">
-            <img src="assets/apps/risk-6.webp" alt="Climate Risk: Un informe final para actuar." loading="lazy" class="" width="1280" height="720">
+            <img decoding="async" src="assets/apps/risk-1.webp" alt="Climate Risk: Definí el alcance, como lo necesites." class="is-on" width="1280" height="720" loading="lazy">
+            <img decoding="async" src="assets/apps/risk-2.webp" alt="Climate Risk: Cómo está cambiando el clima, en cada lugar." loading="lazy" class="" width="1280" height="720">
+            <img decoding="async" src="assets/apps/risk-3.webp" alt="Climate Risk: Proyecciones a futuro." loading="lazy" class="" width="1280" height="720">
+            <img decoding="async" src="assets/apps/risk-4.webp" alt="Climate Risk: Qué tan severos pueden ser los impactos." loading="lazy" class="" width="1280" height="720">
+            <img decoding="async" src="assets/apps/risk-5.webp" alt="Climate Risk: Qué activos están más expuestos." loading="lazy" class="" width="1280" height="720">
+            <img decoding="async" src="assets/apps/risk-6.webp" alt="Climate Risk: Un informe final para actuar." loading="lazy" class="" width="1280" height="720">
           </div>
         </div>
         <div class="story__dots" aria-hidden="true"><i class="is-on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
@@ -405,7 +405,7 @@
 <!-- ================= 4. PROYECTOS ================= -->
 <section class="section" id="proyectos">
   <!-- decoración: mariposas de hojas (assets/deco); se mueven apenas con el scroll (data-par, motion.js) -->
-  <img class="deco deco--proj" src="assets/deco/hojas-fondo.webp" alt="" aria-hidden="true" loading="lazy" data-par="-0.03">
+  <img decoding="async" class="deco deco--proj" src="assets/deco/hojas-fondo.webp" alt="" aria-hidden="true" loading="lazy" data-par="-0.03">
   <div class="wrap">
     <div class="head reveal">
       <div>
@@ -421,11 +421,11 @@
         <span class="map__hint" aria-hidden="true">Arrastrá para girar · tocá un país</span>
       </div>
       <!-- hojas que asoman por detrás del panel -->
-      <img class="deco mc-leaf mc-leaf--a" src="assets/deco/hoja-media.webp" alt="" aria-hidden="true" loading="lazy">
-      <img class="deco mc-leaf mc-leaf--b" src="assets/deco/hoja-chica-2.webp" alt="" aria-hidden="true" loading="lazy">
+      <img decoding="async" class="deco mc-leaf mc-leaf--a" src="assets/deco/hoja-media.webp" alt="" aria-hidden="true" loading="lazy">
+      <img decoding="async" class="deco mc-leaf mc-leaf--b" src="assets/deco/hoja-chica-2.webp" alt="" aria-hidden="true" loading="lazy">
       <aside class="map-card" id="mapCard">
         <!-- ambientación del país: curvas de relieve + silueta (main.js la dibuja con los datos del globo) -->
-        <div class="mc-art" aria-hidden="true"><div class="mc-topo"></div><div class="mc-sil" id="mcSil"></div><span class="mc-coord" id="mcCoord"></span><img class="mc-in-leaf mc-in-leaf--1" src="assets/deco/hoja-chica-1.webp" alt="" loading="lazy"><img class="mc-in-leaf mc-in-leaf--2" src="assets/deco/hoja-chica-2.webp" alt="" loading="lazy"></div>
+        <div class="mc-art" aria-hidden="true"><div class="mc-topo"></div><div class="mc-sil" id="mcSil"></div><span class="mc-coord" id="mcCoord"></span><img decoding="async" class="mc-in-leaf mc-in-leaf--1" src="assets/deco/hoja-chica-1.webp" alt="" loading="lazy"><img decoding="async" class="mc-in-leaf mc-in-leaf--2" src="assets/deco/hoja-chica-2.webp" alt="" loading="lazy"></div>
         <span class="eyebrow" id="mcRegion">América del Sur</span>
         <h3 id="mcName">Argentina</h3>
         <span class="map-card__count" id="mcCountLabel"></span>
@@ -439,7 +439,7 @@
       </aside>
     </div>
 
-    <div class="deco-anchor" aria-hidden="true"><img class="deco deco--casos-l" src="assets/deco/grupo-arriba-izq.webp" alt="" aria-hidden="true" loading="lazy" data-par="-0.1"><img class="deco deco--casos-r" src="assets/deco/grupo-abajo-izq-espejo.webp" alt="" aria-hidden="true" loading="lazy" data-par="-0.16"></div>
+    <div class="deco-anchor" aria-hidden="true"><img decoding="async" class="deco deco--casos-l" src="assets/deco/grupo-arriba-izq.webp" alt="" aria-hidden="true" loading="lazy" data-par="-0.1"><img decoding="async" class="deco deco--casos-r" src="assets/deco/grupo-abajo-izq-espejo.webp" alt="" aria-hidden="true" loading="lazy" data-par="-0.16"></div>
     <div class="head head--sub reveal" id="casos">
       <div>
         <h3 class="h3--lg">Casos publicados</h3>
@@ -477,13 +477,13 @@
     </div>
   </div>
   <div class="logos reveal" role="list" aria-label="Clientes y socios">
-    <div class="logos__row"><div class="logos__track"><span class="logos__item" role="listitem"><img src="assets/logos/genneia.webp" alt="Genneia" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/andromaco.webp" alt="Laboratorios Andrómaco" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/aluar.webp" alt="Aluar" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/buenos-aires-ciudad.webp" alt="Buenos Aires Ciudad" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/ledesma.webp" alt="Ledesma" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/gobierno-misiones.webp" alt="Gobierno de Misiones" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/ingredion.webp" alt="Ingredion" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/verra.webp" alt="Verra" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/canal-panama.webp" alt="Autoridad del Canal de Panamá" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/holcim.webp" alt="Holcim" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/molinos.webp" alt="Molinos" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/norfund.webp" alt="Norfund" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/metro-lima-l2.webp" alt="Metro de Lima Línea 2" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/pampa-energia.webp" alt="Pampa Energía" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/capex.webp" alt="Capex" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/coca-cola.webp" alt="Coca-Cola" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/veladero.webp" alt="Veladero" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/genneia.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/andromaco.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/aluar.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/buenos-aires-ciudad.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/ledesma.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/gobierno-misiones.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/ingredion.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/verra.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/canal-panama.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/holcim.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/molinos.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/norfund.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/metro-lima-l2.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/pampa-energia.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/capex.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/coca-cola.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/veladero.webp" alt="" loading="lazy"></span></div></div>
-    <div class="logos__row logos__row--rev"><div class="logos__track"><span class="logos__item" role="listitem"><img src="assets/logos/pluspetrol.webp" alt="Pluspetrol" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/arcor.webp" alt="Arcor" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/phoenix.webp" alt="Phoenix Global Resources" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/bnp-paribas.webp" alt="BNP Paribas" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/gobierno-paraguay.webp" alt="Gobierno del Paraguay" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/ypf.webp" alt="YPF" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/oldelval.webp" alt="Oldelval" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/cfi.webp" alt="Consejo Federal de Inversiones" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/orson-capital.webp" alt="Orson Capital" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/cc35.webp" alt="CC35" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/mars-petcare.webp" alt="Mars Petcare" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/carbon-group.webp" alt="Carbon Group" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/seaboard.webp" alt="Seaboard Corporation" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/ministerio-ambiente.webp" alt="Ministerio de Ambiente de Argentina" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/pan-american-energy.webp" alt="Pan American Energy" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/aconcagua-energia.webp" alt="Aconcagua Energía" loading="lazy"></span><span class="logos__item" role="listitem"><img src="assets/logos/san-miguel.webp" alt="San Miguel" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/pluspetrol.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/arcor.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/phoenix.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/bnp-paribas.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/gobierno-paraguay.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/ypf.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/oldelval.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/cfi.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/orson-capital.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/cc35.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/mars-petcare.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/carbon-group.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/seaboard.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/ministerio-ambiente.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/pan-american-energy.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/aconcagua-energia.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img src="assets/logos/san-miguel.webp" alt="" loading="lazy"></span></div></div>
+    <div class="logos__row"><div class="logos__track"><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/genneia.webp" alt="Genneia" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/andromaco.webp" alt="Laboratorios Andrómaco" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/aluar.webp" alt="Aluar" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/buenos-aires-ciudad.webp" alt="Buenos Aires Ciudad" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/ledesma.webp" alt="Ledesma" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/gobierno-misiones.webp" alt="Gobierno de Misiones" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/ingredion.webp" alt="Ingredion" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/verra.webp" alt="Verra" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/canal-panama.webp" alt="Autoridad del Canal de Panamá" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/holcim.webp" alt="Holcim" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/molinos.webp" alt="Molinos" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/norfund.webp" alt="Norfund" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/metro-lima-l2.webp" alt="Metro de Lima Línea 2" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/pampa-energia.webp" alt="Pampa Energía" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/capex.webp" alt="Capex" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/coca-cola.webp" alt="Coca-Cola" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/veladero.webp" alt="Veladero" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/genneia.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/andromaco.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/aluar.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/buenos-aires-ciudad.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/ledesma.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/gobierno-misiones.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/ingredion.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/verra.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/canal-panama.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/holcim.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/molinos.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/norfund.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/metro-lima-l2.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/pampa-energia.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/capex.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/coca-cola.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/veladero.webp" alt="" loading="lazy"></span></div></div>
+    <div class="logos__row logos__row--rev"><div class="logos__track"><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/pluspetrol.webp" alt="Pluspetrol" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/arcor.webp" alt="Arcor" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/phoenix.webp" alt="Phoenix Global Resources" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/bnp-paribas.webp" alt="BNP Paribas" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/gobierno-paraguay.webp" alt="Gobierno del Paraguay" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/ypf.webp" alt="YPF" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/oldelval.webp" alt="Oldelval" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/cfi.webp" alt="Consejo Federal de Inversiones" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/orson-capital.webp" alt="Orson Capital" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/cc35.webp" alt="CC35" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/mars-petcare.webp" alt="Mars Petcare" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/carbon-group.webp" alt="Carbon Group" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/seaboard.webp" alt="Seaboard Corporation" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/ministerio-ambiente.webp" alt="Ministerio de Ambiente de Argentina" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/pan-american-energy.webp" alt="Pan American Energy" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/aconcagua-energia.webp" alt="Aconcagua Energía" loading="lazy"></span><span class="logos__item" role="listitem"><img decoding="async" src="assets/logos/san-miguel.webp" alt="San Miguel" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/pluspetrol.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/arcor.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/phoenix.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/bnp-paribas.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/gobierno-paraguay.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/ypf.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/oldelval.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/cfi.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/orson-capital.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/cc35.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/mars-petcare.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/carbon-group.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/seaboard.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/ministerio-ambiente.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/pan-american-energy.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/aconcagua-energia.webp" alt="" loading="lazy"></span><span class="logos__item" aria-hidden="true"><img decoding="async" src="assets/logos/san-miguel.webp" alt="" loading="lazy"></span></div></div>
   </div>
   <div class="wrap">
     <div class="proofs">
       <article class="proof reveal">
-        <span class="proof__seal"><img src="assets/marca/premio-green-cross.webp" alt="Sello Best Developer de Green Cross United Kingdom, Carbon Positive Awards 2025" loading="lazy"></span>
+        <span class="proof__seal"><img decoding="async" src="assets/marca/premio-green-cross.webp" alt="Sello Best Developer de Green Cross United Kingdom, Carbon Positive Awards 2025" loading="lazy"></span>
         <div>
           <span class="eyebrow">Reconocimiento</span>
           <h3>Best Global NbS Developer</h3>
@@ -495,8 +495,8 @@
       </article>
       <article class="proof proof--rating reveal">
         <div class="proof__stack">
-          <img src="assets/marca/sylvera-misiones.webp" alt="Evaluación Sylvera previa a la emisión: Misiones, Argentina, programa REDD+ jurisdiccional, rating A–AA, 6 de enero de 2026" loading="lazy">
-          <img src="assets/marca/sylvera-remonte.webp" alt="Rating Sylvera AA–A previo a la emisión: ReMonte, regeneración de los bosques del Monte en el Chaco Seco argentino, 19 de junio de 2026" loading="lazy">
+          <img decoding="async" src="assets/marca/sylvera-misiones.webp" alt="Evaluación Sylvera previa a la emisión: Misiones, Argentina, programa REDD+ jurisdiccional, rating A–AA, 6 de enero de 2026" loading="lazy">
+          <img decoding="async" src="assets/marca/sylvera-remonte.webp" alt="Rating Sylvera AA–A previo a la emisión: ReMonte, regeneración de los bosques del Monte en el Chaco Seco argentino, 19 de junio de 2026" loading="lazy">
           <span class="proof__check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
         </div>
         <div>
@@ -508,12 +508,12 @@
     </div>
     <div class="quotes reveal" id="quotes">
       <figure class="quote is-on">
-        <img src="assets/test-jafella.webp" alt="Javier Jafella" width="72" height="72" loading="lazy">
+        <img decoding="async" src="assets/test-jafella.webp" alt="Javier Jafella" width="72" height="72" loading="lazy">
         <blockquote>“Poder obtener la huella de carbono total de un producto es muy complejo. Junto a Coralia desarrollamos una metodología que nos permitió acceder a información clave y dar mayor precisión a los datos, incluso en contextos de alta incertidumbre.”</blockquote>
         <figcaption><b>Javier Jafella</b> · Jefe de Sustentabilidad, Laboratorios Andrómaco</figcaption>
       </figure>
       <figure class="quote">
-        <img src="assets/test-martinenghi.webp" alt="Antonella Martinenghi" width="72" height="72" loading="lazy">
+        <img decoding="async" src="assets/test-martinenghi.webp" alt="Antonella Martinenghi" width="72" height="72" loading="lazy">
         <blockquote>“Agradecemos a Coralia Environmental por todo su apoyo durante el proceso de certificación del proyecto y destacamos su rigor técnico, su atención al detalle y su perseverancia para completarlo con éxito.”</blockquote>
         <figcaption><b>Antonella Martinenghi</b> · Sr. Carbon Commercial Executive, Genneia</figcaption>
       </figure>
@@ -526,7 +526,7 @@
 <section id="equipo" class="section team-x">
   <div class="deco-scatter" data-n="10" aria-hidden="true"></div>
   <!-- decoración: mariposas de hojas (assets/deco); se mueven apenas con el scroll (data-par, motion.js) -->
-  <img class="deco deco--team" src="assets/deco/hojas-costado-espejo.webp" alt="" aria-hidden="true" loading="lazy" data-par="-0.14">
+  <img decoding="async" class="deco deco--team" src="assets/deco/hojas-costado-espejo.webp" alt="" aria-hidden="true" loading="lazy" data-par="-0.14">
   <div class="wrap team-x__in">
     <div class="head reveal">
       <div>
@@ -615,7 +615,7 @@
   <div class="deco-scatter" data-n="8" aria-hidden="true"></div>
   <div class="wrap">
     <div class="contact__card reveal">
-      <img class="contact__bg" src="assets/marca/paisaje-rio.webp" srcset="assets/marca/paisaje-rio-800.webp 800w, assets/marca/paisaje-rio.webp 1200w" sizes="(max-width: 700px) 100vw, 1180px" alt="" loading="lazy">
+      <img decoding="async" class="contact__bg" src="assets/marca/paisaje-rio.webp" srcset="assets/marca/paisaje-rio-800.webp 800w, assets/marca/paisaje-rio.webp 1200w" sizes="(max-width: 700px) 100vw, 1180px" alt="" loading="lazy">
       <div class="contact__in">
         <span class="eyebrow eyebrow--light">Contacto</span>
         <h2>Transformemos datos en un impacto real.</h2>
@@ -648,7 +648,7 @@
 
 <footer class="footer">
   <div class="wrap footer__in">
-    <img src="assets/logo-oscuro.webp" alt="Coralia Environmental" height="36" loading="lazy">
+    <img decoding="async" src="assets/logo-oscuro.webp" alt="Coralia Environmental" height="36" loading="lazy">
     <nav aria-label="Pie"><a href="#servicios">Servicios</a><a href="#apps">Plataformas</a><a href="proyectos.html">Proyectos</a><a href="#trusted-by">Nosotros</a><a href="#accesos">Trabajemos juntos</a><a href="discover.html">Descubrí</a></nav>
     <div class="footer__meta"><span>Nogoyá 4169, CABA · contacto@coraliae.com · +54 9 11 5056 0687</span><a href="https://www.linkedin.com/company/coraliae/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.youtube.com/@coraliaenvironmental" target="_blank" rel="noopener">YouTube</a><span class="lang footlang" translate="no"><a href="?lang=es" data-lang="es">ES</a> · <a href="?lang=en" data-lang="en">EN</a> · <a href="?lang=pt" data-lang="pt">PT</a> · <a href="?lang=de" data-lang="de">DE</a></span></div>
   </div>

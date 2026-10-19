@@ -14,8 +14,10 @@ $$('.reveal, .map').forEach((el) => io ? io.observe(el) : el.classList.add('is-v
    sección, siempre enteras (nunca quedan cortadas por el borde) y sin pisarse entre sí. Se arman
    recién cuando la sección está cerca y se rearman si cambia el ancho. data-n: cuántas (en compu). */
 const scatterIO = 'IntersectionObserver' in window ? new IntersectionObserver((es) => {
-  es.forEach((e) => { if (e.isIntersecting) { scatter(e.target); scatterIO.unobserve(e.target); } });
+  es.forEach((e) => { if (e.isIntersecting) { scatterIO.unobserve(e.target); whenIdle(() => scatter(e.target)); } });
 }, { rootMargin: '600px 0px' }) : null;
+// se arman cuando el navegador está libre, para no trabar el scroll justo cuando aparece la sección
+function whenIdle(fn) { 'requestIdleCallback' in window ? requestIdleCallback(fn, { timeout: 1200 }) : setTimeout(fn, 60); }
 function scatter(box) {
   const W = box.clientWidth, H = box.clientHeight; if (!W || !H) return;
   box.dataset.w = W; box.dataset.h = H; box.textContent = '';
@@ -33,11 +35,12 @@ function scatter(box) {
       if (c === box || c.classList.contains('deco') || c.classList.contains('deco-anchor')) continue;
       const cs = getComputedStyle(c); if (cs.display === 'none' || cs.visibility === 'hidden') continue;
       if (solid(c, cs)) { add(c.getBoundingClientRect()); continue; }
-      for (const t of c.childNodes) if (t.nodeType === 3 && t.data.trim()) { const rg = document.createRange(); rg.selectNodeContents(t); [...rg.getClientRects()].forEach(add); }
+      if (sm) { if ([...c.childNodes].some((t) => t.nodeType === 3 && t.data.trim())) { add(c.getBoundingClientRect()); continue; } }
+      else for (const t of c.childNodes) if (t.nodeType === 3 && t.data.trim()) { const rg = document.createRange(); rg.selectNodeContents(t); [...rg.getClientRects()].forEach(add); }
       walk(c);
     }
   })(box.parentElement);
-  for (let k = 0, tries = 0; k < n && tries < 1500; tries++) {
+  for (let k = 0, tries = 0, max = sm ? 500 : 1500; k < n && tries < max; tries++) {
     const s = sm ? 30 + rnd() * 40 : 44 + rnd() * 90;
     const m = pad + s * 0.22; // margen para el giro y el vaivén: así nunca tocan el borde
     const x = m + rnd() * (W - s - 2 * m), y = m + rnd() * (H - s - 2 * m);
@@ -63,7 +66,7 @@ if ('ResizeObserver' in window) {
   const ro = new ResizeObserver((es) => es.forEach((e) => {
     const b = e.target; if (!b.dataset.w) return;
     clearTimeout(b._t); b._t = setTimeout(() => {
-      if (Math.abs(+b.dataset.w - b.clientWidth) > 20 || Math.abs(+b.dataset.h - b.clientHeight) > 40) scatter(b);
+      if (Math.abs(+b.dataset.w - b.clientWidth) > 20 || Math.abs(+b.dataset.h - b.clientHeight) > 160) scatter(b);
     }, 250);
   }));
   $$('.deco-scatter').forEach((b) => ro.observe(b));
@@ -459,7 +462,7 @@ addEventListener('load', placeCasosDeco); addEventListener('resize', placeCasosD
 /* ---------- Casos: carrusel 3D + filtros ---------- */
 function mediaHTML(c, src, cls, logoCls) {
   const baked = src && bakedLogo(c, src);
-  return `<div class="${cls}${baked ? ' is-baked' : ''}">${src ? `<img src="${src}" alt="" loading="lazy" onerror="this.parentNode.classList.remove('is-baked');this.remove()">` : ''}<span class="${logoCls}">${c.client}</span></div>`;
+  return `<div class="${cls}${baked ? ' is-baked' : ''}">${src ? `<img src="${src}" alt="" loading="lazy" decoding="async" onerror="this.parentNode.classList.remove('is-baked');this.remove()">` : ''}<span class="${logoCls}">${c.client}</span></div>`;
 }
 let deckList = CASES.slice(), deckI = 0, deckTimer = null;
 const DECK_MS = 5500;
@@ -497,7 +500,7 @@ function layoutDeck() {
   });
   const c = deckList[deckI]; if (!c) return;
   $('#deckInfo').innerHTML = `<span class="eyebrow">${c.client.toUpperCase()}</span><p>${c.short}</p><a class="link" href="proyecto.html?p=${c.id}">Ver proyecto completo →</a>`;
-  $('#deckInfo').classList.remove('swap'); void $('#deckInfo').offsetWidth; $('#deckInfo').classList.add('swap');
+  const info = $('#deckInfo'); info.classList.remove('swap'); requestAnimationFrame(() => info.classList.add('swap'));
   $('#deckCount').textContent = `${String(deckI + 1).padStart(2, '0')} / ${String(n).padStart(2, '0')}`;
   // chips flotantes alrededor de la tarjeta activa
   $('#chipA').innerHTML = `<i class="dot dot--mint"></i>${c.kpi[0]}`;
@@ -509,10 +512,13 @@ const deckGo = (k) => { if (!deckList.length) return; deckI = (k + deckList.leng
 function restartDeck() {
   clearInterval(deckTimer);
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  deckTimer = setInterval(() => { if (!document.hidden && !deckPaused) deckGo(deckI + 1); }, DECK_MS);
+  deckTimer = setInterval(() => { if (!document.hidden && !deckPaused && deckSeen) deckGo(deckI + 1); }, DECK_MS);
 }
 let deckPaused = false;
 const deck = $('#deck');
+// solo avanza solo mientras está en pantalla (fuera de pantalla no gasta batería)
+let deckSeen = !('IntersectionObserver' in window);
+if (!deckSeen) new IntersectionObserver((es) => { deckSeen = es[0].isIntersecting; }).observe(deck);
 deck.addEventListener('mouseenter', () => { deckPaused = true; const bar = $('#deckBar'); bar.style.width = getComputedStyle(bar).width; bar.style.transition = 'none'; });
 deck.addEventListener('mouseleave', () => { deckPaused = false; restartDeck(); layoutDeck(); });
 $('#deckPrev').addEventListener('click', () => deckGo(deckI - 1));
@@ -575,7 +581,7 @@ setInterval(() => { if (!document.hidden) showQuote((qn + 1) % quotes.length); }
   const order = TEAM.map((_, i) => i).sort(() => Math.random() - 0.5), when = [];
   order.forEach((i, k) => { when[i] = k * 0.11 + Math.random() * 0.06; });
   hive.innerHTML = TEAM.map((p, i) => `<button type="button" class="hex" data-i="${i}" style="--d:${when[i].toFixed(2)}s" aria-label="${p.name}, ${p.area}">
-    <span class="hex__in"><img src="${photo(p)}" alt="" loading="lazy"><img class="hex__color" src="${color(p)}" alt="" loading="lazy" onerror="this.remove()"><span class="hex__glow"></span>
+    <span class="hex__in"><img src="${photo(p)}" alt="" loading="lazy" decoding="async"><img class="hex__color" src="${color(p)}" alt="" loading="lazy" decoding="async" onerror="this.remove()"><span class="hex__glow"></span>
     <span class="hex__name">${p.name}</span></span></button>`).join('');
   const hexes = $$('.hex', hive);
 

@@ -51,13 +51,15 @@
       if (yy < H * 1.2) cards.forEach((c) => { c.style.translate = `0 ${(-yy * (+c.dataset.depth || 0)).toFixed(1)}px`; });
     }
     // decoración: cada pieza se desplaza un poco más lento o más rápido que la página
+    // primero se leen todas las posiciones y después se mueve: así la página no se recalcula una vez por pieza
+    const moves = [];
     decos.forEach((d) => {
       const p = d.offsetParent; if (!p) return; // (posición sin el desplazamiento, para que no tiemble)
       const top = p.getBoundingClientRect().top + d.offsetTop, h = d.offsetHeight;
       if (top + h < -300 || top > H + 300) return;
-      const off = (top + h / 2 - H / 2) * d._k;
-      d.style.transform = `translate3d(0,${off.toFixed(1)}px,0)`;
+      moves.push([d, (top + h / 2 - H / 2) * d._k]);
     });
+    moves.forEach(([d, off]) => { d.style.transform = `translate3d(0,${off.toFixed(1)}px,0)`; });
     if (words.length) {
       const r = phrase.getBoundingClientRect();
       const p = clamp((H * 0.88 - r.top) / (r.height + H * 0.3));
