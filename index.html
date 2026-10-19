@@ -147,10 +147,9 @@
             <!-- Antes y después de cada tipo de proyecto. Fotos de los proyectos (DBCX, Chubut, Misiones): assets/servicios/<tipo>-antes.webp y -despues.webp; textos en BA_TYPES (main.js) -->
             <div class="ba-wrap">
               <div class="ba" id="ba" style="--x:50%">
-                <div class="ba__layer ba__layer--antes"></div>
-                <div class="ba__layer ba__layer--despues"></div>
-                <span class="ba__label ba__label--antes" id="baAntes"></span>
-                <span class="ba__label ba__label--despues" id="baDespues"></span>
+                <!-- cada rótulo va dentro de su foto: así se corta con ella al deslizar y no queda encima de la otra -->
+                <div class="ba__layer ba__layer--antes"><span class="ba__label ba__label--antes" id="baAntes"></span></div>
+                <div class="ba__layer ba__layer--despues"><span class="ba__label ba__label--despues" id="baDespues"></span></div>
                 <input class="ba__range" id="baRange" type="range" min="0" max="100" value="50" aria-label="Deslizá para comparar antes y después">
                 <span class="ba__handle" aria-hidden="true">◂ ▸</span>
               </div>
