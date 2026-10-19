@@ -66,7 +66,9 @@ así que no dependen de Google Fonts. Se declaran al principio de styles.css (@f
   El número que sube al aparecer es el de la tarjeta con data-count (motion.js).
 - "Qué es Coralia": equipo con base científica (opción A). Frase nueva debajo de Mitigar (insetting / offsetting).
 - Apps → plataformas en toda la web y en los 4 idiomas. "Climate Risk App" → "Climate Risk".
-- Sylvera: bloque "Alta integridad" y ReMonte con A–AA (bloque, página de Mitigar, etapa del pipeline y alt de la imagen).
+- Sylvera: bloque "Alta integridad". ECO2 Misiones va con A–AA y ReMonte con AA–A, igual que su sello (bloque,
+  página de Mitigar, etapa y descripción del pipeline y alt de la imagen).
+- Hectáreas nuevas en las páginas de los proyectos: ReMonte 156.000 ha y Chubut 33.170 ha (data.js, PIPELINE).
   El sello assets/marca/sylvera-remonte.webp ya es el nuevo ("Pre-Issuance Rating: AA–A"), sacado de la presentación de Climate Week NYC 2026.
 - Mitigar: cifra unificada en +13,2M y decimales con punto en inglés (10.1M, 2.8M, 1.5M).
 - "Cómo trabajamos" → "Trabajemos juntos" (EN Work with us): cuatro tarjetas (servicios, plataformas, socios, inversores).
@@ -90,6 +92,9 @@ así que no dependen de Google Fonts. Se declaran al principio de styles.css (@f
 - Tanda 4 · cards del pipeline (puntos 20 y 23): una sola card para la home y pipeline.html (pipeCard, en data.js),
   con el formato de la referencia de Nico: foto con el tipo, bandera y país, título en Bricolage Grotesque 800 con
   el color de cada proyecto, descripción, hectáreas | créditos (en Spectral), estándar (logos) | metodología y etapa.
+  Las cards de una misma fila quedan alineadas franja por franja (subgrid), aunque una descripción sea más larga.
+  Estándar: con un solo estándar va el logo completo (ícono + nombre); con dos, solo los íconos
+  (assets/estandares/vcs-icono.png y ccb-icono.png, STD_ICONS en data.js), así entran al lado de la metodología.
   Fuentes nuevas en assets/fonts (bricolage-800, spectral-500). Logos de VCS y CCB en assets/estandares (recortados
   de la referencia; conviene reemplazarlos por los oficiales en SVG). Seis proyectos: ReMonte, Chubut ARR,
   Dominican Blue Carbon, Resilient Iberá, Argentina Biochar Initiative y ChaCo-ReForest. Lo que falta va como
@@ -246,7 +251,9 @@ La tarjeta del premio tiene "Conocé más del premio →", que abre la publicaci
 - Lo que no está en las tablas queda como está (por ejemplo nombres de clientes y personas).
 
 ## Wix
-Cumple los límites de Wix Headless: sin videos, cada archivo pesa menos de 3 MB.
+Cumple los límites de Wix Headless: sin videos, cada archivo pesa menos de 3 MB y el total menos de 20 MB.
+Revisado el 19/10/2026: 228 archivos, 13,5 MB en total (contando LEEME y i18n/fuente), el más pesado 0,48 MB
+(assets/cta.webp). Si se agregan fotos, conviene pasarlas a .webp y que no superen ~500 KB.
 
 ## Fotos de los proyectos (kits de comunicación, octubre 2026)
 - Misiones (REDD+): fotos del kit en la galería del caso (proyecto.html?p=misiones) y en el proyecto destacado de
@@ -277,3 +284,19 @@ Cumple los límites de Wix Headless: sin videos, cada archivo pesa menos de 3 MB
   contacto@coraliae.com. Cuando tengan página, se pone su link ahí y listo.
   Estilos: bloque "Iniciar sesión" (.login, .pick) en styles.css. Traducciones: i18n/fuente/7-ingresar.py y,
   para "Ir a la app" / "Próximamente", i18n/fuente/6-servicios.py.
+- La tarjeta con las tres plataformas es más ancha (580 px) y entra siempre entera en una pantalla: los espacios y
+  los tamaños se achican con el alto de la ventana. En celu y tablet la tarjeta va primero y el texto de bienvenida
+  abajo; en celus bajitos (667 px de alto o menos) se oculta la línea "Entrás con el email…". Probado de 360×640
+  a 1920×1080 en los cuatro idiomas.
+
+## Modo claro / oscuro (octubre 2026)
+- Botón sol/luna en el encabezado, a la izquierda del idioma (lo agrega nav.js en todas las páginas). Al tocarlo,
+  el cambio se abre como un círculo desde el botón (si el navegador no lo soporta, es un fundido).
+- La primera vez sigue la preferencia del sistema; después queda guardado lo que eligió cada uno (localStorage
+  "coralia-theme"). Se aplica al principio de i18n.js, antes de pintar, para que no parpadee.
+- Estilos: bloque "Modo oscuro" al final de styles.css. Cambia los colores base (variables de :root) y arregla lo que
+  estaba fijo en claro: tarjetas destacadas y activas, botones, títulos del pipeline, colores de los servicios,
+  mapa, logos (pasan a blanco; los íconos de colores de los estándares quedan como están).
+- En oscuro la portada no se achica a tarjeta al bajar ni tiene el brillo que la cruza: se funde con la sección
+  de abajo. En claro sigue igual que antes.
+- Traducciones del botón ("Pasar a modo oscuro / claro") en i18n/fuente/8-revision-02.py.

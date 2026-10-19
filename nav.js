@@ -64,7 +64,7 @@ window.APP_LINKS = {
   }, { passive: true });
 })();
 
-// Modo claro / oscuro (PRUEBA): botón sol/luna en el encabezado. El cambio se abre como un círculo desde el botón.
+// Modo claro / oscuro: botón sol/luna en el encabezado. El cambio se abre como un círculo desde el botón.
 (() => {
   const right = document.querySelector('.header__right'); if (!right) return;
   const root = document.documentElement;

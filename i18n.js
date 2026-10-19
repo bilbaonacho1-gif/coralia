@@ -1,4 +1,4 @@
-// Coralia — modo claro / oscuro (PRUEBA): se aplica antes de pintar la página para que no parpadee.
+// Coralia — modo claro / oscuro: se aplica antes de pintar la página para que no parpadee.
 // Se elige con el botón del encabezado (nav.js) y queda guardado; si no hay elección, sigue al sistema.
 (() => {
   let t = null;
