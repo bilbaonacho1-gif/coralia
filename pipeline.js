@@ -27,7 +27,8 @@ if (!p) {
   $('#pContact').href = `mailto:contacto@coraliae.com?subject=${encodeURIComponent('Inversión en ' + p.name)}`;
   if (p.gallery && p.gallery.length) {
     $('#pGalleryWrap').hidden = false;
-    $('#pGallery').innerHTML = p.gallery.map((src, k) => `<button type="button" class="d-gallery__item" data-src="${src}" aria-label="Ver imagen ${k + 1}"><img src="${src}" alt="" loading="lazy"></button>`).join('');
+    // miniatura <foto>-t.webp (600 px) en la grilla; la foto completa se baja recién al abrir el visor
+    $('#pGallery').innerHTML = p.gallery.map((src, k) => `<button type="button" class="d-gallery__item" data-src="${src}" aria-label="Ver imagen ${k + 1}"><img src="${src.replace(/\.\w+$/, '-t.webp')}" alt="" loading="lazy"></button>`).join('');
     const lb = $('#lightbox');
     $('#pGallery').addEventListener('click', (e) => { const b = e.target.closest('[data-src]'); if (!b) return; $('#lbImg').src = b.dataset.src; lb.showModal(); });
     $('#lbClose').addEventListener('click', () => lb.close());

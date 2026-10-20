@@ -172,7 +172,7 @@ T = [
  "What is on the land today, what was done before and what you want to achieve. No technical jargon.",
  "O que há hoje no terreno, o que foi feito antes e o que você quer alcançar. Sem jargão técnico.",
  "Was heute auf der Fläche ist, was vorher geschah und was Sie erreichen wollen. Ohne Fachjargon."),
-("Qué proyecto es y cuánto vale.", "Which project it is and what it's worth.", "Qual projeto é e quanto vale.", "Welches Projekt es ist und was es wert ist."),
+("Qué proyecto es y cuánto vale.", "The project and its value, at a glance.", "Qual projeto é e quanto vale.", "Das Projekt und sein Wert auf einen Blick."),
 ("Tipo de proyecto posible, rango de créditos y de ingresos, con precios de mercado actuales.",
  "Possible project type, range of credits and revenue, at current market prices.",
  "Tipo de projeto possível, faixa de créditos e de receitas, com preços de mercado atuais.",

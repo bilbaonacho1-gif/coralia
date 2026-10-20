@@ -1125,7 +1125,13 @@
 "Las plataformas de Coralia (Huella de carbono, Climate Risk) se rigen por sus propios términos y política de privacidad, que se aceptan al crear una cuenta. Los enlaces a sitios de terceros, como LinkedIn o YouTube, llevan a sitios con sus propias condiciones, de los que Coralia no es responsable.": "As plataformas da Coralia (Pegada de carbono, Climate Risk) são regidas por seus próprios termos e política de privacidade, aceitos ao criar uma conta. Os links para sites de terceiros, como LinkedIn ou YouTube, levam a sites com suas próprias condições, pelos quais a Coralia não é responsável.",
 "Hacemos lo posible para que la información del sitio sea correcta y esté actualizada, pero no garantizamos que no tenga errores ni que el sitio funcione sin interrupciones. En la medida que lo permita la ley, Coralia no responde por decisiones tomadas solo a partir del contenido del sitio o de los resultados de sus simuladores.": "Fazemos o possível para que as informações do site estejam corretas e atualizadas, mas não garantimos que não tenham erros nem que o site funcione sem interrupções. Na medida permitida pela lei, a Coralia não responde por decisões tomadas apenas com base no conteúdo do site ou nos resultados de seus simuladores.",
 "Podemos actualizar estos términos; la versión vigente es la publicada en esta página. Se rigen por las leyes de la República Argentina y cualquier conflicto se somete a los <span class=\"pend\">[tribunales ordinarios de la Ciudad Autónoma de Buenos Aires]</span>. Contacto: <a href=\"mailto:contacto@coraliae.com\">contacto@coraliae.com</a>.": "Podemos atualizar estes termos; a versão vigente é a publicada nesta página. Eles são regidos pelas leis da República Argentina e qualquer conflito é submetido aos <span class=\"pend\">[tribunais ordinários da Cidade Autônoma de Buenos Aires]</span>. Contato: <a href=\"mailto:contacto@coraliae.com\">contacto@coraliae.com</a>.",
-"Las condiciones para usar este sitio, sus contenidos y sus evaluaciones rápidas.": "As condições para usar este site, seus conteúdos e suas avaliações rápidas."
+"Las condiciones para usar este sitio, sus contenidos y sus evaluaciones rápidas.": "As condições para usar este site, seus conteúdos e suas avaliações rápidas.",
+"[Proveedor de correo a confirmar]": "[Provedor de e-mail a confirmar]",
+"Página no encontrada | Coralia Environmental": "Página não encontrada | Coralia Environmental",
+"No encontramos esta página.": "Não encontramos esta página.",
+"Puede que el link esté mal escrito o que la página ya no exista.": "O link pode estar errado ou a página pode não existir mais.",
+"Ir al inicio": "Ir para o início",
+"Ver proyectos": "Ver projetos"
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 trabalho'],

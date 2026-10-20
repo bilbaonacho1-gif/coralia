@@ -57,7 +57,8 @@ $('#dShare').addEventListener('click', async () => {
 const pics = (c.gallery || []).filter((g) => g !== c.hero).concat(c.img && c.img !== c.hero ? [c.img] : []);
 if (pics.length) {
   $('#dGalleryWrap').hidden = false;
-  $('#dGallery').innerHTML = pics.map((src, k) => `<button type="button" class="d-gallery__item" data-src="${src}" aria-label="Ver imagen ${k + 1}"><img src="${src}" alt="" loading="lazy"></button>`).join('');
+  // miniatura <foto>-t.webp (600 px) en la grilla; la foto completa se baja recién al abrir el visor
+  $('#dGallery').innerHTML = pics.map((src, k) => `<button type="button" class="d-gallery__item" data-src="${src}" aria-label="Ver imagen ${k + 1}"><img src="${src.replace(/\.\w+$/, '-t.webp')}" alt="" loading="lazy"></button>`).join('');
   const lb = $('#lightbox');
   $('#dGallery').addEventListener('click', (e) => { const b = e.target.closest('[data-src]'); if (!b) return; $('#lbImg').src = b.dataset.src; lb.showModal(); });
   $('#lbClose').addEventListener('click', () => lb.close());

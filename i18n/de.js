@@ -90,7 +90,7 @@
 "Cobertura forestal, degradación y uso del suelo del polígono, calculados al instante.": "Waldbedeckung, Degradierung und Landnutzung des Polygons, sofort berechnet.",
 "Seis preguntas, en lenguaje simple.": "Sechs Fragen in einfacher Sprache.",
 "Qué hay hoy en el terreno, qué se hizo antes y qué querés lograr. Sin jerga técnica.": "Was heute auf der Fläche ist, was vorher geschah und was Sie erreichen wollen. Ohne Fachjargon.",
-"Qué proyecto es y cuánto vale.": "Welches Projekt es ist und was es wert ist.",
+"Qué proyecto es y cuánto vale.": "Das Projekt und sein Wert auf einen Blick.",
 "Tipo de proyecto posible, rango de créditos y de ingresos, con precios de mercado actuales.": "Mögliche Projektart, Spanne an Zertifikaten und Erlösen, zu aktuellen Marktpreisen.",
 "Elegibilidad, filtro por filtro.": "Eignung, Filter für Filter.",
 "Benchmarks de desempeño, pre-screening de biodiversidad y análisis financiero para cada escenario.": "Leistungsbenchmarks, Biodiversitäts-Vorprüfung und Finanzanalyse für jedes Szenario.",
@@ -1225,7 +1225,14 @@
 "Las plataformas de Coralia (Huella de carbono, Climate Risk) se rigen por sus propios términos y política de privacidad, que se aceptan al crear una cuenta. Los enlaces a sitios de terceros, como LinkedIn o YouTube, llevan a sitios con sus propias condiciones, de los que Coralia no es responsable.": "Die Plattformen von Coralia (CO₂-Fußabdruck, Climate Risk) unterliegen eigenen Bedingungen und Datenschutzerklärungen, die bei der Kontoerstellung akzeptiert werden. Links zu Websites Dritter wie LinkedIn oder YouTube führen zu Seiten mit eigenen Bedingungen, für die Coralia nicht verantwortlich ist.",
 "Hacemos lo posible para que la información del sitio sea correcta y esté actualizada, pero no garantizamos que no tenga errores ni que el sitio funcione sin interrupciones. En la medida que lo permita la ley, Coralia no responde por decisiones tomadas solo a partir del contenido del sitio o de los resultados de sus simuladores.": "Wir bemühen uns, die Informationen der Website korrekt und aktuell zu halten, garantieren aber weder Fehlerfreiheit noch einen unterbrechungsfreien Betrieb. Soweit gesetzlich zulässig, haftet Coralia nicht für Entscheidungen, die allein auf Grundlage der Website-Inhalte oder der Simulatorergebnisse getroffen werden.",
 "Podemos actualizar estos términos; la versión vigente es la publicada en esta página. Se rigen por las leyes de la República Argentina y cualquier conflicto se somete a los <span class=\"pend\">[tribunales ordinarios de la Ciudad Autónoma de Buenos Aires]</span>. Contacto: <a href=\"mailto:contacto@coraliae.com\">contacto@coraliae.com</a>.": "Wir können diese Bedingungen aktualisieren; maßgeblich ist die auf dieser Seite veröffentlichte Fassung. Es gilt das Recht der Republik Argentinien, und für Streitigkeiten sind die <span class=\"pend\">[ordentlichen Gerichte der Autonomen Stadt Buenos Aires]</span> zuständig. Kontakt: <a href=\"mailto:contacto@coraliae.com\">contacto@coraliae.com</a>.",
-"Las condiciones para usar este sitio, sus contenidos y sus evaluaciones rápidas.": "Die Bedingungen für die Nutzung dieser Website, ihrer Inhalte und Schnellbewertungen."
+"Las condiciones para usar este sitio, sus contenidos y sus evaluaciones rápidas.": "Die Bedingungen für die Nutzung dieser Website, ihrer Inhalte und Schnellbewertungen.",
+"[Proveedor de correo a confirmar]": "[E-Mail-Anbieter noch zu bestätigen]",
+"[A confirmar]": "[Noch zu bestätigen]",
+"Página no encontrada | Coralia Environmental": "Seite nicht gefunden | Coralia Environmental",
+"No encontramos esta página.": "Diese Seite haben wir nicht gefunden.",
+"Puede que el link esté mal escrito o que la página ya no exista.": "Vielleicht ist der Link falsch geschrieben oder die Seite existiert nicht mehr.",
+"Ir al inicio": "Zur Startseite",
+"Ver proyectos": "Projekte ansehen"
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 Auftrag'],

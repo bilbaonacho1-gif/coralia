@@ -1782,3 +1782,10 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
 /* dato pendiente: se ve resaltado hasta completarlo, para que no se publique por error */
 .pend{background:#fff2a8;color:#5c4a00;border-radius:4px;padding:0 4px}
 @media (max-width:700px){.legal{padding:118px 0 70px}.legal__toc ol{grid-template-columns:1fr}.legal p,.legal li{font-size:15.5px}}
+
+/* Página 404 */
+.notfound .legal__in{min-height:58vh;display:flex;flex-direction:column;justify-content:center}
+.notfound__go{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.notfound__go .btn{text-decoration:none}
+.notfound__go .btn--mint{color:var(--bg)}
+.notfound__go .btn--ghost-light{color:var(--ink)}

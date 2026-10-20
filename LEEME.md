@@ -362,3 +362,12 @@ a una vez cada 7. Bloque "Celu fluido" al final de styles.css.
 - En oscuro la portada no se achica a tarjeta al bajar ni tiene el brillo que la cruza: se funde con la sección
   de abajo. En claro sigue igual que antes.
 - Traducciones del botón ("Pasar a modo oscuro / claro") en i18n/fuente/8-revision-02.py.
+
+## Repaso general (20/10/2026)
+- Sin links rotos, archivos faltantes ni errores de consola en las 4 lenguas, a 390 y 1366 px.
+- Galerías de proyectos y pipeline: la grilla usa miniaturas <foto>-t.webp (600 px, en la misma carpeta); la foto
+  completa se baja solo al abrir el visor. Si se suma una foto a una galería en data.js, hay que crear su -t.webp.
+- El comparador antes/después baja sus fotos recién cuando está por aparecer (panel de Mitigar abierto).
+- logo.png (160 px de alto), íconos de las apps (96 px) y deco/hojas-fondo.webp (600 px) achicados a lo que se ve.
+- 404.html: página de error propia (Vercel la muestra sola). Lleva <base href="/"> y rutas con / porque puede
+  aparecer en cualquier carpeta. Textos en i18n/fuente/11-error.py.

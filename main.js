@@ -317,6 +317,8 @@ const BA_TYPES = [
   const ba = $('#ba'); if (!ba) return;
   const range = $('#baRange'), tabs = $('#baTabs');
   let cur = 0, timer = 0, userTouched = false;
+  // las fotos se bajan recién cuando el comparador está por aparecer (vive en el panel de Mitigar, que arranca cerrado)
+  let near = !('IntersectionObserver' in window);
   tabs.innerHTML = BA_TYPES.map((t, i) => `<button type="button" role="tab" class="ba__tab" data-i="${i}" aria-selected="false">${t.name}</button>`).join('');
   const set = (x) => { ba.style.setProperty('--x', `${x}%`); range.value = x; };
   function show(i) {
@@ -324,7 +326,7 @@ const BA_TYPES = [
     ['antes', 'despues'].forEach((w) => {
       const L = $(`.ba__layer--${w}`, ba), src = `assets/servicios/${t.k}-${w}.webp`;
       L.dataset.ph = tr('foto a cargar'); L.classList.remove('has-img'); L.style.backgroundImage = '';
-      if (!t.foto) return;
+      if (!t.foto || !near) return;
       const im = new Image(); im.onload = () => { L.style.backgroundImage = `url(${src})`; L.classList.add('has-img'); }; im.src = src;
     });
     $('#baAntes').textContent = t.antes; $('#baDespues').textContent = t.despues;
@@ -348,6 +350,7 @@ const BA_TYPES = [
   show(0); set(calm ? 50 : 85);
   if ('IntersectionObserver' in window) {
     let started = false;
+    new IntersectionObserver((es, o) => { if (es[0].isIntersecting) { near = true; o.disconnect(); show(cur); } }, { rootMargin: '400px' }).observe(ba);
     new IntersectionObserver((es) => { if (es[0].isIntersecting && !started) { started = true; cycle(); } }, { threshold: 0.5 }).observe(ba);
   }
   // Para clientes / Para inversores / Trayectoria: abre su panel debajo (los otros se cierran)

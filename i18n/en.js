@@ -89,7 +89,7 @@
 "Cobertura forestal, degradación y uso del suelo del polígono, calculados al instante.": "Forest cover, degradation and land use of the polygon, calculated instantly.",
 "Seis preguntas, en lenguaje simple.": "Six questions, in plain language.",
 "Qué hay hoy en el terreno, qué se hizo antes y qué querés lograr. Sin jerga técnica.": "What is on the land today, what was done before and what you want to achieve. No technical jargon.",
-"Qué proyecto es y cuánto vale.": "Which project it is and what it's worth.",
+"Qué proyecto es y cuánto vale.": "The project and its value, at a glance.",
 "Tipo de proyecto posible, rango de créditos y de ingresos, con precios de mercado actuales.": "Possible project type, range of credits and revenue, at current market prices.",
 "Elegibilidad, filtro por filtro.": "Eligibility, filter by filter.",
 "Benchmarks de desempeño, pre-screening de biodiversidad y análisis financiero para cada escenario.": "Performance benchmarks, biodiversity pre-screening and financial analysis for each scenario.",
@@ -1023,6 +1023,7 @@
 "156.000 ha": "156,000 ha",
 "de Chaco Seco donde el bosque nativo vuelve con la hacienda adentro": "of Dry Chaco where native forest returns with cattle grazing inside",
 "33.170 ha": "33,170 ha",
+"2.784 ha": "2,784 ha",
 "elegibles para restaurar, en tres áreas del bosque andino-patagónico": "eligible for restoration, across three areas of Andean–Patagonian forest",
 "Pasar a modo oscuro": "Switch to dark mode",
 "Pasar a modo claro": "Switch to light mode",
@@ -1221,7 +1222,14 @@
 "Las plataformas de Coralia (Huella de carbono, Climate Risk) se rigen por sus propios términos y política de privacidad, que se aceptan al crear una cuenta. Los enlaces a sitios de terceros, como LinkedIn o YouTube, llevan a sitios con sus propias condiciones, de los que Coralia no es responsable.": "Coralia's platforms (Carbon Footprint, Climate Risk) are governed by their own terms and privacy policy, which are accepted when creating an account. Links to third-party sites, such as LinkedIn or YouTube, lead to sites with their own terms, for which Coralia is not responsible.",
 "Hacemos lo posible para que la información del sitio sea correcta y esté actualizada, pero no garantizamos que no tenga errores ni que el sitio funcione sin interrupciones. En la medida que lo permita la ley, Coralia no responde por decisiones tomadas solo a partir del contenido del sitio o de los resultados de sus simuladores.": "We do our best to keep the website information correct and up to date, but we do not guarantee that it is error-free or that the site will work without interruptions. To the extent permitted by law, Coralia is not liable for decisions made solely on the basis of the website content or the results of its simulators.",
 "Podemos actualizar estos términos; la versión vigente es la publicada en esta página. Se rigen por las leyes de la República Argentina y cualquier conflicto se somete a los <span class=\"pend\">[tribunales ordinarios de la Ciudad Autónoma de Buenos Aires]</span>. Contacto: <a href=\"mailto:contacto@coraliae.com\">contacto@coraliae.com</a>.": "We may update these terms; the version in force is the one published on this page. They are governed by the laws of the Argentine Republic and any dispute is submitted to the <span class=\"pend\">[ordinary courts of the City of Buenos Aires]</span>. Contact: <a href=\"mailto:contacto@coraliae.com\">contacto@coraliae.com</a>.",
-"Las condiciones para usar este sitio, sus contenidos y sus evaluaciones rápidas.": "The terms for using this website, its content and its quick assessments."
+"Las condiciones para usar este sitio, sus contenidos y sus evaluaciones rápidas.": "The terms for using this website, its content and its quick assessments.",
+"[Proveedor de correo a confirmar]": "[Email provider to be confirmed]",
+"[A confirmar]": "[To be confirmed]",
+"Página no encontrada | Coralia Environmental": "Page not found | Coralia Environmental",
+"No encontramos esta página.": "We couldn’t find this page.",
+"Puede que el link esté mal escrito o que la página ya no exista.": "The link may be mistyped, or the page may no longer exist.",
+"Ir al inicio": "Go to the home page",
+"Ver proyectos": "See projects"
 });
   I18N.patterns.push(
   [/^1 trabajo$/, () => '1 engagement'],
