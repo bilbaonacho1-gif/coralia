@@ -1127,6 +1127,7 @@
 "Podemos actualizar estos términos; la versión vigente es la publicada en esta página. Se rigen por las leyes de la República Argentina y cualquier conflicto se somete a los <span class=\"pend\">[tribunales ordinarios de la Ciudad Autónoma de Buenos Aires]</span>. Contacto: <a href=\"mailto:contacto@coraliae.com\">contacto@coraliae.com</a>.": "Podemos atualizar estes termos; a versão vigente é a publicada nesta página. Eles são regidos pelas leis da República Argentina e qualquer conflito é submetido aos <span class=\"pend\">[tribunais ordinários da Cidade Autônoma de Buenos Aires]</span>. Contato: <a href=\"mailto:contacto@coraliae.com\">contacto@coraliae.com</a>.",
 "Las condiciones para usar este sitio, sus contenidos y sus evaluaciones rápidas.": "As condições para usar este site, seus conteúdos e suas avaliações rápidas.",
 "[Proveedor de correo a confirmar]": "[Provedor de e-mail a confirmar]",
+"Hasta que cierres el navegador": "Até você fechar o navegador",
 "Página no encontrada | Coralia Environmental": "Página não encontrada | Coralia Environmental",
 "No encontramos esta página.": "Não encontramos esta página.",
 "Puede que el link esté mal escrito o que la página ya no exista.": "O link pode estar errado ou a página pode não existir mais.",

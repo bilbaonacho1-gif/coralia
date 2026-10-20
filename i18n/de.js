@@ -1228,6 +1228,7 @@
 "Las condiciones para usar este sitio, sus contenidos y sus evaluaciones rápidas.": "Die Bedingungen für die Nutzung dieser Website, ihrer Inhalte und Schnellbewertungen.",
 "[Proveedor de correo a confirmar]": "[E-Mail-Anbieter noch zu bestätigen]",
 "[A confirmar]": "[Noch zu bestätigen]",
+"Hasta que cierres el navegador": "Bis Sie den Browser schließen",
 "Página no encontrada | Coralia Environmental": "Seite nicht gefunden | Coralia Environmental",
 "No encontramos esta página.": "Diese Seite haben wir nicht gefunden.",
 "Puede que el link esté mal escrito o que la página ya no exista.": "Vielleicht ist der Link falsch geschrieben oder die Seite existiert nicht mehr.",

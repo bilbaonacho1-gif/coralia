@@ -354,8 +354,9 @@ a una vez cada 7. Bloque "Celu fluido" al final de styles.css.
 ## Modo claro / oscuro (octubre 2026)
 - Botón sol/luna en el encabezado, a la izquierda del idioma (lo agrega nav.js en todas las páginas). Al tocarlo,
   el cambio se abre como un círculo desde el botón (si el navegador no lo soporta, es un fundido).
-- La primera vez sigue la preferencia del sistema; después queda guardado lo que eligió cada uno (localStorage
-  "coralia-theme"). Se aplica al principio de i18n.js, antes de pintar, para que no parpadee.
+- La web abre siempre en claro, aunque el sistema esté en oscuro (pedido de Nacho, 20/10/2026). Si se pasa a
+  oscuro, se mantiene mientras dure la visita en esa pestaña (sessionStorage "coralia-theme"): al cerrar el
+  navegador vuelve a abrir en claro. Se aplica al principio de i18n.js, antes de pintar, para que no parpadee.
 - Estilos: bloque "Modo oscuro" al final de styles.css. Cambia los colores base (variables de :root) y arregla lo que
   estaba fijo en claro: tarjetas destacadas y activas, botones, títulos del pipeline, colores de los servicios,
   mapa, logos (pasan a blanco; los íconos de colores de los estándares quedan como están).

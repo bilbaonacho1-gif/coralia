@@ -93,7 +93,7 @@ window.APP_LINKS = {
   right.insertBefore(btn, right.firstChild);
   btn.addEventListener('click', (e) => {
     const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
-    const apply = () => { root.dataset.theme = next; label(); try { localStorage.setItem('coralia-theme', next); } catch (er) { /* solo por esta visita */ } };
+    const apply = () => { root.dataset.theme = next; label(); try { sessionStorage.setItem('coralia-theme', next); } catch (er) { /* sin almacenamiento: solo esta página */ } };
     const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!document.startViewTransition || calm) {
       // sin transición de vista: fundido suave de colores

@@ -76,4 +76,5 @@ T = [
 # Solos dentro de una celda, i18n.js toma el texto del <span>: van también sin la etiqueta (no los genera armar.py de scratch)
 ('[Proveedor de correo a confirmar]', '[Email provider to be confirmed]', '[Provedor de e-mail a confirmar]', '[E-Mail-Anbieter noch zu bestätigen]'),
 ('[A confirmar]', '[To be confirmed]', '[A confirmar]', '[Noch zu bestätigen]'),
+('Hasta que cierres el navegador', 'Until you close the browser', 'Até você fechar o navegador', 'Bis Sie den Browser schließen'),
 ]
