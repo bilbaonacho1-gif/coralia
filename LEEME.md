@@ -276,6 +276,9 @@ Revisado el 19/10/2026: 228 archivos, 13,5 MB en total (contando LEEME y i18n/fu
 - Rama de producción: revision-5 (Ajustes → Entornos → Production → Seguimiento de sucursales). Cada vez que se
   sube algo a esa rama, Vercel actualiza la web sola. Las otras ramas arman una vista previa con su propio link.
 - No toca la web de Wix: queda en el link de vercel.app hasta que se conecte un dominio.
+- Buscadores: vercel.json manda «X-Robots-Tag: noindex, nofollow» solo cuando se entra por un link *.vercel.app,
+  así Google no muestra la web de prueba. Cuando se conecte coraliae.com, ese dominio se indexa normal (no hace
+  falta tocar nada). No agregar un robots.txt que bloquee: valdría también para el dominio real.
 
 ## Fotos de los proyectos (kits de comunicación, octubre 2026)
 - Misiones (REDD+): fotos del kit en la galería del caso (proyecto.html?p=misiones) y en el proyecto destacado de
