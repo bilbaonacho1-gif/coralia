@@ -230,8 +230,8 @@ Debajo de 1000 px el menú se abre con el botón ☰; se cierra al tocar un link
 ## Pendientes (buscá TODO)
 - Link de Carbon Markets Hub: completarlo en APP_LINKS (nav.js). Hoy dice "Próximamente". Climate Risk ya lleva a
   https://climaterisk.coraliae.com/login (19/10/2026), y el «Probá las plataformas →» del centro de la rueda lleva a Iniciar sesión.
-- Faltan páginas que existen en la web actual: Mitigación, Adaptación, Equipo completo y
-  "What's Climate Change".
+- Páginas: Nacho confirmó (20/10/2026) que no hacen falta más. Mitigación y Adaptación están en las carpetas de
+  servicios de la portada y el equipo completo en el panal (#equipo).
 - Revisar con el equipo técnico los rangos ilustrativos de las mini demos y simuladores
   (simuladores.js: F, M, RB, REF_RATE, P_STD, P_HQ).
 
