@@ -78,7 +78,9 @@ def normalizar(s):
 
 def main():
     filas = []
-    for f in sorted(glob.glob(os.path.join(AQUI, '[0-9]-*.py'))):
+    # 1-*.py … 10-*.py, en orden numérico (las tablas de más adelante pisan a las anteriores)
+    tablas = glob.glob(os.path.join(AQUI, '[0-9]-*.py')) + glob.glob(os.path.join(AQUI, '[0-9][0-9]-*.py'))
+    for f in sorted(tablas, key=lambda p: int(os.path.basename(p).split('-')[0])):
         filas += runpy.run_path(f)['T']
     vistos = {}
     for fila in filas:

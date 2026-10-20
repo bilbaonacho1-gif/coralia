@@ -35,7 +35,9 @@ window.APP_LINKS = {
   let edge = 0;
   const measure = () => { edge = (run ? run.offsetHeight : 0) + 40; onScroll(); };
   let was = null;
-  const onScroll = () => { const on = scrollY > edge; if (on !== was) { was = on; header.classList.toggle('is-scrolled', on); } };
+  // páginas sin foto arriba (las legales): el encabezado va siempre con fondo claro
+  const fijo = document.body.classList.contains('page-plain');
+  const onScroll = () => { const on = fijo || scrollY > edge; if (on !== was) { was = on; header.classList.toggle('is-scrolled', on); } };
   addEventListener('scroll', onScroll, { passive: true });
   addEventListener('resize', measure);
   addEventListener('load', measure);

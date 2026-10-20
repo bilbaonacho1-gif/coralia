@@ -230,10 +230,21 @@ Debajo de 1000 px el menú se abre con el botón ☰; se cierra al tocar un link
 ## Pendientes (buscá TODO)
 - Link de Carbon Markets Hub: completarlo en APP_LINKS (nav.js). Hoy dice "Próximamente". Climate Risk ya lleva a
   https://climaterisk.coraliae.com/login (19/10/2026), y el «Probá las plataformas →» del centro de la rueda lleva a Iniciar sesión.
-- Faltan páginas que existen en la web actual: Mitigación, Adaptación, Equipo completo,
-  "What's Climate Change" y Política de privacidad.
+- Faltan páginas que existen en la web actual: Mitigación, Adaptación, Equipo completo y
+  "What's Climate Change".
 - Revisar con el equipo técnico los rangos ilustrativos de las mini demos y simuladores
   (simuladores.js: F, M, RB, REF_RATE, P_STD, P_HQ).
+
+## Privacidad y términos (privacidad.html, terminos.html — octubre 2026)
+- Páginas legales del sitio, linkeadas desde el pie de todas las páginas. Dicen solo lo que el sitio hace hoy: no tiene
+  formularios, cookies ni analítica; guarda idioma y tema en el navegador; los simuladores calculan en el navegador y no
+  mandan nada; el contacto es por email. Si se suma un formulario o analítica, hay que actualizarlas.
+- Los textos están en el HTML (castellano) y en i18n/fuente/10-legales.py (EN, PT, DE): se cambian juntos y después
+  python3 i18n/fuente/armar.py. Las tablas de traducción ahora pueden tener número de dos cifras (10-…).
+- Datos pendientes, resaltados en amarillo (clase .pend) hasta completarlos: CUIT, fecha de publicación, proveedor
+  de correo y su ubicación, plazo de conservación de los mensajes (24 meses) y tribunales. La razón social y el
+  domicilio (Coraliae SRL, Asunción 2444) son los de las plataformas; el pie dice Nogoyá 4169 (oficina): confirmar.
+- Las páginas sin foto arriba llevan <body class="page-plain">: el encabezado va siempre con fondo claro (nav.js).
 
 ## Premio y ratings (Confían en nosotros, ancla #trusted-by)
 Cuando las tarjetas aparecen en pantalla: el sello de Green Cross cae como un sello de goma, deja una onda verde
