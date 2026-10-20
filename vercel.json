@@ -1,10 +1,50 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "headers": [
+  "routes": [
     {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": ".*\\.vercel\\.app" }],
-      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+      "src": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": ".*\\.vercel\\.app"
+        }
+      ],
+      "headers": {
+        "X-Robots-Tag": "noindex, nofollow"
+      },
+      "continue": true
+    },
+    {
+      "src": "/proyecto\\.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "(?<id>misiones|ypf|genneia|mercuria|pluspetrol|phoenix|andromaco|sesuai|ruuts|wipo)"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(facebookexternalhit|Facebot|WhatsApp|LinkedInBot|Twitterbot|Slackbot|TelegramBot|Discordbot|SkypeUriPreview|Pinterestbot|redditbot|Embedly|vkShare|Iframely).*"
+        }
+      ],
+      "dest": "/compartir/proyecto-$id.html"
+    },
+    {
+      "src": "/pipeline\\.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "(?<id>remonte|chubut|dbcx|ibera|biochar|chaco-reforest)"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(facebookexternalhit|Facebot|WhatsApp|LinkedInBot|Twitterbot|Slackbot|TelegramBot|Discordbot|SkypeUriPreview|Pinterestbot|redditbot|Embedly|vkShare|Iframely).*"
+        }
+      ],
+      "dest": "/compartir/pipeline-$id.html"
     }
   ]
 }

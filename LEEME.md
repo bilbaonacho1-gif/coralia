@@ -276,7 +276,7 @@ Revisado el 19/10/2026: 228 archivos, 13,5 MB en total (contando LEEME y i18n/fu
 - Rama de producción: revision-5 (Ajustes → Entornos → Production → Seguimiento de sucursales). Cada vez que se
   sube algo a esa rama, Vercel actualiza la web sola. Las otras ramas arman una vista previa con su propio link.
 - No toca la web de Wix: queda en el link de vercel.app hasta que se conecte un dominio.
-- Buscadores: vercel.json manda «X-Robots-Tag: noindex, nofollow» solo cuando se entra por un link *.vercel.app,
+- Buscadores: vercel.json (lo escribe herramientas/compartir.py) manda «X-Robots-Tag: noindex, nofollow» solo cuando se entra por un link *.vercel.app,
   así Google no muestra la web de prueba. Cuando se conecte coraliae.com, ese dominio se indexa normal (no hace
   falta tocar nada). No agregar un robots.txt que bloquee: valdría también para el dominio real.
 
@@ -371,3 +371,14 @@ a una vez cada 7. Bloque "Celu fluido" al final de styles.css.
 - logo.png (160 px de alto), íconos de las apps (96 px) y deco/hojas-fondo.webp (600 px) achicados a lo que se ve.
 - 404.html: página de error propia (Vercel la muestra sola). Lleva <base href="/"> y rutas con / porque puede
   aparecer en cualquier carpeta. Textos en i18n/fuente/11-error.py.
+
+## Vista previa al compartir y mapa del sitio (20/10/2026)
+- herramientas/compartir.py escribe todo: etiquetas og:/twitter: en el <head> de las páginas fijas (entre
+  <!-- compartir:inicio --> y <!-- compartir:fin -->), las imágenes de 1200 × 630 en assets/compartir/ (foto + logo),
+  una hoja por caso y por proyecto del pipeline en compartir/, sitemap.xml, robots.txt y vercel.json.
+- Cada caso y proyecto del pipeline sale con su foto y su título al compartir el link: vercel.json manda a los robots
+  de vista previa (WhatsApp, LinkedIn, Facebook, X, Slack, Telegram…) a compartir/<página>-<id>.html. Las personas y
+  Google ven la página normal.
+- Volver a correrlo (python3 herramientas/compartir.py) cuando cambien los casos o el pipeline en data.js, y al pasar
+  al dominio propio: cambiar SITIO arriba del script. Hoy apunta a https://coralia-sooty.vercel.app.
+- vercel.json no se edita a mano: va con "routes" (no "rewrites") porque un archivo que existe gana sobre un rewrite.
