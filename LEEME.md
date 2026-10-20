@@ -382,3 +382,11 @@ a una vez cada 7. Bloque "Celu fluido" al final de styles.css.
 - Volver a correrlo (python3 herramientas/compartir.py) cuando cambien los casos o el pipeline en data.js, y al pasar
   al dominio propio: cambiar SITIO arriba del script. Hoy apunta a https://coralia-sooty.vercel.app.
 - vercel.json no se edita a mano: va con "routes" (no "rewrites") porque un archivo que existe gana sobre un rewrite.
+
+## Accesibilidad (20/10/2026)
+- Revisión automática (axe, WCAG 2.1 AA) en todas las páginas, claro y oscuro, 390 y 1366 px: sin errores salvo la
+  frase de la portada que se enciende palabra por palabra (las palabras todavía apagadas son claras a propósito).
+- Para llegar al contraste mínimo en el tema claro: --leaf pasó de #4f7f2a a #477326 y --dim de #7c8a80 a #5c6a61.
+- Zona táctil más grande en el celu: puntitos de los testimonios, idiomas del pie y el índice de las páginas legales.
+- Teclado: todo se recorre con Tab y se ve dónde está el foco; las ventanas (casos, equipo, fotos) se cierran con Escape
+  y el foco vuelve a donde estaba.
