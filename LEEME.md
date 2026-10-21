@@ -408,3 +408,8 @@ a una vez cada 7. Bloque "Celu fluido" al final de styles.css.
 - Salieron 8 fotos parecidas de las galerías del pipeline: remonte-2, 4, 8, 16 y 19, chubut-3 y 7, dbcx-4.
   Quedan ReMonte 14, Chubut 12 y Dominican Blue Carbon 9.
 - Si se suman fotos, que no pasen de ~1100 px (galerías) o ~1400 px (portadas) y volver a correr exportar-wix.py.
+
+## ChaCo-ReForest vuelve al pipeline (21/10/2026)
+- Nico mandó la foto (assets/pipeline/chaco-reforest-1.webp) y pidió dejar "a completar" lo que falta mientras pasa
+  la info: hectáreas, créditos y descripción siguen como "A confirmar". Iberá y Biochar siguen afuera.
+- Con 4 proyectos la grilla va 2 × 2 (en celu, una columna).

@@ -367,8 +367,16 @@ const PIPELINE = [
     img: 'assets/pipeline/dbcx-1.webp', gallery: ['assets/pipeline/dbcx-2.webp', 'assets/pipeline/dbcx-5.webp', 'assets/pipeline/dbcx-3.webp', 'assets/pipeline/dbcx-6.webp',
       'assets/pipeline/dbcx-7.webp', 'assets/pipeline/dbcx-8.webp', 'assets/pipeline/dbcx-9.webp',
       'assets/servicios/blue-carbon-antes.webp', 'assets/servicios/blue-carbon-despues.webp'] },
-  // Resilient Iberá, Argentina Biochar Initiative y ChaCo-ReForest salieron de la web a pedido de Nacho
-  // (21/10/2026): les faltaban fotos y datos. Sus fichas quedaron en el historial de git (data.js antes de este cambio).
+  { id: 'chaco-reforest', name: 'ChaCo-ReForest', type: 'ARR', place: 'Chaco Seco, Argentina', stage: 'Etapa inicial · Buscando USD 750K para el registro y un piloto de 50 ha',
+    // card: deck de inversores y web prototipo (sept-oct 2026), con ReForest LatAm. CCB "a evaluar": por ahora solo VCS.
+    // TODO: hectáreas, créditos y descripción: los pasa Nico (21/10/2026). Foto: la mandó Nico el 21/10/2026
+    country: 'Argentina', flag: 'ar', color: '#6b7a2e',
+    card: { desc: 'Descripción a confirmar.', a: ['Hectáreas', 'A confirmar'], b: ['Créditos', 'A confirmar'], std: ['vcs'], meth: ['Metodología', 'VM0047 v1.1'] },
+    ha: 'A confirmar', kpi: ['50 ha', 'de piloto, junto a ReForest LatAm'],
+    desc: ['Proyecto ARR en el Chaco Seco junto a ReForest LatAm, en etapa inicial: buscando USD 750K para el registro y un piloto de 50 ha.'],
+    img: 'assets/pipeline/chaco-reforest-1.webp', gallery: [] },
+  // Resilient Iberá y Argentina Biochar Initiative salieron de la web a pedido de Nacho (21/10/2026): les faltaban
+  // fotos y datos. Sus fichas quedaron en el historial de git (data.js antes del commit «Pipeline: salen…»).
 ];
 
 // Card de un proyecto del pipeline (Revisión 02, punto 20): foto con el tipo, bandera y país, título en su color,
