@@ -15,6 +15,10 @@ Copia los archivos de la web que están en git, menos lo que no va en Wix:
   - sitemap.xml y robots.txt, que apuntan a la web de prueba: se rehacen con el dominio
     propio (SITIO en herramientas/compartir.py) el día de la mudanza.
 Al final dice cuánto pesa y si entra en el límite.
+
+Para subirlo a un sitio que ya existe en Wix: panel del sitio → Edit Frontend → tarjeta «Update Site» → arrastrar
+el zip. NO usar de nuevo wix.com/headless/drop (crea un sitio nuevo). Cada subida reemplaza la web entera, por eso
+el zip siempre lleva todo.
 """
 import os, shutil, subprocess, sys
 
@@ -59,5 +63,7 @@ mb = lambda b: f'{b / 1e6:.1f} MB'
 print(f'{len(archivos)} archivos en {SALIDA}')
 print(f'Total: {mb(total)} (límite de Wix: {mb(LIMITE)}) · el más pesado: {mayor[0]} ({mb(mayor[1])})')
 print('Entra en Wix.' if total <= LIMITE else f'NO entra: sobran {mb(total - LIMITE)}.')
-zip_ = shutil.make_archive(SALIDA, 'zip', SALIDA)
+import datetime
+# el zip lleva la fecha y la hora en el nombre, para saber cuál es el último
+zip_ = shutil.make_archive(SALIDA + datetime.datetime.now().strftime('-%Y-%m-%d-%Hh%M'), 'zip', SALIDA)
 print(f'Zip para arrastrar en Wix: {zip_} ({mb(os.path.getsize(zip_))})' + ('' if FINAL else ' · copia de prueba, con noindex'))
