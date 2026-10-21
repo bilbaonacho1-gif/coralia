@@ -397,3 +397,14 @@ a una vez cada 7. Bloque "Celu fluido" al final de styles.css.
   fotos y datos). Quedan ReMonte, Chubut ARR y Dominican Blue Carbon. Las fichas viejas están en el historial de git
   (data.js, PIPELINE); para volver a sumarlas, copiarlas ahí y correr python3 herramientas/compartir.py.
 - Los links viejos (pipeline.html?p=ibera, etc.) muestran la lista de proyectos.
+
+## Peso para Wix (21/10/2026)
+- Wix Headless acepta hasta 20 MB en total (dev.wix.com → What You Can Upload). python3 herramientas/exportar-wix.py
+  arma la carpeta lista para subir (por defecto ../coralia-wix) y dice cuánto pesa: hoy 19,1 MB (contado en decimal,
+  el caso más estricto). Deja afuera notas, herramientas y lo que sólo sirve en Vercel (vercel.json, compartir/, las
+  imágenes para compartir de cada caso y proyecto, sitemap y robots, que se rehacen con el dominio propio).
+- Para llegar: fotos de galerías a 1100 px de lado mayor, portadas de casos y pipeline a 1400 px, miniaturas (-t.webp)
+  a 440 px, antes/después a 1100 px y recompresión de fondos, marca, equipo y portadas de páginas.
+- Salieron 8 fotos parecidas de las galerías del pipeline: remonte-2, 4, 8, 16 y 19, chubut-3 y 7, dbcx-4.
+  Quedan ReMonte 14, Chubut 12 y Dominican Blue Carbon 9.
+- Si se suman fotos, que no pasen de ~1100 px (galerías) o ~1400 px (portadas) y volver a correr exportar-wix.py.

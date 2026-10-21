@@ -343,10 +343,8 @@ const PIPELINE = [
     desc: ['El monte chaqueño no se planta: se deja volver. ReMonte es un programa de regeneración natural asistida del bosque nativo del Chaco Seco, con la ganadería adentro.',
       'El renoval no es una maleza: es el bosque volviendo. En el campo medimos cuánto monte queda y cuánto puede volver: cobertura leñosa nativa, renoval, suelo y forraje en El Tumé, La Colonia y Tres Flores.',
       'Sylvera le otorgó un rating AA–A previo a la emisión (junio de 2026).'],
-    img: 'assets/pipeline/remonte-3.webp', gallery: ['assets/pipeline/remonte-6.webp', 'assets/pipeline/remonte-7.webp', 'assets/pipeline/remonte-1.webp', 'assets/pipeline/remonte-8.webp', 'assets/pipeline/remonte-2.webp',
-      'assets/pipeline/remonte-9.webp', 'assets/pipeline/remonte-10.webp', 'assets/pipeline/remonte-4.webp', 'assets/pipeline/remonte-11.webp', 'assets/pipeline/remonte-12.webp', 'assets/pipeline/remonte-5.webp',
-      'assets/pipeline/remonte-13.webp', 'assets/pipeline/remonte-14.webp', 'assets/pipeline/remonte-15.webp', 'assets/pipeline/remonte-16.webp',
-      'assets/pipeline/remonte-17.webp', 'assets/pipeline/remonte-18.webp', 'assets/pipeline/remonte-19.webp', 'assets/pipeline/remonte-20.webp'] },
+    img: 'assets/pipeline/remonte-3.webp', gallery: ['assets/pipeline/remonte-6.webp', 'assets/pipeline/remonte-7.webp', 'assets/pipeline/remonte-1.webp', 'assets/pipeline/remonte-9.webp', 'assets/pipeline/remonte-10.webp', 'assets/pipeline/remonte-11.webp', 'assets/pipeline/remonte-12.webp', 'assets/pipeline/remonte-5.webp',
+      'assets/pipeline/remonte-13.webp', 'assets/pipeline/remonte-14.webp', 'assets/pipeline/remonte-15.webp', 'assets/pipeline/remonte-17.webp', 'assets/pipeline/remonte-18.webp', 'assets/pipeline/remonte-20.webp'] },
   { id: 'chubut', name: 'Chubut ARR', type: 'ARR', place: 'Cholila · Chubut, Argentina', stage: 'Primera instancia de restauración',
     // card: Coralia Q&A 2 - Chubut ARR v2.0. 33.170 ha elegibles (3 PAIs); 5.211.444 VCUs a 40 años
     country: 'Argentina', flag: 'ar', color: '#2f5f4c',
@@ -355,8 +353,7 @@ const PIPELINE = [
     ha: '33.170 ha', kpi: ['33.170 ha', 'elegibles para restaurar, en tres áreas del bosque andino-patagónico'],
     desc: ['El fuego se midió en hectáreas. La recuperación también. Proyecto ARR sobre el paisaje del bosque andino-patagónico afectado por los incendios de 2014-2015, junto al Gobierno del Chubut.',
       'Cada hectárea se verifica en el terreno: muestreo de suelo y parcelas de monitoreo en el área afectada por los incendios.'],
-    img: 'assets/pipeline/chubut-1.webp', gallery: ['assets/pipeline/chubut-4.webp', 'assets/pipeline/chubut-5.webp', 'assets/pipeline/chubut-2.webp', 'assets/pipeline/chubut-6.webp', 'assets/pipeline/chubut-3.webp',
-      'assets/pipeline/chubut-7.webp', 'assets/pipeline/chubut-8.webp', 'assets/pipeline/chubut-9.webp', 'assets/pipeline/chubut-10.webp', 'assets/pipeline/chubut-11.webp',
+    img: 'assets/pipeline/chubut-1.webp', gallery: ['assets/pipeline/chubut-4.webp', 'assets/pipeline/chubut-5.webp', 'assets/pipeline/chubut-2.webp', 'assets/pipeline/chubut-6.webp', 'assets/pipeline/chubut-8.webp', 'assets/pipeline/chubut-9.webp', 'assets/pipeline/chubut-10.webp', 'assets/pipeline/chubut-11.webp',
       'assets/pipeline/chubut-12.webp', 'assets/pipeline/chubut-13.webp', 'assets/pipeline/chubut-14.webp', 'assets/pipeline/chubut-mapa.webp'] },
   { id: 'dbcx', name: 'Dominican Blue Carbon', type: 'Blue Carbon', place: 'Montecristi y Puerto Plata, República Dominicana', stage: 'Medición en campo · octubre 2025',
     // card: PD "Datos degradados (13.10.26)". 4.011,9 ha (conservación + restauración). Créditos: cifra de la card de referencia de Nico
@@ -367,7 +364,7 @@ const PIPELINE = [
     ha: '2.784 ha', kpi: ['2.784 ha', 'de manglar bajo un proyecto de conservación y restauración a 40 años'],
     desc: ['De mercados climáticos de alto riesgo a soluciones climáticas de bajo riesgo: desarrollo de un proyecto de carbono en manglar, con el Dominican Blue Carbon Exchange Fund Trust.',
       'La degradación se mide; la recuperación también. Cada hectárea se verifica en el terreno: inventario de parcelas y muestreo de suelo en Montecristi y Puerto Plata (relevamiento de octubre de 2025).'],
-    img: 'assets/pipeline/dbcx-1.webp', gallery: ['assets/pipeline/dbcx-4.webp', 'assets/pipeline/dbcx-2.webp', 'assets/pipeline/dbcx-5.webp', 'assets/pipeline/dbcx-3.webp', 'assets/pipeline/dbcx-6.webp',
+    img: 'assets/pipeline/dbcx-1.webp', gallery: ['assets/pipeline/dbcx-2.webp', 'assets/pipeline/dbcx-5.webp', 'assets/pipeline/dbcx-3.webp', 'assets/pipeline/dbcx-6.webp',
       'assets/pipeline/dbcx-7.webp', 'assets/pipeline/dbcx-8.webp', 'assets/pipeline/dbcx-9.webp',
       'assets/servicios/blue-carbon-antes.webp', 'assets/servicios/blue-carbon-despues.webp'] },
   // Resilient Iberá, Argentina Biochar Initiative y ChaCo-ReForest salieron de la web a pedido de Nacho
