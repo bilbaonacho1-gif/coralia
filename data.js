@@ -4,6 +4,7 @@
 const CASES = [
   // img: tarjeta con el logo del cliente ya incluido (de la web actual).
   // tallImg: foto para tarjetas verticales cuando la tarjeta original es muy ancha ('' = fondo de color con el nombre).
+  // tallBaked: true si esa foto vertical ya trae el logo del cliente (no se le escribe el nombre encima).
   // hero / gallery: fotos de la página de detalle. quote: índice en QUOTES.
   { id: 'misiones', hero: 'assets/proyectos/misiones.jpg', gallery: ['assets/proyectos/misiones-selva.webp', 'assets/proyectos/misiones-niebla.webp', 'assets/proyectos/misiones-mono.webp', 'assets/proyectos/misiones-atardecer.webp', 'assets/proyectos/misiones-coati.webp', 'assets/proyectos/misiones-aerea.webp', 'assets/proyectos/misiones-comunidades.webp', 'assets/proyectos/misiones-rio.webp', 'assets/proyectos/misiones-puma.webp',
     'assets/proyectos/misiones-dosel-niebla.webp', 'assets/proyectos/misiones-interior.webp', 'assets/proyectos/misiones-acantilado.webp', 'assets/proyectos/misiones-dosel.webp',
@@ -127,7 +128,7 @@ const CASES = [
         'Además, Coralia sigue ampliando su propia base de datos de huellas de carbono de materias primas del sector cosmético, una herramienta para futuras mediciones. El trabajo continúa una colaboración que empezó con la línea Aveno.'],
     },
     url: 'https://www.coraliae.com/projects-laboratoriosandromaco' },
-  { id: 'sesuai', hero: 'assets/proyectos/sesuai.jpg', gallery: [], tallImg: '', featured: false, img: 'assets/proyectos/sesuai.jpg', client: 'sesu.ai', country: 'Argentina', svc: 'consultoria', ind: 'Energía solar',
+  { id: 'sesuai', hero: 'assets/proyectos/sesuai.jpg', gallery: [], tallImg: 'assets/proyectos/sesuai-tarjeta.webp', tallBaked: true, featured: false, img: 'assets/proyectos/sesuai.jpg', client: 'sesu.ai', country: 'Argentina', svc: 'consultoria', ind: 'Energía solar',
     title: 'Prefactibilidad de los parques solares El Pongo I y II', kpi: ['200 MW', 'proyectados en Jujuy'],
     short: 'Estudio técnico, legal, ambiental y comercial para un consorcio coreano.',
     body: ['Analizamos la participación en el MATER, el marco regulatorio y los incentivos como el RIGI y beneficios provinciales, además de las condiciones para la evaluación de impacto ambiental.',
@@ -284,7 +285,7 @@ const QUOTES = [
 ];
 // Imagen para tarjetas verticales (carrusel, destacados)
 const tallOf = (c) => (c.tallImg !== undefined ? c.tallImg : c.img);
-const bakedLogo = (c, src) => src === c.img;   // la tarjeta original ya trae el logo
+const bakedLogo = (c, src) => src === c.img || (c.tallBaked && src === c.tallImg);   // la foto ya trae el logo
 // tarjeta sin foto pero con logo del cliente (note.logo): el logo en una pastilla blanca, en vez del nombre escrito
 const clientMark = (c, src) => (!src && c.note && c.note.logo ? `<span class="logo-chip"><img src="${c.note.logo}" alt="${c.client}"></span>` : c.client);
 
