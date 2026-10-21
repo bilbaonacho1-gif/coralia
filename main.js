@@ -467,7 +467,7 @@ addEventListener('load', placeCasosDeco); addEventListener('resize', placeCasosD
 /* ---------- Casos: carrusel 3D + filtros ---------- */
 function mediaHTML(c, src, cls, logoCls) {
   const baked = src && bakedLogo(c, src);
-  return `<div class="${cls}${baked ? ' is-baked' : ''}">${src ? `<img src="${src}" alt="" loading="lazy" decoding="async" onerror="this.parentNode.classList.remove('is-baked');this.remove()">` : ''}<span class="${logoCls}">${c.client}</span></div>`;
+  return `<div class="${cls}${baked ? ' is-baked' : ''}">${src ? `<img src="${src}" alt="" loading="lazy" decoding="async" onerror="this.parentNode.classList.remove('is-baked');this.remove()">` : ''}<span class="${logoCls}">${clientMark(c, src)}</span></div>`;
 }
 let deckList = CASES.slice(), deckI = 0, deckTimer = null;
 const DECK_MS = 5500;

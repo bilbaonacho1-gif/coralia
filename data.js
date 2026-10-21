@@ -285,6 +285,8 @@ const QUOTES = [
 // Imagen para tarjetas verticales (carrusel, destacados)
 const tallOf = (c) => (c.tallImg !== undefined ? c.tallImg : c.img);
 const bakedLogo = (c, src) => src === c.img;   // la tarjeta original ya trae el logo
+// tarjeta sin foto pero con logo del cliente (note.logo): el logo en una pastilla blanca, en vez del nombre escrito
+const clientMark = (c, src) => (!src && c.note && c.note.logo ? `<span class="logo-chip"><img src="${c.note.logo}" alt="${c.client}"></span>` : c.client);
 
 // Equipo (fuente: coraliae.com). group: direccion · tecnico · relaciones · gestion
 // photo: assets/equipo/<id>.jpg (blanco y negro) · color: <id>-color.jpg (si existe)

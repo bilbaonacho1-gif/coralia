@@ -16,7 +16,7 @@ function media(c, cls, src = c.img) {
   const baked = src && bakedLogo(c, src);
   return `<span class="${cls}${baked ? ' is-baked' : ''}">
     ${src ? `<img src="${src}" alt="" loading="lazy" onerror="this.parentNode.classList.remove('is-baked');this.remove()">` : ''}
-    <span class="pcard__logo">${c.client}</span>
+    <span class="pcard__logo">${clientMark(c, src)}</span>
   </span>`;
 }
 function card(c, big) {

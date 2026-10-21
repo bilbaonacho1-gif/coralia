@@ -1791,3 +1791,7 @@ a.appview__app:hover{background:rgba(255,255,255,.24)}
 .notfound__go .btn{text-decoration:none}
 .notfound__go .btn--mint{color:var(--bg)}
 .notfound__go .btn--ghost-light{color:var(--ink)}
+
+/* Tarjetas de casos sin foto: el logo del cliente en una pastilla blanca (clientMark, data.js) */
+.logo-chip{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border-radius:16px;background:#fff;box-shadow:0 10px 30px -12px rgba(0,0,0,.45)}
+:is(.dcard__media,.pcard__media) .logo-chip img,.logo-chip img{position:static;inset:auto;display:block;width:min(190px,52vw);height:auto;object-fit:contain;filter:none!important}
