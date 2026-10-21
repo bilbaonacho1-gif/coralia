@@ -864,6 +864,7 @@
 "Hablemos": "Talk to us",
 "Hablemos →": "Talk to us →",
 "+13,2M": "+13.2M",
+"+1,2M": "+1.2M",
 "toneladas de CO₂e reducidas o removidas": "tonnes of CO₂e reduced or removed",
 "en proyectos desarrollados por Coralia": "in projects developed by Coralia",
 "toneladas de CO₂e medidas": "tonnes of CO₂e measured",

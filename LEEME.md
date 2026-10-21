@@ -62,7 +62,7 @@ así que no dependen de Google Fonts. Se declaran al principio de styles.css (@f
 - Portada: "Donde la naturaleza / crea valor." (la segunda línea en lima) y la bajada nueva (opción A).
   Botón "Hablemos" (EN Talk to us), también en las otras páginas.
 - Tarjetas de la portada con el mismo formato: número + qué es + aclaración chica. +13,2M t (mercados),
-  +[X]M t medidas (huella, provisorio) y +100 activos (riesgo, provisorio). Los dos provisorios tienen TODO.
+  +1,2M t medidas (huella; dato de Nacho, 21/10/2026) y +100 activos (riesgo, provisorio, con TODO).
   El número que sube al aparecer es el de la tarjeta con data-count (motion.js).
 - "Qué es Coralia": equipo con base científica (opción A). Frase nueva debajo de Mitigar (insetting / offsetting).
 - Apps → plataformas en toda la web y en los 4 idiomas. "Climate Risk App" → "Climate Risk".

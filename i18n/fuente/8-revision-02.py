@@ -11,6 +11,7 @@ T = [
 ("Hablemos →", "Talk to us →", "Fale conosco →", "Kontakt →"),
 # --- Portada: las tres tarjetas
 ("+13,2M", "+13.2M", "+13,2M", "+13,2 Mio."),
+("+1,2M", "+1.2M", "+1,2M", "+1,2 Mio."),
 ("toneladas de CO₂e reducidas o removidas", "tonnes of CO₂e reduced or removed", "toneladas de CO₂e reduzidas ou removidas", "Tonnen CO₂e reduziert oder entnommen"),
 ("en proyectos desarrollados por Coralia", "in projects developed by Coralia", "em projetos desenvolvidos pela Coralia", "in von Coralia entwickelten Projekten"),
 ("toneladas de CO₂e medidas", "tonnes of CO₂e measured", "toneladas de CO₂e medidas", "Tonnen CO₂e gemessen"),
