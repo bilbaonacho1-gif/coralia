@@ -133,7 +133,7 @@ const CASES = [
     body: ['Analizamos la participación en el MATER, el marco regulatorio y los incentivos como el RIGI y beneficios provinciales, además de las condiciones para la evaluación de impacto ambiental.',
       'Estudiamos compradores potenciales vía contratos PPA y actuamos como enlace entre el gobierno provincial, el consorcio y las autoridades nacionales.'],
     note: {
-      place: 'Jujuy, Argentina',
+      logo: 'assets/logos/sesuai.webp', place: 'Jujuy, Argentina',
       metrics: [['200 MW', 'proyectados entre los dos parques'], ['2 parques', 'El Pongo I y El Pongo II'], ['4 frentes', 'técnico, legal, ambiental y comercial']],
       facts: [['Industria', 'Energía solar'], ['Financiamiento', 'Ministerio de Ambiente de Corea']],
       challenge: ['Un consorcio coreano, con financiamiento del Ministerio de Ambiente de Corea, quiere desarrollar los parques solares El Pongo I y II en Jujuy, con una capacidad proyectada de 200 MW.',

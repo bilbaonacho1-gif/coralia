@@ -35,7 +35,7 @@ if (n) {
   $('#dBody').innerHTML = `<section class="note-part"><span class="note-part__n">01</span><h3>El desafío</h3>${ps(n.challenge)}</section>
     <section class="note-part"><span class="note-part__n">02</span><h3>Qué hicimos</h3>${ps(n.did)}${c.role ? `<ul class="d-role">${c.role.map((r) => `<li>${r}</li>`).join('')}</ul>` : ''}${steps}</section>
     <section class="note-part"><span class="note-part__n">03</span><h3>Resultado</h3>${ps(n.result)}</section>`;
-  // sin logo cargado (Mercuria, sesu.ai, Ruuts, WIPO), va el nombre del cliente
+  // sin logo cargado (Mercuria, Ruuts, WIPO), va el nombre del cliente
   $('#dSideClient').innerHTML = `${n.logo ? `<img class="note-side__logo" src="${n.logo}" alt="${c.client}">` : `<b class="note-side__name">${c.client}</b>`}<span class="note-side__place">${n.place || c.country}</span>`;
   $('#dKpi').outerHTML = `<dl class="note-side__m">${n.metrics.map((m) => `<div><dt>${m[0]}</dt><dd>${m[1]}</dd></div>`).join('')}</dl>`;
   $('#dKpiLabel').outerHTML = n.facts ? `<dl class="note-side__f">${n.facts.map((f) => `<div><dt>${f[0]}</dt><dd>${f[1]}</dd></div>`).join('')}</dl>` : '';
