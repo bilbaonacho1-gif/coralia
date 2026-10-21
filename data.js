@@ -333,18 +333,6 @@ const TEAM_GROUPS = { all: 'Todos', direccion: 'Dirección', tecnico: 'Equipo t�
 // Pipeline de proyectos propios (para inversores). Datos de los kits de comunicación de cada proyecto.
 // kpi: el número grande de la ficha. TODO Coralia: créditos estimados de cada proyecto y los que faltan del pipeline (son 6–7).
 const PIPELINE = [
-  { id: 'remonte', name: 'ReMonte', type: 'ARR', place: 'Gran Chaco · Santiago del Estero, Argentina', stage: 'Rating Sylvera AA–A previo a la emisión',
-    // card (Revisión 02): datos del PD ReMonte v4.4 (ago-2026). 156.000 ha = meta del proyecto agrupado; 8,3 M VCUs = estimado a 40 años
-    // TODO: foto de la card con las vacas en El Tumé (la pasa Nico); por ahora va la foto del monte
-    country: 'Argentina', flag: 'ar', color: '#8a6a32',
-    card: { desc: 'Regeneración del bosque nativo y ganadería regenerativa en campos degradados del Chaco Seco.',
-      a: ['Hectáreas', '156.000'], b: ['Créditos (40 años)', '8,3 millones'], std: ['vcs', 'ccb'], meth: ['Metodología', 'VM0047 v1.1'] },
-    ha: '156.000 ha', kpi: ['156.000 ha', 'de Chaco Seco donde el bosque nativo vuelve con la hacienda adentro'],
-    desc: ['El monte chaqueño no se planta: se deja volver. ReMonte es un programa de regeneración natural asistida del bosque nativo del Chaco Seco, con la ganadería adentro.',
-      'El renoval no es una maleza: es el bosque volviendo. En el campo medimos cuánto monte queda y cuánto puede volver: cobertura leñosa nativa, renoval, suelo y forraje en El Tumé, La Colonia y Tres Flores.',
-      'Sylvera le otorgó un rating AA–A previo a la emisión (junio de 2026).'],
-    img: 'assets/pipeline/remonte-3.webp', gallery: ['assets/pipeline/remonte-6.webp', 'assets/pipeline/remonte-7.webp', 'assets/pipeline/remonte-1.webp', 'assets/pipeline/remonte-9.webp', 'assets/pipeline/remonte-10.webp', 'assets/pipeline/remonte-11.webp', 'assets/pipeline/remonte-12.webp', 'assets/pipeline/remonte-5.webp',
-      'assets/pipeline/remonte-13.webp', 'assets/pipeline/remonte-14.webp', 'assets/pipeline/remonte-15.webp', 'assets/pipeline/remonte-17.webp', 'assets/pipeline/remonte-18.webp', 'assets/pipeline/remonte-20.webp'] },
   { id: 'chubut', name: 'Chubut ARR', type: 'ARR', place: 'Cholila · Chubut, Argentina', stage: 'Primera instancia de restauración',
     // card: Coralia Q&A 2 - Chubut ARR v2.0. 33.170 ha elegibles (3 PAIs); 5.211.444 VCUs a 40 años
     country: 'Argentina', flag: 'ar', color: '#2f5f4c',
@@ -368,10 +356,10 @@ const PIPELINE = [
       'assets/pipeline/dbcx-7.webp', 'assets/pipeline/dbcx-8.webp', 'assets/pipeline/dbcx-9.webp',
       'assets/servicios/blue-carbon-antes.webp', 'assets/servicios/blue-carbon-despues.webp'] },
   { id: 'chaco-reforest', name: 'ChaCo-ReForest', type: 'ARR', place: 'Chaco Seco, Argentina', stage: 'Etapa inicial · Buscando USD 750K para el registro y un piloto de 50 ha',
-    // card: deck de inversores y web prototipo (sept-oct 2026), con ReForest LatAm. CCB "a evaluar": por ahora solo VCS.
+    // card: deck de inversores y web prototipo (sept-oct 2026), con ReForest LatAm. Estándares VCS y CCB (Nico, 21/10/2026).
     // TODO: hectáreas, créditos y descripción: los pasa Nico (21/10/2026). Foto: la mandó Nico el 21/10/2026
     country: 'Argentina', flag: 'ar', color: '#6b7a2e',
-    card: { desc: 'Descripción a confirmar.', a: ['Hectáreas', 'A confirmar'], b: ['Créditos', 'A confirmar'], std: ['vcs'], meth: ['Metodología', 'VM0047 v1.1'] },
+    card: { desc: 'Descripción a confirmar.', a: ['Hectáreas', 'A confirmar'], b: ['Créditos', 'A confirmar'], std: ['vcs', 'ccb'], meth: ['Metodología', 'VM0047 v1.1'] },
     ha: 'A confirmar', kpi: ['50 ha', 'de piloto, junto a ReForest LatAm'],
     desc: ['Proyecto ARR en el Chaco Seco junto a ReForest LatAm, en etapa inicial: buscando USD 750K para el registro y un piloto de 50 ha.'],
     img: 'assets/pipeline/chaco-reforest-1.webp', gallery: [] },

@@ -36,7 +36,7 @@
         {
           "type": "query",
           "key": "p",
-          "value": "(?<id>remonte|chubut|dbcx|chaco-reforest)"
+          "value": "(?<id>chubut|dbcx|chaco-reforest)"
         },
         {
           "type": "header",

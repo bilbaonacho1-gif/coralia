@@ -37,7 +37,7 @@ PAGINAS = {
                       'Caso de Coralia Environmental.', 'assets/explora.jpg', 'proyectos'),
     'pipeline.html': ('Pipeline de proyectos | Coralia Environmental',
                       'Pipeline de proyectos de carbono propios de Coralia Environmental.',
-                      'assets/pipeline/remonte-3.webp', 'pipeline'),
+                      'assets/pipeline/chubut-1.webp', 'pipeline'),
     'discover.html': ('Descubrí | Coralia Environmental',
                       'Descubrí tu camino climático con cinco evaluaciones rápidas de Coralia Environmental.',
                       'assets/hero-con.webp', 'descubri'),

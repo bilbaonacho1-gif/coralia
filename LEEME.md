@@ -413,3 +413,9 @@ a una vez cada 7. Bloque "Celu fluido" al final de styles.css.
 - Nico mandó la foto (assets/pipeline/chaco-reforest-1.webp) y pidió dejar "a completar" lo que falta mientras pasa
   la info: hectáreas, créditos y descripción siguen como "A confirmar". Iberá y Biochar siguen afuera.
 - Con 4 proyectos la grilla va 2 × 2 (en celu, una columna).
+
+## Sale ReMonte del pipeline; ChaCo con VCS + CCB (21/10/2026)
+- A pedido de Nacho, ReMonte sale de "Para inversores" y de pipeline.html (y sus fotos de assets/pipeline). Siguen
+  las otras menciones: el rating de Sylvera en "Confían en nosotros" y la línea de Trayectoria (Ruuts · GIZ).
+- ChaCo-ReForest: estándares VCS y CCB (dato de Nico).
+- Quedan 3 proyectos: Chubut ARR, Dominican Blue Carbon y ChaCo-ReForest. Paquete para Wix: 16,0 MB.
