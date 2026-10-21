@@ -36,7 +36,7 @@
         {
           "type": "query",
           "key": "p",
-          "value": "(?<id>remonte|chubut|dbcx|ibera|biochar|chaco-reforest)"
+          "value": "(?<id>remonte|chubut|dbcx)"
         },
         {
           "type": "header",

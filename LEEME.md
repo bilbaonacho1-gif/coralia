@@ -391,3 +391,9 @@ a una vez cada 7. Bloque "Celu fluido" al final de styles.css.
 - Zona táctil más grande en el celu: puntitos de los testimonios, idiomas del pie y el índice de las páginas legales.
 - Teclado: todo se recorre con Tab y se ve dónde está el foco; las ventanas (casos, equipo, fotos) se cierran con Escape
   y el foco vuelve a donde estaba.
+
+## Pipeline: salen Iberá, Biochar y ChaCo-ReForest (21/10/2026)
+- A pedido de Nacho se sacaron de la web Resilient Iberá, Argentina Biochar Initiative y ChaCo-ReForest (les faltaban
+  fotos y datos). Quedan ReMonte, Chubut ARR y Dominican Blue Carbon. Las fichas viejas están en el historial de git
+  (data.js, PIPELINE); para volver a sumarlas, copiarlas ahí y correr python3 herramientas/compartir.py.
+- Los links viejos (pipeline.html?p=ibera, etc.) muestran la lista de proyectos.

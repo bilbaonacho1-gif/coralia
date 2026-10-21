@@ -134,25 +134,4 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://coralia-sooty.vercel.app/pipeline.html?p=dbcx&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://coralia-sooty.vercel.app/pipeline.html?p=dbcx&amp;lang=de"/>
   </url>
-  <url>
-    <loc>https://coralia-sooty.vercel.app/pipeline.html?p=ibera</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coralia-sooty.vercel.app/pipeline.html?p=ibera&amp;lang=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coralia-sooty.vercel.app/pipeline.html?p=ibera&amp;lang=en"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://coralia-sooty.vercel.app/pipeline.html?p=ibera&amp;lang=pt"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://coralia-sooty.vercel.app/pipeline.html?p=ibera&amp;lang=de"/>
-  </url>
-  <url>
-    <loc>https://coralia-sooty.vercel.app/pipeline.html?p=biochar</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coralia-sooty.vercel.app/pipeline.html?p=biochar&amp;lang=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coralia-sooty.vercel.app/pipeline.html?p=biochar&amp;lang=en"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://coralia-sooty.vercel.app/pipeline.html?p=biochar&amp;lang=pt"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://coralia-sooty.vercel.app/pipeline.html?p=biochar&amp;lang=de"/>
-  </url>
-  <url>
-    <loc>https://coralia-sooty.vercel.app/pipeline.html?p=chaco-reforest</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coralia-sooty.vercel.app/pipeline.html?p=chaco-reforest&amp;lang=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coralia-sooty.vercel.app/pipeline.html?p=chaco-reforest&amp;lang=en"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://coralia-sooty.vercel.app/pipeline.html?p=chaco-reforest&amp;lang=pt"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://coralia-sooty.vercel.app/pipeline.html?p=chaco-reforest&amp;lang=de"/>
-  </url>
 </urlset>
