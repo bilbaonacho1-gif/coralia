@@ -1199,7 +1199,7 @@
 "Si cambiamos esta política, publicamos la nueva versión en esta página con su fecha. Contacto: <a href=\"mailto:contacto@coraliae.com\">contacto@coraliae.com</a>.": "If we change this policy, we publish the new version on this page with its date. Contact: <a href=\"mailto:contacto@coraliae.com\">contacto@coraliae.com</a>.",
 "Legales": "Legal",
 "Este sitio no tiene formularios, no pide crear una cuenta y no usa cookies de seguimiento. Acá contamos qué datos sí se tratan y cómo.": "This website has no forms, does not ask you to create an account and does not use tracking cookies. Here we explain what data is processed and how.",
-"Última actualización: <span class=\"pend\">[fecha de publicación]</span>": "Last updated: <span class=\"pend\">[publication date]</span>",
+"Última actualización: 21 de octubre de 2026": "Last updated: 21 October 2026",
 "Las plataformas de Coralia (Huella de carbono, Climate Risk) tienen su propia sección de seguridad y legales, con lo que corresponde a los datos que se cargan en ellas.": "Coralia's platforms (Carbon Footprint, Climate Risk) have their own security and legal section, covering the data uploaded to them.",
 "Términos de uso": "Terms of use",
 "Las condiciones para usar el sitio de Coralia Environmental, sus contenidos y sus evaluaciones rápidas.": "The terms for using the Coralia Environmental website, its content and its quick assessments.",

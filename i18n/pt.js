@@ -1101,7 +1101,7 @@
 "Si cambiamos esta política, publicamos la nueva versión en esta página con su fecha. Contacto: <a href=\"mailto:contacto@coraliae.com\">contacto@coraliae.com</a>.": "Se alterarmos esta política, publicamos a nova versão nesta página com a data. Contato: <a href=\"mailto:contacto@coraliae.com\">contacto@coraliae.com</a>.",
 "Legales": "Jurídico",
 "Este sitio no tiene formularios, no pide crear una cuenta y no usa cookies de seguimiento. Acá contamos qué datos sí se tratan y cómo.": "Este site não tem formulários, não pede para criar uma conta e não usa cookies de rastreamento. Aqui explicamos quais dados são tratados e como.",
-"Última actualización: <span class=\"pend\">[fecha de publicación]</span>": "Última atualização: <span class=\"pend\">[data de publicação]</span>",
+"Última actualización: 21 de octubre de 2026": "Última atualização: 21 de outubro de 2026",
 "Las plataformas de Coralia (Huella de carbono, Climate Risk) tienen su propia sección de seguridad y legales, con lo que corresponde a los datos que se cargan en ellas.": "As plataformas da Coralia (Pegada de carbono, Climate Risk) têm sua própria seção de segurança e jurídico, sobre os dados carregados nelas.",
 "Términos de uso": "Termos de uso",
 "Las condiciones para usar el sitio de Coralia Environmental, sus contenidos y sus evaluaciones rápidas.": "As condições para usar o site da Coralia Environmental, seus conteúdos e suas avaliações rápidas.",
