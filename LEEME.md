@@ -241,9 +241,9 @@ Debajo de 1000 px el menú se abre con el botón ☰; se cierra al tocar un link
   mandan nada; el contacto es por email. Si se suma un formulario o analítica, hay que actualizarlas.
 - Los textos están en el HTML (castellano) y en i18n/fuente/10-legales.py (EN, PT, DE): se cambian juntos y después
   python3 i18n/fuente/armar.py. Las tablas de traducción ahora pueden tener número de dos cifras (10-…).
-- Datos pendientes, resaltados en amarillo (clase .pend) hasta completarlos (ya no figura el proveedor de correo, a pedido de Nacho):
-  de correo y su ubicación, plazo de conservación de los mensajes (24 meses) y tribunales. La razón social y el
-  domicilio (Coraliae SRL, Asunción 2444) son los de las plataformas; el pie dice Nogoyá 4169 (oficina): confirmar.
+- Datos confirmados (21/10/2026): CUIT 30-71240183-0, última actualización 21/10/2026, 24 meses para los mensajes y
+  tribunales ordinarios de CABA. Sin el proveedor de correo (a pedido de Nacho). Ya no queda nada en amarillo. La razón
+  social y el domicilio (Coraliae SRL, Asunción 2444) son los de las plataformas; el pie dice Nogoyá 4169 (oficina).
 - Las páginas sin foto arriba llevan <body class="page-plain">: el encabezado va siempre con fondo claro (nav.js).
 
 ## Premio y ratings (Confían en nosotros, ancla #trusted-by)
