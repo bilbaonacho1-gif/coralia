@@ -4,7 +4,8 @@ Correr desde la carpeta de la web:   python3 herramientas/exportar-wix.py [carpe
 (sin carpeta, la arma en ../coralia-wix; además deja al lado un .zip para arrastrar en la página de Wix)
 
 Sin --final, cada página lleva <meta name="robots" content="noindex">: es una copia de prueba y Google no
-tiene que mostrarla. El día que la web pase a coraliae.com, exportar con --final.
+tiene que mostrarla. El día que la web pase a coraliae.com, exportar con --final: además cambia las
+direcciones de la vista previa al compartir (og:url, og:image) de la web de prueba a DOMINIO.
 
 Wix acepta hasta 20 MB en total y hasta 20 MB por archivo (dev.wix.com → What You Can Upload).
 Copia los archivos de la web que están en git, menos lo que no va en Wix:
@@ -26,6 +27,8 @@ WEB = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 args = [a for a in sys.argv[1:] if not a.startswith('--')]
 FINAL = '--final' in sys.argv
 SALIDA = os.path.abspath(args[0]) if args else os.path.join(os.path.dirname(WEB), 'coralia-wix')
+SITIO_PRUEBA = 'https://coralia-sooty.vercel.app'
+DOMINIO = 'https://www.coraliae.com'   # la dirección definitiva, para la vista previa al compartir
 LIMITE = 20_000_000   # 20 MB contados en decimal, el caso más estricto
 
 FUERA_EXACTO = {'LEEME.md', 'README.md', 'TRASPASO.md', 'vercel.json', 'sitemap.xml', 'robots.txt', '.gitignore'}
@@ -49,6 +52,11 @@ for f in archivos:
     dst = os.path.join(SALIDA, f)
     os.makedirs(os.path.dirname(dst), exist_ok=True)
     shutil.copy2(os.path.join(WEB, f), dst)
+    if FINAL and f.endswith('.html'):
+        # vista previa al compartir (og:url, og:image): de la web de prueba a la dirección definitiva
+        html = open(dst, encoding='utf-8').read()
+        if SITIO_PRUEBA in html:
+            open(dst, 'w', encoding='utf-8').write(html.replace(SITIO_PRUEBA, DOMINIO))
     if not FINAL and f.endswith('.html'):
         html = open(dst, encoding='utf-8').read()
         if 'name="robots"' not in html:
