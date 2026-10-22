@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Lo escribe herramientas/compartir.py. Cada página está en los 4 idiomas con ?lang= -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://coralia-sooty.vercel.app/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coralia-sooty.vercel.app/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coralia-sooty.vercel.app/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://coralia-sooty.vercel.app/?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://coralia-sooty.vercel.app/?lang=de"/>
+  </url>
+  <url>
+    <loc>https://coralia-sooty.vercel.app/proyectos.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coralia-sooty.vercel.app/proyectos.html?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coralia-sooty.vercel.app/proyectos.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://coralia-sooty.vercel.app/proyectos.html?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://coralia-sooty.vercel.app/proyectos.html?lang=de"/>
+  </url>
+  <url>
+    <loc>https://coralia-sooty.vercel.app/pipeline.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coralia-sooty.vercel.app/pipeline.html?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coralia-sooty.vercel.app/pipeline.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://coralia-sooty.vercel.app/pipeline.html?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://coralia-sooty.vercel.app/pipeline.html?lang=de"/>
+  </url>
+  <url>
+    <loc>https://coralia-sooty.vercel.app/discover.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coralia-sooty.vercel.app/discover.html?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coralia-sooty.vercel.app/discover.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://coralia-sooty.vercel.app/discover.html?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://coralia-sooty.vercel.app/discover.html?lang=de"/>
+  </url>
+  <url>
+    <loc>https://coralia-sooty.vercel.app/privacidad.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coralia-sooty.vercel.app/privacidad.html?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coralia-sooty.vercel.app/privacidad.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://coralia-sooty.vercel.app/privacidad.html?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://coralia-sooty.vercel.app/privacidad.html?lang=de"/>
+  </url>
+  <url>
+    <loc>https://coralia-sooty.vercel.app/terminos.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coralia-sooty.vercel.app/terminos.html?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coralia-sooty.vercel.app/terminos.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://coralia-sooty.vercel.app/terminos.html?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://coralia-sooty.vercel.app/terminos.html?lang=de"/>
+  </url>
+  <url>
+    <loc>https://coralia-sooty.vercel.app/proyecto.html?p=misiones</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coralia-sooty.vercel.app/proyecto.html?p=misiones&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coralia-sooty.vercel.app/proyecto.html?p=misiones&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://coralia-sooty.vercel.app/proyecto.html?p=misiones&amp;lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://coralia-sooty.vercel.app/proyecto.html?p=misiones&amp;lang=de"/>
+  </url>
+  <url>
+    <loc>https://coralia-sooty.vercel.app/proyecto.html?p=ypf</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coralia-sooty.vercel.app/proyecto.html?p=ypf&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coralia-sooty.vercel.app/proyecto.html?p=ypf&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://coralia-sooty.vercel.app/proyecto.html?p=ypf&amp;lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://coralia-sooty.vercel.app/proyecto.html?p=ypf&amp;lang=de"/>
+  </url>
+  <url>
+    <loc>https://coralia-sooty.vercel.app/proyecto.html?p=genneia</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coralia-sooty.vercel.app/proyecto.html?p=genneia&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coralia-sooty.vercel.app/proyecto.html?p=genneia&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://coralia-sooty.vercel.app/proyecto.html?p=genneia&amp;lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://coralia-sooty.vercel.app/proyecto.html?p=genneia&amp;lang=de"/>
+  </url>
+  <url>
+    <loc>https://coralia-sooty.vercel.app/proyecto.html?p=mercuria</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coralia-sooty.vercel.app/proyecto.html?p=mercuria&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coralia-sooty.vercel.app/proyecto.html?p=mercuria&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://coralia-sooty.vercel.app/proyecto.html?p=mercuria&amp;lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://coralia-sooty.vercel.app/proyecto.html?p=mercuria&amp;lang=de"/>
+  </url>
+  <url>
+    <loc>https://coralia-sooty.vercel.app/proyecto.html?p=pluspetrol</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coralia-sooty.vercel.app/proyecto.html?p=pluspetrol&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coralia-sooty.vercel.app/proyecto.html?p=pluspetrol&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://coralia-sooty.vercel.app/proyecto.html?p=pluspetrol&amp;lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://coralia-sooty.vercel.app/proyecto.html?p=pluspetrol&amp;lang=de"/>
+  </url>
+  <url>
+    <loc>https://coralia-sooty.vercel.app/proyecto.html?p=phoenix</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coralia-sooty.vercel.app/proyecto.html?p=phoenix&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coralia-sooty.vercel.app/proyecto.html?p=phoenix&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://coralia-sooty.vercel.app/proyecto.html?p=phoenix&amp;lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://coralia-sooty.vercel.app/proyecto.html?p=phoenix&amp;lang=de"/>
+  </url>
+  <url>
+    <loc>https://coralia-sooty.vercel.app/proyecto.html?p=andromaco</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coralia-sooty.vercel.app/proyecto.html?p=andromaco&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coralia-sooty.vercel.app/proyecto.html?p=andromaco&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://coralia-sooty.vercel.app/proyecto.html?p=andromaco&amp;lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://coralia-sooty.vercel.app/proyecto.html?p=andromaco&amp;lang=de"/>
+  </url>
+  <url>
+    <loc>https://coralia-sooty.vercel.app/proyecto.html?p=sesuai</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coralia-sooty.vercel.app/proyecto.html?p=sesuai&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coralia-sooty.vercel.app/proyecto.html?p=sesuai&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://coralia-sooty.vercel.app/proyecto.html?p=sesuai&amp;lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://coralia-sooty.vercel.app/proyecto.html?p=sesuai&amp;lang=de"/>
+  </url>
+  <url>
+    <loc>https://coralia-sooty.vercel.app/proyecto.html?p=ruuts</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coralia-sooty.vercel.app/proyecto.html?p=ruuts&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coralia-sooty.vercel.app/proyecto.html?p=ruuts&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://coralia-sooty.vercel.app/proyecto.html?p=ruuts&amp;lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://coralia-sooty.vercel.app/proyecto.html?p=ruuts&amp;lang=de"/>
+  </url>
+  <url>
+    <loc>https://coralia-sooty.vercel.app/proyecto.html?p=wipo</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coralia-sooty.vercel.app/proyecto.html?p=wipo&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coralia-sooty.vercel.app/proyecto.html?p=wipo&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://coralia-sooty.vercel.app/proyecto.html?p=wipo&amp;lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://coralia-sooty.vercel.app/proyecto.html?p=wipo&amp;lang=de"/>
+  </url>
+  <url>
+    <loc>https://coralia-sooty.vercel.app/pipeline.html?p=chubut</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coralia-sooty.vercel.app/pipeline.html?p=chubut&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coralia-sooty.vercel.app/pipeline.html?p=chubut&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://coralia-sooty.vercel.app/pipeline.html?p=chubut&amp;lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://coralia-sooty.vercel.app/pipeline.html?p=chubut&amp;lang=de"/>
+  </url>
+  <url>
+    <loc>https://coralia-sooty.vercel.app/pipeline.html?p=dbcx</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coralia-sooty.vercel.app/pipeline.html?p=dbcx&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coralia-sooty.vercel.app/pipeline.html?p=dbcx&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://coralia-sooty.vercel.app/pipeline.html?p=dbcx&amp;lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://coralia-sooty.vercel.app/pipeline.html?p=dbcx&amp;lang=de"/>
+  </url>
+  <url>
+    <loc>https://coralia-sooty.vercel.app/pipeline.html?p=chaco-reforest</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coralia-sooty.vercel.app/pipeline.html?p=chaco-reforest&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coralia-sooty.vercel.app/pipeline.html?p=chaco-reforest&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://coralia-sooty.vercel.app/pipeline.html?p=chaco-reforest&amp;lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://coralia-sooty.vercel.app/pipeline.html?p=chaco-reforest&amp;lang=de"/>
+  </url>
+</urlset>

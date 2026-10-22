@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<!-- Revisión 02, punto 19: los servicios ahora se despliegan en la home. Esta página queda para que no se rompan
+     los links viejos: servicio.html?s=medir | mitigar | adaptar lleva a index.html#servicio-... (conserva ?lang=). -->
+<title>Servicios | Coralia Environmental</title>
+<!-- Ícono de la pestaña: la mariposa del logo de Coralia -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icono/icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="robots" content="noindex">
+<script>
+  (() => {
+    const q = new URLSearchParams(location.search), s = q.get('s'), lang = q.get('lang');
+    const svc = ['medir', 'mitigar', 'adaptar'].includes(s) ? `#servicio-${s}` : '#servicios';
+    location.replace('index.html' + (lang ? `?lang=${encodeURIComponent(lang)}` : '') + svc);
+  })();
+</script>
+<meta http-equiv="refresh" content="0; url=index.html#servicios">
+<link rel="canonical" href="index.html#servicios">
+</head>
+<body><p><a href="index.html#servicios">Servicios de Coralia Environmental →</a></p></body>
+</html>
