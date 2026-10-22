@@ -7,7 +7,7 @@ document.querySelectorAll('[data-login]').forEach((a) => { a.href = LOGIN_URL; }
 // null = todavía no tiene página: se muestra "Próximamente". Cambiar un link se hace solo acá.
 window.APP_LINKS = {
   footprint: 'https://carbonfootprint.coraliae.com/login',
-  markets: null,
+  markets: 'https://carbonmarkets.coraliae.com/',
   risk: 'https://climaterisk.coraliae.com/login',
 };
 
